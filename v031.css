@@ -56,13 +56,6 @@
   font-size:clamp(1.5rem,2.1vw,2.3rem);
 }
 
-.hero-card--hermes .plate-art,
-.hero-card--ui .plate-art,
-.hero-card--guangfan .plate-art{
-  inset-left:.85rem;
-  inset-right:.85rem;
-}
-
 @media (max-width:1120px) and (min-width:781px){
   .hero-stage{
     grid-template-columns:minmax(0,.82fr) minmax(460px,1.18fr);
