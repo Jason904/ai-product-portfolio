@@ -18,8 +18,8 @@
 
   const hydrateUiSkillLab = () => {
     const section = document.querySelector('.project--ui');
-    if (!section || section.dataset.evidenceVersion === 'v2-compact') return;
-    section.dataset.evidenceVersion = 'v2-compact';
+    if (!section || section.dataset.evidenceVersion === 'v2-1-causal') return;
+    section.dataset.evidenceVersion = 'v2-1-causal';
     section.innerHTML = `
       <header class="ui-case-hero reveal">
         <div class="ui-case-title">
@@ -32,8 +32,8 @@
             <span>9 Forks</span>
             <span>7 Main Skills</span>
           </div>
-          <p class="project-lead">把 AI 前端开发从一次性的 Prompt 调试，变成一套视觉目标驱动、可执行、可验收、可修复的 Workflow。</p>
-          <p class="ui-case-thesis">Codex / Claude Code 已经能快速写页面，真正的问题变成：<b>怎么让它持续写出团队真正想要的那个页面。</b></p>
+          <p class="project-lead">把“让 AI 写前端”从一次性的 Prompt 调试，变成一套有视觉目标、有规格合同、有验收门禁、有结构化修复的可复用 Workflow。</p>
+          <p class="ui-case-thesis">今天 AI 已经非常会写页面。真正困难的问题变成：<b>它写出来的是不是我们真正想要的页面？</b></p>
           <div class="ui-case-actions">
             <a href="https://github.com/Jason904/ui-skill-lab" target="_blank" rel="noreferrer">View GitHub ↗</a>
             <a href="https://skills.sh/Jason904/ui-skill-lab" target="_blank" rel="noreferrer">skills.sh ↗</a>
@@ -47,20 +47,61 @@
           <h3 id="ui-problem-title">AI 已经会写 UI，难的是让它持续写对。</h3>
         </div>
         <div class="ui-problem-rows">
+          <article><span>01</span><strong>目标不可见</strong><p>PRD 只有文字，团队很难在实现前建立一致的视觉预期。</p></article>
+          <article><span>02</span><strong>Agent 自由度过高</strong><p>缺少明确中间合同，容易出现“能运行，但不是我要的页面”。</p></article>
+          <article><span>03</span><strong>验收与修复靠感觉</strong><p>“再大一点 / 再高级一点 / 再像一点”无法形成稳定、可复验的修复闭环。</p></article>
+        </div>
+      </section>
+
+      <section class="ui-middle-layer reveal" aria-labelledby="ui-middle-title">
+        <div class="ui-middle-heading">
+          <small>THE MISSING LAYER</small>
+          <h3 id="ui-middle-title">真正缺的是中间层。</h3>
+          <p>AI Coding 的问题已经不主要是“能不能写 UI”，而是视觉意图没有形成一个 Agent 可以理解、执行、验收和修复的合同。</p>
+        </div>
+        <div class="ui-flow-compare" aria-label="传统 AI Coding 与 UI Skill Lab 工作流对比">
+          <article class="ui-flow-column ui-flow-column--before">
+            <small>传统方式</small>
+            <ol>
+              <li>PRD</li><li>AI 自由生成</li><li>页面能跑</li><li>人肉判断“不太对”</li><li>AI 猜 CSS</li><li>继续修改</li>
+            </ol>
+          </article>
+          <div class="ui-flow-divider" aria-hidden="true"><span>VS</span></div>
+          <article class="ui-flow-column ui-flow-column--system">
+            <small>UI Skill Lab</small>
+            <ol>
+              <li>PRD</li><li>Visual Target</li><li>Visual Spec</li><li>Design System</li><li>Agent Code</li><li>Screenshot Acceptance</li><li>Diff Fix</li>
+            </ol>
+          </article>
+        </div>
+        <p class="ui-middle-thesis">不是让 Agent 更自由地写，而是给 Agent 建立正确的 <b>目标、规格、门禁和反馈闭环。</b></p>
+      </section>
+
+      <section class="ui-core-highlights reveal" aria-labelledby="ui-highlights-title">
+        <div class="ui-highlights-heading">
+          <small>CORE DESIGN</small>
+          <h3 id="ui-highlights-title">四个关键设计，分别控制目标、规格、验收和修复。</h3>
+        </div>
+        <div class="ui-highlight-rows">
           <article>
             <span>01</span>
-            <strong>目标不可见</strong>
-            <p>PRD 只有文字，团队很难在实现前建立一致的视觉预期。</p>
+            <div><small>VISUAL-FIRST</small><h4>先让团队看到目标，再让 AI 写代码。</h4></div>
+            <p>PRD 先变成可讨论的视觉方向，由人确认后形成最终 Reference，再进入实现。<b>Specification 不应该从已有代码反推，而应该从确认后的产品目标产生。</b> 最终的 <code>reference.png</code> 成为 Visual Source of Truth，优先解决目标漂移。</p>
           </article>
           <article>
             <span>02</span>
-            <strong>Agent 自由度过高</strong>
-            <p>缺少明确中间合同，容易出现“能运行，但不是我要的页面”。</p>
+            <div><small>VISUAL → SPEC</small><h4>把“我想要这种感觉”变成 Agent 可以执行的合同。</h4></div>
+            <p>一张设计图不能直接约束 Codex，所以继续拆成 tokens、layout、component tree、spacing、typography、hierarchy 与 design rules。核心是在解决：<b>人和 Agent 使用的不是同一种语言，怎么建立中间协议？</b></p>
           </article>
           <article>
             <span>03</span>
-            <strong>验收与修复靠感觉</strong>
-            <p>“再好看一点”无法形成稳定、可复验、范围可控的修复闭环。</p>
+            <div><small>QUALITY GATE</small><h4>代码能运行，不代表页面正确。</h4></div>
+            <p>用 Spec Compliance 检查代码是否服从规格，再用 Screenshot Acceptance 检查浏览器最终输出是否满足目标。这里坚持 <b>Product Correctness &gt; Engineering Correctness</b>。视觉重建 Benchmark 进一步加入 MAE / RMSE / SSIM 与 anti-cheat 约束。 <a href="https://github.com/Jason904/ui-skill-lab/blob/main/docs/visual-reconstruction-benchmark.md" target="_blank" rel="noreferrer">Read Benchmark ↗</a></p>
+          </article>
+          <article>
+            <span>04</span>
+            <div><small>VISUAL DIFF FIX</small><h4>把“再调好看一点”变成结构化修复任务。</h4></div>
+            <p>把哪里不一致、证据是什么、严重程度、对应组件和具体 Fix Task 明确下来，再修改、重新截图、再次验收。最终形成可执行的 <code>fix-tasks</code>，重点解决修复漂移。</p>
           </article>
         </div>
       </section>
@@ -69,15 +110,10 @@
         <div class="ui-workflow-heading">
           <small>HOW IT WORKS</small>
           <h3>从 PRD 到可验收页面</h3>
-          <p>先建立视觉共识，再把视觉目标规格化，最后通过截图验收和定向修复持续收敛。</p>
+          <p>上面的产品判断最终被落成一条完整 Workflow：先建立视觉共识，再规格化目标，最后通过真实浏览器结果验收与修复。</p>
         </div>
         <a class="ui-workflow-image" href="https://github.com/Jason904/ui-skill-lab/blob/main/docs/from-prd-to-acceptable-page.zh.png" target="_blank" rel="noreferrer" aria-label="打开完整 UI Skill Lab 工作流图">
-          <img
-            src="https://raw.githubusercontent.com/Jason904/ui-skill-lab/main/docs/from-prd-to-acceptable-page.zh.png"
-            alt="UI Skill Lab 从 PRD 到可验收页面的完整工作流"
-            loading="lazy"
-            decoding="async"
-          >
+          <img src="https://raw.githubusercontent.com/Jason904/ui-skill-lab/main/docs/from-prd-to-acceptable-page.zh.png" alt="UI Skill Lab 从 PRD 到可验收页面的完整工作流" loading="lazy" decoding="async">
           <span>查看完整流程图 ↗</span>
         </a>
       </figure>
@@ -98,39 +134,15 @@
         </div>
       </section>
 
-      <section class="ui-core-highlights reveal" aria-labelledby="ui-highlights-title">
-        <div class="ui-highlights-heading">
-          <small>CORE DESIGN</small>
-          <h3 id="ui-highlights-title">三个关键设计，让 Workflow 从“能生成”走向“可控制”。</h3>
-        </div>
-        <div class="ui-highlight-rows">
-          <article>
-            <span>01</span>
-            <div><small>VISUAL-FIRST</small><h4>先看见目标，再开始 Build。</h4></div>
-            <p>先把 PRD 变成可讨论的 UI Visual，由人确认方向，再进入编码。把最昂贵的方向错误提前到开发之前暴露。</p>
-          </article>
-          <article>
-            <span>02</span>
-            <div><small>CONTRACT-DRIVEN</small><h4>把视觉意图变成 Agent 可以执行的合同。</h4></div>
-            <p>Reference 进一步拆成 tokens、layout、component tree、design rules 与 states，让 Agent 围绕明确 Source of Truth 执行。</p>
-          </article>
-          <article>
-            <span>03</span>
-            <div><small>ACCEPTANCE LOOP</small><h4>Build 完成，不代表 Product 完成。</h4></div>
-            <p>Implementation → Screenshot → Compare → Diff → Fix → Re-check。视觉重建 Benchmark 再用 MAE / RMSE / SSIM 与 anti-cheat 约束校验结果。 <a href="https://github.com/Jason904/ui-skill-lab/blob/main/docs/visual-reconstruction-benchmark.md" target="_blank" rel="noreferrer">Read Benchmark ↗</a></p>
-          </article>
-        </div>
-      </section>
-
       <section class="ui-role-block reveal" aria-labelledby="ui-role-title">
         <div class="ui-section-heading">
           <small>MY ROLE</small>
           <h3 id="ui-role-title">我在这个项目里做了什么？</h3>
         </div>
         <div class="ui-role-rows">
-          <article><span>01</span><div><strong>定义问题</strong><p>识别 AI 写 UI 的瓶颈已经从“能不能生成代码”，迁移到目标对齐、执行约束和结果验收。</p></div></article>
-          <article><span>02</span><div><strong>设计系统</strong><p>把问题拆成 Visual Target、Spec、Gate、Acceptance、Repair，并设计成 7 个职责明确的 Skill。</p></div></article>
-          <article><span>03</span><div><strong>做成可复用产品</strong><p>把个人 AI Coding 实践沉淀成公开仓库、文档、测试和可安装 Skill，而不是一次性的项目技巧。</p></div></article>
+          <article><span>01</span><div><strong>重新定义问题</strong><p>没有继续把重点放在“Agent 会不会生成代码”，而是识别目标漂移、规格漂移、验收漂移和修复漂移。</p></div></article>
+          <article><span>02</span><div><strong>设计 Human × Agent 协作协议</strong><p>人负责目标和最终判断，Agent 负责执行，Skill 负责规格化、约束、检查与定向修复。</p></div></article>
+          <article><span>03</span><div><strong>把实践产品化</strong><p>从 Case → Pattern → Method → Productized Workflow，最终形成公开仓库、文档、测试和可安装 Skill。</p></div></article>
         </div>
       </section>
 
