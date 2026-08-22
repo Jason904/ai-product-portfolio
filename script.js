@@ -257,7 +257,9 @@
           <p>我用这套方法，把一款仍处在概念阶段的 AI 穿戴产品，提前制作成完整的视觉、场景、动态体验和线上 Interactive Concept。</p>
         </div>
         <div class="gf-live-preview">
-          <iframe src="https://lightwear-ai-hardware-v3.vercel.app/files/hardware-hotspots-value-v3.html" title="光帆 AI 全感耳机 Interactive Concept" loading="lazy"></iframe>
+          <a href="https://lightwear-ai-hardware-v3.vercel.app/files/hardware-hotspots-value-v3.html" target="_blank" rel="noreferrer" aria-label="打开光帆 AI 全感耳机 Interactive Concept" style="position:absolute;inset:0;display:block;z-index:1;">
+            <img src="./assets/guangfan-concept-cover.svg" alt="光帆 AI 全感耳机 Interactive Concept 封面" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </a>
           <div class="gf-preview-topbar">
             <span>lightwear-ai-hardware-v3.vercel.app / Interactive Concept</span>
             <a href="https://lightwear-ai-hardware-v3.vercel.app/files/hardware-hotspots-value-v3.html" target="_blank" rel="noreferrer">Explore Interactive Concept ↗</a>
