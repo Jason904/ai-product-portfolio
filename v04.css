@@ -1,4 +1,4 @@
-/* UI Skill Lab V2.1 — causal portfolio case, aligned to Leonxlnx/taste-skill principles */
+/* UI Skill Lab V2.1.1 — causal portfolio case + AI PM capability metadata, aligned to Leonxlnx/taste-skill principles */
 
 .project--ui{
   content-visibility:auto;
@@ -65,6 +65,46 @@
   line-height:1.72;
 }
 .ui-case-thesis b{color:var(--ink);font-weight:690}
+
+.ui-capability-meta{
+  margin-top:1.45rem;
+  padding:1rem 0 .95rem;
+  border-top:1px solid rgba(23,23,20,.12);
+  border-bottom:1px solid rgba(23,23,20,.12);
+}
+
+.ui-capability-label{
+  display:block;
+  margin-bottom:.7rem;
+  color:#817970;
+  font-size:.64rem;
+  font-weight:760;
+  letter-spacing:.11em;
+}
+
+.ui-capability-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.4rem 1rem;
+  max-width:46rem;
+}
+
+.ui-capability-tags span{
+  position:relative;
+  color:#393530;
+  font-size:.76rem;
+  font-weight:670;
+  line-height:1.55;
+  white-space:nowrap;
+}
+
+.ui-capability-tags span:not(:last-child)::after{
+  content:"·";
+  position:absolute;
+  right:-.63rem;
+  color:var(--accent);
+  font-weight:800;
+}
 
 .ui-case-actions{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.4rem}
 .ui-case-actions a,.ui-case-footer a,.ui-highlight-rows a{
@@ -255,9 +295,13 @@
 }
 
 @media(max-width:760px){
-  .project--ui{contain-intrinsic-size:3900px}
+  .project--ui{contain-intrinsic-size:4050px}
   .ui-case-title h2{font-size:clamp(3.35rem,15vw,4.4rem)}
   .ui-case-intro .project-lead{font-size:1.14rem}
+  .ui-capability-meta{margin-top:1.2rem;padding:.9rem 0}
+  .ui-capability-tags{display:grid;grid-template-columns:1fr;gap:.38rem}
+  .ui-capability-tags span{white-space:normal;font-size:.75rem}
+  .ui-capability-tags span:not(:last-child)::after{display:none}
   .ui-problem-block,.ui-middle-layer,.ui-core-highlights,.ui-workflow-section,.ui-skill-pipeline,.ui-role-block{margin-top:4.4rem}
   .ui-section-heading h3,.ui-middle-heading h3,.ui-highlights-heading h3,.ui-workflow-heading h3,.ui-pipeline-heading h3{font-size:clamp(2rem,9vw,2.9rem)}
   .ui-problem-rows article{grid-template-columns:2rem 1fr;gap:.35rem 1rem}
