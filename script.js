@@ -18,8 +18,8 @@
 
   const hydrateUiSkillLab = () => {
     const section = document.querySelector('.project--ui');
-    if (!section || section.dataset.evidenceVersion === 'v2-1-causal') return;
-    section.dataset.evidenceVersion = 'v2-1-causal';
+    if (!section || section.dataset.evidenceVersion === 'v2-1-1-capabilities') return;
+    section.dataset.evidenceVersion = 'v2-1-1-capabilities';
     section.innerHTML = `
       <header class="ui-case-hero reveal">
         <div class="ui-case-title">
@@ -34,6 +34,16 @@
           </div>
           <p class="project-lead">把“让 AI 写前端”从一次性的 Prompt 调试，变成一套有视觉目标、有规格合同、有验收门禁、有结构化修复的可复用 Workflow。</p>
           <p class="ui-case-thesis">今天 AI 已经非常会写页面。真正困难的问题变成：<b>它写出来的是不是我们真正想要的页面？</b></p>
+          <div class="ui-capability-meta" aria-label="UI Skill Lab AI 产品经理能力标签">
+            <span class="ui-capability-label">AI PM CAPABILITIES</span>
+            <div class="ui-capability-tags">
+              <span>AI Skill / Workflow 产品设计</span>
+              <span>Agent Contract / Specification</span>
+              <span>Human × AI 协作设计</span>
+              <span>AI Eval / Product Quality Gate</span>
+              <span>方法产品化 / Open Source</span>
+            </div>
+          </div>
           <div class="ui-case-actions">
             <a href="https://github.com/Jason904/ui-skill-lab" target="_blank" rel="noreferrer">View GitHub ↗</a>
             <a href="https://skills.sh/Jason904/ui-skill-lab" target="_blank" rel="noreferrer">skills.sh ↗</a>
