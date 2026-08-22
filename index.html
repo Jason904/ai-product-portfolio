@@ -4,201 +4,246 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="AI Product Build Portfolio — 把不确定性变成可以判断的证据。" />
+  <meta name="theme-color" content="#f3efe8" />
   <title>AI Product Build Portfolio</title>
   <link rel="stylesheet" href="./styles.css" />
+  <script src="./script.js" defer></script>
 </head>
 <body>
-  <main class="page">
-    <section class="hero">
-      <div class="hero-copy">
-        <div class="eyebrow">AI PRODUCT BUILD PORTFOLIO</div>
-        <h1>把不确定性，变成可以判断的证据。</h1>
-        <p class="lead">我如何用 AI 改变产品从概念验证、真实构建，到 Skill / Workflow 产品化的工作方式。</p>
-        <div class="chips">
-          <span class="chip">BUILD · 产品构建</span>
-          <span class="chip">SYSTEMIZE · Skill 设计</span>
-          <span class="chip">PRODUCTIZE · 方法产品化</span>
-          <span class="chip">VALIDATE · 概念验证</span>
+  <a class="skip-link" href="#work">跳到作品</a>
+
+  <header class="topbar" aria-label="主导航">
+    <a class="brand-mark" href="#top" aria-label="回到顶部">
+      <span class="brand-dot" aria-hidden="true"></span>
+      <span>AI Product Portfolio</span>
+    </a>
+    <nav class="nav-pill" aria-label="页面导航">
+      <a href="#work">Work</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="https://github.com/Jason904/ai-product-portfolio" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-scroll" id="top">
+      <div class="hero-stage">
+        <div class="hero-copy reveal is-visible">
+          <p class="kicker"><span class="kicker-mark"></span> AI Product Manager · Build Portfolio</p>
+          <h1>把不确定性，<br><span>变成可以判断的证据。</span></h1>
+          <p class="hero-sub">我如何用 AI 改变产品从概念验证、真实构建，到 Skill / Workflow 产品化的工作方式。</p>
+          <div class="hero-actions">
+            <a class="button button--dark" href="#work">查看作品 <span aria-hidden="true">↓</span></a>
+            <a class="button button--light" href="https://github.com/Jason904/ai-product-portfolio" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="capability-rail" id="capabilities" aria-label="核心能力">
+            <span><b>BUILD</b> 产品构建</span>
+            <span><b>SYSTEMIZE</b> Skill 设计</span>
+            <span><b>PRODUCTIZE</b> 方法产品化</span>
+            <span><b>VALIDATE</b> 概念验证</span>
+          </div>
         </div>
-      </div>
-      <div class="montage">
-        <div class="placeholder">TwitCanva<br>产品视觉占位</div>
-        <div class="placeholder">Hermes P7+<br>Skill 视觉占位</div>
-        <div class="placeholder">UI Skill Lab<br>Workflow 占位</div>
-        <div class="placeholder">光帆<br>概念视觉占位</div>
+
+        <div class="hero-visuals" aria-label="四个项目视觉预览">
+          <article class="hero-card hero-card--twit" data-speed="0.72" data-tilt="-2.5">
+            <div class="plate-meta"><span>01</span><span>BUILD</span></div>
+            <div class="plate-title">TwitCanva</div>
+            <div class="plate-art plate-art--nodes" aria-hidden="true">
+              <span class="node n1"></span><span class="node n2"></span><span class="node n3"></span><span class="node n4"></span>
+              <i class="wire w1"></i><i class="wire w2"></i><i class="wire w3"></i>
+            </div>
+            <p>Multimodal AI Creation Workspace</p>
+          </article>
+
+          <article class="hero-card hero-card--hermes" data-speed="1.06" data-tilt="1.2">
+            <div class="plate-meta"><span>02</span><span>SYSTEMIZE</span></div>
+            <div class="plate-title">Hermes P7+</div>
+            <div class="plate-art plate-art--thinking" aria-hidden="true">
+              <span>CASE</span><i></i><span>JUDGE</span><i></i><span>ASSET</span>
+            </div>
+            <p>Product Thinking Skill</p>
+          </article>
+
+          <article class="hero-card hero-card--ui" data-speed="0.9" data-tilt="-1.1">
+            <div class="plate-meta"><span>03</span><span>PRODUCTIZE</span></div>
+            <div class="plate-title">UI Skill Lab</div>
+            <div class="plate-art plate-art--spec" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <p>Visual-first Agent Workflow</p>
+          </article>
+
+          <article class="hero-card hero-card--guangfan" data-speed="1.22" data-tilt="2.2">
+            <div class="plate-meta"><span>04</span><span>VALIDATE</span></div>
+            <div class="plate-title">光帆</div>
+            <div class="plate-art plate-art--orbit" aria-hidden="true"><span></span><i></i></div>
+            <p>AI Product Concept Validation</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="project">
-      <div class="project-head">
-        <div class="project-copy">
-          <div class="eyebrow">01 / BUILD · 旗舰项目</div>
+    <section class="work-intro" id="work">
+      <p class="section-kicker reveal">Selected AI Product Work</p>
+      <div class="work-intro-grid reveal">
+        <h2>不是四个 Side Project，<br>而是四种 AI PM 能力。</h2>
+        <p>每个项目只证明一件最重要的事：我能把模糊问题变成产品判断，再把判断推进成真实证据。</p>
+      </div>
+    </section>
+
+    <section class="project project--twit" id="twitcanva">
+      <div class="project-shell">
+        <aside class="project-sticky reveal">
+          <p class="project-index">01 / BUILD</p>
           <h2>TwitCanva</h2>
-          <p class="project-desc">把割裂的 AI 图像 / 视频生成工具，变成一个可连续创作、可精细控制的多模态 AI 工作台。</p>
-          <p class="judgment">核心判断：生成能力已经很强，真正缺的是能够承载完整创作流程的 Workflow，以及让用户获得稳定控制的中间层。</p>
+          <p class="project-lead">把割裂的 AI 图像 / 视频生成工具，变成一个可连续创作、可精细控制的多模态 AI 工作台。</p>
+          <blockquote>生成能力已经很强，真正缺的是 <b>Workflow + Control</b>。</blockquote>
+          <div class="ability-list" aria-label="TwitCanva 能力证明">
+            <span>复杂 AI 产品 0→1 定义</span>
+            <span>AI 能力产品化 / Workflow</span>
+            <span>生成式 AI 可控性设计</span>
+            <span>复杂系统产品抽象</span>
+            <span>独立 AI 产品开发</span>
+          </div>
+          <span class="button button--muted" aria-disabled="true">完整 Demo · 素材接入后开放</span>
+        </aside>
+
+        <div class="feature-stream">
+          <article class="feature-block feature-block--hero reveal">
+            <div class="feature-media feature-media--main"><span>MAIN PRODUCT DEMO · 30–45s</span></div>
+            <div class="feature-copy">
+              <span>Core product form</span>
+              <h3>Node Canvas · 完整创作 Workflow</h3>
+              <p>把素材、图像生成、视频生成、多模型能力与结果继续编辑组织在同一条可组合流程中，而不是让用户在不同工具之间反复搬运。</p>
+            </div>
+          </article>
+
+          <article class="feature-block feature-block--split reveal">
+            <div class="feature-copy">
+              <span>Spatial control</span>
+              <h3>Camera Angle</h3>
+              <p>把原本依赖 Prompt 猜测的空间视角，转成可直接操作的 Camera 控制，让空间意图从语言描述变成明确产品交互。</p>
+            </div>
+            <div class="feature-media feature-media--camera"><span>CAMERA UI → RESULT</span></div>
+          </article>
+
+          <article class="feature-block feature-block--story reveal">
+            <div class="feature-media feature-media--story"><span>PLAN → CONFIRM → GENERATE</span></div>
+            <div class="feature-copy">
+              <span>Human-in-the-loop</span>
+              <h3>Storyboard</h3>
+              <p>在高成本生成之前加入可修改、可确认的规划层，平衡自动化效率、用户控制权与真实调用成本。</p>
+            </div>
+          </article>
+
+          <article class="feature-block feature-block--pose reveal">
+            <div class="feature-copy">
+              <span>Controllable generation</span>
+              <h3>Pose Director</h3>
+              <p>用自然语言 + 3D 可编辑结构，把复杂动作、构图与空间关系从“文字描述”升级为“可视化控制”。</p>
+            </div>
+            <div class="feature-media feature-media--pose"><span>3D POSE → REFERENCE → OUTPUT</span></div>
+          </article>
         </div>
-        <span class="chip">复杂 AI 产品 0→1</span>
-      </div>
-
-      <div class="placeholder media-wide">主 Demo 视频占位<br>后续替换为 30–45 秒产品流程视频</div>
-
-      <div class="highlights">
-        <article class="highlight">
-          <div class="mini">截图占位</div>
-          <h3>Node Canvas · 完整创作 Workflow</h3>
-          <p>把素材、图像生成、视频生成、多模型能力与结果继续编辑组织在同一条可组合流程中，而不是让用户在不同工具之间反复搬运。</p>
-        </article>
-        <article class="highlight">
-          <div class="mini">截图占位</div>
-          <h3>Camera Angle · 显性视角控制</h3>
-          <p>把原本依赖 Prompt 猜测的空间视角，转成用户可直接操作的 Camera 控制，让空间意图从语言描述变成明确产品交互。</p>
-        </article>
-        <article class="highlight">
-          <div class="mini">截图占位</div>
-          <h3>Storyboard · AI 规划先确认再执行</h3>
-          <p>在高成本图像 / 视频生成之前加入可修改、可确认的规划层，平衡自动化效率、用户控制权与真实调用成本。</p>
-        </article>
-        <article class="highlight">
-          <div class="mini">截图占位</div>
-          <h3>Pose Director · 结构控制中间层</h3>
-          <p>用自然语言 + 3D 可编辑结构，把复杂动作、构图与空间关系从“文字描述”升级为“可视化控制”。</p>
-        </article>
-      </div>
-
-      <div class="abilities">
-        <div class="ability-title">AI PM 能力体现</div>
-        <div class="chips">
-          <span class="chip">复杂 AI 产品 0→1 定义</span>
-          <span class="chip">AI 能力产品化 / Workflow</span>
-          <span class="chip">生成式 AI 可控性设计</span>
-          <span class="chip">复杂系统产品抽象</span>
-          <span class="chip">独立 AI 产品开发</span>
-        </div>
-        <a class="cta primary" href="#">观看完整产品 Demo →</a>
       </div>
     </section>
 
-    <section class="project">
-      <div class="project-head">
-        <div class="project-copy">
-          <div class="eyebrow">02 / SYSTEMIZE</div>
-          <h2>Hermes P7+ Product Thinking Skill</h2>
-          <p class="project-desc">把高级产品经理隐性的判断方式，设计成 AI 可执行、用户可训练、结果可沉淀的 Product Thinking Skill。</p>
-          <p class="judgment">核心判断：与其让 AI 直接替用户“想答案”，不如把高阶产品判断过程本身产品化成一个可复用 Skill。</p>
-        </div>
-        <span class="chip">AI Skill Design</span>
-      </div>
+    <section class="project project--hermes" id="hermes">
+      <div class="project-shell project-shell--hermes">
+        <aside class="project-sticky reveal">
+          <p class="project-index">02 / SYSTEMIZE</p>
+          <h2>Hermes P7+<br><span>Product Thinking Skill</span></h2>
+          <p class="project-lead">把高级产品经理隐性的判断方式，设计成 AI 可执行、用户可训练、结果可沉淀的 Product Thinking Skill。</p>
+          <blockquote>与其让 AI 替用户“想答案”，不如把高阶产品判断过程本身产品化。</blockquote>
+          <div class="ability-list">
+            <span>AI Skill 产品设计</span>
+            <span>复杂认知能力产品抽象</span>
+            <span>Human × AI 协作设计</span>
+            <span>方法论产品化</span>
+            <span>AI Coding 独立实现</span>
+          </div>
+        </aside>
 
-      <div class="two-col">
-        <div class="flow">
-          <strong>Skill Workflow 占位</strong><br><br>
-          真实 Case<br>↓<br>
-          问题是否真实 / 对象 / 场景<br>↓<br>
-          成本收益 / 因果 / 系统关系<br>↓<br>
-          趋势 / 价值流向<br>↓<br>
-          做 / 不做 / 先验证<br>↓<br>
-          结构化表达<br>↓<br>
-          Pattern / Asset
+        <div class="skill-lane reveal" aria-label="Hermes Skill Workflow">
+          <div class="skill-step"><span>01</span><div><b>真实 Case</b><p>从真实 AI / 产品问题出发，而不是抽象练习题。</p></div></div>
+          <div class="skill-step"><span>02</span><div><b>判断问题</b><p>问题是否真实、对象是谁、场景和约束是什么。</p></div></div>
+          <div class="skill-step"><span>03</span><div><b>建立机制</b><p>成本收益、因果、系统关系、趋势与价值流向。</p></div></div>
+          <div class="skill-step"><span>04</span><div><b>做出取舍</b><p>做 / 不做 / 先验证，并给出验证路径。</p></div></div>
+          <div class="skill-step skill-step--accent"><span>05</span><div><b>Thinking → Asset</b><p>把一次分析沉淀成结构化表达、Pattern 与可迁移认知资产。</p></div></div>
+          <div class="hermes-principles">
+            <article><small>Skill design</small><h3>Product Thinking Skill</h3><p>把隐性经验拆成 AI 可执行的认知操作，而不是一段更长的 Prompt。</p></article>
+            <article><small>Reasoning</small><h3>Adaptive Reasoning</h3><p>不是机械套框架，而是让方法服务于当前问题和判断目标。</p></article>
+            <article><small>Learning</small><h3>From Answer to Training</h3><p>目标不是漂亮答案，而是帮助用户形成能够迁移到新 Case 的判断方式。</p></article>
+          </div>
+          <span class="button button--muted" aria-disabled="true">Hermes 真实产出 · 链接接入后开放</span>
         </div>
-        <div class="outputs">
-          <div class="ability-title">真实 Case / Output 占位</div>
-          <div class="output"><strong>Case 01</strong><br><span>输入 → Hermes 分析结果</span></div>
-          <div class="output"><strong>Case 02</strong><br><span>输入 → Hermes 分析结果</span></div>
-          <div class="output"><strong>Skill Structure</strong><br><span>SKILL / References / Templates...</span></div>
-        </div>
-      </div>
-
-      <div class="highlights">
-        <article class="highlight"><h3>Product Thinking Skill</h3><p>把隐性的产品判断经验拆成 AI 可执行的认知操作序列，而不是一段长 Prompt。</p></article>
-        <article class="highlight"><h3>Adaptive Reasoning</h3><p>不是机械套框架，而是让方法服务于当前问题和判断目标。</p></article>
-        <article class="highlight"><h3>From Answer to Training</h3><p>目标不是输出更漂亮的答案，而是帮助用户形成能够迁移到新 Case 的判断方式。</p></article>
-        <article class="highlight"><h3>Thinking → Asset</h3><p>把一次分析继续沉淀成结构化表达、Pattern 与长期可复用认知资产。</p></article>
-      </div>
-
-      <div class="abilities">
-        <div class="ability-title">AI PM 能力体现</div>
-        <div class="chips">
-          <span class="chip">AI Skill 产品设计</span>
-          <span class="chip">复杂认知能力产品抽象</span>
-          <span class="chip">Human × AI 协作设计</span>
-          <span class="chip">方法论产品化</span>
-          <span class="chip">AI Coding 独立实现</span>
-        </div>
-        <a class="cta primary" href="#">查看 Hermes Skill 与真实产出 →</a>
       </div>
     </section>
 
-    <section class="project">
-      <div class="project-head">
-        <div class="project-copy">
-          <div class="eyebrow">03 / PRODUCTIZE</div>
-          <h2>UI Skill Lab</h2>
-          <p class="project-desc">把“让 AI 写前端”从一次性的 Prompt 调试，变成一套有视觉目标、有规格合同、有验收门禁、有结构化修复的可复用 Workflow。</p>
-          <p class="judgment">核心判断：AI Coding 的瓶颈已经不只是“能不能写 UI”，而是视觉意图没有形成 Agent 可以理解、执行、验收和修复的合同。</p>
+    <section class="project project--ui" id="ui-skill-lab">
+      <div class="ui-header reveal">
+        <p class="project-index">03 / PRODUCTIZE</p>
+        <h2>UI Skill Lab</h2>
+        <div>
+          <p class="project-lead">把“让 AI 写前端”从一次性的 Prompt 调试，变成有视觉目标、有规格合同、有验收门禁、有结构化修复的可复用 Workflow。</p>
+          <blockquote>AI Coding 的瓶颈已经不只是“能不能写 UI”，而是视觉意图有没有形成 Agent 可以理解、执行、验收和修复的合同。</blockquote>
         </div>
-        <span class="chip">Method Productization</span>
       </div>
 
-      <div class="flow centered"><strong>PRD</strong> → Visual Target → Visual Spec → Design System → Agent Build → Screenshot Acceptance → Diff Fix</div>
-
-      <div class="highlights">
-        <article class="highlight"><div class="mini">Reference 占位</div><h3>Visual-first</h3><p>先让团队确认目标 UI，再让 Agent 开始实现，避免一开始就在错误视觉方向上高效编码。</p></article>
-        <article class="highlight"><div class="mini">Spec 占位</div><h3>Visual → Spec</h3><p>把视觉目标转成 tokens、layout、component tree 与 design rules，建立人类意图和 Agent 执行之间的中间协议。</p></article>
-        <article class="highlight"><div class="mini">验收占位</div><h3>Product Quality Gate</h3><p>区分“代码能运行”和“页面真的正确”，通过截图验收与规格检查守住 Product PASS。</p></article>
-        <article class="highlight"><div class="mini">Diff Fix 占位</div><h3>Structured Diff Fix</h3><p>把“再调好看一点”变成有证据、有位置、有优先级的结构化修复任务。</p></article>
+      <div class="workflow-rail reveal" aria-label="UI Skill Lab workflow">
+        <span>PRD</span><i></i><span>Visual Target</span><i></i><span>Visual Spec</span><i></i><span>Agent Build</span><i></i><span>Screenshot</span><i></i><span>Diff Fix</span>
       </div>
 
-      <div class="abilities">
-        <div class="ability-title">AI PM 能力体现</div>
-        <div class="chips">
-          <span class="chip">实践问题 → 方法抽象</span>
-          <span class="chip">Agent Contract / Spec 设计</span>
-          <span class="chip">AI Eval / Quality Gate</span>
-          <span class="chip">Workflow / Skill 产品设计</span>
-          <span class="chip">开源与方法产品化</span>
+      <div class="ui-plates">
+        <article class="ui-plate ui-plate--large reveal"><small>01 / TARGET</small><h3>Visual-first</h3><div class="ui-visual">REFERENCE</div><p>先确认目标 UI，再让 Agent 编码，避免在错误方向上高效执行。</p></article>
+        <article class="ui-plate reveal"><small>02 / CONTRACT</small><h3>Visual → Spec</h3><div class="ui-visual ui-visual--spec">TOKENS / LAYOUT / TREE</div><p>把视觉目标变成 Agent 可以执行的规格合同。</p></article>
+        <article class="ui-plate reveal"><small>03 / GATE</small><h3>Product Quality Gate</h3><div class="ui-visual ui-visual--gate">BUILD ≠ PRODUCT PASS</div><p>区分“代码能运行”和“页面真的正确”。</p></article>
+        <article class="ui-plate ui-plate--wide reveal"><small>04 / REPAIR</small><h3>Structured Diff Fix</h3><div class="ui-visual ui-visual--diff">EVIDENCE → FIX TASK → VERIFY</div><p>把“再调好看一点”变成有证据、有位置、有优先级的结构化修复。</p></article>
+      </div>
+
+      <div class="ui-footer reveal">
+        <div class="ability-list ability-list--inline">
+          <span>实践问题 → 方法抽象</span><span>Agent Contract / Spec</span><span>AI Eval / Quality Gate</span><span>Workflow / Skill 设计</span><span>开源与方法产品化</span>
         </div>
-        <a class="cta primary" href="#">查看 UI Skill Lab GitHub →</a>
+        <a class="button button--dark" href="https://github.com/Jason904/ui-skill-lab" target="_blank" rel="noreferrer">查看 GitHub ↗</a>
       </div>
     </section>
 
-    <section class="project">
-      <div class="project-head">
-        <div class="project-copy">
-          <div class="eyebrow">04 / VALIDATE</div>
-          <h2>光帆 · AI 产品概念验证</h2>
-          <p class="project-desc">用 AI 把一个还不存在的未来产品，提前变成老板和团队能够看见、理解、讨论和判断的产品体验。</p>
-          <p class="judgment">核心判断：在高成本 Build 之前，先用 AI 做低成本 Experience Simulation，把原本开发完成以后才能发生的产品认知验证前移。</p>
+    <section class="project project--guangfan" id="guangfan">
+      <div class="guangfan-frame reveal">
+        <div class="guangfan-copy">
+          <p class="project-index">04 / VALIDATE</p>
+          <h2>如果一个产品还不存在，<br>怎么让组织提前看见它？</h2>
+          <p>光帆 · AI 产品概念验证</p>
         </div>
-        <span class="chip">Decision Enablement</span>
-      </div>
-
-      <div class="placeholder media-wide">主场景视频 / 大视觉占位<br>后续替换为机场体验、产品视觉或概念视频</div>
-
-      <div class="flow centered">Concept → Product Visual → Scenario → Storyboard → Video → Shareable HTML → Stakeholder Decision</div>
-
-      <div class="highlights">
-        <article class="highlight"><h3>Technology → User Value</h3><p>把 Camera、LLM、Watch、AIOS 等技术能力重新组织成用户能直接感知的“看见 → 理解 → 提醒 → 行动”。</p></article>
-        <article class="highlight"><h3>Killer Scenario</h3><p>用机场登机口变化的具体故事，而不是功能罗列，证明产品在什么时刻真正有存在价值。</p></article>
-        <article class="highlight"><h3>Multimodal Visualization</h3><p>用图片、Storyboard、视频和 HTML 承担不同层级的概念表达任务，降低理解和传播摩擦。</p></article>
-        <article class="highlight"><h3>Shared Decision Object</h3><p>让老板、产品、算法、硬件和设计围绕同一个“未来产品体验”讨论取舍、MVP 与是否继续投入。</p></article>
-      </div>
-
-      <div class="abilities">
-        <div class="ability-title">AI PM 能力体现</div>
-        <div class="chips">
-          <span class="chip">0→1 产品概念定义</span>
-          <span class="chip">AI 技术 → 用户价值</span>
-          <span class="chip">低成本产品验证</span>
-          <span class="chip">跨团队沟通与组织推动</span>
-          <span class="chip">AI 多模态原型表达</span>
+        <div class="guangfan-media" aria-label="光帆主场景视频占位"><span>AIRPORT EXPERIENCE FILM · PLACEHOLDER</span></div>
+        <div class="guangfan-thesis">
+          <p>在高成本 Build 之前，先用 AI 做低成本 Experience Simulation，把原本开发完成以后才能发生的产品认知验证前移。</p>
+          <strong>Concept → Experience → Decision</strong>
         </div>
-        <a class="cta primary" href="#">查看完整光帆体验 →</a>
+      </div>
+      <div class="guangfan-grid reveal">
+        <article><small>Technology → User Value</small><h3>把技术能力翻译成体验</h3><p>把 Camera、LLM、Watch、AIOS 重新组织成用户能感知的“看见 → 理解 → 提醒 → 行动”。</p></article>
+        <article><small>Killer Scenario</small><h3>用故事验证存在价值</h3><p>用机场登机口变化这一具体场景，而不是功能罗列，证明产品在什么时刻真正有用。</p></article>
+        <article><small>Shared Decision Object</small><h3>让未来产品成为共同讨论对象</h3><p>帮助老板、产品、算法、硬件和设计围绕同一个体验讨论 MVP、取舍与是否继续投入。</p></article>
+      </div>
+      <div class="ui-footer reveal">
+        <div class="ability-list ability-list--inline">
+          <span>0→1 产品概念定义</span><span>AI 技术 → 用户价值</span><span>低成本产品验证</span><span>跨团队沟通与组织推动</span><span>AI 多模态原型表达</span>
+        </div>
+        <span class="button button--muted" aria-disabled="true">完整体验 · 素材接入后开放</span>
       </div>
     </section>
 
-    <footer>
-      V0.1 · Structure Prototype — 当前只验证结构、信息密度与浏览节奏。
-    </footer>
+    <section class="closing reveal">
+      <p>AI PRODUCT BUILD PORTFOLIO</p>
+      <h2>Validate what matters.<br>Build what works.</h2>
+      <a class="button button--dark" href="#top">回到顶部 ↑</a>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <span>Jason904 · AI Product Portfolio</span>
+    <span>V0.2 · Visual Structure Prototype</span>
+  </footer>
 </body>
 </html>
