@@ -1,12 +1,18 @@
 (() => {
-  const STYLE_HREF = './v03.css';
-  if (!document.querySelector('link[data-portfolio-v03]')) {
+  const STYLES = [
+    { href: './v03.css', attr: 'portfolioV03' },
+    { href: './v031.css', attr: 'portfolioV031' },
+  ];
+
+  STYLES.forEach(({ href, attr }) => {
+    const selector = `link[data-${attr.replace(/[A-Z]/g, (m) => `-${m.toLowerCase()}`)}]`;
+    if (document.querySelector(selector)) return;
     const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = STYLE_HREF;
-    link.dataset.portfolioV03 = 'true';
+    link.href = href;
+    link.dataset[attr] = 'true';
     document.head.appendChild(link);
-  }
+  });
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const hero = document.querySelector('.hero-scroll');
@@ -45,11 +51,16 @@
     return t * t * (3 - 2 * t);
   };
 
+  /*
+   * Scroll choreography: the four plates begin as one loose visual cluster,
+   * then fan toward four directions. TwitCanva remains the visual anchor;
+   * Hermes/UI become secondary plates; Guangfan recedes into the background.
+   */
   const profiles = [
-    { x: -42, y: -122, rotate: -2.4, scale: 0.955, opacity: 0.82 },
-    { x: 34,  y: -215, rotate:  3.0, scale: 1.035, opacity: 0.94 },
-    { x: -56, y: -302, rotate: -2.2, scale: 1.025, opacity: 0.96 },
-    { x: 48,  y: -392, rotate:  3.4, scale: 0.925, opacity: 0.78 },
+    { x: -68, y: -82,  rotate: -1.4, scale: 0.985, opacity: 0.96 },
+    { x:  76, y: -118, rotate:  2.8, scale: 0.965, opacity: 0.91 },
+    { x: -92, y:  24,  rotate: -2.6, scale: 1.010, opacity: 0.97 },
+    { x: 102, y:  62,  rotate:  3.8, scale: 0.885, opacity: 0.76 },
   ];
 
   let ticking = false;
@@ -64,11 +75,11 @@
       const profile = profiles[index] || profiles[profiles.length - 1];
       const speed = Number(card.dataset.speed || 1);
       const baseTilt = Number(card.dataset.tilt || 0);
-      const delay = index * 0.035;
+      const delay = index * 0.03;
       const local = smoothstep((progress - delay) / Math.max(1 - delay, 0.001));
 
-      const x = profile.x * local * (0.84 + speed * 0.16);
-      const y = profile.y * local * (0.78 + speed * 0.22);
+      const x = profile.x * local * (0.86 + speed * 0.14);
+      const y = profile.y * local * (0.86 + speed * 0.14);
       const rotate = baseTilt + profile.rotate * local;
       const scale = 1 + (profile.scale - 1) * local;
       const opacity = 1 + (profile.opacity - 1) * local;
