@@ -4,6 +4,7 @@
     { href: './v031.css', attr: 'portfolioV031' },
     { href: './v032.css', attr: 'portfolioV032' },
     { href: './v04.css', attr: 'portfolioV04' },
+    { href: './v05.css', attr: 'portfolioV05' },
   ];
 
   STYLES.forEach(({ href, attr }) => {
@@ -167,7 +168,126 @@
     `;
   };
 
+  const hydrateGuangfan = () => {
+    const section = document.querySelector('.project--guangfan');
+    if (!section || section.dataset.conceptVersion === 'v1-method-first') return;
+    section.dataset.conceptVersion = 'v1-method-first';
+    section.innerHTML = `
+      <header class="gf-hero reveal">
+        <div class="gf-hero-title">
+          <p class="project-index">04 / VALIDATE · AI PRODUCT CONCEPT</p>
+          <h2>AI Product Concept Validation<span>把还不存在的产品，提前变成可体验、可讨论、可决策的产品概念。</span></h2>
+        </div>
+        <div class="gf-hero-intro">
+          <div class="gf-case-chip">CASE STUDY · 光帆 AI 全感耳机</div>
+          <p class="gf-hero-lead">用 AIGC + AI Coding，把抽象的产品想法提前变成组织可以共同看见和判断的产品体验。</p>
+          <div class="gf-capabilities" aria-label="AI Product Concept Validation 能力标签">
+            <span>AI PM CAPABILITIES</span>
+            <div class="gf-capability-list">
+              <span>0→1 Product Concept</span>
+              <span>Technology → User Value</span>
+              <span>AI-powered Prototyping</span>
+              <span>POC / Hypothesis Validation</span>
+              <span>Cross-functional Alignment</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="gf-judgment reveal">
+        <span class="gf-section-label">CORE JUDGMENT</span>
+        <h3>高成本 Build 之前，先把产品“做给组织看”。</h3>
+        <div class="gf-judgment-copy">
+          <p>0→1 产品早期最大的风险之一，不是团队没有想法，而是每个人脑中的“产品”并不是同一个产品。</p>
+          <p>我利用 AIGC 和 AI Coding，把产品形态、用户场景、交互逻辑和体验节奏提前具象化，让产品先变成一个可以被理解、讨论和判断的对象。</p>
+        </div>
+        <div class="gf-decision-line"><span>Concept</span><i></i><span>Experience</span><i></i><span>Decision</span></div>
+      </section>
+
+      <section class="gf-levers reveal">
+        <div class="gf-levers-head">
+          <span class="gf-section-label">HOW I VALIDATE</span>
+          <h3>三个杠杆，把抽象概念推进成组织可以共同判断的证据。</h3>
+        </div>
+        <div class="gf-lever-list">
+          <article class="gf-lever">
+            <div class="gf-lever-index"><b>01</b><small>Technology → User Value</small></div>
+            <h4>把技术能力翻译成体验</h4>
+            <p>把模型、算法、硬件等抽象技术能力，重新组织成用户能够直接理解和感知的产品体验，而不是停留在 Feature List。</p>
+          </article>
+          <article class="gf-lever">
+            <div class="gf-lever-index"><b>02</b><small>Killer Scenario</small></div>
+            <h4>用故事验证存在价值</h4>
+            <p>把产品能力放进具体人物、场景和任务里，用 Experience Story 验证：用户为什么需要它、什么时候真正有价值。</p>
+          </article>
+          <article class="gf-lever">
+            <div class="gf-lever-index"><b>03</b><small>Shared Decision Object</small></div>
+            <h4>让未来产品成为共同讨论对象</h4>
+            <p>用视觉稿、Storyboard、Video 和 Interactive Prototype，把不同角色脑中的“产品想象”变成同一个可见对象，推动跨团队对齐、MVP 取舍和下一步投入决策。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="gf-ai-lever reveal">
+        <div class="gf-ai-lever-head">
+          <span class="gf-section-label">AI AS LEVER</span>
+          <h3>AI 不是素材工具，而是概念验证杠杆。</h3>
+        </div>
+        <div class="gf-ai-grid">
+          <article class="gf-ai-column">
+            <small>AIGC</small>
+            <h4>Make the invisible visible</h4>
+            <p>把抽象产品概念快速变成可见的产品形态、场景和体验故事。</p>
+            <ul><li>Product Form</li><li>Scenario</li><li>Storyboard</li><li>Concept Film</li><li>Experience Moment</li></ul>
+          </article>
+          <article class="gf-ai-column">
+            <small>AI CODING</small>
+            <h4>Make the concept explorable</h4>
+            <p>把静态表达进一步做成可浏览、可交互、可快速迭代的产品概念体验。</p>
+            <ul><li>Interactive Prototype</li><li>Product Story</li><li>Hotspot Exploration</li><li>Experience Simulation</li></ul>
+          </article>
+        </div>
+        <div class="gf-ai-outcome">Shared Product Understanding → Decision</div>
+      </section>
+
+      <section class="gf-case reveal">
+        <div class="gf-case-head">
+          <span class="gf-section-label">CASE STUDY / EVIDENCE</span>
+          <h3>光帆 AI 全感耳机</h3>
+          <p>我用这套方法，把一款仍处在概念阶段的 AI 穿戴产品，提前制作成完整的视觉、场景、动态体验和线上 Interactive Concept。</p>
+        </div>
+        <div class="gf-live-preview">
+          <iframe src="https://lightwear-ai-hardware-v3.vercel.app/files/hardware-hotspots-value-v3.html" title="光帆 AI 全感耳机 Interactive Concept" loading="lazy"></iframe>
+          <div class="gf-preview-topbar">
+            <span>lightwear-ai-hardware-v3.vercel.app / Interactive Concept</span>
+            <a href="https://lightwear-ai-hardware-v3.vercel.app/files/hardware-hotspots-value-v3.html" target="_blank" rel="noreferrer">Explore Interactive Concept ↗</a>
+          </div>
+        </div>
+        <div class="gf-case-note"><p>光帆在这里不是方法本身，而是这套 AI Product Concept Validation 工作方式已经被真实做出来并线上部署的证据。</p></div>
+      </section>
+
+      <section class="gf-role reveal">
+        <div class="gf-role-head">
+          <span class="gf-section-label">MY ROLE</span>
+          <h3>我把什么推进到了可判断状态？</h3>
+        </div>
+        <div class="gf-role-list">
+          <article><span>01</span><div><strong>Define · 定义产品概念</strong><p>把技术输入转成清晰的产品价值、用户问题和 Experience Proposition。</p></div></article>
+          <article><span>02</span><div><strong>Visualize · 用 AIGC 快速具象化</strong><p>把抽象概念转成产品形态、用户场景、Storyboard 和动态体验。</p></div></article>
+          <article><span>03</span><div><strong>Prototype · 用 AI Coding 搭建 Experience Simulation</strong><p>把静态概念进一步做成可浏览、可交互、可迭代的线上产品体验。</p></div></article>
+          <article><span>04</span><div><strong>Align · 推动跨团队共同判断</strong><p>让产品、算法、硬件、设计和决策者围绕同一个产品对象讨论，而不是围绕各自脑中的想象讨论。</p></div></article>
+        </div>
+      </section>
+
+      <footer class="gf-footer reveal">
+        <span>04 / VALIDATE · AI Product Concept Validation</span>
+        <a href="https://lightwear-ai-hardware-v3.vercel.app/files/hardware-hotspots-value-v3.html" target="_blank" rel="noreferrer">Explore Interactive Concept ↗</a>
+      </footer>
+    `;
+  };
+
   hydrateUiSkillLab();
+  hydrateGuangfan();
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const hero = document.querySelector('.hero-scroll');
