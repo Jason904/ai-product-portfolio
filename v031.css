@@ -1,0 +1,96 @@
+/* V0.3.1 — Hero composition: 1 primary + 2 secondary + 1 background layer */
+
+.hero-stage{
+  grid-template-columns:minmax(0,.76fr) minmax(560px,1.24fr);
+  gap:4.8vw;
+  width:min(1340px,calc(100% - 44px));
+}
+
+.hero-visuals{
+  height:min(760px,79dvh);
+  min-height:610px;
+  transform:translateX(2vw);
+}
+
+/* Give the stage more air, then size each plate by hierarchy instead of equally. */
+.hero-card{
+  box-shadow:0 30px 78px rgba(72,57,43,.15),0 3px 10px rgba(72,57,43,.07);
+}
+
+.hero-card--twit{
+  width:clamp(285px,27vw,430px);
+  top:1%;
+  left:6%;
+  z-index:6;
+}
+
+.hero-card--hermes{
+  width:clamp(245px,22.4vw,355px);
+  top:29%;
+  right:2%;
+  z-index:4;
+}
+
+.hero-card--ui{
+  width:clamp(260px,23.8vw,380px);
+  top:52%;
+  left:0;
+  z-index:5;
+}
+
+.hero-card--guangfan{
+  width:clamp(225px,20.5vw,325px);
+  top:68%;
+  right:12%;
+  z-index:2;
+  box-shadow:0 24px 64px rgba(72,57,43,.12),0 2px 8px rgba(72,57,43,.06);
+}
+
+/* Secondary cards should not shout as loudly as the primary card. */
+.hero-card--hermes .plate-title,
+.hero-card--ui .plate-title{
+  font-size:clamp(1.72rem,2.45vw,2.7rem);
+}
+
+.hero-card--guangfan .plate-title{
+  font-size:clamp(1.5rem,2.1vw,2.3rem);
+}
+
+.hero-card--hermes .plate-art,
+.hero-card--ui .plate-art,
+.hero-card--guangfan .plate-art{
+  inset-left:.85rem;
+  inset-right:.85rem;
+}
+
+@media (max-width:1120px) and (min-width:781px){
+  .hero-stage{
+    grid-template-columns:minmax(0,.82fr) minmax(460px,1.18fr);
+    gap:3vw;
+    width:min(1240px,calc(100% - 36px));
+  }
+  .hero-visuals{
+    height:min(690px,76dvh);
+    min-height:560px;
+    transform:translateX(.8vw);
+  }
+  .hero-card--twit{width:min(360px,35vw);left:4%}
+  .hero-card--hermes{width:min(310px,30vw);right:0}
+  .hero-card--ui{width:min(330px,32vw);left:-1%}
+  .hero-card--guangfan{width:min(285px,28vw);right:7%}
+}
+
+@media (max-width:780px){
+  .hero-stage{grid-template-columns:1fr;width:calc(100% - 28px)}
+  .hero-visuals{height:530px;min-height:0;transform:none}
+  .hero-card--twit,
+  .hero-card--hermes,
+  .hero-card--ui,
+  .hero-card--guangfan{
+    width:min(82vw,350px);
+  }
+  .hero-card--twit{top:0;left:0}
+  .hero-card--hermes{top:128px;right:0}
+  .hero-card--ui{top:258px;left:3%}
+  .hero-card--guangfan{top:385px;right:2%}
+}
