@@ -18,8 +18,8 @@
 
   const hydrateUiSkillLab = () => {
     const section = document.querySelector('.project--ui');
-    if (!section || section.dataset.evidenceVersion === 'v04') return;
-    section.dataset.evidenceVersion = 'v04';
+    if (!section || section.dataset.evidenceVersion === 'final-taste') return;
+    section.dataset.evidenceVersion = 'final-taste';
     section.innerHTML = `
       <div class="ui-proof-header reveal">
         <div>
@@ -28,29 +28,61 @@
         </div>
         <div class="ui-proof-intro">
           <div class="ui-social-proof" aria-label="GitHub 社会证明">
-            <span>GitHub</span>
-            <strong>★ 154</strong>
+            <strong>154 ★ GitHub</strong>
             <span>9 Forks</span>
-            <span>7 Skills</span>
+            <span>7 Main Skills</span>
+            <span>MIT Open Source</span>
           </div>
           <p class="project-lead">把“让 AI 写前端”从一次性的 Prompt 调试，变成一套有视觉目标、有规格合同、有质量门禁、有结构化修复的可复用 Workflow。</p>
           <blockquote>真正的问题不是 Agent 会不会写 UI，而是团队的视觉意图有没有形成一份 <b>Agent 可以理解、执行、验收和修复的合同</b>。</blockquote>
         </div>
       </div>
 
+      <section class="ui-proof-question reveal" aria-labelledby="ui-problem-title">
+        <h3 id="ui-problem-title">AI 已经会写 UI，真正难的是写对。</h3>
+        <div class="ui-problem-signals">
+          <article class="ui-problem-signal">
+            <span>01</span>
+            <strong>目标看不见</strong>
+            <p>PRD 是文字，团队很难在实现前建立同一个视觉体感。</p>
+          </article>
+          <article class="ui-problem-signal">
+            <span>02</span>
+            <strong>规格不可执行</strong>
+            <p>截图对人直观，却不能直接告诉 Agent layout、tokens 与组件关系。</p>
+          </article>
+          <article class="ui-problem-signal">
+            <span>03</span>
+            <strong>Build ≠ Product Pass</strong>
+            <p>代码能运行，不代表最终页面真的符合已经确认的视觉目标。</p>
+          </article>
+          <article class="ui-problem-signal">
+            <span>04</span>
+            <strong>修复容易漂移</strong>
+            <p>“再调好看一点”会让 Agent 扩大修改范围，甚至重新设计页面。</p>
+          </article>
+        </div>
+      </section>
+
       <figure class="ui-workflow-proof reveal">
+        <div class="ui-workflow-heading">
+          <p>Artifact 01 · Workflow Map</p>
+          <h3>从 PRD 到可验收页面的完整闭环。</h3>
+        </div>
         <div class="ui-workflow-image">
-          <img
-            src="https://raw.githubusercontent.com/Jason904/ui-skill-lab/main/docs/from-prd-to-acceptable-page.zh.png"
-            alt="UI Skill Lab 从 PRD 到可验收页面的完整工作流"
-            loading="lazy"
-            decoding="async"
-          >
+          <a href="https://github.com/Jason904/ui-skill-lab/blob/main/docs/from-prd-to-acceptable-page.zh.png" target="_blank" rel="noreferrer" aria-label="打开完整 UI Skill Lab 工作流图">
+            <img
+              src="https://raw.githubusercontent.com/Jason904/ui-skill-lab/main/docs/from-prd-to-acceptable-page.zh.png"
+              alt="UI Skill Lab 从 PRD 到可验收页面的完整工作流"
+              loading="lazy"
+              decoding="async"
+            >
+            <span class="ui-workflow-open">查看完整流程图 ↗</span>
+          </a>
         </div>
         <figcaption>
-          <span>Repository evidence</span>
-          <strong>从 PRD 到可验收页面</strong>
-          <p>先用视觉稿建立共识，再把定稿转成规格合同约束 Agent，最后通过截图验收和定向修复让页面逐轮收敛。</p>
+          <strong>Repository evidence</strong>
+          <p>先用视觉稿建立团队共识，再把定稿转成 visual spec、tokens、layout、component tree 与 design rules 约束 Agent，最后通过截图验收和定向修复让页面逐轮收敛。</p>
         </figcaption>
       </figure>
 
@@ -64,67 +96,103 @@
         <i></i><span>visual-diff-fix</span>
       </div>
 
-      <div class="ui-evidence-grid">
-        <article class="ui-evidence-card ui-evidence-card--target reveal">
-          <small>01 / VISUAL TARGET</small>
-          <h3>先让团队看见目标，再让 Agent 开始写</h3>
-          <p>PRD 先进入视觉生成与确认环节，最终的 <code>reference.png</code> 成为视觉事实源，避免在错误方向上高效编码。</p>
-          <div class="artifact artifact--target" aria-hidden="true">
-            <span>PRD</span><b>→</b><span>image2-prompt-pack</span><b>→</b><strong>reference.png</strong>
+      <section class="ui-artifacts" aria-labelledby="ui-artifacts-title">
+        <div class="ui-artifacts-head reveal">
+          <p>Evidence, not claims</p>
+          <h3 id="ui-artifacts-title">三个 Artifact，证明这套 Workflow 真的被做成了系统。</h3>
+        </div>
+
+        <article class="ui-artifact-row reveal">
+          <div class="ui-artifact-copy">
+            <small>ARTIFACT 02 / QUALITY GATE</small>
+            <h4>Visual Reconstruction Benchmark</h4>
+            <p>验证的不只是 Skill 有没有跑完，而是最终浏览器页面有没有真正接近固定 Reference；同时用 anti-cheat contract 防止直接复用参考图“骗过”视觉指标。</p>
+            <a href="https://github.com/Jason904/ui-skill-lab/blob/main/docs/visual-reconstruction-benchmark.md" target="_blank" rel="noreferrer">Read Benchmark ↗</a>
+          </div>
+          <div class="ui-artifact-real ui-artifact-real--benchmark" aria-label="Visual Reconstruction Benchmark 真实内容摘录">
+            <pre>What it verifies
+
+reference.png  →  actual.png
+
+<mark>normalizedMae</mark>   average pixel error
+<mark>rmse</mark>            root mean squared error
+<mark>p95Abs</mark>          95th percentile error
+<mark>badPixelRatio</mark>   bad-pixel share
+<mark>globalSsim</mark>      structural similarity
+
+Candidate contract
+• build strict cases with real HTML / CSS
+• do not reference composite reference.png
+• anti-cheat audit before pixel scoring</pre>
           </div>
         </article>
 
-        <article class="ui-evidence-card ui-evidence-card--contract reveal">
-          <small>02 / SPEC CONTRACT</small>
-          <h3>把“我想要这种感觉”翻译成机器可执行规格</h3>
-          <p><code>visual-to-spec</code> 把视觉稿拆成 tokens、layout、component tree 和 design rules，再由 review gate 检查规格本身是否可信。</p>
-          <div class="artifact artifact--files">
-            <span>visual-spec.md</span>
-            <span>tokens</span>
-            <span>layout</span>
-            <span>component tree</span>
-            <span>design rules</span>
+        <article class="ui-artifact-row ui-artifact-row--reverse reveal">
+          <div class="ui-artifact-copy">
+            <small>ARTIFACT 03 / STRUCTURED REPAIR</small>
+            <h4>从模糊反馈到 Fix Contract</h4>
+            <p><code>visual-diff-fix</code> 读取差异证据与规格上下文，把修复限制成结构化任务；修复完成后重新截图，再回到 visual acceptance，而不是让 Agent 借机重写整个页面。</p>
+            <a href="https://github.com/Jason904/ui-skill-lab/blob/main/skills/visual-diff-fix/examples/fix-report.example.md" target="_blank" rel="noreferrer">Open Real Fix Report ↗</a>
+          </div>
+          <div class="ui-artifact-real ui-artifact-real--repair" aria-label="Visual Diff Fix Report 真实内容摘录">
+            <pre>Visual Diff Fix Report
+
+Tasks read:             <mark>3</mark>
+Fixed:                  <mark>2</mark>
+Needs human review:     <mark>1</mark>
+Unresolved:             <mark>0</mark>
+
+Validation
+lint:        passed
+build:       passed
+screenshot:  captured
+
+Remaining risk
+Final visual similarity requires rerunning
+<mark>visual-acceptance-review</mark>.</pre>
           </div>
         </article>
+      </section>
 
-        <article class="ui-evidence-card ui-evidence-card--gate reveal">
-          <small>03 / PRODUCT QUALITY GATE</small>
-          <h3>代码能跑，不等于页面正确</h3>
-          <p>通过 spec compliance + browser screenshot 做双层验收；视觉重建 Benchmark 进一步使用 MAE / RMSE / SSIM 等指标并加入 anti-cheat 约束。</p>
-          <div class="artifact artifact--metrics">
-            <span><b>SPEC</b> compliance</span>
-            <span><b>SHOT</b> acceptance</span>
-            <span><b>MAE</b> / RMSE</span>
-            <span><b>SSIM</b> / anti-cheat</span>
-          </div>
-        </article>
+      <section class="ui-proof-capabilities reveal" aria-labelledby="ui-proves-title">
+        <h3 id="ui-proves-title">这证明了什么 AI PM 能力？</h3>
+        <div class="ui-capability-lines">
+          <article class="ui-capability-line">
+            <span>01</span>
+            <div><strong>从实践问题抽象成系统方法</strong><p>不是修一个“页面不像”的 Case，而是识别目标、规格、实现、验收与修复中的系统性漂移。</p></div>
+          </article>
+          <article class="ui-capability-line">
+            <span>02</span>
+            <div><strong>Agent Contract / Specification Design</strong><p>把主观视觉目标转成 Source of Truth、Spec、Rules 与 Acceptance Criteria。</p></div>
+          </article>
+          <article class="ui-capability-line">
+            <span>03</span>
+            <div><strong>AI Eval / Product Quality Gate</strong><p>明确区分 Engineering PASS 与 Product PASS，用真实浏览器结果和独立证据判断正确性。</p></div>
+          </article>
+          <article class="ui-capability-line">
+            <span>04</span>
+            <div><strong>Human × AI Workflow Design</strong><p>人负责目标与最终判断，AI 负责规格化、执行、检查与定向修复，而不是追求无边界全自动。</p></div>
+          </article>
+          <article class="ui-capability-line">
+            <span>05</span>
+            <div><strong>方法产品化与开源</strong><p>把个人实践拆成 7 个可独立理解和复用的 Skill，并通过公开仓库与 skills.sh 对外验证。</p></div>
+          </article>
+        </div>
+      </section>
 
-        <article class="ui-evidence-card ui-evidence-card--repair reveal">
-          <small>04 / STRUCTURED REPAIR</small>
-          <h3>把“再调好看一点”变成结构化 Fix Task</h3>
-          <p><code>visual-diff-fix</code> 把差异转成具体修复任务，限制 Agent 只改证据指向的问题，并在修改后重新截图验收。</p>
-          <div class="artifact artifact--repair" aria-hidden="true">
-            <span>Evidence</span><b>→</b><strong>fix-tasks.json</strong><b>→</b><span>Fix</span><b>→</b><span>Re-check</span>
-          </div>
-        </article>
-      </div>
-
-      <div class="ui-proof-footer reveal">
+      <section class="ui-deep-dive reveal" aria-labelledby="ui-deep-title">
         <div>
-          <p class="ui-proof-label">AI PM 能力体现</p>
-          <div class="ability-list ability-list--inline">
-            <span>实践问题 → 方法抽象</span>
-            <span>Agent Contract / Spec 设计</span>
-            <span>AI Eval / Quality Gate</span>
-            <span>Workflow / Skill 产品设计</span>
-            <span>开源与方法产品化</span>
-          </div>
+          <small>Explore the evidence</small>
+          <h3 id="ui-deep-title">代码、Skill、Benchmark 都可以继续验证。</h3>
         </div>
-        <div class="ui-proof-actions">
-          <a class="button button--dark" href="https://github.com/Jason904/ui-skill-lab" target="_blank" rel="noreferrer">GitHub · ★ 154 ↗</a>
-          <a class="button button--light" href="https://skills.sh/Jason904/ui-skill-lab" target="_blank" rel="noreferrer">skills.sh ↗</a>
-        </div>
-      </div>
+        <nav class="ui-deep-links" aria-label="UI Skill Lab 深挖入口">
+          <a href="https://github.com/Jason904/ui-skill-lab" target="_blank" rel="noreferrer"><span>GitHub Repository · ★154</span><span>↗</span></a>
+          <a href="https://skills.sh/Jason904/ui-skill-lab" target="_blank" rel="noreferrer"><span>skills.sh</span><span>↗</span></a>
+          <a href="https://github.com/Jason904/ui-skill-lab/blob/main/docs/visual-reconstruction-benchmark.md" target="_blank" rel="noreferrer"><span>Visual Reconstruction Benchmark</span><span>↗</span></a>
+        </nav>
+      </section>
+
+      <p class="ui-proof-closing reveal">AI Coding 的下一阶段，不只是让 Agent 写得更快，而是让人的目标更可靠地进入执行、验收和修复闭环。</p>
     `;
   };
 
