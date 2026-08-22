@@ -2,6 +2,7 @@
   const STYLES = [
     { href: './v03.css', attr: 'portfolioV03' },
     { href: './v031.css', attr: 'portfolioV031' },
+    { href: './v032.css', attr: 'portfolioV032' },
   ];
 
   STYLES.forEach(({ href, attr }) => {
@@ -16,7 +17,6 @@
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const hero = document.querySelector('.hero-scroll');
-  const visuals = document.querySelector('.hero-visuals');
   const cards = Array.from(document.querySelectorAll('.hero-card'));
   const topbar = document.querySelector('.topbar');
   const revealEls = document.querySelectorAll('.reveal:not(.is-visible)');
@@ -35,8 +35,13 @@
     revealEls.forEach((el) => el.classList.add('is-visible'));
   }
 
+  let topbarScrolled = null;
   const updateTopbar = () => {
-    if (topbar) topbar.classList.toggle('is-scrolled', window.scrollY > 24);
+    if (!topbar) return;
+    const next = window.scrollY > 24;
+    if (next === topbarScrolled) return;
+    topbarScrolled = next;
+    topbar.classList.toggle('is-scrolled', next);
   };
 
   if (reduceMotion || !hero || cards.length === 0) {
@@ -52,9 +57,9 @@
   };
 
   /*
-   * Scroll choreography: the four plates begin as one loose visual cluster,
-   * then fan toward four directions. TwitCanva remains the visual anchor;
-   * Hermes/UI become secondary plates; Guangfan recedes into the background.
+   * Scroll choreography stays identical to V0.3.1. This patch only changes
+   * how the animation is computed and written so the browser can keep the
+   * moving cards on the compositor path as much as possible.
    */
   const profiles = [
     { x: -68, y: -82,  rotate: -1.4, scale: 0.985, opacity: 0.96 },
@@ -63,49 +68,56 @@
     { x: 102, y:  62,  rotate:  3.8, scale: 0.885, opacity: 0.76 },
   ];
 
+  const motionCards = cards.map((card, index) => ({
+    card,
+    profile: profiles[index] || profiles[profiles.length - 1],
+    speed: Number(card.dataset.speed || 1),
+    baseTilt: Number(card.dataset.tilt || 0),
+    delay: index * 0.03,
+  }));
+
+  let heroStart = 0;
+  let travel = 1;
+  const measure = () => {
+    heroStart = hero.offsetTop;
+    travel = Math.max(hero.scrollHeight - window.innerHeight, 1);
+  };
+  measure();
+
   let ticking = false;
   const update = () => {
-    const rect = hero.getBoundingClientRect();
-    const travel = Math.max(hero.offsetHeight - window.innerHeight, 1);
-    const passed = Math.min(Math.max(-rect.top, 0), travel);
-    const progress = clamp01(passed / travel);
-    const eased = smoothstep(progress);
+    const progress = clamp01((window.scrollY - heroStart) / travel);
 
-    cards.forEach((card, index) => {
-      const profile = profiles[index] || profiles[profiles.length - 1];
-      const speed = Number(card.dataset.speed || 1);
-      const baseTilt = Number(card.dataset.tilt || 0);
-      const delay = index * 0.03;
+    motionCards.forEach(({ card, profile, speed, baseTilt, delay }) => {
       const local = smoothstep((progress - delay) / Math.max(1 - delay, 0.001));
-
-      const x = profile.x * local * (0.86 + speed * 0.14);
-      const y = profile.y * local * (0.86 + speed * 0.14);
+      const factor = 0.86 + speed * 0.14;
+      const x = profile.x * local * factor;
+      const y = profile.y * local * factor;
       const rotate = baseTilt + profile.rotate * local;
       const scale = 1 + (profile.scale - 1) * local;
       const opacity = 1 + (profile.opacity - 1) * local;
 
-      card.style.setProperty('--scroll-x', `${x.toFixed(2)}px`);
-      card.style.setProperty('--scroll-y', `${y.toFixed(2)}px`);
-      card.style.setProperty('--tilt', `${rotate.toFixed(2)}deg`);
-      card.style.setProperty('--scale', scale.toFixed(4));
-      card.style.setProperty('--card-opacity', opacity.toFixed(4));
+      card.style.transform = `translate3d(${x.toFixed(2)}px,${y.toFixed(2)}px,0) rotate(${rotate.toFixed(2)}deg) scale(${scale.toFixed(4)})`;
+      card.style.opacity = opacity.toFixed(4);
     });
 
-    if (visuals) {
-      visuals.style.setProperty('--hero-progress', eased.toFixed(4));
-    }
     updateTopbar();
     ticking = false;
   };
 
   const requestUpdate = () => {
-    if (!ticking) {
-      requestAnimationFrame(update);
-      ticking = true;
-    }
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(update);
+  };
+
+  const onResize = () => {
+    measure();
+    requestUpdate();
   };
 
   window.addEventListener('scroll', requestUpdate, { passive: true });
-  window.addEventListener('resize', requestUpdate);
+  window.addEventListener('resize', onResize, { passive: true });
+  window.addEventListener('load', onResize, { once: true });
   update();
 })();
