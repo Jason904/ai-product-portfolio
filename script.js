@@ -207,7 +207,7 @@
       <section class="gf-levers reveal">
         <div class="gf-levers-head">
           <span class="gf-section-label">HOW I VALIDATE</span>
-          <h3>三个杠杆，把抽象概念推进成组织可以共同判断的证据。</h3>
+          <h3>三个核心杠杆</h3>
         </div>
         <div class="gf-lever-list">
           <article class="gf-lever">
@@ -231,7 +231,7 @@
       <section class="gf-ai-lever reveal">
         <div class="gf-ai-lever-head">
           <span class="gf-section-label">AI AS LEVER</span>
-          <h3>AI 不是素材工具，而是概念验证杠杆。</h3>
+          <h3>AIGC + AI Coding，让产品概念更早变得可见、可体验。</h3>
         </div>
         <div class="gf-ai-grid">
           <article class="gf-ai-column">
@@ -252,7 +252,7 @@
 
       <section class="gf-case reveal">
         <div class="gf-case-head">
-          <span class="gf-section-label">CASE STUDY / EVIDENCE</span>
+          <span class="gf-section-label">CASE STUDY</span>
           <h3>光帆 AI 全感耳机</h3>
           <p>我用这套方法，把一款仍处在概念阶段的 AI 穿戴产品，提前制作成完整的视觉、场景、动态体验和线上 Interactive Concept。</p>
         </div>
@@ -265,13 +265,12 @@
             <a href="https://lightwear-ai-hardware-v3.vercel.app/files/hardware-hotspots-value-v3.html" target="_blank" rel="noreferrer">Explore Interactive Concept ↗</a>
           </div>
         </div>
-        <div class="gf-case-note"><p>光帆在这里不是方法本身，而是这套 AI Product Concept Validation 工作方式已经被真实做出来并线上部署的证据。</p></div>
       </section>
 
       <section class="gf-role reveal">
         <div class="gf-role-head">
           <span class="gf-section-label">MY ROLE</span>
-          <h3>我把什么推进到了可判断状态？</h3>
+          <h3>我在这个项目里做了什么？</h3>
         </div>
         <div class="gf-role-list">
           <article><span>01</span><div><strong>Define · 定义产品概念</strong><p>把技术输入转成清晰的产品价值、用户问题和 Experience Proposition。</p></div></article>
