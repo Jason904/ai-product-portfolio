@@ -1,0 +1,153 @@
+/* ==========================================================================
+   >>> [MODULE 05: CLOSING & GLOBAL SITE FOOTER - START] <<<
+   ========================================================================== */
+/* ==========================================================================
+   10. CLOSING SECTION & FOOTER (TASTESKILL EDITORIAL EXCELLENCE)
+   ========================================================================== */
+
+.closing {
+  width: min(1240px, calc(100% - 44px));
+  margin: 0 auto;
+  padding: clamp(6.5rem, 11vw, 10rem) 0 clamp(5rem, 8vw, 7.5rem);
+  border-top: 1px solid var(--line);
+}
+
+.closing-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.closing-content {
+  max-width: 48rem;
+}
+
+.closing-label {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.closing-label::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 1px;
+}
+
+.closing h2,
+.closing-title {
+  font-size: clamp(2.8rem, 5.2vw, 5.2rem);
+  font-weight: 780;
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+  margin: 0;
+  text-wrap: balance;
+}
+
+.closing-action {
+  padding-bottom: 0.4rem;
+}
+
+.button--back-to-top {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.95rem 2rem;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  background: var(--ink);
+  color: #fff;
+  border: 1px solid var(--ink);
+  box-shadow: 0 6px 18px rgba(23, 23, 20, 0.14);
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.button--back-to-top:hover {
+  background: #282520;
+  border-color: #282520;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(23, 23, 20, 0.22);
+}
+
+.button--back-to-top:active {
+  transform: translateY(-1px) scale(0.985);
+}
+
+/* Site Footer */
+.site-footer {
+  width: min(1240px, calc(100% - 44px));
+  margin: 0 auto;
+  padding: 2.2rem 0 3.8rem;
+  border-top: 1px solid var(--line);
+}
+
+.site-footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
+.site-footer-brand {
+  font-size: 0.82rem;
+  font-weight: 650;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.site-footer-meta {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: #7f7870;
+}
+
+/* Responsive adjustments for Closing & Footer */
+@media (max-width: 768px) {
+  .closing {
+    padding: 4.5rem 0 3.8rem;
+  }
+  .closing-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.2rem;
+  }
+  .closing h2,
+  .closing-title {
+    font-size: clamp(2.2rem, 9.5vw, 3.2rem);
+  }
+  .button--back-to-top {
+    width: 100%;
+    text-align: center;
+  }
+  .site-footer {
+    padding: 1.8rem 0 2.8rem;
+  }
+  .site-footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+/* ==========================================================================
+   >>> [MODULE 05: CLOSING & GLOBAL SITE FOOTER - END] <<<

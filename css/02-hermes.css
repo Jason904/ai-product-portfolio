@@ -1,0 +1,3756 @@
+/* ==========================================================================
+   >>> [MODULE 02: HERMES P7+ PRODUCT THINKING - START] <<<
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   7. PROJECT 02: HERMES (TasteSkill 5-Plate Architectural Masterpiece)
+   Strictly Scoped under .project--hermes, #hermes, .hermes-* (Zero Global Leak)
+   TasteSkill Calibration: Variance: 7, Motion: 4, Density: 4
+   -------------------------------------------------------------------------- */
+
+.project--hermes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-plate-gap, 5.2rem);
+  position: relative;
+  background-color: var(--bg);
+}
+
+/* Base Plate Structure & Guard Selectors */
+.hermes-plate {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  position: relative;
+  padding-bottom: 4.5rem;
+  border-bottom: 1px dashed rgba(23, 23, 20, 0.12);
+}
+
+.hermes-plate--master {
+  border-bottom: none;
+  padding-bottom: 2rem;
+}
+
+.hermes-plate--pipeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.hermes-tier {
+  background: #f7f4ec;
+  border: 1px solid rgba(23, 23, 20, 0.08);
+  border-radius: 12px;
+  padding: 1.15rem 1.35rem;
+  display: flex;
+}
+
+/* --------------------------------------------------------------------------
+   7. PROJECT 02: HERMES P7+ (TasteSkill 5-Plate Architectural Masterpiece)
+   Strictly Scoped under .project--hermes, #hermes, .hermes-* (Zero Global Leak)
+   TasteSkill Calibration: Variance: 7, Motion: 4, Density: 4
+   -------------------------------------------------------------------------- */
+
+.project--hermes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-plate-gap, 5.2rem);
+  position: relative;
+  background-color: var(--bg);
+}
+
+/* Base Plate Structure */
+.hermes-plate {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  position: relative;
+  padding-bottom: 4.5rem;
+  border-bottom: 1px dashed rgba(23, 23, 20, 0.12);
+}
+
+.hermes-plate--matters {
+  border-bottom: none;
+  padding-bottom: 1rem;
+}
+
+/* ==========================================================================
+   PLATE 1: THE PARADIGM SHIFT (Clean Editorial Masterpiece)
+   ========================================================================== */
+.hermes-masterhead {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 2.6rem 2.8rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.02);
+  position: relative;
+  overflow: hidden;
+}
+
+.hermes-masterhead::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent);
+}
+
+.hermes-masterhead-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hermes-meta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.hermes-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px rgba(200, 104, 61, 0.2);
+}
+
+.hermes-masterhead-status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  background: rgba(23, 23, 20, 0.04);
+  border: 1px solid rgba(23, 23, 20, 0.08);
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+}
+
+.hermes-status-pulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 2px rgba(200, 104, 61, 0.2);
+}
+
+.hermes-title {
+  font-family: var(--font-display);
+  font-size: 2.7rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--ink);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.hermes-title-sub {
+  font-size: 1.55rem;
+  font-weight: 600;
+  color: var(--accent);
+  display: block;
+  margin-top: 0.25rem;
+  letter-spacing: -0.01em;
+}
+
+/* Masterhead Two-Column Grid: Left (Thesis & Deduction Cards) + Right (Live Artifact HUD) */
+.hermes-masterhead-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 1.8rem;
+  align-items: stretch;
+}
+
+.hermes-masterhead-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+/* Master Thesis Monolith */
+.hermes-thesis-card {
+  background: rgba(200, 104, 61, 0.045);
+  border-left: 3.5px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.hermes-thesis-header {
+  display: flex;
+  align-items: center;
+}
+
+.hermes-thesis-tag {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.hermes-thesis-quote {
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 750;
+  line-height: 1.45;
+  color: var(--ink);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* Structured Dual Deduction Architectural Rails (Unified warm surface, zero white blocks) */
+.hermes-deduction-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  background: rgba(23, 23, 20, 0.022);
+  border: 1px solid rgba(23, 23, 20, 0.07);
+  border-radius: 8px;
+  padding: 1.15rem 1.3rem;
+}
+
+.hermes-deduction-card {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.8rem;
+  border-left: 2.5px solid rgba(23, 23, 20, 0.16);
+  padding-left: 1.05rem;
+  transition: border-color 0.2s ease;
+}
+
+.hermes-deduction-card:nth-child(2) {
+  border-left-color: var(--accent);
+}
+
+.hermes-deduction-card:hover {
+  border-left-color: var(--accent);
+}
+
+.hermes-deduction-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.hermes-deduction-kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hermes-deduction-idx {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--accent);
+  background: rgba(200, 104, 61, 0.08);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  border: 1px solid rgba(200, 104, 61, 0.18);
+  font-variant-numeric: tabular-nums;
+}
+
+.hermes-deduction-idx--accent {
+  background: rgba(200, 104, 61, 0.12);
+  border-color: rgba(200, 104, 61, 0.25);
+}
+
+.hermes-deduction-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.hermes-deduction-badge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 750;
+  color: var(--muted);
+  background: rgba(23, 23, 20, 0.05);
+  padding: 0.18rem 0.5rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.hermes-deduction-badge--accent {
+  color: var(--accent);
+  background: rgba(200, 104, 61, 0.08);
+  border: 1px solid rgba(200, 104, 61, 0.2);
+}
+
+.hermes-deduction-body {
+  font-size: 0.86rem;
+  line-height: 1.65;
+  color: var(--ink-secondary);
+  margin: 0;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+.hermes-deduction-body b {
+  color: var(--ink);
+}
+
+.hermes-deduction-microbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.35rem;
+  background: transparent;
+  border: none;
+  border-top: 1px dashed rgba(23, 23, 20, 0.11);
+  border-radius: 0;
+  padding: 0.55rem 0 0 0;
+  margin-top: auto;
+}
+
+.hermes-micro-reject {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 650;
+  color: #a84232;
+  background: rgba(168, 66, 50, 0.07);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.hermes-micro-arrow {
+  color: rgba(23, 23, 20, 0.3);
+  font-size: 0.72rem;
+  flex-shrink: 0;
+}
+
+.hermes-micro-target {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 750;
+  color: var(--ink);
+  background: rgba(23, 23, 20, 0.06);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.hermes-micro-target--accent {
+  color: var(--accent);
+  background: rgba(200, 104, 61, 0.08);
+  border: 1px solid rgba(200, 104, 61, 0.2);
+}
+
+/* Right Column: Live Artifact Repository HUD (Dark Terminal Card) */
+.hermes-artifact-hud {
+  background: #171714;
+  color: #f7f2eb;
+  border-radius: 12px;
+  padding: 1.35rem 1.45rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.hermes-artifact-hud::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent 80%);
+}
+
+.hermes-hud-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.hermes-hud-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.hermes-live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.25);
+  animation: hermes-pulse 2s infinite ease-in-out;
+}
+
+@keyframes hermes-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+.hermes-hud-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  color: rgba(247, 242, 235, 0.7);
+  text-transform: uppercase;
+}
+
+.hermes-hud-badge {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  background: rgba(200, 104, 61, 0.15);
+  border: 1px solid rgba(200, 104, 61, 0.3);
+  padding: 0.15rem 0.45rem;
+  border-radius: 3px;
+}
+
+.hermes-hud-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.hermes-hud-repo-title {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: #ffffff;
+}
+
+.hermes-hud-repo-title svg {
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.hermes-hud-repo-title h4 {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 750;
+  margin: 0;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.hermes-hud-repo-desc {
+  font-size: 0.76rem;
+  line-height: 1.45;
+  color: rgba(247, 242, 235, 0.65);
+  margin: 0;
+}
+
+.hermes-hud-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.42rem;
+  padding: 0.65rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hermes-hud-telemetry-cell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.065);
+  border-radius: 6px;
+  padding: 0.38rem 0.6rem;
+  transition: all 0.2s ease;
+}
+
+.hermes-hud-telemetry-cell:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.hermes-telemetry-lead {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.hermes-telemetry-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(247, 242, 235, 0.4);
+  flex-shrink: 0;
+}
+
+.hermes-telemetry-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: rgba(247, 242, 235, 0.55);
+}
+
+.hermes-telemetry-value {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+  flex-shrink: 0;
+}
+
+.hermes-telemetry-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 650;
+  padding: 0.12rem 0.45rem;
+  border-radius: 4px;
+  line-height: 1.25;
+}
+
+.hermes-telemetry-badge--cron {
+  background: rgba(52, 211, 153, 0.12);
+  border: 1px solid rgba(52, 211, 153, 0.28);
+  color: #34d399;
+}
+
+.hermes-telemetry-badge--cron code {
+  font-family: inherit;
+  color: inherit;
+}
+
+.hermes-cron-icon {
+  font-size: 0.65rem;
+  opacity: 0.85;
+}
+
+.hermes-telemetry-badge--reader {
+  background: rgba(147, 197, 253, 0.1);
+  border: 1px solid rgba(147, 197, 253, 0.25);
+  color: #93c5fd;
+  font-size: 0.65rem;
+}
+
+.hermes-telemetry-plus {
+  color: rgba(247, 242, 235, 0.35);
+  font-size: 0.65rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+.hermes-telemetry-badge--wechat {
+  background: rgba(74, 222, 128, 0.1);
+  border: 1px solid rgba(74, 222, 128, 0.25);
+  color: #86efac;
+  font-size: 0.65rem;
+}
+
+.hermes-telemetry-badge--asset {
+  background: rgba(200, 104, 61, 0.12);
+  border: 1px solid rgba(200, 104, 61, 0.28);
+  color: #f7f2eb;
+}
+
+.hermes-asset-accent {
+  color: #ff9d66;
+  font-weight: 750;
+}
+
+.hermes-asset-type {
+  color: rgba(247, 242, 235, 0.7);
+  margin-left: 0.2rem;
+  font-size: 0.64rem;
+}
+
+/* Fallback styles for legacy rows if present */
+.hermes-hud-spec-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.hermes-spec-label {
+  color: rgba(247, 242, 235, 0.55);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+}
+
+.hermes-spec-val {
+  color: rgba(247, 242, 235, 0.9);
+  font-weight: 600;
+}
+
+.hermes-spec-code {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  background: rgba(52, 211, 153, 0.12);
+  border: 1px solid rgba(52, 211, 153, 0.28);
+  padding: 0.12rem 0.4rem;
+  border-radius: 3px;
+  color: #34d399;
+}
+
+.hermes-hud-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  background: #ffffff;
+  color: #171714;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 750;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  margin-top: 0.15rem;
+}
+
+.hermes-hud-btn:hover {
+  background: #f7f2eb;
+  color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+}
+
+.hermes-hud-arrow {
+  color: var(--accent);
+  font-size: 0.85rem;
+}
+
+/* 4-Pillar Unified Continuous Architecture Flow Rail */
+.hermes-system-synergy {
+  background: rgba(23, 23, 20, 0.02);
+  border: 1px solid rgba(23, 23, 20, 0.08);
+  border-radius: 12px;
+  padding: 1.3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hermes-synergy-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hermes-synergy-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.hermes-synergy-badge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  background: rgba(200, 104, 61, 0.08);
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  border: 1px solid rgba(200, 104, 61, 0.2);
+}
+
+.hermes-flow-rail {
+  display: flex;
+  align-items: stretch;
+  background: rgba(23, 23, 20, 0.015);
+  border: 1px solid rgba(23, 23, 20, 0.07);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.hermes-flow-node {
+  flex: 1;
+  padding: 1.1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  position: relative;
+  transition: background 0.2s ease;
+}
+
+.hermes-flow-node:hover {
+  background: rgba(23, 23, 20, 0.035);
+}
+
+.hermes-flow-node--core {
+  flex: 1.3;
+  background: rgba(200, 104, 61, 0.045);
+  border-left: 1px solid rgba(200, 104, 61, 0.2);
+  border-right: 1px solid rgba(200, 104, 61, 0.2);
+  box-shadow: inset 0 0 12px rgba(200, 104, 61, 0.03);
+}
+
+.hermes-flow-node--core:hover {
+  background: rgba(200, 104, 61, 0.07);
+}
+
+.hermes-flow-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  margin: 0 -11px;
+  z-index: 2;
+  flex-shrink: 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+.hermes-flow-arrow-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fbf9f5;
+  border: 1px solid rgba(23, 23, 20, 0.14);
+  color: rgba(23, 23, 20, 0.45);
+  box-shadow: 0 1px 3px rgba(23, 23, 20, 0.05);
+  transition: all 0.2s ease;
+}
+
+.hermes-flow-arrow-pill svg {
+  display: block;
+  stroke: currentColor;
+}
+
+.hermes-flow-connector--core-out .hermes-flow-arrow-pill,
+.hermes-flow-arrow-pill--accent {
+  background: #fff8f4;
+  border-color: rgba(200, 104, 61, 0.35);
+  color: var(--accent);
+  box-shadow: 0 1px 4px rgba(200, 104, 61, 0.12);
+}
+
+.hermes-flow-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+}
+
+.hermes-flow-idx {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.hermes-flow-role {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 750;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.hermes-flow-role--core {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.hermes-flow-name {
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin-top: 0.1rem;
+}
+
+.hermes-flow-name--core {
+  color: var(--ink);
+}
+
+.hermes-flow-desc {
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--ink-secondary);
+  margin: 0;
+}
+
+.hermes-synergy-footnote {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  background: rgba(23, 23, 20, 0.025);
+  border: 1px solid rgba(23, 23, 20, 0.06);
+  border-left: 2.5px solid var(--accent);
+  border-radius: 6px;
+  padding: 0.65rem 0.9rem;
+}
+
+.hermes-footnote-icon {
+  font-size: 0.85rem;
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 0.05rem;
+}
+
+.hermes-footnote-text {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--ink-secondary);
+  margin: 0;
+}
+
+.hermes-footnote-text b {
+  color: var(--ink);
+}
+
+/* ==========================================================================
+   02 / SYSTEMIZE — PLATE 1: PARADIGM SHIFT (方案 A: 矛盾对决 × 4 级穿透架构流)
+   ========================================================================== */
+
+.hermes-paradigm-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  margin-top: 0.5rem;
+}
+
+/* Layer 1: Tension Crucible (矛盾对决场) */
+.hermes-tension-crucible {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.hermes-crucible-card {
+  background: rgba(23, 23, 20, 0.022);
+  border: 1px solid rgba(23, 23, 20, 0.08);
+  border-radius: 12px;
+  padding: 1.8rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  position: relative;
+  transition: border-color 0.2s ease;
+}
+
+.hermes-crucible-card--deficit {
+  border-left: 3.5px solid var(--accent);
+}
+
+.hermes-crucible-card--traps {
+  border-left: 3.5px solid #d9483b;
+}
+
+.hermes-crucible-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(23, 23, 20, 0.07);
+  padding-bottom: 0.75rem;
+}
+
+.hermes-crucible-kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.hermes-crucible-idx {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--accent);
+  background: rgba(200, 104, 61, 0.09);
+  padding: 0.12rem 0.45rem;
+  border-radius: 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+.hermes-crucible-idx--warn {
+  color: #d9483b;
+  background: rgba(217, 72, 59, 0.09);
+}
+
+.hermes-crucible-tag {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--ink-secondary);
+}
+
+.hermes-crucible-tag--warn {
+  color: #a8382d;
+}
+
+.hermes-crucible-pill {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 750;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+}
+
+.hermes-crucible-pill--accent {
+  color: var(--accent);
+  background: rgba(200, 104, 61, 0.08);
+  border: 1px solid rgba(200, 104, 61, 0.2);
+}
+
+.hermes-crucible-pill--warn {
+  color: #a8382d;
+  background: rgba(217, 72, 59, 0.06);
+  border: 1px solid rgba(217, 72, 59, 0.18);
+}
+
+.hermes-crucible-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hermes-crucible-thesis {
+  font-family: var(--font-display);
+  font-size: 1.22rem;
+  font-weight: 800;
+  line-height: 1.45;
+  color: var(--ink);
+  margin: 0;
+}
+
+.hermes-crucible-formula {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.hermes-formula-code {
+  display: inline-block;
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--accent);
+  background: rgba(200, 104, 61, 0.08);
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  border: 1px dashed rgba(200, 104, 61, 0.25);
+}
+
+.hermes-formula-code--warn {
+  color: #d9483b;
+  background: rgba(217, 72, 59, 0.08);
+  border: 1px dashed rgba(217, 72, 59, 0.25);
+}
+
+.hermes-formula-sub {
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: var(--ink-secondary);
+}
+
+.hermes-crucible-desc {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--ink-secondary);
+  margin: 0;
+}
+
+.hermes-traps-matrix {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.hermes-trap-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(217, 72, 59, 0.04);
+  border: 1px solid rgba(217, 72, 59, 0.12);
+  border-radius: 6px;
+  padding: 0.5rem 0.65rem;
+}
+
+.hermes-trap-icon {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #d9483b;
+}
+
+.hermes-trap-text {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 750;
+  color: #8c2a20;
+  white-space: nowrap;
+}
+
+.hermes-crucible-question-box {
+  background: rgba(23, 23, 20, 0.03);
+  border: 1px dashed rgba(23, 23, 20, 0.12);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.hermes-question-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.hermes-question-text {
+  font-size: 0.84rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--ink);
+  margin: 0;
+}
+
+
+/* Layer 2: 4-Stage Cognitive Penetration Rail */
+.hermes-penetration-rail {
+  background: rgba(23, 23, 20, 0.022);
+  border: 1px solid rgba(23, 23, 20, 0.08);
+  border-radius: 12px;
+  padding: 1.6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.hermes-rail-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(23, 23, 20, 0.07);
+  padding-bottom: 0.75rem;
+}
+
+.hermes-rail-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.hermes-rail-tag {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.hermes-rail-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.hermes-rail-badge {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--ink-secondary);
+  background: rgba(23, 23, 20, 0.05);
+  border: 1px solid rgba(23, 23, 20, 0.08);
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+}
+
+.hermes-rail-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.hermes-rail-step {
+  background: rgba(23, 23, 20, 0.02);
+  border: 1px solid rgba(23, 23, 20, 0.07);
+  border-radius: 8px;
+  padding: 1.1rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: all 0.2s ease;
+}
+
+.hermes-rail-step:hover {
+  background: rgba(23, 23, 20, 0.04);
+  border-color: rgba(200, 104, 61, 0.3);
+  transform: translateY(-1px);
+}
+
+.hermes-rail-step--accent {
+  background: rgba(200, 104, 61, 0.04);
+  border-color: rgba(200, 104, 61, 0.25);
+}
+
+.hermes-rail-step--accent:hover {
+  background: rgba(200, 104, 61, 0.07);
+  border-color: var(--accent);
+}
+
+.hermes-step-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hermes-step-idx {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--ink);
+  background: rgba(23, 23, 20, 0.06);
+  padding: 0.12rem 0.45rem;
+  border-radius: 4px;
+}
+
+.hermes-step-idx--accent {
+  color: #fff;
+  background: var(--accent);
+}
+
+.hermes-step-level {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 750;
+  color: var(--ink-secondary);
+}
+
+.hermes-step-level--accent {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.hermes-step-question {
+  font-family: var(--font-display);
+  font-size: 0.94rem;
+  font-weight: 800;
+  line-height: 1.45;
+  color: var(--ink);
+  margin: 0;
+}
+
+.hermes-step-question--accent {
+  color: var(--ink);
+}
+
+.hermes-step-action {
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: var(--ink-secondary);
+  margin: 0;
+}
+
+
+/* Layer 3: Core Product Axiom Pull Banner */
+.hermes-axiom-banner {
+  background: rgba(200, 104, 61, 0.035);
+  border: 1px solid rgba(200, 104, 61, 0.2);
+  border-left: 3.5px solid var(--accent);
+  border-radius: 0 12px 12px 0;
+  padding: 1.8rem 2.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.hermes-axiom-header {
+  display: flex;
+  align-items: center;
+}
+
+.hermes-axiom-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.hermes-axiom-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.45;
+  color: var(--ink);
+  margin: 0;
+}
+
+.hermes-axiom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.hermes-axiom-card {
+  background: rgba(23, 23, 20, 0.025);
+  border: 1px solid rgba(23, 23, 20, 0.07);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.hermes-axiom-card--causality {
+  background: rgba(200, 104, 61, 0.03);
+  border: 1px dashed rgba(200, 104, 61, 0.22);
+}
+
+.hermes-axiom-label {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8rem;
+  font-weight: 750;
+  color: var(--ink);
+}
+
+.hermes-axiom-label--accent {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 800;
+}
+
+.hermes-axiom-desc {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--ink-secondary);
+  margin: 0;
+}
+
+.hermes-axiom-strong {
+  color: var(--ink);
+  font-weight: 750;
+}
+
+.hermes-axiom-strong--accent {
+  color: var(--ink);
+  font-weight: 750;
+}
+
+.hermes-axiom-footer {
+  border-top: 1px dashed rgba(200, 104, 61, 0.25);
+  padding-top: 0.9rem;
+}
+
+.hermes-axiom-quote {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 750;
+  font-style: italic;
+  color: var(--ink);
+  margin: 0;
+  padding-left: 0.9rem;
+  border-left: 2px solid var(--accent);
+}
+
+/* Plate 1 Responsive Adjustments */
+@media (max-width: 900px) {
+  .hermes-masterhead {
+    padding: 2rem 1.6rem;
+  }
+  .hermes-masterhead-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .hermes-deduction-grid {
+    grid-template-columns: 1fr;
+  }
+  .hermes-title {
+    font-size: 2.2rem;
+  }
+  .hermes-title-sub {
+    font-size: 1.3rem;
+  }
+  .hermes-flow-rail {
+    flex-direction: column;
+  }
+  .hermes-flow-connector {
+    display: none;
+  }
+  .hermes-flow-node {
+    border-bottom: 1px solid rgba(23, 23, 20, 0.08);
+  }
+  .hermes-flow-node:last-child {
+    border-bottom: none;
+  }
+  .hermes-flow-node--core {
+    border-left: none;
+    border-right: none;
+    border-top: 1.5px solid rgba(200, 104, 61, 0.25);
+    border-bottom: 1.5px solid rgba(200, 104, 61, 0.25);
+  }
+  .hermes-tension-crucible {
+    grid-template-columns: 1fr;
+  }
+  .hermes-rail-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hermes-axiom-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .hermes-masterhead {
+    padding: 1.5rem 1.1rem;
+    gap: 1.4rem;
+  }
+  .hermes-title {
+    font-size: 1.8rem;
+  }
+  .hermes-title-sub {
+    font-size: 1.15rem;
+  }
+  .hermes-system-synergy {
+    padding: 1rem 1rem;
+  }
+  .hermes-flow-node {
+    padding: 0.9rem 0.9rem;
+  }
+  .hermes-tension-crucible {
+    grid-template-columns: 1fr;
+  }
+  .hermes-traps-matrix {
+    grid-template-columns: 1fr;
+  }
+  .hermes-rail-grid {
+    grid-template-columns: 1fr;
+  }
+  .hermes-axiom-banner {
+    padding: 1.3rem 1.2rem;
+  }
+  .hermes-crucible-card {
+    padding: 1.4rem 1.2rem;
+  }
+  .hermes-penetration-rail {
+    padding: 1.4rem 1.2rem;
+  }
+}
+
+
+/* }
+
+/* ==========================================================================
+   PLATE 2: 3-TIER PROGRESSIVE PIPELINE ARCHITECTURE (TasteSkill Option A)
+   ========================================================================== */
+
+.hermes-plate--pipeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.hermes-section-head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  max-width: 900px;
+}
+
+.hermes-section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+
+.hermes-kicker-idx {
+  background: rgba(200, 104, 61, 0.1);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+}
+
+.hermes-kicker-sep {
+  color: var(--muted);
+}
+
+.hermes-kicker-text {
+  color: var(--ink-secondary);
+}
+
+.hermes-section-title {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* 2.2 Editorial Pull-Banner with Micro-Meta Rail */
+.hermes-editorial-pullbar {
+  background: rgba(200, 104, 61, 0.045);
+  border-left: 3.5px solid var(--accent);
+  border-top: 1px solid rgba(200, 104, 61, 0.12);
+  border-right: 1px solid rgba(200, 104, 61, 0.12);
+  border-bottom: 1px solid rgba(200, 104, 61, 0.12);
+  border-radius: 0 10px 10px 0;
+  padding: 1.1rem 1.4rem;
+  margin: 0.25rem 0 0.5rem;
+}
+
+.hermes-pullbar-hook {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0 0 0.35rem;
+  letter-spacing: -0.01em;
+}
+
+.hermes-pullbar-lead {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--ink-secondary);
+  margin: 0;
+}
+
+.hermes-pullbar-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 0.75rem;
+  padding-top: 0.65rem;
+  border-top: 1px dashed rgba(200, 104, 61, 0.2);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  flex-wrap: wrap;
+}
+
+.hermes-pmeta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.hermes-pmeta-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* 2.3 Three-Tier Progressive Pipeline Console */
+.hermes-p3tier-console {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+}
+
+/* Base Tier Container (Warm Paper Palette) */
+.hermes-tier {
+  background: #f7f4ec;
+  border: 1px solid rgba(23, 23, 20, 0.08);
+  border-radius: 12px;
+  padding: 1.2rem 1.45rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+  box-shadow: 0 2px 12px rgba(35, 30, 20, 0.02);
+  transition: border-color 0.2s ease;
+}
+
+.hermes-tier:hover {
+  border-color: rgba(200, 104, 61, 0.25);
+}
+
+.hermes-tier-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(23, 23, 20, 0.07);
+  padding-bottom: 0.65rem;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.hermes-tier-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.hermes-tier-idx {
+  background: rgba(23, 23, 20, 0.06);
+  color: var(--ink);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+.hermes-tier-idx--sop {
+  background: rgba(200, 104, 61, 0.1);
+  color: var(--accent);
+}
+
+.hermes-tier-idx--gate {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.hermes-tier-title {
+  color: var(--ink);
+}
+
+.hermes-tier-desc {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+/* Common Pipeline Card (.hermes-pcard) */
+.hermes-pcard {
+  background: #faf8f4;
+  border: 1px solid rgba(23, 23, 20, 0.07);
+  border-radius: 8px;
+  padding: 0.9rem 1.05rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  box-shadow: 0 1px 4px rgba(35, 30, 20, 0.03);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.hermes-pcard:hover {
+  transform: translateY(-2px);
+  border-color: rgba(200, 104, 61, 0.35);
+  box-shadow: 0 4px 14px rgba(200, 104, 61, 0.06);
+}
+
+.hermes-pcard--accent {
+  background: rgba(200, 104, 61, 0.045);
+  border-color: rgba(200, 104, 61, 0.3);
+}
+
+.hermes-pcard-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hermes-pcard-idx {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.hermes-pcard-idx--accent {
+  color: var(--accent);
+}
+
+.hermes-pcard-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  background: rgba(23, 23, 20, 0.04);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+}
+
+.hermes-pcard-tag--accent {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.hermes-pcard-title {
+  font-size: 0.88rem;
+  font-weight: 750;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.35;
+}
+
+.hermes-pcard-title--accent {
+  color: var(--ink);
+}
+
+.hermes-pcard-title b {
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+}
+
+.hermes-pcard-desc {
+  font-size: 0.76rem;
+  line-height: 1.45;
+  color: var(--ink-secondary);
+  margin: 0;
+  flex: 1;
+}
+
+.hermes-pcard-anchor {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 700;
+  color: var(--muted);
+  border-top: 1px dashed rgba(23, 23, 20, 0.08);
+  padding-top: 0.4rem;
+  margin-top: auto;
+}
+
+.hermes-pcard-anchor--accent {
+  color: var(--accent);
+  border-color: rgba(200, 104, 61, 0.2);
+}
+
+/* TIER 1: Runtime Initialization Track */
+.hermes-runtime-track {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: stretch;
+  gap: 0.75rem;
+}
+
+.hermes-track-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* Inter-tier Connecting Conduits */
+.hermes-tier-conduit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.1rem 0;
+}
+
+.hermes-conduit-wire {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 750;
+  color: var(--ink-secondary);
+  background: #f0ebe1;
+  border: 1px solid rgba(23, 23, 20, 0.08);
+  padding: 0.35rem 1.1rem;
+  border-radius: 20px;
+  box-shadow: 0 1px 4px rgba(35, 30, 20, 0.03);
+}
+
+.hermes-conduit-wire--gate {
+  border-color: rgba(200, 104, 61, 0.3);
+  background: rgba(200, 104, 61, 0.06);
+  color: var(--ink);
+}
+
+.hermes-conduit-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.hermes-conduit-chevron {
+  font-size: 0.68rem;
+  color: var(--accent);
+}
+
+/* TIER 2: 5-Step SOP Stream */
+.hermes-sop-5cols {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.65rem;
+}
+
+/* Data Bus Bar */
+.hermes-databus-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: #f0ebe1;
+  border: 1px solid rgba(23, 23, 20, 0.07);
+  border-radius: 6px;
+  padding: 0.45rem 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+}
+
+.hermes-databus-tag {
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.hermes-databus-flow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ink-secondary);
+  flex-wrap: wrap;
+}
+
+.hermes-databus-flow strong {
+  color: var(--accent);
+}
+
+/* TIER 3: Gate & Delivery Closure */
+.hermes-closure-grid {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 1.15rem;
+  align-items: stretch;
+}
+
+/* Left: Gatekeeper Box */
+.hermes-gatekeeper-box {
+  background: #faf8f4;
+  border: 1.5px solid rgba(200, 104, 61, 0.3);
+  border-radius: 10px;
+  padding: 1.15rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: 0 2px 8px rgba(200, 104, 61, 0.04);
+}
+
+.hermes-gbox-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(200, 104, 61, 0.15);
+  padding-bottom: 0.5rem;
+}
+
+.hermes-gbox-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.hermes-gbox-icon {
+  font-size: 1.1rem;
+}
+
+.hermes-gbox-seq {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+}
+
+.hermes-gbox-status {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 800;
+  background: rgba(200, 104, 61, 0.12);
+  color: var(--accent);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+}
+
+.hermes-gbox-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0;
+}
+
+.hermes-gbox-quote {
+  font-size: 0.77rem;
+  line-height: 1.5;
+  color: var(--ink-secondary);
+  margin: 0;
+  font-style: italic;
+}
+
+.hermes-gbox-rules {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-top: auto;
+  border-top: 1px dashed rgba(200, 104, 61, 0.18);
+  padding-top: 0.6rem;
+}
+
+.hermes-grule {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  font-size: 0.73rem;
+  line-height: 1.4;
+}
+
+.hermes-grule-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 0.35rem;
+}
+
+.hermes-grule--pass .hermes-grule-dot {
+  background: #2e7d32;
+}
+
+.hermes-grule--reject .hermes-grule-dot {
+  background: #c62828;
+}
+
+.hermes-grule-txt {
+  color: var(--ink);
+}
+
+.hermes-grule-txt b {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+/* Right: Steps 07-10 2x2 Grid */
+.hermes-delivery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+/* 2.4 Pipeline Bottom Summary Ribbon */
+.hermes-pipeline-summary {
+  background: rgba(200, 104, 61, 0.05);
+  border: 1px solid rgba(200, 104, 61, 0.25);
+  border-radius: 8px;
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+}
+
+.hermes-summary-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  background: var(--accent);
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.hermes-summary-text {
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: var(--ink);
+  margin: 0;
+}
+
+/* ==========================================================================
+   PLATE 2 RESPONSIVE BREAKPOINTS (TasteSkill Verified)
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .hermes-closure-grid {
+    grid-template-columns: 320px 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hermes-closure-grid {
+    grid-template-columns: 1fr;
+  }
+  .hermes-sop-5cols {
+    gap: 0.45rem;
+  }
+  .hermes-pcard {
+    padding: 0.8rem 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hermes-editorial-pullbar {
+    padding: 1rem 1.1rem;
+  }
+  .hermes-pullbar-meta {
+    gap: 0.75rem;
+  }
+  .hermes-runtime-track {
+    grid-template-columns: 1fr;
+  }
+  .hermes-track-arrow {
+    transform: rotate(90deg);
+    align-self: center;
+    margin: -0.2rem 0;
+  }
+  .hermes-sop-5cols {
+    grid-template-columns: 1fr;
+  }
+  .hermes-delivery-grid {
+    grid-template-columns: 1fr;
+  }
+  .hermes-tier {
+    padding: 1.15rem 1.15rem;
+  }
+  .hermes-pipeline-summary {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hermes-section-title {
+    font-size: 1.45rem;
+  }
+  .hermes-pullbar-hook {
+    font-size: 0.96rem;
+  }
+}
+
+/* ==========================================================================
+   PLATE 3: PRODUCT THINKING ENGINE (高手思考显性化与 8Q 认知推演台 · Option A)
+   Strictly Scoped under #hermes, .project--hermes, .hermes-* (Zero Global Leak)
+   TasteSkill Design: Warm Paper Industrial Cockpit + 3-Column Flight Console
+   ========================================================================== */
+
+.hermes-plate--engine {
+  border-bottom: 1px solid var(--line);
+  padding: 4rem 0;
+  position: relative;
+}
+
+/* Master Section Headers */
+.hermes-section-head {
+  margin-bottom: 2.2rem;
+  max-width: 960px;
+}
+
+.hermes-section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.hermes-kicker-idx {
+  background: rgba(200, 104, 61, 0.12);
+  color: var(--accent);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+.hermes-kicker-sep {
+  opacity: 0.4;
+}
+
+.hermes-kicker-text {
+  color: var(--ink);
+  letter-spacing: 0.06em;
+}
+
+.hermes-section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.85rem;
+}
+
+.hermes-section-lead {
+  font-size: 1.02rem;
+  line-height: 1.62;
+  color: var(--muted);
+  max-width: 820px;
+  word-break: keep-all;
+}
+
+/* --------------------------------------------------------------------------
+   3.1 8Q COGNITIVE REASONING SCAFFOLD CONSOLE (Three-Column Flight Cockpit)
+   -------------------------------------------------------------------------- */
+.hermes-inspector-console {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface, #fcfaf6);
+  border: 1px solid var(--line, rgba(23, 23, 20, 0.12));
+  border-radius: 14px;
+  padding: 1.6rem 1.8rem;
+  box-shadow: 0 4px 24px rgba(23, 23, 20, 0.03);
+  color: var(--ink);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.hermes-inspector-console::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent, #c8683d);
+}
+
+/* 3-Column Flight Cockpit Main Grid — Rebalanced for Option A */
+.hermes-console-main-grid {
+  display: grid;
+  grid-template-columns: 175px minmax(0, 1fr) 480px;
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+/* --------------------------------------------------------------------------
+   COL 1: LEFT NAVIGATOR (8Q Scaffold Step Stream)
+   -------------------------------------------------------------------------- */
+.hermes-inspector-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  border-right: 1px solid rgba(23, 23, 20, 0.08);
+  padding-right: 1.15rem;
+}
+
+.hermes-nav-head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  border-bottom: 1px dashed rgba(23, 23, 20, 0.14);
+  padding-bottom: 0.75rem;
+}
+
+.hermes-nav-title {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.hermes-nav-subtitle {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.hermes-nav-note {
+  font-size: 0.68rem;
+  color: var(--muted);
+  line-height: 1.4;
+  margin-top: 0.15rem;
+}
+
+.hermes-nav-stages {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.hermes-nav-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.hermes-group-header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0 0.2rem;
+}
+
+.hermes-group-dot {
+  width: 4.5px;
+  height: 4.5px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.75;
+}
+
+.hermes-group-name {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.hermes-group-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+/* 8Q Item Buttons */
+.hermes-8q-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: transparent;
+  border: 1px solid transparent;
+  border-left: 2.5px solid transparent;
+  border-radius: 5px;
+  padding: 0.42rem 0.6rem;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  transition: all 0.16s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hermes-8q-item:hover {
+  background: rgba(23, 23, 20, 0.03);
+  border-color: rgba(23, 23, 20, 0.06);
+  border-left-color: rgba(200, 104, 61, 0.4);
+  transform: translateX(2px);
+}
+
+.hermes-8q-item.is-active {
+  background: rgba(200, 104, 61, 0.08);
+  border-color: rgba(200, 104, 61, 0.25);
+  border-left-color: var(--accent);
+  box-shadow: 0 2px 6px rgba(200, 104, 61, 0.08);
+}
+
+.hermes-8q-num {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  min-width: 18px;
+}
+
+.hermes-8q-item.is-active .hermes-8q-num {
+  color: var(--accent);
+}
+
+.hermes-8q-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.08rem;
+}
+
+.hermes-8q-key {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+}
+
+.hermes-8q-item.is-active .hermes-8q-key {
+  color: var(--accent);
+}
+
+.hermes-8q-label {
+  font-size: 0.68rem;
+  color: var(--muted);
+  line-height: 1.25;
+}
+
+.hermes-8q-item.is-active .hermes-8q-label {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   COL 2: CENTER INSPECTOR BODY (2x2 Quad Cross-Axis Blueprint)
+   -------------------------------------------------------------------------- */
+.hermes-inspector-body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.hermes-q-panel {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.hermes-q-panel.is-active {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  opacity: 1;
+  animation: hermesPanelFade 0.22s ease-out forwards;
+}
+
+@keyframes hermesPanelFade {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hermes-panel-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  border-bottom: 1px solid rgba(23, 23, 20, 0.08);
+  padding-bottom: 0.85rem;
+}
+
+.hermes-panel-stage-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.hermes-stage-pill {
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.hermes-stage-idx {
+  background: rgba(200, 104, 61, 0.12);
+  color: var(--accent);
+  padding: 0.12rem 0.4rem;
+  border-radius: 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+.hermes-panel-qtitle {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+/* 2x2 Cross-Axis Quad Blueprint */
+.hermes-quad-crossgrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: rgba(23, 23, 20, 0.015);
+  border: 1px solid rgba(23, 23, 20, 0.09);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.hermes-quad-box {
+  padding: 1.05rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  position: relative;
+  background: transparent;
+  transition: background 0.16s ease;
+}
+
+.hermes-quad-box:hover {
+  background: rgba(200, 104, 61, 0.02);
+}
+
+.hermes-quad-box--why {
+  border-right: 1px solid rgba(23, 23, 20, 0.08);
+  border-bottom: 1px solid rgba(23, 23, 20, 0.08);
+}
+
+.hermes-quad-box--how {
+  border-bottom: 1px solid rgba(23, 23, 20, 0.08);
+  background: rgba(200, 104, 61, 0.02);
+}
+
+.hermes-quad-box--learn {
+  border-right: 1px solid rgba(23, 23, 20, 0.08);
+}
+
+.hermes-quad-box--next {
+  background: transparent;
+}
+
+/* Option A: Vertical Stacked Hierarchy (上下层级标头) */
+.hermes-quad-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.hermes-quad-code {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.hermes-quad-sub {
+  font-size: 0.86rem;
+  font-weight: 750;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+}
+
+/* Option A: Balanced Editorial Paragraph Flow */
+.hermes-quad-desc {
+  font-size: 0.82rem;
+  line-height: 1.58;
+  color: #2c2b28;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  text-align: justify;
+}
+
+.hermes-quad-method-tag {
+  margin-top: 0.35rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed rgba(23, 23, 20, 0.12);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.hermes-method-pill {
+  background: rgba(200, 104, 61, 0.1);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 700;
+  padding: 0.12rem 0.4rem;
+  border-radius: 4px;
+  border: 1px solid rgba(200, 104, 61, 0.2);
+}
+
+.hermes-method-reason {
+  font-size: 0.7rem;
+  color: var(--muted);
+  line-height: 1.35;
+  margin-left: 0.2rem;
+}
+
+/* --------------------------------------------------------------------------
+   COL 3: RIGHT METHOD ARSENAL WING (Dynamic Method Routing & Realtime Sync)
+   -------------------------------------------------------------------------- */
+.hermes-method-arsenal-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border-left: 1px solid rgba(23, 23, 20, 0.08);
+  padding-left: 1.2rem;
+}
+
+.hermes-arsenal-head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  border-bottom: 1px dashed rgba(23, 23, 20, 0.12);
+  padding-bottom: 0.75rem;
+}
+
+.hermes-arsenal-kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.hermes-arsenal-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.hermes-arsenal-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+/* Option A: Refined Axiom Card Container */
+.hermes-arsenal-axiom-card {
+  background: rgba(200, 104, 61, 0.04);
+  border: 1px solid rgba(200, 104, 61, 0.18);
+  border-left: 3px solid var(--accent, #c8683d);
+  border-radius: 5px;
+  padding: 0.6rem 0.8rem;
+  margin-top: 0.15rem;
+}
+
+.hermes-arsenal-quote {
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: var(--ink);
+  word-break: break-word;
+  overflow-wrap: break-word;
+  text-align: justify;
+  margin: 0;
+}
+
+.hermes-arsenal-quote strong {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.hermes-arsenal-dims {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.hermes-dim-block {
+  background: rgba(23, 23, 20, 0.015);
+  border: 1px solid rgba(23, 23, 20, 0.06);
+  border-radius: 6px;
+  padding: 0.6rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hermes-dim-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.4rem;
+  padding-bottom: 0.32rem;
+  border-bottom: 1px dashed rgba(23, 23, 20, 0.08);
+}
+
+.hermes-dim-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+
+.hermes-dim-idx {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hermes-dim-sub {
+  font-family: var(--font-mono);
+  font-size: 0.60rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.hermes-dim-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.hermes-dim-chips {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.45rem;
+}
+
+.hermes-sync-chip {
+  background: rgba(23, 23, 20, 0.02);
+  border: 1px solid rgba(23, 23, 20, 0.06);
+  border-radius: 6px;
+  padding: 0.52rem 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.22rem;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
+}
+
+.hermes-sync-chip:hover {
+  border-color: rgba(200, 104, 61, 0.3);
+  background: rgba(200, 104, 61, 0.04);
+}
+
+.hermes-sync-chip.is-method-active {
+  background: rgba(200, 104, 61, 0.08);
+  border-color: var(--accent);
+  box-shadow: 0 1px 6px rgba(200, 104, 61, 0.12);
+  transform: translateY(-1px);
+}
+
+.hermes-sync-chip-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.3rem;
+}
+
+.hermes-sync-name {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 750;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hermes-sync-chip.is-method-active .hermes-sync-name {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.hermes-sync-badge {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 700;
+  padding: 0.08rem 0.3rem;
+  border-radius: 3px;
+  background: rgba(23, 23, 20, 0.04);
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transition: all 0.18s ease;
+}
+
+.hermes-sync-chip.is-method-active .hermes-sync-badge {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 800;
+}
+
+.hermes-sync-trigger {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+}
+
+.hermes-sync-chip.is-method-active .hermes-sync-trigger {
+  color: #b0542c;
+}
+
+.hermes-sync-role {
+  font-size: 0.68rem;
+  color: #43413d;
+  line-height: 1.4;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.hermes-sync-chip.is-method-active .hermes-sync-role {
+  color: #1a1916;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   PLATE 4: QUALITY LOOP (质量门禁闭环、法医切片与系统化演进)
+   Strictly Scoped under #hermes, .project--hermes, .hermes-* (Zero Global Leak)
+   TasteSkill Design: 5-Stage Corridor + Forensic Failures + PM Leadership Tree
+   ========================================================================== */
+
+/* 4.1 5-Stage Governance Pipeline Corridor */
+.hermes-qcorridor {
+  background: var(--surface, #fcfaf6);
+  border: 1px solid var(--line, rgba(23, 23, 20, 0.12));
+  border-radius: 14px;
+  padding: 2.2rem 2.4rem;
+  box-shadow: 0 4px 20px rgba(23, 23, 20, 0.02);
+  margin-bottom: 2rem;
+}
+
+.hermes-qcorridor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(23, 23, 20, 0.08);
+  padding-bottom: 1.2rem;
+  margin-bottom: 1.6rem;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.hermes-qcorridor-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.hermes-qcorridor-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+}
+
+.hermes-qcorridor-track {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr auto 1.15fr;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.hermes-qstep {
+  background: #ffffff;
+  border: 1px solid rgba(23, 23, 20, 0.08);
+  border-radius: 10px;
+  padding: 1.1rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  min-height: 175px;
+  transition: all 0.18s ease;
+}
+
+.hermes-qstep:hover {
+  border-color: rgba(200, 104, 61, 0.35);
+  box-shadow: 0 4px 12px rgba(23, 23, 20, 0.04);
+}
+
+.hermes-qstep--gate {
+  background: #fdfbf7;
+  border-color: var(--accent);
+  box-shadow: 0 2px 12px rgba(200, 104, 61, 0.1);
+}
+
+.hermes-qstep-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hermes-qstep-idx {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.hermes-qstep-idx--accent {
+  color: var(--accent);
+}
+
+.hermes-qstep-role {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.hermes-qstep-role--accent {
+  color: var(--accent);
+}
+
+.hermes-qstep-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+.hermes-qstep-title--accent {
+  color: var(--accent);
+}
+
+.hermes-qstep-desc {
+  font-size: 0.76rem;
+  line-height: 1.45;
+  color: var(--muted);
+  margin-top: auto;
+}
+
+.hermes-qstep-tag {
+  display: inline-flex;
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  background: rgba(23, 23, 20, 0.05);
+  color: var(--ink);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  margin-top: 0.2rem;
+}
+
+.hermes-qstep-tag--accent {
+  background: rgba(200, 104, 61, 0.12);
+  color: var(--accent);
+}
+
+.hermes-qstep-arrow {
+  color: var(--muted);
+  font-size: 0.9rem;
+  opacity: 0.4;
+  user-select: none;
+}
+
+/* 4.2 Forensic Failures Section */
+.hermes-forensic-failures {
+  background: var(--surface, #fcfaf6);
+  border: 1px solid var(--line, rgba(23, 23, 20, 0.12));
+  border-radius: 14px;
+  padding: 2.2rem 2.4rem;
+  box-shadow: 0 4px 20px rgba(23, 23, 20, 0.02);
+  margin-bottom: 2rem;
+}
+
+.hermes-ff-header {
+  margin-bottom: 1.8rem;
+  border-bottom: 1px solid rgba(23, 23, 20, 0.08);
+  padding-bottom: 1.2rem;
+}
+
+.hermes-ff-tag {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #dc2626;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.hermes-ff-title {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.hermes-ff-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.hermes-ff-card {
+  background: #ffffff;
+  border: 1px solid rgba(23, 23, 20, 0.08);
+  border-radius: 10px;
+  padding: 1.4rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.hermes-ff-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px dashed rgba(23, 23, 20, 0.1);
+  padding-bottom: 0.75rem;
+}
+
+.hermes-ff-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hermes-ff-card-type {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.hermes-ff-card-idx {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--muted);
+}
+
+.hermes-ff-badge {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  font-weight: 700;
+  background: rgba(239, 68, 68, 0.08);
+  color: #dc2626;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+}
+
+.hermes-ff-card-thesis {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #991b1b;
+  letter-spacing: 0.02em;
+}
+
+.hermes-ff-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.hermes-ff-block {
+  border-radius: 6px;
+  padding: 0.8rem 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.hermes-ff-block--symptom {
+  background: #fef2f2;
+  border-left: 3px solid #ef4444;
+}
+
+.hermes-ff-block--solution {
+  background: #f0fdf4;
+  border-left: 3px solid #10b981;
+}
+
+.hermes-ff-label {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hermes-ff-label--err {
+  color: #dc2626;
+}
+
+.hermes-ff-label--fix {
+  color: #059669;
+}
+
+.hermes-ff-text {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #2c2b28;
+  word-break: keep-all;
+}
+
+/* 4.3 Turning Point Pull Banner */
+.hermes-turning-point-banner {
+  background: linear-gradient(135deg, #1c1b18 0%, #262420 100%);
+  color: #f8f6f0;
+  border-radius: 14px;
+  padding: 2.2rem 2.5rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hermes-turning-point-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent) 0%, #fb923c 100%);
+}
+
+.hermes-tp-header {
+  margin-bottom: 0.8rem;
+}
+
+.hermes-tp-badge {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #fb923c;
+  text-transform: uppercase;
+}
+
+.hermes-tp-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.6rem;
+}
+
+.hermes-tp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.4rem;
+}
+
+.hermes-tp-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.hermes-tp-num {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.4);
+  font-variant-numeric: tabular-nums;
+}
+
+.hermes-tp-num--accent {
+  color: #fb923c;
+}
+
+.hermes-tp-text {
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: #e5e5e5;
+  word-break: keep-all;
+}
+
+.hermes-tp-col--accent .hermes-tp-text {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* 4.4 System Evolution & PM Leadership (AI PM Capability in Action) */
+.hermes-systemize-section {
+  background: var(--surface, #fcfaf6);
+  border: 1px solid var(--line, rgba(23, 23, 20, 0.12));
+  border-radius: 14px;
+  padding: 2.4rem 2.6rem;
+  box-shadow: 0 4px 24px rgba(23, 23, 20, 0.02);
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hermes-systemize-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent);
+}
+
+.hermes-sys-header {
+  margin-bottom: 1.8rem;
+  border-bottom: 1px solid rgba(23, 23, 20, 0.08);
+  padding-bottom: 1.4rem;
+}
+
+.hermes-sys-eyebrow-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.6rem;
+}
+
+.hermes-sys-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  text-transform: uppercase;
+  display: block;
+}
+
+.hermes-evolution-chain-track {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+  font-family: var(--font-mono);
+  background: rgba(23, 23, 20, 0.03);
+  border: 1px solid rgba(23, 23, 20, 0.07);
+  border-radius: 6px;
+  padding: 0.4rem 0.75rem;
+}
+
+.hermes-chain-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.hermes-chain-step {
+  color: var(--ink-secondary, #57534e);
+  transition: color 0.2s ease;
+}
+
+.hermes-chain-step:hover {
+  color: var(--accent);
+}
+
+.hermes-chain-arrow {
+  color: var(--accent);
+  font-weight: 700;
+  opacity: 0.9;
+  font-size: 0.72rem;
+}
+
+.hermes-chain-subline {
+  font-size: 0.56rem;
+  color: var(--muted);
+  letter-spacing: 0.03em;
+  opacity: 0.95;
+  font-family: var(--font-sans, inherit);
+}
+
+.hermes-sys-title {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 750;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  margin-bottom: 0.6rem;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.hermes-sys-lead {
+  font-size: 0.88rem;
+  line-height: 1.68;
+  color: var(--muted);
+  max-width: 980px;
+  overflow-wrap: break-word;
+  word-break: normal;
+  margin: 0;
+}
+
+/* ==========================================================================
+   PLATE 4: DECISION SPINE & EVOLUTION LOG (DE-BOXED ARCHITECTURAL BLUEPRINT)
+   ========================================================================== */
+.hermes-spine-ledger {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  border-top: 1px solid rgba(23, 23, 20, 0.12);
+  border-bottom: 1px solid rgba(23, 23, 20, 0.12);
+  margin-top: 2rem;
+  margin-bottom: 2.2rem;
+}
+
+.hermes-spine-row {
+  display: grid;
+  grid-template-columns: 3.2rem 1fr;
+  align-items: stretch;
+  position: relative;
+  border-bottom: 1px dashed rgba(23, 23, 20, 0.1);
+  padding: 2rem 1.2rem 2rem 0;
+  transition: background 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  background: transparent;
+}
+
+.hermes-spine-row:last-child {
+  border-bottom: none;
+}
+
+.hermes-spine-row:hover {
+  background: rgba(200, 104, 61, 0.018);
+}
+
+/* Vertical Continuous Spine Rail */
+.hermes-spine-rail-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.hermes-spine-rail-col::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: rgba(23, 23, 20, 0.12);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.hermes-spine-row:first-child .hermes-spine-rail-col::before {
+  top: 0.35rem;
+}
+
+.hermes-spine-row:last-child .hermes-spine-rail-col::before {
+  bottom: calc(100% - 1.4rem);
+}
+
+.hermes-spine-line {
+  display: none;
+}
+
+.hermes-spine-node-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fbf9f4;
+  border: 2px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.05rem;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 0 0 3px #fbf9f4, 0 1px 4px rgba(200, 104, 61, 0.2);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.hermes-spine-row:hover .hermes-spine-node-dot {
+  transform: scale(1.18);
+  border-color: #d96b3b;
+}
+
+.hermes-spine-dot-core {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: block;
+}
+
+/* Progressive Visual Milestone Node Accents */
+.hermes-spine-row--eval .hermes-spine-node-dot {
+  border-color: #b45309;
+}
+.hermes-spine-row--eval .hermes-spine-dot-core {
+  background: #b45309;
+}
+
+.hermes-spine-row--correctness .hermes-spine-node-dot {
+  border-color: #15803d;
+}
+.hermes-spine-row--correctness .hermes-spine-dot-core {
+  background: #15803d;
+}
+
+.hermes-spine-row--delivery .hermes-spine-node-dot {
+  border-color: #c8683d;
+  box-shadow: 0 0 0 3px #fbf9f4, 0 0 10px rgba(200, 104, 61, 0.35);
+}
+
+/* Main Content Area */
+.hermes-spine-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding-left: 0.75rem;
+  min-width: 0;
+}
+
+.hermes-spine-tag-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  line-height: 1.2;
+}
+
+.hermes-spine-phase-badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+}
+
+.hermes-spine-phase-sub {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 650;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+.hermes-spine-title {
+  font-family: var(--font-display);
+  font-size: 1.22rem;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.38;
+  margin: 0.1rem 0 0 0;
+  letter-spacing: -0.01em;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.hermes-spine-question {
+  font-family: var(--font-serif, var(--font-body));
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #55514d;
+  line-height: 1.52;
+  margin: 0.1rem 0 0.2rem 0;
+  letter-spacing: 0.01em;
+}
+
+.hermes-spine-decision-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-top: 0.1rem;
+}
+
+.hermes-spine-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  text-transform: uppercase;
+  display: block;
+}
+
+.hermes-spine-decision-text {
+  font-size: 0.9rem;
+  line-height: 1.68;
+  color: var(--ink-secondary, #33302c);
+  margin: 0;
+  max-width: 980px;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+/* Action Bar: System Change + Evidence */
+.hermes-spine-action-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.4rem;
+  margin-top: 0.55rem;
+  padding-top: 0.8rem;
+  border-top: 1px dashed rgba(23, 23, 20, 0.08);
+}
+
+.hermes-spine-flow-track {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.hermes-spine-flow-label {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hermes-spine-flow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  background: rgba(23, 23, 20, 0.028);
+  border: 1px solid rgba(23, 23, 20, 0.07);
+  padding: 0.32rem 0.68rem;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink-secondary, #44403c);
+  line-height: 1.4;
+}
+
+.hermes-flow-step {
+  font-weight: 600;
+}
+
+.hermes-flow-step--accent {
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.hermes-flow-step--gate {
+  font-weight: 800;
+  color: #b45309;
+  background: rgba(180, 83, 9, 0.09);
+  padding: 0.08rem 0.35rem;
+  border-radius: 3px;
+}
+
+.hermes-flow-step--pass {
+  font-weight: 800;
+  color: #15803d;
+  background: rgba(21, 128, 61, 0.09);
+  padding: 0.08rem 0.35rem;
+  border-radius: 3px;
+}
+
+.hermes-flow-step--wechat {
+  font-weight: 800;
+  color: #047857;
+  background: rgba(4, 120, 87, 0.09);
+  padding: 0.08rem 0.35rem;
+  border-radius: 3px;
+}
+
+.hermes-flow-sep {
+  color: rgba(23, 23, 20, 0.3);
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.hermes-spine-evidence-box {
+  margin-left: auto;
+}
+
+.hermes-spine-evidence-text {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  font-weight: 750;
+  color: var(--accent);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   4.4 MODULE 1: WHAT THIS DEMONSTRATES // 5 AI PM CAPABILITIES HORIZON
+   ========================================================================== */
+.hermes-caps-section {
+  margin-top: 2.2rem;
+  margin-bottom: 2.2rem;
+  background: transparent;
+}
+
+.hermes-caps-header {
+  margin-bottom: 1.4rem;
+}
+
+.hermes-caps-title {
+  font-family: var(--font-display);
+  font-size: 1.28rem;
+  font-weight: 750;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  margin: 0.4rem 0 0.5rem 0;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.hermes-caps-lead {
+  font-size: 0.86rem;
+  line-height: 1.65;
+  color: var(--muted);
+  max-width: 960px;
+  margin: 0;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+/* 5-Column Editorial Horizon Matrix */
+.hermes-caps-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid rgba(23, 23, 20, 0.12);
+  border-bottom: 1px solid rgba(23, 23, 20, 0.12);
+  background: transparent;
+}
+
+.hermes-cap-col {
+  padding: 1.5rem 1.15rem 1.5rem 1.15rem;
+  border-right: 1px dashed rgba(23, 23, 20, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  transition: background 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  min-width: 0;
+}
+
+.hermes-cap-col:first-child {
+  padding-left: 0.2rem;
+}
+
+.hermes-cap-col:last-child {
+  border-right: none;
+  padding-right: 0.2rem;
+}
+
+.hermes-cap-col:hover {
+  background: rgba(200, 104, 61, 0.015);
+}
+
+.hermes-cap-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.hermes-cap-num {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.hermes-cap-tag {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  font-weight: 650;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hermes-cap-name {
+  font-family: var(--font-sans);
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.3;
+  margin: 0.15rem 0 0 0;
+  letter-spacing: -0.01em;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.hermes-cap-desc {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--ink-secondary, #44403c);
+  margin: 0.2rem 0 0 0;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+/* ==========================================================================
+   4.5 MODULE 2: MY AI PRODUCT THESIS (RESTRAINED EDITORIAL CLOSING NOTE)
+   ========================================================================== */
+.hermes-finale-banner {
+  background: #faf8f4;
+  border: 1px solid rgba(200, 104, 61, 0.2);
+  border-radius: 8px;
+  padding: 2.2rem 2.4rem;
+  box-shadow: 0 2px 14px rgba(200, 104, 61, 0.025);
+  text-align: center;
+  position: relative;
+  margin-top: 0.8rem;
+  min-height: auto;
+}
+
+.hermes-thesis-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+  display: block;
+}
+
+.hermes-finale-quote {
+  border-left: none !important;
+  padding-left: 0 !important;
+  font-family: var(--font-display);
+  font-size: clamp(1.18rem, 1.85vw, 1.48rem);
+  font-weight: 700;
+  font-style: normal;
+  color: var(--ink);
+  line-height: 1.52;
+  letter-spacing: -0.01em;
+  margin: 0 auto;
+  max-width: 840px;
+}
+
+.hermes-quote-line {
+  display: block;
+}
+
+.hermes-quote-line--accent {
+  font-weight: 800;
+  color: var(--ink);
+  margin-top: 0.2rem;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE BREAKPOINTS FOR PLATE 3 & PLATE 4
+   -------------------------------------------------------------------------- */
+@media (max-width: 1080px) {
+  .hermes-spine-row {
+    padding: 1.8rem 1rem 1.8rem 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .hermes-caps-grid {
+    grid-template-columns: repeat(2, 1fr);
+    border-bottom: none;
+  }
+  .hermes-cap-col {
+    padding: 1.3rem 1.1rem;
+    border-right: 1px dashed rgba(23, 23, 20, 0.12);
+    border-bottom: 1px dashed rgba(23, 23, 20, 0.12);
+  }
+  .hermes-cap-col:nth-child(2n) {
+    border-right: none;
+  }
+  .hermes-cap-col:last-child {
+    grid-column: span 2;
+    border-right: none;
+    border-bottom: 1px solid rgba(23, 23, 20, 0.12);
+  }
+  .hermes-inspector-console {
+    padding: 1.4rem 1.6rem;
+  }
+  .hermes-console-main-grid {
+    grid-template-columns: 165px minmax(0, 1fr) 420px;
+    gap: 1rem;
+  }
+  .hermes-sync-dimensions-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.9rem;
+  }
+  .hermes-qcorridor-track {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  .hermes-qstep-arrow {
+    display: none;
+  }
+  .hermes-qstep {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .hermes-inspector-console {
+    padding: 1.4rem;
+  }
+  .hermes-console-main-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .hermes-inspector-nav {
+    border-right: none;
+    border-bottom: 1px solid rgba(23, 23, 20, 0.08);
+    padding-right: 0;
+    padding-bottom: 1.4rem;
+  }
+  .hermes-nav-stages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  .hermes-quad-crossgrid {
+    grid-template-columns: 1fr;
+  }
+  .hermes-quad-box--why {
+    border-right: none;
+  }
+  .hermes-quad-box--learn {
+    border-right: none;
+    border-bottom: 1px solid rgba(23, 23, 20, 0.08);
+  }
+  .hermes-sync-dimensions-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .hermes-console-decision-trio {
+    grid-template-columns: 1fr;
+  }
+  .hermes-ff-grid {
+    grid-template-columns: 1fr;
+  }
+  .hermes-tp-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hermes-finale-banner {
+    padding: 2.2rem 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hermes-caps-grid {
+    grid-template-columns: 1fr;
+    border-bottom: none;
+  }
+  .hermes-cap-col {
+    padding: 1.2rem 0.4rem;
+    border-right: none;
+    border-bottom: 1px dashed rgba(23, 23, 20, 0.1);
+  }
+  .hermes-cap-col:first-child {
+    padding-left: 0.4rem;
+  }
+  .hermes-cap-col:last-child {
+    grid-column: span 1;
+    border-bottom: 1px solid rgba(23, 23, 20, 0.12);
+    padding-right: 0.4rem;
+  }
+  .hermes-caps-title {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hermes-plate--engine,
+  .hermes-plate--governance {
+    padding: 3rem 0;
+  }
+  .hermes-nav-stages {
+    grid-template-columns: 1fr;
+  }
+  .hermes-sync-dimensions-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  .hermes-dim-col {
+    padding: 0.85rem 0.9rem;
+  }
+  .hermes-qcorridor {
+    padding: 1.5rem 1.2rem;
+  }
+  .hermes-forensic-failures {
+    padding: 1.5rem 1.2rem;
+  }
+  .hermes-turning-point-banner {
+    padding: 1.8rem 1.4rem;
+  }
+  .hermes-systemize-section {
+    padding: 1.5rem 1.2rem;
+  }
+  .hermes-spine-row {
+    grid-template-columns: 2.4rem 1fr;
+    padding: 1.6rem 0.4rem 1.6rem 0;
+  }
+  .hermes-spine-title {
+    font-size: 1.05rem;
+  }
+  .hermes-spine-action-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+  .hermes-spine-evidence-box {
+    margin-left: 0;
+  }
+}
+
+/* Critical Selectors Guard Preserved for verify_css_integrity.py */
+.hermes-plate--master { border-bottom: none; }
+.hermes-plate--pipeline { border-bottom: 1px solid var(--line); }
+.hermes-tier { position: relative; }
+.hermes-paradigm-section { position: relative; }
+.hermes-axiom-footer { position: relative; }
+
+/* ==========================================================================
+   >>> [MODULE 02: HERMES P7+ PRODUCT THINKING - END] <<<

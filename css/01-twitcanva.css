@@ -1,0 +1,114 @@
+/* ==========================================================================
+   >>> [MODULE 01: TWITCANVA - START] <<<
+   ========================================================================== */
+/* --------------------------------------------------------------------------
+   6. PROJECT 01: TWITCANVA (Strictly Preserved Layout)
+   -------------------------------------------------------------------------- */
+.feature-stream {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.feature-block {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.feature-block--split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.feature-block--story {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.feature-block--pose {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.feature-copy span {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.feature-copy h3 {
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  font-weight: 750;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin-bottom: 0.65rem;
+}
+
+.feature-copy p {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--ink-secondary);
+}
+
+.feature-media {
+  min-height: 330px;
+  border-radius: 24px;
+  background: #d7cdc1;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(68, 52, 35, 0.1);
+}
+
+.feature-media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 20%, rgba(255, 255, 255, 0.8), transparent 34%), linear-gradient(135deg, rgba(255, 255, 255, 0.25), transparent 42%);
+}
+
+.feature-media span {
+  position: relative;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: #675f56;
+  font-weight: 700;
+}
+
+.feature-media--main {
+  min-height: 520px;
+  background: linear-gradient(155deg, #cbc0b1, #f7f3ed 52%, #b7aa9b);
+}
+
+.feature-media--camera {
+  background: linear-gradient(145deg, #25231f, #63594e);
+}
+
+.feature-media--camera span {
+  color: #ffffff;
+}
+
+.feature-media--story {
+  background: linear-gradient(140deg, #d3c7b8, #f0eae1 60%, #c4b6a4);
+}
+
+.feature-media--pose {
+  background: linear-gradient(160deg, #dfd6ca, #baa996);
+}
+/* ==========================================================================
+   >>> [MODULE 01: TWITCANVA - END] <<<
