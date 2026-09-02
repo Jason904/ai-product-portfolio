@@ -1,19 +1,37 @@
 /* ==========================================================================
-   MODULE 01: TWITCANVA 01 THE PROBLEM — DESIGN R3 (A/B FORENSIC COMPARATOR)
+   MODULE 01: TWITCANVA 01 THE PROBLEM — DESIGN R3.1 (SCROLL-DRIVEN & HIGHLIGHTED)
    Namespace: .tc-problem-r1-*
-   Layout: Interactive Dual-Screen Forensic Comparator (1 Baseline vs 3 Rerolls)
-   TasteSkill Calibration:
-     TWITCANVA_P1_VARIANCE = 7
-     TWITCANVA_P1_DENSITY = 4 (Evaluation Lab Console)
-   Architecture: Editorial + Interactive Forensic Bench + De-boxed + 1240px Spine
+   Features:
+     - Scroll-driven automatic sequential Tab switching with Sticky Pinning
+     - Forensic Target Reticles & Visual Delta Problem Highlights
+     - Clean compact vertical rhythm fitting 100% in viewport without clipping
    ========================================================================== */
 
 .tc-problem-r1 {
   width: 100%;
   position: relative;
   background-color: var(--paper, #f4efe9);
-  padding: clamp(5rem, 6.5vw, 6.5rem) 0 4.5rem;
   border-top: 1px solid var(--line, rgba(23, 23, 20, 0.12));
+}
+
+/* Scroll track container: 260vh provides smooth scroll pacing across 3 tabs */
+.tc-problem-r1__scroll-track {
+  position: relative;
+  min-height: 260vh;
+  width: 100%;
+}
+
+.tc-problem-r1__sticky-box {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5.5rem 0 2.2rem;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .tc-problem-r1__container {
@@ -21,23 +39,30 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
 }
 
 /* --------------------------------------------------------------------------
-   BEAT A: PROBLEM STATEMENT (FULL WIDTH)
+   BEAT A: PROBLEM STATEMENT
    -------------------------------------------------------------------------- */
+.tc-problem-r1__statement-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
 .tc-problem-r1__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
   flex-wrap: wrap;
-  margin-bottom: clamp(1.6rem, 2.2vw, 2rem);
+  margin-bottom: 0.4rem;
 }
 
 .tc-problem-r1__meta-left {
   font-family: var(--font-mono, monospace);
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 750;
   letter-spacing: 0.12em;
   color: var(--muted, #736c64);
@@ -46,54 +71,52 @@
 
 .tc-problem-r1__meta-right {
   font-family: var(--font-mono, monospace);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   color: var(--ink-secondary, #423e38);
   text-transform: uppercase;
 }
 
-.tc-problem-r1__statement {
+.tc-problem-r1__title-row {
   display: flex;
-  flex-direction: column;
-  margin-bottom: clamp(2.4rem, 3.2vw, 3rem);
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
 .tc-problem-r1__title {
   font-family: var(--font-display, sans-serif);
-  font-size: clamp(3rem, 4.8vw, 4.8rem);
+  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
   font-weight: 800;
-  line-height: 0.98;
-  letter-spacing: -0.04em;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
   color: var(--ink, #171714);
   margin: 0;
   display: flex;
-  flex-direction: column;
-  gap: 0.18rem;
-}
-
-.tc-problem-r1__title span {
-  display: block;
+  align-items: baseline;
+  gap: 0.5rem;
 }
 
 .tc-problem-r1__lead {
-  margin: 1.4rem 0 0;
-  font-size: clamp(1.12rem, 1.45vw, 1.28rem);
-  font-weight: 650;
-  line-height: 1.5;
-  color: var(--ink, #171714);
-  max-width: 760px;
+  margin: 0.25rem 0 0;
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--ink-secondary, #423e38);
+  max-width: 780px;
   word-break: keep-all;
 }
 
 /* --------------------------------------------------------------------------
-   BEAT B: A/B FORENSIC COMPARATOR CONSOLE (DUAL DISPLAY + TABBED DRIFTS)
+   BEAT B: A/B COMPARATOR CONSOLE WITH DUAL STAGE
    -------------------------------------------------------------------------- */
 .tc-problem-r1__comparator-console {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 0.5rem;
+  margin: 0.6rem 0;
 }
 
 /* Tab Bar / Evaluation Dimension Selector */
@@ -102,17 +125,17 @@
   align-items: center;
   justify-content: space-between;
   gap: 1.2rem;
-  padding-bottom: 1.1rem;
+  padding-bottom: 0.55rem;
   border-bottom: 1px solid rgba(23, 23, 20, 0.10);
-  margin-bottom: 1.8rem;
+  margin-bottom: 0.75rem;
   flex-wrap: wrap;
 }
 
 .tc-problem-r1__tab-label {
   font-family: var(--font-mono, monospace);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 750;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   color: var(--ink-secondary, #423e38);
   text-transform: uppercase;
   display: flex;
@@ -127,17 +150,17 @@
 .tc-problem-r1__tab-group {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
   flex-wrap: wrap;
 }
 
 .tc-problem-r1__tab-btn {
   font-family: var(--font-mono, monospace);
-  font-size: 0.74rem;
+  font-size: 0.70rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
-  padding: 0.4rem 0.85rem;
-  border-radius: 6px;
+  letter-spacing: 0.05em;
+  padding: 0.3rem 0.65rem;
+  border-radius: 4px;
   border: 1px solid rgba(23, 23, 20, 0.12);
   background: rgba(23, 23, 20, 0.03);
   color: var(--ink-secondary, #423e38);
@@ -145,7 +168,7 @@
   transition: all 0.2s ease;
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.35rem;
 }
 
 .tc-problem-r1__tab-btn:hover {
@@ -158,6 +181,7 @@
   background: var(--ink, #171714);
   color: #fff;
   border-color: var(--ink, #171714);
+  box-shadow: 0 2px 8px rgba(23, 23, 20, 0.15);
 }
 
 .tc-problem-r1__tab-btn.is-active .badge-err {
@@ -173,7 +197,7 @@
 .tc-problem-r1__dual-stage {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(24px, 2.8vw, 36px);
+  gap: clamp(18px, 2vw, 28px);
   width: 100%;
 }
 
@@ -186,9 +210,9 @@
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.45rem;
   font-family: var(--font-mono, monospace);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   letter-spacing: 0.06em;
 }
 
@@ -212,11 +236,12 @@
 .tc-problem-r1__stage-box {
   width: 100%;
   aspect-ratio: 16 / 9;
+  max-height: 310px;
   background: #000;
-  border-radius: 8px;
+  border-radius: 6px;
   overflow: hidden;
   border: 1px solid rgba(23, 23, 20, 0.08);
-  box-shadow: 0 4px 20px rgba(23, 23, 20, 0.04);
+  box-shadow: 0 4px 16px rgba(23, 23, 20, 0.04);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -230,12 +255,112 @@
   object-fit: contain;
 }
 
+/* --------------------------------------------------------------------------
+   FORENSIC TARGET RETICLES & VISUAL DELTA HIGHLIGHTS OVERLAYS
+   -------------------------------------------------------------------------- */
+.tc-problem-r1__highlight-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Highlight 1: Character Identity Reticle (Target on Red Controller's Face & Hair) */
+.tc-problem-r1__reticle-character {
+  position: absolute;
+  top: 9%;
+  left: 46%;
+  width: 18%;
+  height: 40%;
+  border: 1.5px solid rgba(200, 104, 61, 0.85);
+  border-radius: 4px;
+  background: rgba(200, 104, 61, 0.08);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5), inset 0 0 12px rgba(200, 104, 61, 0.15);
+  animation: tcPulse 2.5s infinite ease-in-out;
+}
+
+.tc-problem-r1__reticle-pill {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(23, 23, 20, 0.92);
+  color: #ff9364;
+  border: 1px solid rgba(200, 104, 61, 0.6);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.60rem;
+  font-weight: 750;
+  padding: 0.12rem 0.4rem;
+  border-radius: 3px;
+  white-space: nowrap;
+  letter-spacing: 0.04em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Highlight 2: Spatial Topology Distance Measure */
+.tc-problem-r1__reticle-relation {
+  position: absolute;
+  top: 45%;
+  left: 32%;
+  width: 54%;
+  height: 24%;
+  border-top: 1.5px dashed rgba(200, 104, 61, 0.85);
+  border-bottom: 1.5px dashed rgba(200, 104, 61, 0.85);
+  background: rgba(200, 104, 61, 0.05);
+}
+
+.tc-problem-r1__reticle-pill--relation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(23, 23, 20, 0.92);
+  color: #ff9364;
+  border: 1px solid rgba(200, 104, 61, 0.6);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.60rem;
+  font-weight: 750;
+  padding: 0.12rem 0.4rem;
+  border-radius: 3px;
+  white-space: nowrap;
+  letter-spacing: 0.04em;
+}
+
+/* Highlight 3: 4:3 Camera Framing Crop Overlay */
+.tc-problem-r1__reticle-composition {
+  position: absolute;
+  inset: 0;
+  border: 1.5px dashed rgba(200, 104, 61, 0.85);
+  background: rgba(200, 104, 61, 0.04);
+}
+
+.tc-problem-r1__reticle-pill--composition {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(23, 23, 20, 0.92);
+  color: #ff9364;
+  border: 1px solid rgba(200, 104, 61, 0.6);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.60rem;
+  font-weight: 750;
+  padding: 0.12rem 0.4rem;
+  border-radius: 3px;
+  white-space: nowrap;
+  letter-spacing: 0.04em;
+}
+
+@keyframes tcPulse {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 0.65; }
+}
+
 /* Pane Footer: Diagnostic Details */
 .tc-problem-r1__pane-footer {
-  margin-top: 1.1rem;
+  margin-top: 0.65rem;
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
+  gap: 0.25rem;
 }
 
 .tc-problem-r1__spec-row {
@@ -243,9 +368,9 @@
   align-items: center;
   justify-content: space-between;
   font-family: var(--font-mono, monospace);
-  font-size: 0.74rem;
-  letter-spacing: 0.05em;
-  padding-bottom: 0.45rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  padding-bottom: 0.25rem;
   border-bottom: 1px solid rgba(23, 23, 20, 0.06);
 }
 
@@ -265,13 +390,22 @@
 }
 
 .tc-problem-r1__pane-desc {
-  margin: 0.35rem 0 0;
+  margin: 0.15rem 0 0;
   font-family: var(--font-display, -apple-system, sans-serif);
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   font-weight: 600;
   color: var(--ink-secondary, #423e38);
-  line-height: 1.5;
+  line-height: 1.4;
   word-break: keep-all;
+}
+
+.tc-problem-r1__pane-desc strong {
+  color: var(--ink, #171714);
+}
+
+.tc-problem-r1__pane-desc .highlight-text {
+  color: var(--accent, #c8683d);
+  font-weight: 700;
 }
 
 /* Reroll Pane Container */
@@ -289,61 +423,41 @@
    BEAT C: PRODUCT JUDGMENT & COUPLING THESIS (FULL WIDTH)
    -------------------------------------------------------------------------- */
 .tc-problem-r1__takeaway {
-  margin-top: clamp(4.2rem, 5.5vw, 5.5rem);
-  padding-top: 2.8rem;
+  padding-top: 0.85rem;
   border-top: 1px dashed rgba(23, 23, 20, 0.10);
   display: flex;
   flex-direction: column;
-  gap: 1.8rem;
+  gap: 0.6rem;
   width: 100%;
 }
 
 .tc-problem-r1__takeaway-main {
   display: flex;
-  flex-direction: column;
-  max-width: 840px;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
-/* 32-36px Calm & Authoritative Headline */
 .tc-problem-r1__takeaway-headline {
   font-family: var(--font-display, sans-serif);
-  font-size: clamp(1.75rem, 2.5vw, 2.35rem);
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.025em;
+  font-size: clamp(1.15rem, 1.6vw, 1.45rem);
+  font-weight: 750;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
   color: var(--ink, #171714);
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
 }
 
-.tc-problem-r1__takeaway-headline span {
-  display: block;
-}
-
-.tc-problem-r1__takeaway-sub-en {
-  font-family: var(--font-mono, monospace);
-  font-size: 0.74rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--muted, #736c64);
-  margin-top: 0.45rem;
-}
-
-/* De-boxed Hairline Coupling Formula */
 .tc-problem-r1__coupling-formula {
-  margin: 1.4rem 0 0.8rem;
-  padding: 0.8rem 0;
-  border-top: 1px solid rgba(23, 23, 20, 0.09);
-  border-bottom: 1px solid rgba(23, 23, 20, 0.09);
+  padding: 0.35rem 0.6rem;
+  background: rgba(23, 23, 20, 0.03);
+  border-radius: 4px;
   display: inline-flex;
   align-items: center;
-  gap: 0.8rem;
-  flex-wrap: wrap;
+  gap: 0.5rem;
   font-family: var(--font-mono, monospace);
-  font-size: 0.78rem;
-  max-width: max-content;
+  font-size: 0.70rem;
 }
 
 .tc-problem-r1__cf-target {
@@ -361,45 +475,47 @@
   font-weight: 750;
 }
 
+.tc-problem-r1__takeaway-bottom-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
 .tc-problem-r1__takeaway-lead {
-  font-size: 1.12rem;
-  font-weight: 700;
-  color: var(--ink, #171714);
-  margin: 1.1rem 0 0.4rem;
-  line-height: 1.5;
+  font-size: 0.85rem;
+  font-weight: 650;
+  color: var(--ink-secondary, #423e38);
+  margin: 0;
+  line-height: 1.4;
   word-break: keep-all;
 }
 
 .tc-problem-r1__telemetry {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.5rem;
   font-family: var(--font-mono, monospace);
-  font-size: 0.74rem;
+  font-size: 0.68rem;
   font-weight: 650;
   color: var(--muted, #736c64);
-  margin-top: 0.5rem;
   letter-spacing: 0.04em;
 }
 
-.tc-problem-r1__telemetry-dot {
-  color: var(--muted-light, #9e978e);
-}
-
-/* Bottom Principle & Transition Footer */
 .tc-problem-r1__takeaway-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
   flex-wrap: wrap;
-  padding-top: 1.35rem;
+  padding-top: 0.65rem;
   border-top: 1px solid rgba(23, 23, 20, 0.06);
 }
 
 .tc-problem-r1__principle {
   font-family: var(--font-mono, monospace);
-  font-size: 0.82rem;
+  font-size: 0.74rem;
   font-weight: 750;
   letter-spacing: 0.08em;
   color: var(--ink, #171714);
@@ -408,7 +524,7 @@
 
 .tc-problem-r1__transition {
   font-family: var(--font-mono, monospace);
-  font-size: 0.74rem;
+  font-size: 0.70rem;
   font-weight: 750;
   letter-spacing: 0.1em;
   color: var(--muted, #736c64);
@@ -420,45 +536,36 @@
    RESPONSIVE OVERRIDES
    -------------------------------------------------------------------------- */
 @media (max-width: 900px) {
+  .tc-problem-r1__scroll-track {
+    min-height: auto;
+  }
+  .tc-problem-r1__sticky-box {
+    position: static;
+    height: auto;
+    min-height: auto;
+    padding: 3.5rem 0 2rem;
+  }
   .tc-problem-r1__dual-stage {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 }
 
 @media (max-width: 768px) {
-  .tc-problem-r1 {
-    padding: 3.8rem 0 3rem;
-  }
   .tc-problem-r1__tab-bar-wrap {
     flex-direction: column;
     align-items: flex-start;
   }
-  .tc-problem-r1__takeaway-footer {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .tc-problem-r1__header {
+  .tc-problem-r1__takeaway-bottom-row {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.4rem;
   }
-  .tc-problem-r1__tab-group {
-    width: 100%;
-  }
+}
+
+@media (max-width: 480px) {
   .tc-problem-r1__tab-btn {
     width: 100%;
     justify-content: space-between;
-    font-size: 0.72rem;
-  }
-  .tc-problem-r1__coupling-formula {
-    font-size: 0.72rem;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.35rem;
   }
 }
