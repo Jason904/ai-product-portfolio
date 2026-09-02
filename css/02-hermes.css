@@ -82,10 +82,10 @@
   flex-direction: column;
   gap: 1.8rem;
   background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 2.6rem 2.8rem;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(23, 23, 20, 0.055);
+  border-radius: 12px;
+  padding: 2.2rem 2.4rem;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.015);
   position: relative;
   overflow: hidden;
 }
@@ -95,7 +95,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 4px;
+  width: 3.5px;
   height: 100%;
   background: var(--accent);
 }
@@ -106,6 +106,8 @@
   justify-content: space-between;
   gap: 1rem;
   flex-wrap: wrap;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px dashed rgba(23, 23, 20, 0.08);
 }
 
 .hermes-meta-badge {
@@ -113,7 +115,7 @@
   align-items: center;
   gap: 0.55rem;
   font-family: var(--font-mono);
-  font-size: 0.76rem;
+  font-size: 0.75rem;
   font-weight: 750;
   letter-spacing: 0.08em;
   color: var(--accent);
@@ -121,11 +123,11 @@
 }
 
 .hermes-badge-dot {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 0 3px rgba(200, 104, 61, 0.2);
+  box-shadow: 0 0 0 3px rgba(200, 104, 61, 0.18);
 }
 
 .hermes-masterhead-status-tag {
@@ -134,43 +136,25 @@
   gap: 0.45rem;
   font-family: var(--font-mono);
   font-size: 0.68rem;
-  font-weight: 750;
+  font-weight: 700;
   letter-spacing: 0.08em;
   color: var(--muted);
-  background: rgba(23, 23, 20, 0.04);
-  border: 1px solid rgba(23, 23, 20, 0.08);
-  padding: 0.25rem 0.6rem;
-  border-radius: 4px;
+  background: transparent;
+  border: none;
+  padding: 0;
 }
 
 .hermes-status-pulse {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 0 2px rgba(200, 104, 61, 0.2);
+  background: #22c55e;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
 }
 
-.hermes-title {
-  font-family: var(--font-display);
-  font-size: 2.7rem;
-  font-weight: 800;
-  line-height: 1.15;
-  color: var(--ink);
-  margin: 0;
-  letter-spacing: -0.02em;
-}
-
-.hermes-title-sub {
-  font-size: 1.55rem;
-  font-weight: 600;
-  color: var(--accent);
-  display: block;
-  margin-top: 0.25rem;
-  letter-spacing: -0.01em;
-}
-
-/* Masterhead Two-Column Grid: Left (Thesis & Deduction Cards) + Right (Live Artifact HUD) */
+/* --------------------------------------------------------------------------
+   TIER 1: TOP HERO GRID (Title & Proposition Left | Live Evidence HUD Right)
+   -------------------------------------------------------------------------- */
 .hermes-masterhead-grid {
   display: grid;
   grid-template-columns: 1fr 340px;
@@ -181,218 +165,97 @@
 .hermes-masterhead-main {
   display: flex;
   flex-direction: column;
-  gap: 1.15rem;
+  gap: 1.1rem;
+  justify-content: center;
 }
 
-/* Master Thesis Monolith */
-.hermes-thesis-card {
-  background: rgba(200, 104, 61, 0.045);
-  border-left: 3.5px solid var(--accent);
-  border-radius: 0 8px 8px 0;
-  padding: 0.85rem 1.25rem;
+.hermes-title {
+  font-family: var(--font-display);
+  font-size: 2.35rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--ink);
+  margin: 0;
+  letter-spacing: -0.025em;
+}
+
+.hermes-title-sub {
+  font-size: 1.2rem;
+  font-weight: 550;
+  color: rgba(200, 104, 61, 0.92);
+  display: block;
+  margin-top: 0.25rem;
+  letter-spacing: -0.01em;
+}
+
+/* Master Thesis: De-boxed Editorial Opening Statement */
+.hermes-thesis-statement {
+  background: transparent;
+  border-left: 2.5px solid var(--accent);
+  border-radius: 0;
+  padding: 0.35rem 0 0.35rem 1.1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.38rem;
+  max-width: 680px;
 }
 
 .hermes-thesis-header {
   display: flex;
   align-items: center;
+  gap: 0.8rem;
 }
 
 .hermes-thesis-tag {
   font-family: var(--font-mono);
-  font-size: 0.66rem;
+  font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   color: var(--accent);
   text-transform: uppercase;
 }
 
-.hermes-thesis-quote {
+.hermes-thesis-headline {
   font-family: var(--font-display);
-  font-size: 1.12rem;
+  font-size: 1.15rem;
   font-weight: 750;
+  line-height: 1.48;
+  color: var(--ink);
+  margin: 0;
+  letter-spacing: -0.012em;
+}
+
+.hermes-thesis-subvalue {
+  font-size: 0.88rem;
   line-height: 1.45;
-  color: var(--ink);
-  margin: 0;
-  letter-spacing: -0.01em;
-}
-
-/* Structured Dual Deduction Architectural Rails (Unified warm surface, zero white blocks) */
-.hermes-deduction-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  background: rgba(23, 23, 20, 0.022);
-  border: 1px solid rgba(23, 23, 20, 0.07);
-  border-radius: 8px;
-  padding: 1.15rem 1.3rem;
-}
-
-.hermes-deduction-card {
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  padding: 0;
-  box-shadow: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 0.8rem;
-  border-left: 2.5px solid rgba(23, 23, 20, 0.16);
-  padding-left: 1.05rem;
-  transition: border-color 0.2s ease;
-}
-
-.hermes-deduction-card:nth-child(2) {
-  border-left-color: var(--accent);
-}
-
-.hermes-deduction-card:hover {
-  border-left-color: var(--accent);
-}
-
-.hermes-deduction-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-}
-
-.hermes-deduction-kicker {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.hermes-deduction-idx {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 800;
-  color: var(--accent);
-  background: rgba(200, 104, 61, 0.08);
-  padding: 0.15rem 0.45rem;
-  border-radius: 4px;
-  border: 1px solid rgba(200, 104, 61, 0.18);
-  font-variant-numeric: tabular-nums;
-}
-
-.hermes-deduction-idx--accent {
-  background: rgba(200, 104, 61, 0.12);
-  border-color: rgba(200, 104, 61, 0.25);
-}
-
-.hermes-deduction-title {
-  font-family: var(--font-display);
-  font-size: 0.95rem;
-  font-weight: 800;
-  color: var(--ink);
-  margin: 0;
-  letter-spacing: -0.01em;
-}
-
-.hermes-deduction-badge {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  font-weight: 750;
   color: var(--muted);
-  background: rgba(23, 23, 20, 0.05);
-  padding: 0.18rem 0.5rem;
-  border-radius: 4px;
-  white-space: nowrap;
-}
-
-.hermes-deduction-badge--accent {
-  color: var(--accent);
-  background: rgba(200, 104, 61, 0.08);
-  border: 1px solid rgba(200, 104, 61, 0.2);
-}
-
-.hermes-deduction-body {
-  font-size: 0.86rem;
-  line-height: 1.65;
-  color: var(--ink-secondary);
   margin: 0;
-  word-break: normal;
-  overflow-wrap: break-word;
 }
 
-.hermes-deduction-body b {
-  color: var(--ink);
-}
-
-.hermes-deduction-microbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.35rem;
-  background: transparent;
-  border: none;
-  border-top: 1px dashed rgba(23, 23, 20, 0.11);
-  border-radius: 0;
-  padding: 0.55rem 0 0 0;
-  margin-top: auto;
-}
-
-.hermes-micro-reject {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: 650;
-  color: #a84232;
-  background: rgba(168, 66, 50, 0.07);
-  padding: 0.15rem 0.4rem;
-  border-radius: 4px;
-  white-space: nowrap;
-}
-
-.hermes-micro-arrow {
-  color: rgba(23, 23, 20, 0.3);
-  font-size: 0.72rem;
-  flex-shrink: 0;
-}
-
-.hermes-micro-target {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: 750;
-  color: var(--ink);
-  background: rgba(23, 23, 20, 0.06);
-  padding: 0.15rem 0.4rem;
-  border-radius: 4px;
-  white-space: nowrap;
-}
-
-.hermes-micro-target--accent {
-  color: var(--accent);
-  background: rgba(200, 104, 61, 0.08);
-  border: 1px solid rgba(200, 104, 61, 0.2);
-}
-
-/* Right Column: Live Artifact Repository HUD (Dark Terminal Card) */
+/* Right Column: Live Product Evidence HUD (Refined Dark Terminal Anchor) */
 .hermes-artifact-hud {
   background: #171714;
   color: #f7f2eb;
-  border-radius: 12px;
-  padding: 1.35rem 1.45rem;
+  border-radius: 10px;
+  padding: 1.15rem 1.3rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 0.9rem;
+  gap: 0.65rem;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 6px 20px rgba(0, 0, 0, 0.10);
   position: relative;
   overflow: hidden;
 }
 
 .hermes-artifact-hud::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--accent), transparent 80%);
+  background: linear-gradient(90deg, var(--accent) 0%, rgba(200, 104, 61, 0.6) 40%, transparent 85%);
 }
 
 .hermes-hud-header {
@@ -412,35 +275,29 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #34d399;
-  box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.25);
-  animation: hermes-pulse 2s infinite ease-in-out;
-}
-
-@keyframes hermes-pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(0.85); }
+  background: #22c55e;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.25);
 }
 
 .hermes-hud-kicker {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
-  font-weight: 750;
+  font-size: 0.68rem;
+  font-weight: 800;
   letter-spacing: 0.08em;
-  color: rgba(247, 242, 235, 0.7);
+  color: #f7f2eb;
   text-transform: uppercase;
 }
 
 .hermes-hud-badge {
   font-family: var(--font-mono);
   font-size: 0.62rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  color: var(--accent);
-  background: rgba(200, 104, 61, 0.15);
-  border: 1px solid rgba(200, 104, 61, 0.3);
+  font-weight: 750;
+  color: #22c55e;
+  background: rgba(34, 197, 94, 0.12);
   padding: 0.15rem 0.45rem;
-  border-radius: 3px;
+  border-radius: 4px;
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  letter-spacing: 0.06em;
 }
 
 .hermes-hud-title-block {
@@ -452,38 +309,39 @@
 .hermes-hud-repo-title {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.5rem;
   color: #ffffff;
 }
 
 .hermes-hud-repo-title svg {
-  color: #ffffff;
+  color: var(--accent);
   flex-shrink: 0;
 }
 
 .hermes-hud-repo-title h4 {
   font-family: var(--font-display);
   font-size: 1.02rem;
-  font-weight: 750;
-  margin: 0;
+  font-weight: 800;
   color: #ffffff;
+  margin: 0;
   letter-spacing: -0.01em;
 }
 
 .hermes-hud-repo-desc {
-  font-size: 0.76rem;
+  font-size: 0.78rem;
   line-height: 1.45;
-  color: rgba(247, 242, 235, 0.65);
+  color: rgba(255, 255, 255, 0.72);
   margin: 0;
 }
 
 .hermes-hud-specs {
   display: flex;
   flex-direction: column;
-  gap: 0.42rem;
-  padding: 0.65rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  padding: 0.6rem 0.75rem;
 }
 
 .hermes-hud-telemetry-cell {
@@ -491,182 +349,245 @@
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(255, 255, 255, 0.065);
-  border-radius: 6px;
-  padding: 0.38rem 0.6rem;
-  transition: all 0.2s ease;
-}
-
-.hermes-hud-telemetry-cell:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.14);
 }
 
 .hermes-telemetry-lead {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  flex-shrink: 0;
 }
 
 .hermes-telemetry-dot {
-  width: 4px;
-  height: 4px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
-  background: rgba(247, 242, 235, 0.4);
-  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.hermes-telemetry-dot--accent {
+  background: var(--accent);
+}
+
+.hermes-telemetry-dot--dest {
+  background: #3b82f6;
 }
 
 .hermes-telemetry-label {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  color: rgba(247, 242, 235, 0.55);
+  font-size: 0.62rem;
+  font-weight: 750;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.06em;
 }
 
 .hermes-telemetry-value {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 0.28rem;
-  flex-shrink: 0;
 }
 
 .hermes-telemetry-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 650;
-  padding: 0.12rem 0.45rem;
+  padding: 0.12rem 0.4rem;
   border-radius: 4px;
-  line-height: 1.25;
 }
 
 .hermes-telemetry-badge--cron {
-  background: rgba(52, 211, 153, 0.12);
-  border: 1px solid rgba(52, 211, 153, 0.28);
-  color: #34d399;
-}
-
-.hermes-telemetry-badge--cron code {
-  font-family: inherit;
-  color: inherit;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.06);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
 }
 
 .hermes-cron-icon {
-  font-size: 0.65rem;
-  opacity: 0.85;
+  font-size: 0.62rem;
+  opacity: 0.8;
 }
 
-.hermes-telemetry-badge--reader {
-  background: rgba(147, 197, 253, 0.1);
-  border: 1px solid rgba(147, 197, 253, 0.25);
+.hermes-telemetry-badge--gate {
+  color: #f7a278;
+  background: rgba(200, 104, 61, 0.15);
+  border: 1px solid rgba(200, 104, 61, 0.25);
+}
+
+.hermes-telemetry-badge--dest {
   color: #93c5fd;
-  font-size: 0.65rem;
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.25);
 }
 
-.hermes-telemetry-plus {
-  color: rgba(247, 242, 235, 0.35);
-  font-size: 0.65rem;
-  font-family: var(--font-mono);
-  font-weight: 700;
-}
-
-.hermes-telemetry-badge--wechat {
-  background: rgba(74, 222, 128, 0.1);
-  border: 1px solid rgba(74, 222, 128, 0.25);
-  color: #86efac;
-  font-size: 0.65rem;
-}
-
-.hermes-telemetry-badge--asset {
-  background: rgba(200, 104, 61, 0.12);
-  border: 1px solid rgba(200, 104, 61, 0.28);
-  color: #f7f2eb;
-}
-
-.hermes-asset-accent {
-  color: #ff9d66;
-  font-weight: 750;
-}
-
-.hermes-asset-type {
-  color: rgba(247, 242, 235, 0.7);
-  margin-left: 0.2rem;
-  font-size: 0.64rem;
-}
-
-/* Fallback styles for legacy rows if present */
-.hermes-hud-spec-row {
+.hermes-hud-footer-compact {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.5rem;
-  font-size: 0.75rem;
+  gap: 0.6rem;
+  padding-top: 0.45rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.hermes-spec-label {
-  color: rgba(247, 242, 235, 0.55);
+.hermes-hud-output-tag {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
-}
-
-.hermes-spec-val {
-  color: rgba(247, 242, 235, 0.9);
-  font-weight: 600;
-}
-
-.hermes-spec-code {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  background: rgba(52, 211, 153, 0.12);
-  border: 1px solid rgba(52, 211, 153, 0.28);
-  padding: 0.12rem 0.4rem;
-  border-radius: 3px;
-  color: #34d399;
+  font-size: 0.62rem;
+  font-weight: 650;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.04em;
 }
 
 .hermes-hud-btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.45rem;
-  background: #ffffff;
-  color: #171714;
+  gap: 0.35rem;
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.68rem;
   font-weight: 750;
-  padding: 0.6rem 1rem;
-  border-radius: 8px;
+  color: #ffffff;
+  background: var(--accent);
+  padding: 0.32rem 0.75rem;
+  border-radius: 5px;
   text-decoration: none;
-  transition: all 0.2s ease;
-  margin-top: 0.15rem;
+  transition: transform 0.2s ease, background 0.2s ease;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
 }
 
 .hermes-hud-btn:hover {
-  background: #f7f2eb;
-  color: var(--accent);
+  background: #b55a30;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
 }
 
-.hermes-hud-arrow {
-  color: var(--accent);
-  font-size: 0.85rem;
-}
-
-/* 4-Pillar Unified Continuous Architecture Flow Rail */
-.hermes-system-synergy {
-  background: rgba(23, 23, 20, 0.02);
-  border: 1px solid rgba(23, 23, 20, 0.08);
-  border-radius: 12px;
-  padding: 1.3rem 1.5rem;
+/* --------------------------------------------------------------------------
+   TIER 2: FULL-WIDTH INTERMEDIATE PRODUCT SHIFT MATRIX (2x2 Editorial Rail)
+   -------------------------------------------------------------------------- */
+.hermes-shift-section {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.45rem;
+  background: transparent;
+  border-top: 1px dashed rgba(23, 23, 20, 0.12);
+  border-bottom: 1px dashed rgba(23, 23, 20, 0.12);
+  border-radius: 0;
+  padding: 1.15rem 0 1.25rem 0;
+  width: 100%;
+}
+
+.hermes-shift-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.15rem;
+}
+
+.hermes-shift-tag {
+  font-family: var(--font-mono);
+  font-size: 0.70rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.hermes-shift-bridge {
+  font-size: 0.94rem;
+  line-height: 1.5;
+  color: var(--ink-secondary);
+  margin: 0 0 0.85rem 0;
+  max-width: 620px;
+}
+
+.hermes-shift-matrix {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.hermes-shift-subhead-row {
+  display: grid;
+  grid-template-columns: 14% 34% 6% 46%;
+  align-items: center;
+  padding: 0.4rem 0 0.35rem 0;
+  border-bottom: 1px solid rgba(23, 23, 20, 0.06);
+}
+
+.hermes-shift-col-cat,
+.hermes-shift-col-arrow-label {
+  display: block;
+}
+
+.hermes-shift-col-from-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.hermes-shift-col-to-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.hermes-shift-row {
+  display: grid;
+  grid-template-columns: 14% 34% 6% 46%;
+  align-items: center;
+  min-height: 52px;
+  padding: 0.75rem 0;
+  transition: background 0.15s ease;
+}
+
+.hermes-shift-row + .hermes-shift-row {
+  border-top: 1px solid rgba(23, 23, 20, 0.06);
+}
+
+.hermes-shift-category {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.hermes-shift-source {
+  font-size: 0.96rem;
+  font-weight: 450;
+  color: var(--ink-secondary);
+  line-height: 1.4;
+}
+
+.hermes-shift-arrow {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  text-align: left;
+}
+
+.hermes-shift-target {
+  font-size: 1.06rem;
+  font-weight: 750;
+  color: var(--ink);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+/* --------------------------------------------------------------------------
+   TIER 3: ASYMMETRIC VALUE DELIVERY CHAIN PANEL (Continuous Architecture Spine)
+   -------------------------------------------------------------------------- */
+.hermes-system-synergy {
+  background: rgba(23, 23, 20, 0.015);
+  border: 1px solid rgba(23, 23, 20, 0.06);
+  border-radius: 10px;
+  padding: 1.25rem 1.45rem 1.1rem 1.45rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
 }
 
 .hermes-synergy-header-row {
@@ -677,177 +598,268 @@
   flex-wrap: wrap;
 }
 
+.hermes-synergy-title-group {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
 .hermes-synergy-label {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.08em;
-  color: var(--accent);
+  color: var(--ink);
   text-transform: uppercase;
 }
 
+.hermes-synergy-sublabel {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
 .hermes-synergy-badge {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 750;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  background: rgba(23, 23, 20, 0.04);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid rgba(23, 23, 20, 0.06);
+  text-transform: uppercase;
+}
+
+/* Value Delivery Chain Ribbon & Top Rail */
+.hermes-value-chain-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.hermes-chain-top-rail {
+  display: grid;
+  grid-template-columns: 18% 32% 28% 22%;
+  align-items: center;
+  padding-bottom: 0.25rem;
+}
+
+.hermes-rail-col {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.hermes-rail-node {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #9c978b;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.hermes-rail-node--core {
+  background: var(--accent);
+  box-shadow: 0 0 0 3px rgba(200, 104, 61, 0.22);
+}
+
+.hermes-rail-node--quality {
+  background: #7a7569;
+}
+
+.hermes-rail-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(23, 23, 20, 0.10);
+  margin-left: 4px;
+}
+
+.hermes-value-chain {
+  display: grid;
+  grid-template-columns: 18% 32% 28% 22%;
+  align-items: stretch;
+}
+
+.hermes-chain-node {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  background: transparent;
+  border-radius: 0;
+}
+
+.hermes-chain-node--runtime {
+  padding: 0.4rem 1rem 0.4rem 0;
+  border-right: 1px solid rgba(23, 23, 20, 0.045);
+}
+
+.hermes-chain-node--core {
+  padding: 0.4rem 1.2rem;
+  background: rgba(200, 104, 61, 0.035);
+  border-left: 2px solid var(--accent);
+  border-right: 1px solid rgba(23, 23, 20, 0.045);
+  border-radius: 4px;
+}
+
+.hermes-chain-node--quality {
+  padding: 0.4rem 1.1rem;
+  border-right: 1px solid rgba(23, 23, 20, 0.045);
+}
+
+.hermes-chain-node--delivery {
+  padding: 0.4rem 0 0.4rem 1.1rem;
+}
+
+.hermes-chain-meta {
+  display: flex;
+  align-items: center;
+}
+
+.hermes-chain-tag {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 750;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.hermes-chain-tag--core {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.hermes-chain-name {
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 750;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.hermes-chain-name--core {
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.hermes-chain-name--quality {
+  font-size: 0.98rem;
+  font-weight: 750;
+  color: var(--ink);
+}
+
+.hermes-chain-desc {
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--muted);
+  margin: 0;
+}
+
+.hermes-chain-desc--core {
+  color: var(--ink-secondary);
+  font-weight: 500;
+}
+
+/* Closing System Principle Footnote */
+.hermes-system-principle {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed rgba(23, 23, 20, 0.08);
+  flex-wrap: wrap;
+}
+
+.hermes-principle-tag {
   font-family: var(--font-mono);
   font-size: 0.65rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   color: var(--accent);
-  background: rgba(200, 104, 61, 0.08);
-  padding: 0.2rem 0.55rem;
-  border-radius: 4px;
-  border: 1px solid rgba(200, 104, 61, 0.2);
-}
-
-.hermes-flow-rail {
-  display: flex;
-  align-items: stretch;
-  background: rgba(23, 23, 20, 0.015);
-  border: 1px solid rgba(23, 23, 20, 0.07);
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.hermes-flow-node {
-  flex: 1;
-  padding: 1.1rem 1.2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-  position: relative;
-  transition: background 0.2s ease;
-}
-
-.hermes-flow-node:hover {
-  background: rgba(23, 23, 20, 0.035);
-}
-
-.hermes-flow-node--core {
-  flex: 1.3;
-  background: rgba(200, 104, 61, 0.045);
-  border-left: 1px solid rgba(200, 104, 61, 0.2);
-  border-right: 1px solid rgba(200, 104, 61, 0.2);
-  box-shadow: inset 0 0 12px rgba(200, 104, 61, 0.03);
-}
-
-.hermes-flow-node--core:hover {
-  background: rgba(200, 104, 61, 0.07);
-}
-
-.hermes-flow-connector {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 22px;
-  margin: 0 -11px;
-  z-index: 2;
-  flex-shrink: 0;
-  user-select: none;
-  pointer-events: none;
-}
-
-.hermes-flow-arrow-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #fbf9f5;
-  border: 1px solid rgba(23, 23, 20, 0.14);
-  color: rgba(23, 23, 20, 0.45);
-  box-shadow: 0 1px 3px rgba(23, 23, 20, 0.05);
-  transition: all 0.2s ease;
-}
-
-.hermes-flow-arrow-pill svg {
-  display: block;
-  stroke: currentColor;
-}
-
-.hermes-flow-connector--core-out .hermes-flow-arrow-pill,
-.hermes-flow-arrow-pill--accent {
-  background: #fff8f4;
-  border-color: rgba(200, 104, 61, 0.35);
-  color: var(--accent);
-  box-shadow: 0 1px 4px rgba(200, 104, 61, 0.12);
-}
-
-.hermes-flow-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.4rem;
-}
-
-.hermes-flow-idx {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 800;
-  color: var(--accent);
-  font-variant-numeric: tabular-nums;
-}
-
-.hermes-flow-role {
-  font-family: var(--font-mono);
-  font-size: 0.66rem;
-  font-weight: 750;
-  color: var(--muted);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.hermes-flow-role--core {
-  color: var(--accent);
-  font-weight: 800;
-}
-
-.hermes-flow-name {
-  font-family: var(--font-display);
-  font-size: 0.98rem;
-  font-weight: 800;
-  color: var(--ink);
-  margin-top: 0.1rem;
-}
-
-.hermes-flow-name--core {
-  color: var(--ink);
-}
-
-.hermes-flow-desc {
-  font-size: 0.78rem;
-  line-height: 1.45;
-  color: var(--ink-secondary);
-  margin: 0;
-}
-
-.hermes-synergy-footnote {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.65rem;
-  background: rgba(23, 23, 20, 0.025);
-  border: 1px solid rgba(23, 23, 20, 0.06);
-  border-left: 2.5px solid var(--accent);
-  border-radius: 6px;
-  padding: 0.65rem 0.9rem;
-}
-
-.hermes-footnote-icon {
-  font-size: 0.85rem;
-  color: var(--accent);
   flex-shrink: 0;
-  margin-top: 0.05rem;
 }
 
-.hermes-footnote-text {
-  font-size: 0.78rem;
+.hermes-principle-quote {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 650;
+  color: var(--ink);
   line-height: 1.5;
-  color: var(--ink-secondary);
   margin: 0;
 }
 
-.hermes-footnote-text b {
-  color: var(--ink);
+/* Responsive Overrides for Plate 1 Masterhead */
+@media (max-width: 1024px) {
+  .hermes-masterhead-grid {
+    grid-template-columns: 1fr;
+  }
+  .hermes-shift-subhead-row,
+  .hermes-shift-row {
+    grid-template-columns: 16% 34% 6% 44%;
+  }
+  .hermes-chain-top-rail,
+  .hermes-value-chain {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .hermes-chain-node {
+    border-right: none;
+    padding: 0.6rem 0.8rem;
+  }
+  .hermes-chain-top-rail {
+    display: none;
+  }
 }
+
+@media (max-width: 768px) {
+  .hermes-masterhead {
+    padding: 1.5rem 1.2rem;
+  }
+  .hermes-title {
+    font-size: 1.85rem;
+  }
+  .hermes-shift-subhead-row {
+    display: none;
+  }
+  .hermes-shift-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.6rem;
+    min-height: auto;
+    padding: 0.65rem 0;
+  }
+  .hermes-shift-category {
+    width: 100%;
+    color: var(--accent);
+  }
+  .hermes-shift-source {
+    font-size: 0.88rem;
+  }
+  .hermes-shift-arrow {
+    font-size: 0.95rem;
+  }
+  .hermes-shift-target {
+    font-size: 0.95rem;
+  }
+  .hermes-value-chain {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  .hermes-chain-node--core {
+    border-left: 2px solid var(--accent);
+  }
+}
+
+
 
 /* ==========================================================================
    02 / SYSTEMIZE — PLATE 1: PARADIGM SHIFT (方案 A: 矛盾对决 × 4 级穿透架构流)
