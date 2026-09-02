@@ -1,11 +1,11 @@
 /* ==========================================================================
-   MODULE 01: TWITCANVA 01 THE PROBLEM — DESIGN R3.3 (FORENSIC AUDIT SPEC)
+   MODULE 01: TWITCANVA 01 THE PROBLEM — DESIGN R3.4 (REFINED VERDICT ARCHITECTURE)
    Namespace: .tc-problem-r1-*
    Features:
      - Scroll-driven automatic sequential Tab switching with Sticky Pinning
      - Forensic Target Reticles & Visual Delta Problem Highlights
      - Structured Forensic Audit Notes (INTENT SPEC vs FORENSIC VERDICT)
-     - Clean compact vertical rhythm fitting 100% in viewport without clipping
+     - Cohesive, Jargon-Free Product Judgment Section with High Craftsmanship
    TasteSkill: High Forensic Precision + Editorial Restraint
    ========================================================================== */
 
@@ -31,7 +31,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 5.5rem 0 2.2rem;
+  padding: 5.2rem 0 2rem;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -59,7 +59,7 @@
   justify-content: space-between;
   gap: 1.5rem;
   flex-wrap: wrap;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.35rem;
 }
 
 .tc-problem-r1__meta-left {
@@ -118,7 +118,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: 0.6rem 0;
+  margin: 0.5rem 0;
 }
 
 /* Tab Bar / Evaluation Dimension Selector */
@@ -127,9 +127,9 @@
   align-items: center;
   justify-content: space-between;
   gap: 1.2rem;
-  padding-bottom: 0.55rem;
+  padding-bottom: 0.5rem;
   border-bottom: 1px solid rgba(23, 23, 20, 0.10);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.65rem;
   flex-wrap: wrap;
 }
 
@@ -360,7 +360,7 @@
 
 /* Pane Footer: Key-Value Spec Rows */
 .tc-problem-r1__pane-footer {
-  margin-top: 0.65rem;
+  margin-top: 0.55rem;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
@@ -392,11 +392,9 @@
   font-weight: 750;
 }
 
-/* --------------------------------------------------------------------------
-   STRUCTURED FORENSIC AUDIT NOTES (INTENT SPEC vs FORENSIC VERDICT)
-   -------------------------------------------------------------------------- */
+/* Structured Forensic Audit Notes */
 .tc-problem-r1__audit-note {
-  margin-top: 0.55rem;
+  margin-top: 0.5rem;
   padding: 0.35rem 0 0.35rem 0.75rem;
   display: flex;
   flex-direction: column;
@@ -457,89 +455,102 @@
 }
 
 /* --------------------------------------------------------------------------
-   BEAT C: PRODUCT JUDGMENT & COUPLING THESIS (FULL WIDTH)
+   BEAT C: PRODUCT JUDGMENT & COUPLING THESIS (REFINED UNIFIED ARCHITECTURE)
    -------------------------------------------------------------------------- */
 .tc-problem-r1__takeaway {
   padding-top: 0.85rem;
   border-top: 1px dashed rgba(23, 23, 20, 0.10);
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.65rem;
   width: 100%;
 }
 
-.tc-problem-r1__takeaway-main {
+.tc-problem-r1__verdict-block {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.45rem;
+  max-width: 960px;
+}
+
+.tc-problem-r1__verdict-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.65rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  color: var(--accent, #c8683d);
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.tc-problem-r1__verdict-tag::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent, #c8683d);
 }
 
 .tc-problem-r1__takeaway-headline {
   font-family: var(--font-display, sans-serif);
-  font-size: clamp(1.15rem, 1.6vw, 1.45rem);
-  font-weight: 750;
+  font-size: clamp(1.2rem, 1.7vw, 1.5rem);
+  font-weight: 800;
   line-height: 1.25;
   letter-spacing: -0.02em;
   color: var(--ink, #171714);
   margin: 0;
 }
 
-.tc-problem-r1__coupling-formula {
-  padding: 0.35rem 0.6rem;
-  background: rgba(23, 23, 20, 0.03);
-  border-radius: 4px;
-  display: inline-flex;
+/* Streamlined Causal Contrast Flow (Natural & Jargon-Free) */
+.tc-problem-r1__contrast-flow {
+  display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-mono, monospace);
-  font-size: 0.70rem;
+  gap: 0.65rem 1rem;
+  flex-wrap: wrap;
+  font-family: var(--font-display, -apple-system, sans-serif);
+  font-size: 0.82rem;
+  font-weight: 650;
+  color: var(--ink, #171714);
+  padding: 0.45rem 0.75rem;
+  background: rgba(23, 23, 20, 0.025);
+  border-left: 2.5px solid var(--accent, #c8683d);
+  border-radius: 0 4px 4px 0;
+  margin: 0.1rem 0;
 }
 
-.tc-problem-r1__cf-target {
+.tc-problem-r1__contrast-intent {
+  color: var(--ink-secondary, #423e38);
+}
+
+.tc-problem-r1__contrast-arrow {
+  color: var(--accent, #c8683d);
+  font-weight: 850;
+  font-size: 0.95rem;
+}
+
+.tc-problem-r1__contrast-reality {
+  color: var(--accent, #c8683d);
+  font-weight: 750;
+}
+
+.tc-problem-r1__takeaway-lead {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--ink-secondary, #423e38);
+  margin: 0;
+  line-height: 1.45;
+  word-break: keep-all;
+}
+
+.tc-problem-r1__takeaway-lead strong {
   color: var(--ink, #171714);
   font-weight: 750;
 }
 
-.tc-problem-r1__cf-arrow {
-  color: var(--accent, #c8683d);
-  font-weight: 800;
-}
-
-.tc-problem-r1__cf-reopen {
-  color: var(--accent, #c8683d);
-  font-weight: 750;
-}
-
-.tc-problem-r1__takeaway-bottom-row {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.tc-problem-r1__takeaway-lead {
-  font-size: 0.85rem;
-  font-weight: 650;
-  color: var(--ink-secondary, #423e38);
-  margin: 0;
-  line-height: 1.4;
-  word-break: keep-all;
-}
-
-.tc-problem-r1__telemetry {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-mono, monospace);
-  font-size: 0.68rem;
-  font-weight: 650;
-  color: var(--muted, #736c64);
-  letter-spacing: 0.04em;
-}
-
+/* Bottom Closing Bar: Clear Principle & Natural Transition */
 .tc-problem-r1__takeaway-footer {
   display: flex;
   align-items: center;
@@ -551,22 +562,28 @@
 }
 
 .tc-problem-r1__principle {
-  font-family: var(--font-mono, monospace);
-  font-size: 0.74rem;
+  font-family: var(--font-display, -apple-system, sans-serif);
+  font-size: 0.84rem;
   font-weight: 750;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.02em;
   color: var(--ink, #171714);
-  text-transform: uppercase;
 }
 
 .tc-problem-r1__transition {
-  font-family: var(--font-mono, monospace);
-  font-size: 0.70rem;
-  font-weight: 750;
-  letter-spacing: 0.1em;
-  color: var(--muted, #736c64);
-  text-transform: uppercase;
-  flex-shrink: 0;
+  font-family: var(--font-display, -apple-system, sans-serif);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--accent, #c8683d);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: opacity 0.2s ease;
+}
+
+.tc-problem-r1__transition:hover {
+  opacity: 0.8;
 }
 
 /* --------------------------------------------------------------------------
@@ -593,10 +610,10 @@
     flex-direction: column;
     align-items: flex-start;
   }
-  .tc-problem-r1__takeaway-bottom-row {
+  .tc-problem-r1__takeaway-footer {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.4rem;
+    gap: 0.6rem;
   }
 }
 
@@ -604,5 +621,9 @@
   .tc-problem-r1__tab-btn {
     width: 100%;
     justify-content: space-between;
+  }
+  .tc-problem-r1__contrast-flow {
+    font-size: 0.76rem;
+    gap: 0.4rem;
   }
 }
