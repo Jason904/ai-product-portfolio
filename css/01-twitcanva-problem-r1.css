@@ -1,12 +1,13 @@
 /* ==========================================================================
-   MODULE 01: TWITCANVA 01 THE PROBLEM — DESIGN R3.5 (PRINCIPLE HIGHLIGHTED)
+   MODULE 01: TWITCANVA 01 THE PROBLEM — DESIGN R3.5 (DE-BOXED & REFINED)
    Namespace: .tc-problem-r1-*
    Features:
      - Scroll-driven automatic sequential Tab switching with Sticky Pinning
      - Forensic Target Reticles & Visual Delta Problem Highlights
      - Structured Forensic Audit Notes (INTENT SPEC vs FORENSIC VERDICT)
      - Asymmetric Split Beat C: Left Analytical Proof + Right Golden Principle Pillar
-   TasteSkill: High Forensic Precision + Balanced Visual Mass
+     - Fully De-boxed Causal Flow (Zero Gray Background Block)
+   TasteSkill: High Forensic Precision + Balanced Visual Mass + De-boxed
    ========================================================================== */
 
 .tc-problem-r1 {
@@ -400,8 +401,8 @@
   flex-direction: column;
   gap: 0.15rem;
   position: relative;
-  background: rgba(23, 23, 20, 0.015);
-  border-radius: 0 4px 4px 0;
+  background: transparent;
+  border-radius: 0;
 }
 
 .tc-problem-r1__audit-note--baseline {
@@ -475,7 +476,7 @@
 .tc-problem-r1__takeaway-left {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.35rem;
 }
 
 .tc-problem-r1__verdict-tag {
@@ -509,21 +510,22 @@
   margin: 0;
 }
 
-/* Causal Contrast Flow */
+/* Causal Contrast Flow: Fully De-boxed on Warm Paper (Zero Gray Block) */
 .tc-problem-r1__contrast-flow {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.5rem 0.8rem;
+  gap: 0.45rem 0.75rem;
   flex-wrap: wrap;
   font-family: var(--font-display, -apple-system, sans-serif);
   font-size: 0.80rem;
   font-weight: 650;
   color: var(--ink, #171714);
-  padding: 0.4rem 0.7rem;
-  background: rgba(23, 23, 20, 0.025);
-  border-left: 2.5px solid var(--accent, #c8683d);
-  border-radius: 0 4px 4px 0;
+  padding: 0.15rem 0 0.15rem 0.65rem;
+  background: transparent;
+  border-left: 2px solid var(--accent, #c8683d);
+  border-radius: 0;
   margin: 0.1rem 0;
+  max-width: max-content;
 }
 
 .tc-problem-r1__contrast-intent {
@@ -555,7 +557,7 @@
   font-weight: 750;
 }
 
-/* Right: Golden Principle Highlight Pillar (Eradicates Blank Space) */
+/* Right: Golden Principle Highlight Pillar */
 .tc-problem-r1__principle-card {
   display: flex;
   flex-direction: column;
