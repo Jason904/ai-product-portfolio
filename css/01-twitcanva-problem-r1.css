@@ -1,10 +1,11 @@
 /* ==========================================================================
-   MODULE 01: TWITCANVA 01 THE PROBLEM — DESIGN R3.2
+   MODULE 01: TWITCANVA 01 THE PROBLEM — DESIGN R3.3 (FORENSIC AUDIT SPEC)
    Namespace: .tc-problem-r1-*
    Features:
      - Scroll-driven automatic sequential Tab switching with Sticky Pinning
      - Forensic Target Reticles & Visual Delta Problem Highlights
-     - Clean Camera Composition Drift (Framing & Angle Shift without 4:3 crop)
+     - Structured Forensic Audit Notes (INTENT SPEC vs FORENSIC VERDICT)
+     - Clean compact vertical rhythm fitting 100% in viewport without clipping
    TasteSkill: High Forensic Precision + Editorial Restraint
    ========================================================================== */
 
@@ -266,7 +267,7 @@
   z-index: 2;
 }
 
-/* Highlight 1: Character Identity Reticle (Target on Red Controller's Face & Hair) */
+/* Highlight 1: Character Identity Reticle */
 .tc-problem-r1__reticle-character {
   position: absolute;
   top: 9%;
@@ -357,7 +358,7 @@
   50% { opacity: 0.65; }
 }
 
-/* Pane Footer: Diagnostic Details */
+/* Pane Footer: Key-Value Spec Rows */
 .tc-problem-r1__pane-footer {
   margin-top: 0.65rem;
   display: flex;
@@ -391,23 +392,57 @@
   font-weight: 750;
 }
 
-.tc-problem-r1__pane-desc {
-  margin: 0.15rem 0 0;
+/* --------------------------------------------------------------------------
+   STRUCTURED FORENSIC AUDIT NOTES (INTENT SPEC vs FORENSIC VERDICT)
+   -------------------------------------------------------------------------- */
+.tc-problem-r1__audit-note {
+  margin-top: 0.55rem;
+  padding: 0.35rem 0 0.35rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  position: relative;
+  background: rgba(23, 23, 20, 0.015);
+  border-radius: 0 4px 4px 0;
+}
+
+.tc-problem-r1__audit-note--baseline {
+  border-left: 2px solid rgba(23, 23, 20, 0.25);
+}
+
+.tc-problem-r1__audit-note--verdict {
+  border-left: 2px solid var(--accent, #c8683d);
+}
+
+.tc-problem-r1__note-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tc-problem-r1__audit-note--baseline .tc-problem-r1__note-tag {
+  color: var(--ink-secondary, #423e38);
+}
+
+.tc-problem-r1__audit-note--verdict .tc-problem-r1__note-tag {
+  color: var(--accent, #c8683d);
+}
+
+.tc-problem-r1__note-body {
+  margin: 0;
   font-family: var(--font-display, -apple-system, sans-serif);
-  font-size: 0.82rem;
+  font-size: 0.80rem;
   font-weight: 600;
   color: var(--ink-secondary, #423e38);
-  line-height: 1.4;
+  line-height: 1.45;
   word-break: keep-all;
 }
 
-.tc-problem-r1__pane-desc strong {
-  color: var(--ink, #171714);
-}
-
-.tc-problem-r1__pane-desc .highlight-text {
+.tc-problem-r1__note-body .highlight-text {
   color: var(--accent, #c8683d);
-  font-weight: 700;
+  font-weight: 750;
 }
 
 /* Reroll Pane Container */

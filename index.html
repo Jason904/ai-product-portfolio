@@ -282,7 +282,10 @@
                       <span class="tc-problem-r1__spec-key">EDIT TARGET</span>
                       <span class="tc-problem-r1__spec-val tc-problem-r1__spec-val--accent">POSE (前伸手势 &rarr; 强控制姿态)</span>
                     </div>
-                    <p class="tc-problem-r1__pane-desc">这是用户当前已满意的基线画面。本次意图：仅修改红衣控制者的动作，保持其他变量不变。</p>
+                    <div class="tc-problem-r1__audit-note tc-problem-r1__audit-note--baseline">
+                      <span class="tc-problem-r1__note-tag">INTENT SPEC</span>
+                      <p class="tc-problem-r1__note-body">全景基线锁定 &middot; 仅针对红衣控制者动作发起单变量变更。</p>
+                    </div>
                   </div>
                 </div>
 
@@ -314,7 +317,10 @@
                         <span class="tc-problem-r1__spec-key">UNWANTED DRIFT</span>
                         <span class="tc-problem-r1__spec-val tc-problem-r1__spec-val--accent">CHARACTER &cross; (面部、发型与身份被重绘)</span>
                       </div>
-                      <p class="tc-problem-r1__pane-desc"><strong>问题诊断点：</strong>动作确实改对了，但由于缺乏角色显式控制资产，红衣人的<span class="highlight-text">面孔与人物身份发生严重漂移</span>。</p>
+                      <div class="tc-problem-r1__audit-note tc-problem-r1__audit-note--verdict">
+                        <span class="tc-problem-r1__note-tag">FORENSIC VERDICT</span>
+                        <p class="tc-problem-r1__note-body">动作改动触发特征重绘，缺乏角色显式控制，导致红衣人<span class="highlight-text">面孔与身份严重漂移</span>。</p>
+                      </div>
                     </div>
                   </div>
 
@@ -344,7 +350,10 @@
                         <span class="tc-problem-r1__spec-key">UNWANTED DRIFT</span>
                         <span class="tc-problem-r1__spec-val tc-problem-r1__spec-val--accent">RELATION &cross; (三人站位拓扑被拉散重排)</span>
                       </div>
-                      <p class="tc-problem-r1__pane-desc"><strong>问题诊断点：</strong>只改了一个人的动作，未锁定的空间关系却被采样器重新解算，<span class="highlight-text">绿袍被拉近、黑衣被推远，站位崩塌</span>。</p>
+                      <div class="tc-problem-r1__audit-note tc-problem-r1__audit-note--verdict">
+                        <span class="tc-problem-r1__note-tag">FORENSIC VERDICT</span>
+                        <p class="tc-problem-r1__note-body">单人动作重构未锁定空间拓扑，三人站位间距被重新解算，<span class="highlight-text">空间拓扑关系崩塌</span>。</p>
+                      </div>
                     </div>
                   </div>
 
@@ -374,7 +383,10 @@
                         <span class="tc-problem-r1__spec-key">UNWANTED DRIFT</span>
                         <span class="tc-problem-r1__spec-val tc-problem-r1__spec-val--accent">COMPOSITION &cross; (机位与景别重构)</span>
                       </div>
-                      <p class="tc-problem-r1__pane-desc"><strong>问题诊断点：</strong>动作修改触发整幅画面重新采样，原本满意的全景站位构图<span class="highlight-text">被重构为近景俯仰视角，镜头语言失真</span>。</p>
+                      <div class="tc-problem-r1__audit-note tc-problem-r1__audit-note--verdict">
+                        <span class="tc-problem-r1__note-tag">FORENSIC VERDICT</span>
+                        <p class="tc-problem-r1__note-body">动作修改触发整幅画面重新采样，原本满意的全景构图<span class="highlight-text">被重构为近景俯仰，镜头视角失真</span>。</p>
+                      </div>
                     </div>
                   </div>
                 </div>
