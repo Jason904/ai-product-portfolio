@@ -216,7 +216,7 @@
       </div>
     </section>
 
-    <!-- 01 / THE PROBLEM — TWITCANVA DESIGN R2.1 (Causal Comparison Board) -->
+    <!-- 01 / THE PROBLEM — TWITCANVA DESIGN R3 (Interactive A/B Forensic Comparator) -->
     <section class="tc-problem-r1" id="twitcanva-problem-r1" aria-label="01 / THE PROBLEM · Control Coupling">
       <div class="tc-problem-r1__container">
         <!-- BEAT A: PROBLEM STATEMENT (FULL WIDTH) -->
@@ -233,124 +233,129 @@
           <p class="tc-problem-r1__lead">当结果已经基本正确，为什么修改一个变量，仍然会重新打开整张画面的不确定性？</p>
         </div>
 
-        <!-- BEAT B: CAUSAL COMPARISON BOARD (36% BASELINE + 8% SPINE + 56% DRIFTS) -->
-        <div class="tc-problem-r1__board-top">
-          <span class="tc-problem-r1__board-sub">SAME EDIT INTENT &middot; THREE FAILURE MODES</span>
-          <span class="tc-problem-r1__evidence-tag">ILLUSTRATIVE FAILURE MODES</span>
-        </div>
-
-        <div class="tc-problem-r1__board">
-          <!-- Left Column: Source State Spec (36%) -->
-          <div class="tc-problem-r1__col-left">
-            <div class="tc-problem-r1__col-title">
-              <span class="tag-accent">CURRENT STATE</span> / 当前已正确状态
+        <!-- BEAT B: A/B FORENSIC COMPARATOR (INTERACTIVE CONSOLE) -->
+        <div class="tc-problem-r1__comparator-console">
+          <!-- Evaluation Dimension Selector -->
+          <div class="tc-problem-r1__tab-bar-wrap">
+            <div class="tc-problem-r1__tab-label">
+              <span class="highlight">SELECT TEST CASE</span> / 切换漂移评测维度
             </div>
-            
-            <div class="tc-problem-r1__baseline-stage">
-              <img class="tc-problem-r1__baseline-img" src="assets/images/twitcanva/twitcanva-p1-baseline.png" alt="当前基线状态：三人高保真真人生成结果" loading="eager" decoding="async">
-            </div>
-
-            <!-- State Spec: Structured Vertical Blueprint -->
-            <div class="tc-problem-r1__spec-card">
-              <div class="tc-problem-r1__spec-group">
-                <div class="tc-problem-r1__spec-header tc-problem-r1__spec-header--keep">
-                  KEEP EXPECTED
-                </div>
-                <div class="tc-problem-r1__spec-list">
-                  <span>CHARACTER</span>
-                  <span>RELATION</span>
-                  <span>COMPOSITION</span>
-                </div>
-              </div>
-
-              <div class="tc-problem-r1__spec-divider" aria-hidden="true"></div>
-
-              <div class="tc-problem-r1__spec-group">
-                <div class="tc-problem-r1__spec-header tc-problem-r1__spec-header--change">
-                  EDIT TARGET
-                </div>
-                <div class="tc-problem-r1__spec-list">
-                  <span style="color: var(--accent, #c8683d); font-weight: 750;">POSE</span>
-                </div>
-                <p class="tc-problem-r1__intent-text">只改变红衣控制者的动作，将前伸手势抬高为更强、更明确的控制姿态。</p>
-              </div>
+            <div class="tc-problem-r1__tab-group" role="tablist">
+              <button type="button" class="tc-problem-r1__tab-btn is-active" data-target="tc-drift-01" role="tab" aria-selected="true">
+                <span>01 / 角色身份漂移</span>
+                <span class="badge-err">CHARACTER &cross;</span>
+              </button>
+              <button type="button" class="tc-problem-r1__tab-btn" data-target="tc-drift-02" role="tab" aria-selected="false">
+                <span>02 / 空间站位漂移</span>
+                <span class="badge-err">RELATION &cross;</span>
+              </button>
+              <button type="button" class="tc-problem-r1__tab-btn" data-target="tc-drift-03" role="tab" aria-selected="false">
+                <span>03 / 镜头构图漂移</span>
+                <span class="badge-err">COMPOSITION &cross;</span>
+              </button>
             </div>
           </div>
 
-          <!-- Middle Column: Causal Spine (8%) -->
-          <div class="tc-problem-r1__col-spine" aria-hidden="true">
-            <div class="tc-problem-r1__spine-hub">
-              <div class="tc-problem-r1__spine-badge">EDIT: POSE</div>
-              <div class="tc-problem-r1__spine-fork">
-                <svg viewBox="0 0 60 180" fill="none">
-                  <!-- Central origin node -->
-                  <circle cx="10" cy="90" r="4.5" fill="#c8683d" />
-                  <!-- Branch 1: to Drift 01 top -->
-                  <path d="M 10 90 C 35 90, 35 15, 60 15" stroke="rgba(23, 23, 20, 0.22)" stroke-width="1.2" />
-                  <polygon points="56,12 60,15 56,18" fill="#c8683d" />
-                  <!-- Branch 2: to Drift 02 center -->
-                  <path d="M 10 90 L 60 90" stroke="rgba(23, 23, 20, 0.22)" stroke-width="1.2" />
-                  <polygon points="56,87 60,90 56,93" fill="#c8683d" />
-                  <!-- Branch 3: to Drift 03 bottom -->
-                  <path d="M 10 90 C 35 90, 35 165, 60 165" stroke="rgba(23, 23, 20, 0.22)" stroke-width="1.2" />
-                  <polygon points="56,162 60,165 56,168" fill="#c8683d" />
-                </svg>
+          <!-- Dual Display Stage (Left: Fixed Baseline vs Right: Active Reroll) -->
+          <div class="tc-problem-r1__dual-stage">
+            <!-- Left Pane: Source Reference Standard (Single Instance) -->
+            <div class="tc-problem-r1__pane">
+              <div class="tc-problem-r1__pane-header">
+                <span class="tc-problem-r1__pane-title">SOURCE STANDARD / 基准对照组</span>
+                <span class="tc-problem-r1__pane-tag">CURRENT VALID STATE</span>
+              </div>
+              
+              <div class="tc-problem-r1__stage-box">
+                <img class="tc-problem-r1__stage-img" src="assets/images/twitcanva/twitcanva-p1-baseline.png" alt="基准参照组：三人原始正确状态" loading="eager" decoding="async">
+              </div>
+
+              <div class="tc-problem-r1__pane-footer">
+                <div class="tc-problem-r1__spec-row">
+                  <span class="tc-problem-r1__spec-key">LOCKED VARIABLES</span>
+                  <span class="tc-problem-r1__spec-val">CHARACTER &middot; RELATION &middot; COMPOSITION</span>
+                </div>
+                <div class="tc-problem-r1__spec-row">
+                  <span class="tc-problem-r1__spec-key">EDIT TARGET</span>
+                  <span class="tc-problem-r1__spec-val tc-problem-r1__spec-val--accent">POSE (前伸手势 &rarr; 强控制姿态)</span>
+                </div>
+                <p class="tc-problem-r1__pane-desc">这是用户当前已满意的基线画面。本次意图：仅修改红衣控制者的动作，保持其他变量不变。</p>
               </div>
             </div>
-          </div>
 
-          <!-- Right Column: Three Stacked Drift Rows (56%) -->
-          <div class="tc-problem-r1__col-right">
-            <!-- Drift 01: Character Drift -->
-            <article class="tc-problem-r1__drift-card">
-              <div class="tc-problem-r1__drift-header">
-                <div class="tc-problem-r1__drift-title-group">
-                  <span class="tc-problem-r1__drift-num">01 / CHARACTER DRIFT</span>
+            <!-- Right Pane: Active Test Case (Dynamic Switcher) -->
+            <div class="tc-problem-r1__pane">
+              <!-- View 01: Character Drift -->
+              <div class="tc-problem-r1__reroll-view is-active" id="tc-drift-01" role="tabpanel">
+                <div class="tc-problem-r1__pane-header">
+                  <span class="tc-problem-r1__pane-title">TEST 01 / CHARACTER DRIFT</span>
+                  <span class="tc-problem-r1__pane-tag tc-problem-r1__pane-tag--err">POSE &check; &middot; CHARACTER &cross;</span>
                 </div>
-                <div class="tc-problem-r1__drift-status">
-                  <span class="ok">POSE &check;</span>
-                  <span class="err">CHARACTER &cross;</span>
+                
+                <div class="tc-problem-r1__stage-box">
+                  <img class="tc-problem-r1__stage-img" src="assets/images/twitcanva/twitcanva-p1-reroll-01-character.png" alt="Reroll 01: 角色身份漂移" loading="eager" decoding="async">
                 </div>
-              </div>
-              <div class="tc-problem-r1__drift-stage">
-                <img class="tc-problem-r1__drift-img" src="assets/images/twitcanva/twitcanva-p1-reroll-01-character.png" alt="Reroll 01: 角色身份漂移" loading="eager" decoding="async">
-              </div>
-              <p class="tc-problem-r1__drift-desc">动作改对了，人却变了。</p>
-            </article>
 
-            <!-- Drift 02: Relation Drift -->
-            <article class="tc-problem-r1__drift-card">
-              <div class="tc-problem-r1__drift-header">
-                <div class="tc-problem-r1__drift-title-group">
-                  <span class="tc-problem-r1__drift-num">02 / RELATION DRIFT</span>
-                </div>
-                <div class="tc-problem-r1__drift-status">
-                  <span class="ok">POSE &check;</span>
-                  <span class="err">RELATION &cross;</span>
+                <div class="tc-problem-r1__pane-footer">
+                  <div class="tc-problem-r1__spec-row">
+                    <span class="tc-problem-r1__spec-key">INTENT RESULT</span>
+                    <span class="tc-problem-r1__spec-val">POSE &check; (动作抬高手势已生效)</span>
+                  </div>
+                  <div class="tc-problem-r1__spec-row">
+                    <span class="tc-problem-r1__spec-key">UNWANTED DRIFT</span>
+                    <span class="tc-problem-r1__spec-val tc-problem-r1__spec-val--accent">CHARACTER &cross; (面部、发型与身份被重绘)</span>
+                  </div>
+                  <p class="tc-problem-r1__pane-desc"><strong>问题诊断点：</strong>动作确实改对了，但由于缺乏角色显式控制资产，红衣人的面孔特征与人物身份发生严重漂移。</p>
                 </div>
               </div>
-              <div class="tc-problem-r1__drift-stage">
-                <img class="tc-problem-r1__drift-img" src="assets/images/twitcanva/twitcanva-p1-reroll-02-relation.png" alt="Reroll 02: 人物关系漂移" loading="eager" decoding="async">
-              </div>
-              <p class="tc-problem-r1__drift-desc">只改一个人的动作，三人的站位关系却被重新计算。</p>
-            </article>
 
-            <!-- Drift 03: Composition Drift -->
-            <article class="tc-problem-r1__drift-card">
-              <div class="tc-problem-r1__drift-header">
-                <div class="tc-problem-r1__drift-title-group">
-                  <span class="tc-problem-r1__drift-num">03 / COMPOSITION DRIFT</span>
+              <!-- View 02: Relation Drift -->
+              <div class="tc-problem-r1__reroll-view" id="tc-drift-02" role="tabpanel">
+                <div class="tc-problem-r1__pane-header">
+                  <span class="tc-problem-r1__pane-title">TEST 02 / RELATION DRIFT</span>
+                  <span class="tc-problem-r1__pane-tag tc-problem-r1__pane-tag--err">POSE &check; &middot; RELATION &cross;</span>
                 </div>
-                <div class="tc-problem-r1__drift-status">
-                  <span class="ok">POSE &check;</span>
-                  <span class="err">COMPOSITION &cross;</span>
+                
+                <div class="tc-problem-r1__stage-box">
+                  <img class="tc-problem-r1__stage-img" src="assets/images/twitcanva/twitcanva-p1-reroll-02-relation.png" alt="Reroll 02: 人物关系漂移" loading="eager" decoding="async">
+                </div>
+
+                <div class="tc-problem-r1__pane-footer">
+                  <div class="tc-problem-r1__spec-row">
+                    <span class="tc-problem-r1__spec-key">INTENT RESULT</span>
+                    <span class="tc-problem-r1__spec-val">POSE &check; (动作抬高手势已生效)</span>
+                  </div>
+                  <div class="tc-problem-r1__spec-row">
+                    <span class="tc-problem-r1__spec-key">UNWANTED DRIFT</span>
+                    <span class="tc-problem-r1__spec-val tc-problem-r1__spec-val--accent">RELATION &cross; (三人站位拓扑被拉散重排)</span>
+                  </div>
+                  <p class="tc-problem-r1__pane-desc"><strong>问题诊断点：</strong>只改了一个人的动作，未锁定的空间关系却被采样器重新解算，绿袍被拉近、黑衣被推远，站位崩塌。</p>
                 </div>
               </div>
-              <div class="tc-problem-r1__drift-stage">
-                <img class="tc-problem-r1__drift-img" src="assets/images/twitcanva/twitcanva-p1-reroll-03-composition.png" alt="Reroll 03: 构图镜头漂移" loading="eager" decoding="async">
+
+              <!-- View 03: Composition Drift -->
+              <div class="tc-problem-r1__reroll-view" id="tc-drift-03" role="tabpanel">
+                <div class="tc-problem-r1__pane-header">
+                  <span class="tc-problem-r1__pane-title">TEST 03 / COMPOSITION DRIFT</span>
+                  <span class="tc-problem-r1__pane-tag tc-problem-r1__pane-tag--err">POSE &check; &middot; COMPOSITION &cross;</span>
+                </div>
+                
+                <div class="tc-problem-r1__stage-box">
+                  <img class="tc-problem-r1__stage-img" src="assets/images/twitcanva/twitcanva-p1-reroll-03-composition.png" alt="Reroll 03: 构图镜头漂移" loading="eager" decoding="async">
+                </div>
+
+                <div class="tc-problem-r1__pane-footer">
+                  <div class="tc-problem-r1__spec-row">
+                    <span class="tc-problem-r1__spec-key">INTENT RESULT</span>
+                    <span class="tc-problem-r1__spec-val">POSE &check; (动作抬高手势已生效)</span>
+                  </div>
+                  <div class="tc-problem-r1__spec-row">
+                    <span class="tc-problem-r1__spec-key">UNWANTED DRIFT</span>
+                    <span class="tc-problem-r1__spec-val tc-problem-r1__spec-val--accent">COMPOSITION &cross; (镜头比例突变 4:3 裁切)</span>
+                  </div>
+                  <p class="tc-problem-r1__pane-desc"><strong>问题诊断点：</strong>动作修改触发整幅画面重新采样，原本满意的 16:9 电影画幅退化为 4:3 局部特写，景别彻底失真。</p>
+                </div>
               </div>
-              <p class="tc-problem-r1__drift-desc">动作改了，原本满意的镜头也被重新构了一遍。</p>
-            </article>
+            </div>
           </div>
         </div>
 
@@ -396,6 +401,29 @@
           </div>
         </footer>
       </div>
+
+      <script>
+        (function() {
+          const section = document.getElementById("twitcanva-problem-r1");
+          if (!section) return;
+          const tabBtns = section.querySelectorAll(".tc-problem-r1__tab-btn");
+          const rerollViews = section.querySelectorAll(".tc-problem-r1__reroll-view");
+          tabBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+              const targetId = btn.getAttribute("data-target");
+              tabBtns.forEach(b => {
+                b.classList.remove("is-active");
+                b.setAttribute("aria-selected", "false");
+              });
+              rerollViews.forEach(v => v.classList.remove("is-active"));
+              btn.classList.add("is-active");
+              btn.setAttribute("aria-selected", "true");
+              const activeView = document.getElementById(targetId);
+              if (activeView) activeView.classList.add("is-active");
+            });
+          });
+        })();
+      </script>
     </section>
 
 <section class="project project--twit" id="twitcanva">

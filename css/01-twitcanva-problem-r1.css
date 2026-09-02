@@ -1,15 +1,18 @@
 /* ==========================================================================
-   MODULE 01: TWITCANVA 01 THE PROBLEM — DESIGN R2.1 (CAUSAL WORKBENCH)
+   MODULE 01: TWITCANVA 01 THE PROBLEM — DESIGN R3 (A/B FORENSIC COMPARATOR)
    Namespace: .tc-problem-r1-*
-   Layout: 36% Baseline (Centered Source Frame) + 8% Causal Spine + 56% Three Drifts
-   Architecture: Editorial + Analytical + De-boxed + 1240px Spine
+   Layout: Interactive Dual-Screen Forensic Comparator (1 Baseline vs 3 Rerolls)
+   TasteSkill Calibration:
+     TWITCANVA_P1_VARIANCE = 7
+     TWITCANVA_P1_DENSITY = 4 (Evaluation Lab Console)
+   Architecture: Editorial + Interactive Forensic Bench + De-boxed + 1240px Spine
    ========================================================================== */
 
 .tc-problem-r1 {
   width: 100%;
   position: relative;
   background-color: var(--paper, #f4efe9);
-  padding: clamp(5rem, 6.5vw, 6.8rem) 0 4.5rem;
+  padding: clamp(5rem, 6.5vw, 6.5rem) 0 4.5rem;
   border-top: 1px solid var(--line, rgba(23, 23, 20, 0.12));
 }
 
@@ -84,306 +87,202 @@
 }
 
 /* --------------------------------------------------------------------------
-   BEAT B: CAUSAL COMPARISON BOARD (36% BASELINE + 8% SPINE + 56% DRIFTS)
+   BEAT B: A/B FORENSIC COMPARATOR CONSOLE (DUAL DISPLAY + TABBED DRIFTS)
    -------------------------------------------------------------------------- */
-.tc-problem-r1__board-top {
+.tc-problem-r1__comparator-console {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+/* Tab Bar / Evaluation Dimension Selector */
+.tc-problem-r1__tab-bar-wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 0.9rem;
+  gap: 1.2rem;
+  padding-bottom: 1.1rem;
   border-bottom: 1px solid rgba(23, 23, 20, 0.10);
-  margin-bottom: 2rem;
+  margin-bottom: 1.8rem;
   flex-wrap: wrap;
-  gap: 0.8rem;
 }
 
-.tc-problem-r1__board-sub {
+.tc-problem-r1__tab-label {
   font-family: var(--font-mono, monospace);
   font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: var(--ink-secondary, #423e38);
-  text-transform: uppercase;
-}
-
-.tc-problem-r1__evidence-tag {
-  font-family: var(--font-mono, monospace);
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--muted, #736c64);
-  text-transform: uppercase;
-  padding: 0.15rem 0.55rem;
-  background: rgba(23, 23, 20, 0.04);
-  border-radius: 4px;
-}
-
-/* 3-Column Board Grid */
-.tc-problem-r1__board {
-  display: grid;
-  grid-template-columns: 36% 8% 56%;
-  align-items: start;
-  width: 100%;
-  position: relative;
-}
-
-/* --- Left Column: Source State Spec (36%) --- */
-.tc-problem-r1__col-left {
-  display: flex;
-  flex-direction: column;
-  padding-right: 1.2rem;
-  position: sticky;
-  top: 6rem;
-  align-self: start;
-}
-
-.tc-problem-r1__col-title {
-  font-family: var(--font-mono, monospace);
-  font-size: 0.70rem;
   font-weight: 750;
   letter-spacing: 0.1em;
   color: var(--ink-secondary, #423e38);
   text-transform: uppercase;
-  margin-bottom: 0.75rem;
   display: flex;
   align-items: center;
   gap: 0.45rem;
 }
 
-.tc-problem-r1__col-title span.tag-accent {
+.tc-problem-r1__tab-label span.highlight {
   color: var(--accent, #c8683d);
 }
 
-.tc-problem-r1__baseline-stage {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  background: #000;
+.tc-problem-r1__tab-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tc-problem-r1__tab-btn {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0.4rem 0.85rem;
   border-radius: 6px;
-  overflow: hidden;
-  border: 1px solid rgba(23, 23, 20, 0.08);
-  box-shadow: 0 4px 16px rgba(23, 23, 20, 0.03);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.tc-problem-r1__baseline-img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-/* Vertical State Spec Block */
-.tc-problem-r1__spec-card {
-  margin-top: 1.2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-}
-
-.tc-problem-r1__spec-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-}
-
-.tc-problem-r1__spec-header {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-family: var(--font-mono, monospace);
-  font-size: 0.70rem;
-  font-weight: 750;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.tc-problem-r1__spec-header--keep {
+  border: 1px solid rgba(23, 23, 20, 0.12);
+  background: rgba(23, 23, 20, 0.03);
   color: var(--ink-secondary, #423e38);
-}
-
-.tc-problem-r1__spec-header--change {
-  color: var(--accent, #c8683d);
-}
-
-.tc-problem-r1__spec-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  font-family: var(--font-mono, monospace);
-  font-size: 0.76rem;
-  letter-spacing: 0.05em;
-  color: var(--ink, #171714);
-}
-
-.tc-problem-r1__spec-list span {
+  cursor: pointer;
+  transition: all 0.2s ease;
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
 }
 
-.tc-problem-r1__spec-list span::before {
-  content: "·";
-  color: var(--muted);
-  font-size: 0.9rem;
+.tc-problem-r1__tab-btn:hover {
+  background: rgba(23, 23, 20, 0.07);
+  border-color: rgba(23, 23, 20, 0.25);
+  color: var(--ink, #171714);
 }
 
-.tc-problem-r1__spec-divider {
-  width: 100%;
-  height: 1px;
-  background: rgba(23, 23, 20, 0.08);
+.tc-problem-r1__tab-btn.is-active {
+  background: var(--ink, #171714);
+  color: #fff;
+  border-color: var(--ink, #171714);
 }
 
-.tc-problem-r1__intent-text {
-  font-family: var(--font-display, -apple-system, sans-serif);
-  font-size: 0.82rem;
-  font-weight: 550;
-  color: var(--muted, #736c64);
-  line-height: 1.45;
-  margin: 0;
+.tc-problem-r1__tab-btn.is-active .badge-err {
+  color: #ff9364;
 }
 
-/* --- Middle Column: Causal Spine (8%) --- */
-.tc-problem-r1__col-spine {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  height: 100%;
-  padding-top: 5rem;
-}
-
-.tc-problem-r1__spine-hub {
-  position: sticky;
-  top: 14rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-.tc-problem-r1__spine-badge {
-  font-family: var(--font-mono, monospace);
-  font-size: 0.65rem;
-  font-weight: 750;
-  letter-spacing: 0.06em;
+.tc-problem-r1__tab-btn .badge-err {
   color: var(--accent, #c8683d);
-  background: rgba(200, 104, 61, 0.08);
-  border: 1px solid rgba(200, 104, 61, 0.25);
-  border-radius: 4px;
-  padding: 0.2rem 0.4rem;
-  white-space: nowrap;
-  text-align: center;
-  margin-bottom: 0.6rem;
+  font-weight: 800;
 }
 
-.tc-problem-r1__spine-fork {
+/* Dual Stage Grid (Left: Baseline vs Right: Active Reroll) */
+.tc-problem-r1__dual-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(24px, 2.8vw, 36px);
   width: 100%;
-  height: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.tc-problem-r1__spine-fork svg {
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-}
-
-/* --- Right Column: Three Stacked Drift Rows (56%) --- */
-.tc-problem-r1__col-right {
+.tc-problem-r1__pane {
   display: flex;
   flex-direction: column;
-  gap: 2.2rem;
-  padding-left: 1.2rem;
-  border-left: 1px solid rgba(23, 23, 20, 0.08);
 }
 
-.tc-problem-r1__drift-card {
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-  padding-bottom: 1.8rem;
-  border-bottom: 1px solid rgba(23, 23, 20, 0.08);
-}
-
-.tc-problem-r1__drift-card:last-child {
-  padding-bottom: 0;
-  border-bottom: none;
-}
-
-.tc-problem-r1__drift-header {
+.tc-problem-r1__pane-header {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-}
-
-.tc-problem-r1__drift-title-group {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-}
-
-.tc-problem-r1__drift-num {
+  margin-bottom: 0.75rem;
   font-family: var(--font-mono, monospace);
-  font-size: 0.74rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+}
+
+.tc-problem-r1__pane-title {
+  font-weight: 750;
   color: var(--ink, #171714);
   text-transform: uppercase;
 }
 
-.tc-problem-r1__drift-status {
-  font-family: var(--font-mono, monospace);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
+.tc-problem-r1__pane-tag {
+  color: var(--muted, #736c64);
+  font-weight: 650;
 }
 
-.tc-problem-r1__drift-status .ok {
-  color: var(--ink-secondary, #423e38);
-}
-
-.tc-problem-r1__drift-status .err {
+.tc-problem-r1__pane-tag--err {
   color: var(--accent, #c8683d);
-  font-weight: 800;
+  font-weight: 750;
 }
 
-/* Display Stage (16:9 Black Box, Contain) */
-.tc-problem-r1__drift-stage {
+/* 16:9 Black Contain Display Stage */
+.tc-problem-r1__stage-box {
   width: 100%;
   aspect-ratio: 16 / 9;
   background: #000;
-  border-radius: 6px;
+  border-radius: 8px;
   overflow: hidden;
   border: 1px solid rgba(23, 23, 20, 0.08);
+  box-shadow: 0 4px 20px rgba(23, 23, 20, 0.04);
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
-.tc-problem-r1__drift-img {
+.tc-problem-r1__stage-img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-.tc-problem-r1__drift-desc {
-  margin: 0;
+/* Pane Footer: Diagnostic Details */
+.tc-problem-r1__pane-footer {
+  margin-top: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.tc-problem-r1__spec-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.74rem;
+  letter-spacing: 0.05em;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid rgba(23, 23, 20, 0.06);
+}
+
+.tc-problem-r1__spec-key {
+  color: var(--muted, #736c64);
+  font-weight: 700;
+}
+
+.tc-problem-r1__spec-val {
+  color: var(--ink-secondary, #423e38);
+  font-weight: 700;
+}
+
+.tc-problem-r1__spec-val--accent {
+  color: var(--accent, #c8683d);
+  font-weight: 750;
+}
+
+.tc-problem-r1__pane-desc {
+  margin: 0.35rem 0 0;
   font-family: var(--font-display, -apple-system, sans-serif);
   font-size: 0.88rem;
-  font-weight: 650;
+  font-weight: 600;
   color: var(--ink-secondary, #423e38);
-  line-height: 1.45;
+  line-height: 1.5;
   word-break: keep-all;
+}
+
+/* Reroll Pane Container */
+.tc-problem-r1__reroll-view {
+  display: none;
+  width: 100%;
+  flex-direction: column;
+}
+
+.tc-problem-r1__reroll-view.is-active {
+  display: flex;
 }
 
 /* --------------------------------------------------------------------------
@@ -520,30 +419,20 @@
 /* --------------------------------------------------------------------------
    RESPONSIVE OVERRIDES
    -------------------------------------------------------------------------- */
-@media (max-width: 1024px) {
-  .tc-problem-r1__board {
+@media (max-width: 900px) {
+  .tc-problem-r1__dual-stage {
     grid-template-columns: 1fr;
-    row-gap: 2.5rem;
-  }
-  .tc-problem-r1__col-left {
-    position: static;
-    padding-right: 0;
-    max-width: 650px;
-  }
-  .tc-problem-r1__col-spine {
-    display: none;
-  }
-  .tc-problem-r1__col-right {
-    padding-left: 0;
-    border-left: none;
-    border-top: 1px dashed rgba(23, 23, 20, 0.10);
-    padding-top: 2rem;
+    gap: 2rem;
   }
 }
 
 @media (max-width: 768px) {
   .tc-problem-r1 {
     padding: 3.8rem 0 3rem;
+  }
+  .tc-problem-r1__tab-bar-wrap {
+    flex-direction: column;
+    align-items: flex-start;
   }
   .tc-problem-r1__takeaway-footer {
     flex-direction: column;
@@ -557,6 +446,14 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 0.4rem;
+  }
+  .tc-problem-r1__tab-group {
+    width: 100%;
+  }
+  .tc-problem-r1__tab-btn {
+    width: 100%;
+    justify-content: space-between;
+    font-size: 0.72rem;
   }
   .tc-problem-r1__coupling-formula {
     font-size: 0.72rem;
