@@ -587,12 +587,13 @@
 
 .tc-problem-r1__principle-quote {
   font-family: var(--font-display, sans-serif);
-  font-size: clamp(1.2rem, 1.45vw, 1.42rem);
+  font-size: clamp(1.05rem, 1.25vw, 1.22rem);
   font-weight: 850;
-  line-height: 1.28;
+  line-height: 1.35;
   color: var(--ink, #171714);
   margin: 0 0 0.35rem;
   letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
 .tc-problem-r1__principle-sub {
