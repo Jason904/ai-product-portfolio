@@ -1,0 +1,634 @@
+/* ==========================================================================
+   MODULE 01: TWITCANVA 03 CROWD — DESIGN R1
+   Namespace: .tc-crowd-r1-*
+   Theme: Scale & Spatial Organization / 规模与空间控制
+   TasteSkill: Warm Paper + Deep Ink + Burnt Orange Accent + De-boxed Editorial
+   ========================================================================== */
+
+.tc-crowd-r1 {
+  width: 100%;
+  position: relative;
+  background-color: var(--paper, #f4efe9);
+  padding: clamp(5rem, 6.5vw, 6.8rem) 0 4.5rem;
+  border-top: 1px solid var(--line, rgba(23, 23, 20, 0.12));
+}
+
+.tc-crowd-r1__container {
+  width: min(1240px, calc(100% - 44px));
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4rem, 5.5vw, 5.5rem);
+}
+
+/* --------------------------------------------------------------------------
+   BLOCK 01: OPENING / 从一个 UNIT 开始 (LEFT 68% STATEMENT / RIGHT 32% UNIT)
+   -------------------------------------------------------------------------- */
+.tc-crowd-r1__b01-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.48fr) minmax(280px, 1fr);
+  gap: clamp(32px, 4vw, 56px);
+  align-items: center;
+}
+
+.tc-crowd-r1__b01-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.tc-crowd-r1__meta-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: clamp(1.2rem, 1.8vw, 1.6rem);
+}
+
+.tc-crowd-r1__meta-eyebrow {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.74rem;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  color: var(--muted, #736c64);
+  text-transform: uppercase;
+}
+
+.tc-crowd-r1__meta-right {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--ink-secondary, #423e38);
+  text-transform: uppercase;
+}
+
+.tc-crowd-r1__title {
+  font-family: var(--font-display, sans-serif);
+  font-size: clamp(3.0rem, 4.8vw, 4.8rem);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  color: var(--ink, #171714);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+}
+
+.tc-crowd-r1__title span {
+  display: block;
+}
+
+.tc-crowd-r1__lead {
+  margin: 1.4rem 0 0.4rem;
+  font-size: clamp(1.1rem, 1.45vw, 1.28rem);
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--ink, #171714);
+  max-width: 620px;
+  word-break: keep-all;
+}
+
+.tc-crowd-r1__sublead {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 550;
+  color: var(--ink-secondary, #423e38);
+  line-height: 1.5;
+  max-width: 600px;
+  word-break: keep-all;
+}
+
+/* Right Unit Card */
+.tc-crowd-r1__unit-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  background: rgba(23, 23, 20, 0.02);
+  border: 1px solid rgba(23, 23, 20, 0.08);
+  padding: 1.1rem;
+}
+
+.tc-crowd-r1__unit-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+}
+
+.tc-crowd-r1__unit-tag {
+  color: var(--accent, #c8683d);
+  font-weight: 800;
+}
+
+.tc-crowd-r1__unit-sub {
+  color: var(--muted, #736c64);
+  font-weight: 650;
+}
+
+.tc-crowd-r1__unit-frame {
+  width: 100%;
+  height: 220px;
+  background: #000;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tc-crowd-r1__unit-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.tc-crowd-r1__unit-footer {
+  margin-top: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--ink-secondary, #423e38);
+}
+
+/* --------------------------------------------------------------------------
+   BLOCK 02: FORMATION A/B -> RESULT A/B (CORE EXPERIMENT · 40% WEIGHT)
+   -------------------------------------------------------------------------- */
+.tc-crowd-r1__b02-section {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.5rem;
+  border-top: 1px dashed rgba(23, 23, 20, 0.12);
+}
+
+.tc-crowd-r1__section-kicker {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.70rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  color: var(--accent, #c8683d);
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+}
+
+.tc-crowd-r1__b02-title {
+  font-family: var(--font-display, sans-serif);
+  font-size: clamp(1.65rem, 2.3vw, 2.1rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: var(--ink, #171714);
+  margin: 0;
+}
+
+.tc-crowd-r1__b02-sub {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.05em;
+  color: var(--muted, #736c64);
+  margin: 0.35rem 0 0.4rem;
+}
+
+.tc-crowd-r1__b02-desc {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--ink-secondary, #423e38);
+  margin: 0 0 1.8rem;
+}
+
+/* 2-Column Comparison Layout (Plan A vs Plan B) */
+.tc-crowd-r1__compare-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(24px, 3.2vw, 44px);
+  width: 100%;
+}
+
+.tc-crowd-r1__plan-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.tc-crowd-r1__plan-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid rgba(23, 23, 20, 0.09);
+}
+
+.tc-crowd-r1__plan-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--accent, #c8683d);
+  text-transform: uppercase;
+}
+
+.tc-crowd-r1__plan-subtext {
+  font-size: 0.80rem;
+  color: var(--muted, #736c64);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Stage & Frame */
+.tc-crowd-r1__stage-frame {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  background: #000;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(23, 23, 20, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tc-crowd-r1__stage-frame--result {
+  aspect-ratio: 16 / 9;
+}
+
+.tc-crowd-r1__stage-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.tc-crowd-r1__stage-label {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  font-weight: 750;
+  letter-spacing: 0.06em;
+  color: var(--ink-secondary, #423e38);
+  margin-top: 0.2rem;
+}
+
+.tc-crowd-r1__flow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.70rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  color: var(--accent, #c8683d);
+  padding: 0.25rem 0;
+}
+
+/* Bottom A/B Summary */
+.tc-crowd-r1__b02-bottom {
+  margin-top: 2rem;
+  padding: 1.2rem 1.4rem;
+  background: rgba(23, 23, 20, 0.025);
+  border-left: 3px solid var(--accent, #c8683d);
+  border-radius: 0 6px 6px 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.tc-crowd-r1__b02-verdict {
+  font-family: var(--font-display, sans-serif);
+  font-size: 0.96rem;
+  font-weight: 750;
+  color: var(--ink, #171714);
+}
+
+.tc-crowd-r1__b02-principle {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.74rem;
+  font-weight: 750;
+  letter-spacing: 0.06em;
+  color: var(--accent, #c8683d);
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   BLOCK 03: HEROES + CROWD SCENE STAGING (LEFT 58% IMAGE / RIGHT 42% STATEMENT)
+   -------------------------------------------------------------------------- */
+.tc-crowd-r1__b03-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.42fr) minmax(320px, 1fr);
+  gap: clamp(32px, 4vw, 56px);
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 1px dashed rgba(23, 23, 20, 0.12);
+}
+
+.tc-crowd-r1__b03-img-frame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(23, 23, 20, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tc-crowd-r1__b03-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.tc-crowd-r1__b03-title {
+  font-family: var(--font-display, sans-serif);
+  font-size: clamp(1.45rem, 2.1vw, 1.95rem);
+  font-weight: 800;
+  line-height: 1.22;
+  letter-spacing: -0.025em;
+  color: var(--ink, #171714);
+  margin: 0;
+}
+
+.tc-crowd-r1__b03-desc {
+  font-size: 0.88rem;
+  font-weight: 550;
+  color: var(--ink-secondary, #423e38);
+  line-height: 1.6;
+  margin: 0.4rem 0 0.8rem;
+  word-break: keep-all;
+}
+
+.tc-crowd-r1__b03-formula {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.74rem;
+  font-weight: 750;
+  letter-spacing: 0.06em;
+  color: var(--ink, #171714);
+  padding-top: 0.65rem;
+  border-top: 1px solid rgba(23, 23, 20, 0.08);
+}
+
+.tc-crowd-r1__b03-formula span.accent {
+  color: var(--accent, #c8683d);
+}
+
+/* --------------------------------------------------------------------------
+   BLOCK 04: EXTENDED APPLICATION / CAPSULE CROWD (~1180px WIDE PUNCH)
+   -------------------------------------------------------------------------- */
+.tc-crowd-r1__b04-section {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.5rem;
+  border-top: 1px dashed rgba(23, 23, 20, 0.12);
+}
+
+.tc-crowd-r1__b04-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1.4rem;
+}
+
+.tc-crowd-r1__b04-title {
+  font-family: var(--font-display, sans-serif);
+  font-size: clamp(1.45rem, 2.1vw, 1.95rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--ink, #171714);
+  margin: 0;
+}
+
+.tc-crowd-r1__b04-desc {
+  font-size: 0.88rem;
+  font-weight: 550;
+  color: var(--ink-secondary, #423e38);
+  margin: 0;
+}
+
+.tc-crowd-r1__b04-frame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(23, 23, 20, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tc-crowd-r1__b04-footer {
+  margin-top: 0.85rem;
+  display: flex;
+  justify-content: flex-end;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  color: var(--muted, #736c64);
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   BLOCK 05: REAL CROWD WORKFLOW + PRODUCT JUDGMENT (38% LEFT / 62% RIGHT)
+   -------------------------------------------------------------------------- */
+.tc-crowd-r1__b05-grid {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) minmax(0, 1.62fr);
+  gap: clamp(32px, 4vw, 56px);
+  align-items: start;
+  padding-top: 1.8rem;
+  border-top: 1px dashed rgba(23, 23, 20, 0.12);
+}
+
+/* Left: Product Judgment (38%) */
+.tc-crowd-r1__b05-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.tc-crowd-r1__b05-title {
+  font-family: var(--font-display, sans-serif);
+  font-size: clamp(1.2rem, 1.6vw, 1.45rem);
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--ink, #171714);
+  margin: 0;
+}
+
+.tc-crowd-r1__b05-desc {
+  font-size: 0.85rem;
+  font-weight: 550;
+  color: var(--ink-secondary, #423e38);
+  line-height: 1.55;
+  margin: 0 0 1.2rem;
+}
+
+.tc-crowd-r1__b05-judgment {
+  padding-top: 1.1rem;
+  border-top: 1px solid rgba(23, 23, 20, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.tc-crowd-r1__b05-judgment-head {
+  font-family: var(--font-display, sans-serif);
+  font-size: clamp(1.35rem, 1.9vw, 1.8rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--ink, #171714);
+  margin: 0;
+}
+
+.tc-crowd-r1__b05-judgment-sub {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.70rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  color: var(--muted, #736c64);
+  margin-bottom: 0.4rem;
+}
+
+.tc-crowd-r1__b05-judgment-body {
+  font-size: 0.85rem;
+  font-weight: 550;
+  color: var(--ink-secondary, #423e38);
+  line-height: 1.55;
+  margin: 0 0 0.8rem;
+}
+
+.tc-crowd-r1__b05-formula {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.70rem;
+  font-weight: 750;
+  letter-spacing: 0.06em;
+  color: var(--ink, #171714);
+  padding: 0.4rem 0.6rem;
+  background: rgba(23, 23, 20, 0.03);
+  border-radius: 4px;
+  max-width: max-content;
+}
+
+.tc-crowd-r1__b05-principle {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--accent, #c8683d);
+  text-transform: uppercase;
+  margin-top: 0.6rem;
+}
+
+/* Right: Real Crowd Workflow (62%) */
+.tc-crowd-r1__b05-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.tc-crowd-r1__wf-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  color: var(--ink-secondary, #423e38);
+  text-transform: uppercase;
+}
+
+.tc-crowd-r1__wf-header span.highlight {
+  color: var(--accent, #c8683d);
+}
+
+.tc-crowd-r1__wf-frame {
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(23, 23, 20, 0.08);
+  background: #000;
+  box-shadow: 0 4px 20px rgba(23, 23, 20, 0.04);
+}
+
+.tc-crowd-r1__wf-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   BOTTOM SITE TRANSITION
+   -------------------------------------------------------------------------- */
+.tc-crowd-r1__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(23, 23, 20, 0.08);
+}
+
+.tc-crowd-r1__transition {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.74rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  color: var(--accent, #c8683d);
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: opacity 0.2s ease;
+}
+
+.tc-crowd-r1__transition:hover {
+  opacity: 0.8;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE OVERRIDES
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .tc-crowd-r1__b01-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .tc-crowd-r1__b03-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .tc-crowd-r1__b05-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tc-crowd-r1 {
+    padding: 3.8rem 0 3rem;
+  }
+  .tc-crowd-r1__compare-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tc-crowd-r1__meta-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+}
