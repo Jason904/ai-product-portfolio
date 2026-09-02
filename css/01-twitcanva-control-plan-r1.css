@@ -1,0 +1,509 @@
+/* ==========================================================================
+   MODULE 01: TWITCANVA 02 THE CONTROL PLAN — DESIGN R1.1 (COMPACT BLUEPRINT)
+   Namespace: .tc-plan-r1-*
+   Layout: 60/40 Top Split + 1240px 3-Col Taxonomy Rail + 1180px Canvas + 62/38 Judgment
+   Architecture: Editorial + Blueprint Reveal + De-boxed + 1240px Spine
+   ========================================================================== */
+
+.tc-plan-r1 {
+  width: 100%;
+  position: relative;
+  background-color: var(--paper, #f4efe9);
+  padding: clamp(5rem, 6.5vw, 6.8rem) 0 4.5rem;
+  border-top: 1px solid var(--line, rgba(23, 23, 20, 0.12));
+}
+
+.tc-plan-r1__container {
+  width: min(1240px, calc(100% - 44px));
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --------------------------------------------------------------------------
+   BEAT A: TOP 60% : 40% COMPACT PROPOSITION & COGNITIVE CONVERSION
+   -------------------------------------------------------------------------- */
+.tc-plan-r1__top-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(320px, 1fr);
+  gap: clamp(32px, 4vw, 56px);
+  align-items: start;
+  margin-bottom: clamp(2.8rem, 3.8vw, 3.6rem);
+}
+
+/* Left: Statement (60%) */
+.tc-plan-r1__top-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.tc-plan-r1__meta-header {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.tc-plan-r1__meta-eyebrow {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.74rem;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  color: var(--accent, #c8683d);
+  text-transform: uppercase;
+}
+
+.tc-plan-r1__title {
+  font-family: var(--font-display, sans-serif);
+  font-size: clamp(3.0rem, 4.8vw, 4.8rem);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  color: var(--ink, #171714);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+}
+
+.tc-plan-r1__title span {
+  display: block;
+}
+
+.tc-plan-r1__lead {
+  margin: 1.4rem 0 0;
+  font-size: clamp(1.05rem, 1.4vw, 1.22rem);
+  font-weight: 600;
+  line-height: 1.55;
+  color: var(--ink-secondary, #423e38);
+  max-width: 620px;
+  word-break: keep-all;
+}
+
+/* Right: Cognitive Conversion (40% · Before / After) */
+.tc-plan-r1__top-right {
+  border-left: 1px dashed rgba(23, 23, 20, 0.14);
+  padding-left: clamp(1.4rem, 2.2vw, 2.2rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.tc-plan-r1__meta-right {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--ink, #171714);
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+
+.tc-plan-r1__convert-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.tc-plan-r1__convert-kicker {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--accent, #c8683d);
+  text-transform: uppercase;
+}
+
+.tc-plan-r1__convert-title {
+  font-family: var(--font-display, -apple-system, sans-serif);
+  font-size: 0.88rem;
+  font-weight: 750;
+  color: var(--ink, #171714);
+  line-height: 1.35;
+}
+
+.tc-plan-r1__convert-sub {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.05em;
+  color: var(--muted, #736c64);
+  text-transform: uppercase;
+}
+
+.tc-plan-r1__convert-list {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-secondary, #423e38);
+  line-height: 1.45;
+  margin-top: 0.15rem;
+}
+
+.tc-plan-r1__convert-list--after {
+  color: var(--ink, #171714);
+  font-weight: 750;
+}
+
+.tc-plan-r1__convert-arrow {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--accent, #c8683d);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.1rem 0;
+}
+
+/* --------------------------------------------------------------------------
+   BEAT B: 3-COLUMN TAXONOMY RAIL (COMPACT SYSTEM BLUEPRINT · ~160px HEIGHT)
+   -------------------------------------------------------------------------- */
+.tc-plan-r1__taxonomy-rail {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(24px, 3vw, 44px);
+  padding: 1.5rem 0 1.6rem;
+  border-top: 1px solid rgba(23, 23, 20, 0.10);
+  border-bottom: 1px solid rgba(23, 23, 20, 0.10);
+  margin-bottom: clamp(2.8rem, 3.8vw, 3.6rem);
+}
+
+.tc-plan-r1__taxonomy-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.tc-plan-r1__tax-num {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--accent, #c8683d);
+  text-transform: uppercase;
+}
+
+.tc-plan-r1__tax-main {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.80rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  color: var(--ink, #171714);
+}
+
+.tc-plan-r1__tax-skeleton {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--muted, #736c64);
+  text-transform: uppercase;
+}
+
+.tc-plan-r1__tax-desc {
+  font-family: var(--font-display, -apple-system, sans-serif);
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--ink-secondary, #423e38);
+  line-height: 1.45;
+  margin: 0.15rem 0 0;
+  word-break: keep-all;
+}
+
+/* --------------------------------------------------------------------------
+   BEAT C: REAL CONTROL PLAN CANVAS (1180px WIDE · CENTERED)
+   -------------------------------------------------------------------------- */
+.tc-plan-r1__canvas-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.tc-plan-r1__canvas-header {
+  width: min(100%, 1180px);
+  margin-bottom: 0.85rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-secondary, #423e38);
+  font-weight: 750;
+  text-transform: uppercase;
+}
+
+.tc-plan-r1__canvas-header span.highlight {
+  color: var(--accent, #c8683d);
+}
+
+.tc-plan-r1__media-frame {
+  width: min(100%, 1180px);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(23, 23, 20, 0.08);
+  background: #000;
+  box-shadow: 0 6px 28px rgba(23, 23, 20, 0.04);
+}
+
+.tc-plan-r1__img-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* System Formula Rail (De-boxed, Single Top Hairline) */
+.tc-plan-r1__formula-rail {
+  margin: 2.2rem auto 0;
+  width: min(100%, 1180px);
+  padding: 1.2rem 0 0;
+  border-top: 1px solid rgba(23, 23, 20, 0.10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.80rem;
+  letter-spacing: 0.08em;
+}
+
+.tc-plan-r1__formula-item {
+  color: var(--ink, #171714);
+  font-weight: 750;
+}
+
+.tc-plan-r1__formula-op {
+  color: var(--accent, #c8683d);
+  font-weight: 800;
+  padding: 0 0.35rem;
+}
+
+.tc-plan-r1__formula-arrow {
+  color: var(--accent, #c8683d);
+  font-weight: 800;
+  padding: 0 0.5rem;
+  font-size: 0.95rem;
+}
+
+.tc-plan-r1__formula-dest {
+  color: var(--accent, #c8683d);
+  font-weight: 800;
+}
+
+/* --------------------------------------------------------------------------
+   BEAT D: PRODUCT JUDGMENT (ASYMMETRIC SPLIT: LEFT 62% + RIGHT 38%)
+   -------------------------------------------------------------------------- */
+.tc-plan-r1__judgment-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(280px, 1fr);
+  gap: clamp(32px, 4vw, 56px);
+  align-items: start;
+  padding-top: clamp(3rem, 4vw, 3.8rem);
+  border-top: 1px dashed rgba(23, 23, 20, 0.12);
+  margin-top: clamp(3.5rem, 5vw, 4.5rem);
+}
+
+/* Left Column: Thesis & Definition (62%) */
+.tc-plan-r1__judgment-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.tc-plan-r1__judgment-headline {
+  font-family: var(--font-display, sans-serif);
+  font-size: clamp(1.8rem, 2.6vw, 2.45rem);
+  font-weight: 780;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  color: var(--ink, #171714);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.tc-plan-r1__judgment-headline span {
+  display: block;
+}
+
+.tc-plan-r1__judgment-sub-en {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.74rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  color: var(--muted, #736c64);
+  margin: 0.4rem 0 0.8rem;
+}
+
+.tc-plan-r1__judgment-lead {
+  font-size: 0.94rem;
+  font-weight: 550;
+  color: var(--ink-secondary, #423e38);
+  line-height: 1.65;
+  margin: 0;
+  max-width: 62ch;
+  word-break: keep-all;
+}
+
+/* Thesis Contrast Rail */
+.tc-plan-r1__thesis-flow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-display, -apple-system, sans-serif);
+  font-size: 0.90rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  color: var(--ink, #171714);
+  margin: 0.8rem 0 0.4rem;
+}
+
+.tc-plan-r1__thesis-arrow {
+  color: var(--accent, #c8683d);
+  font-weight: 850;
+  font-size: 1.05rem;
+}
+
+.tc-plan-r1__thesis-sub-en {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.70rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  color: var(--muted, #736c64);
+  margin: 0 0 0.8rem;
+}
+
+.tc-plan-r1__definition-note {
+  font-family: var(--font-display, -apple-system, sans-serif);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--ink, #171714);
+  line-height: 1.55;
+  max-width: 62ch;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(23, 23, 20, 0.06);
+  word-break: keep-all;
+}
+
+/* Right Column: Vertical Concept Ladder (38%) */
+.tc-plan-r1__judgment-right {
+  border-left: 1px dashed rgba(23, 23, 20, 0.14);
+  padding-left: clamp(1.4rem, 2.2vw, 2.2rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 1.8rem;
+}
+
+.tc-plan-r1__ladder {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.tc-plan-r1__ladder-node {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.tc-plan-r1__ladder-kicker {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--accent, #c8683d);
+  text-transform: uppercase;
+}
+
+.tc-plan-r1__ladder-title {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.78rem;
+  font-weight: 750;
+  letter-spacing: 0.06em;
+  color: var(--ink, #171714);
+  text-transform: uppercase;
+}
+
+.tc-plan-r1__ladder-node--target .tc-plan-r1__ladder-title {
+  color: var(--accent, #c8683d);
+  font-weight: 850;
+}
+
+.tc-plan-r1__ladder-arrow {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--accent, #c8683d);
+  padding: 0.1rem 0;
+}
+
+.tc-plan-r1__transition-wrap {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(23, 23, 20, 0.06);
+}
+
+.tc-plan-r1__transition {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.74rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  color: var(--accent, #c8683d);
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: opacity 0.2s ease;
+}
+
+.tc-plan-r1__transition:hover {
+  opacity: 0.8;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE OVERRIDES
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .tc-plan-r1__top-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .tc-plan-r1__top-right {
+    border-left: none;
+    border-top: 1px dashed rgba(23, 23, 20, 0.12);
+    padding-left: 0;
+    padding-top: 1.5rem;
+  }
+  .tc-plan-r1__judgment-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .tc-plan-r1__judgment-right {
+    border-left: none;
+    border-top: 1px dashed rgba(23, 23, 20, 0.12);
+    padding-left: 0;
+    padding-top: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tc-plan-r1 {
+    padding: 3.8rem 0 3rem;
+  }
+  .tc-plan-r1__taxonomy-rail {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tc-plan-r1__meta-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+}
