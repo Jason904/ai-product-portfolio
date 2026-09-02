@@ -163,7 +163,7 @@
 
           <!-- 10. Control Canvas Media Frame -->
           <div class="tc-h1-r1__media-frame tc-h1-r1__media-frame--canvas">
-            <img class="tc-h1-r1__img--canvas" src="assets/images/twitcanva/twitcanva-h1-control-canvas.png" alt="TwitCanva H1 控制画布工作流拓扑" loading="lazy" decoding="async">
+            <img class="tc-h1-r1__img--canvas" src="assets/images/twitcanva/twitcanva-h1-control-canvas.png" alt="TwitCanva H1 控制画布工作流拓扑" loading="eager" decoding="async">
           </div>
 
           <!-- 11. Control Formula Rail (Cohesive, Centered System Equation) -->
@@ -210,6 +210,157 @@
             <!-- 16. Next Plate Transition Cue -->
             <div class="tc-h1-r1__transition" aria-hidden="true">
               NEXT / WHY CONTROL &darr;
+            </div>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+    <!-- 01 / THE PROBLEM — TWITCANVA DESIGN R1 -->
+    <section class="tc-problem-r1" id="twitcanva-problem-r1" aria-label="01 / THE PROBLEM · Control Coupling">
+      <div class="tc-problem-r1__container">
+        <!-- BEAT A: PROBLEM STATEMENT -->
+        <header class="tc-problem-r1__header">
+          <span class="tc-problem-r1__meta-left">01 / THE PROBLEM</span>
+          <span class="tc-problem-r1__meta-right">CONTROL COUPLING</span>
+        </header>
+
+        <div class="tc-problem-r1__statement">
+          <h1 class="tc-problem-r1__title">
+            <span>ONE CHANGE.</span>
+            <span>FULL REROLL.</span>
+          </h1>
+          <p class="tc-problem-r1__lead">当结果已经基本正确，为什么修改一个变量，仍然会重新打开整张画面的不确定性？</p>
+        </div>
+
+        <!-- BEAT B: CURRENT STATE (BASELINE REFERENCE) -->
+        <div class="tc-problem-r1__baseline-section">
+          <div class="tc-problem-r1__baseline-header">
+            <span class="tc-problem-r1__baseline-label"><span class="highlight">CURRENT STATE</span> / 当前已正确状态</span>
+          </div>
+          
+          <div class="tc-problem-r1__media-frame--baseline">
+            <img class="tc-problem-r1__img--baseline" src="assets/images/twitcanva/twitcanva-p1-baseline.png" alt="当前基线状态：三人高保真真人生成结果" loading="eager" decoding="async">
+          </div>
+
+          <!-- Status Mental Model: KEEP / CHANGE -->
+          <div class="tc-problem-r1__baseline-rail" aria-label="变量状态心智模型">
+            <div class="tc-problem-r1__rail-keep">
+              <span class="tc-problem-r1__rail-tag">KEEP:</span>
+              <span>CHARACTER · RELATION · COMPOSITION</span>
+            </div>
+            <div class="tc-problem-r1__rail-change">
+              <span class="tc-problem-r1__rail-tag">CHANGE:</span>
+              <span>POSE</span>
+            </div>
+          </div>
+
+          <div class="tc-problem-r1__intent-box">
+            <span class="tc-problem-r1__intent-tag">CHANGE POSE ONLY &rarr;</span>
+            <span>只改变红衣控制者的动作，将前伸手势改为更高、更强的控制姿态。</span>
+          </div>
+        </div>
+
+        <!-- Editorial Whitespace Transition -->
+        <div class="tc-problem-r1__bridge" aria-hidden="true"></div>
+
+        <!-- BEAT C: SAME EDIT INTENT · THREE FAILURE MODES (35% VISUAL CORE) -->
+        <div class="tc-problem-r1__comparison-section">
+          <div class="tc-problem-r1__comparison-header">
+            <h2 class="tc-problem-r1__comparison-title">同一个修改意图，三种典型漂移模式</h2>
+            <div class="tc-problem-r1__comparison-subbar">
+              <span class="tc-problem-r1__comparison-sub">SAME EDIT INTENT · THREE FAILURE MODES</span>
+              <span class="tc-problem-r1__evidence-tag">ILLUSTRATIVE FAILURE MODES</span>
+            </div>
+          </div>
+
+          <!-- 3-Column Parallel Comparison Grid -->
+          <div class="tc-problem-r1__drift-grid">
+            <!-- Reroll 01: Character Drift -->
+            <article class="tc-problem-r1__drift-card">
+              <div class="tc-problem-r1__drift-top">
+                <span class="tc-problem-r1__drift-num">01 / CHARACTER DRIFT</span>
+                <div class="tc-problem-r1__drift-status">
+                  <span class="ok">POSE &check;</span>
+                  <span class="err">CHARACTER &cross;</span>
+                </div>
+              </div>
+              <div class="tc-problem-r1__drift-frame">
+                <img class="tc-problem-r1__drift-img" src="assets/images/twitcanva/twitcanva-p1-reroll-01-character.png" alt="Reroll 01: 角色身份漂移" loading="eager" decoding="async">
+              </div>
+              <p class="tc-problem-r1__drift-desc">动作改对了，人却变了。</p>
+            </article>
+
+            <!-- Reroll 02: Relation Drift -->
+            <article class="tc-problem-r1__drift-card">
+              <div class="tc-problem-r1__drift-top">
+                <span class="tc-problem-r1__drift-num">02 / RELATION DRIFT</span>
+                <div class="tc-problem-r1__drift-status">
+                  <span class="ok">POSE &check;</span>
+                  <span class="err">RELATION &cross;</span>
+                </div>
+              </div>
+              <div class="tc-problem-r1__drift-frame">
+                <img class="tc-problem-r1__drift-img" src="assets/images/twitcanva/twitcanva-p1-reroll-02-relation.png" alt="Reroll 02: 人物关系漂移" loading="eager" decoding="async">
+              </div>
+              <p class="tc-problem-r1__drift-desc">只改一个人的动作，三人的站位关系却被重新计算。</p>
+            </article>
+
+            <!-- Reroll 03: Composition Drift -->
+            <article class="tc-problem-r1__drift-card">
+              <div class="tc-problem-r1__drift-top">
+                <span class="tc-problem-r1__drift-num">03 / COMPOSITION DRIFT</span>
+                <div class="tc-problem-r1__drift-status">
+                  <span class="ok">POSE &check;</span>
+                  <span class="err">COMPOSITION &cross;</span>
+                </div>
+              </div>
+              <div class="tc-problem-r1__drift-frame">
+                <img class="tc-problem-r1__drift-img" src="assets/images/twitcanva/twitcanva-p1-reroll-03-composition.png" alt="Reroll 03: 构图镜头漂移" loading="eager" decoding="async">
+              </div>
+              <p class="tc-problem-r1__drift-desc">动作改了，原本满意的镜头也被重新构了一遍。</p>
+            </article>
+          </div>
+        </div>
+
+        <!-- BEAT D: PRODUCT JUDGMENT & THE COUPLING THESIS -->
+        <footer class="tc-problem-r1__takeaway">
+          <div class="tc-problem-r1__takeaway-main">
+            <h2 class="tc-problem-r1__takeaway-headline">
+              <span>改变一个变量，</span>
+              <span>不应该重新打开所有变量。</span>
+            </h2>
+            <div class="tc-problem-r1__takeaway-sub-en">ONE CHANGE SHOULD NOT REOPEN EVERY VARIABLE.</div>
+
+            <!-- Minimal Coupling Formula -->
+            <div class="tc-problem-r1__coupling-formula" aria-label="控制变量耦合模型公式">
+              <span class="tc-problem-r1__cf-target">EDIT TARGET: POSE</span>
+              <span class="tc-problem-r1__cf-arrow">&rarr;</span>
+              <span class="tc-problem-r1__cf-reopen">REROLL CAN RE-SAMPLE: CHARACTER · RELATION · COMPOSITION</span>
+            </div>
+
+            <!-- Core Thesis Lead -->
+            <p class="tc-problem-r1__takeaway-lead">真正的问题不是生成质量，而是控制变量仍然耦合在一次生成里。</p>
+            
+            <!-- Cost Telemetry -->
+            <div class="tc-problem-r1__telemetry">
+              <span>重试 &uarr;</span>
+              <span class="tc-problem-r1__telemetry-dot">&middot;</span>
+              <span>时间 &uarr;</span>
+              <span class="tc-problem-r1__telemetry-dot">&middot;</span>
+              <span>成本 &uarr;</span>
+              <span class="tc-problem-r1__telemetry-dot">&middot;</span>
+              <span>不确定性 &uarr;</span>
+            </div>
+          </div>
+
+          <!-- Bottom Principle & Transition -->
+          <div class="tc-problem-r1__takeaway-footer">
+            <div class="tc-problem-r1__principle">
+              CHANGE WHAT MATTERS. KEEP WHAT ALREADY WORKS.
+            </div>
+            <div class="tc-problem-r1__transition" aria-hidden="true">
+              NEXT / MAKE CONTROL EXPLICIT &darr;
             </div>
           </div>
         </footer>
