@@ -216,7 +216,7 @@
       </div>
     </section>
 
-    <!-- 01 / THE PROBLEM — TWITCANVA DESIGN R2 (Analytical Workbench Layout) -->
+    <!-- 01 / THE PROBLEM — TWITCANVA DESIGN R2.1 (Causal Comparison Board) -->
     <section class="tc-problem-r1" id="twitcanva-problem-r1" aria-label="01 / THE PROBLEM · Control Coupling">
       <div class="tc-problem-r1__container">
         <!-- BEAT A: PROBLEM STATEMENT (FULL WIDTH) -->
@@ -233,50 +233,80 @@
           <p class="tc-problem-r1__lead">当结果已经基本正确，为什么修改一个变量，仍然会重新打开整张画面的不确定性？</p>
         </div>
 
-        <!-- BEAT B: CENTRAL WORKBENCH STAGE (LEFT 42% BASELINE / RIGHT 58% 3 DRIFTS) -->
-        <div class="tc-problem-r1__workbench">
-          <!-- Left Column: Baseline & Problem Definition (42%) -->
-          <div class="tc-problem-r1__bench-left">
-            <div class="tc-problem-r1__baseline-top">
-              <span class="tc-problem-r1__baseline-label"><span class="highlight">CURRENT STATE</span> / 当前已正确状态</span>
+        <!-- BEAT B: CAUSAL COMPARISON BOARD (36% BASELINE + 8% SPINE + 56% DRIFTS) -->
+        <div class="tc-problem-r1__board-top">
+          <span class="tc-problem-r1__board-sub">SAME EDIT INTENT &middot; THREE FAILURE MODES</span>
+          <span class="tc-problem-r1__evidence-tag">ILLUSTRATIVE FAILURE MODES</span>
+        </div>
+
+        <div class="tc-problem-r1__board">
+          <!-- Left Column: Source State Spec (36%) -->
+          <div class="tc-problem-r1__col-left">
+            <div class="tc-problem-r1__col-title">
+              <span class="tag-accent">CURRENT STATE</span> / 当前已正确状态
             </div>
             
             <div class="tc-problem-r1__baseline-stage">
               <img class="tc-problem-r1__baseline-img" src="assets/images/twitcanva/twitcanva-p1-baseline.png" alt="当前基线状态：三人高保真真人生成结果" loading="eager" decoding="async">
             </div>
 
-            <!-- Status Mental Model: KEEP / CHANGE -->
-            <div class="tc-problem-r1__baseline-rail" aria-label="变量状态心智模型">
-              <div class="tc-problem-r1__rail-keep">
-                <span class="tc-problem-r1__rail-tag">KEEP:</span>
-                <span>CHARACTER · RELATION · COMPOSITION</span>
+            <!-- State Spec: Structured Vertical Blueprint -->
+            <div class="tc-problem-r1__spec-card">
+              <div class="tc-problem-r1__spec-group">
+                <div class="tc-problem-r1__spec-header tc-problem-r1__spec-header--keep">
+                  KEEP EXPECTED
+                </div>
+                <div class="tc-problem-r1__spec-list">
+                  <span>CHARACTER</span>
+                  <span>RELATION</span>
+                  <span>COMPOSITION</span>
+                </div>
               </div>
-              <div class="tc-problem-r1__rail-change">
-                <span class="tc-problem-r1__rail-tag">CHANGE:</span>
-                <span>POSE</span>
-              </div>
-            </div>
 
-            <div class="tc-problem-r1__intent-box">
-              <span class="tc-problem-r1__intent-tag">CHANGE POSE ONLY &rarr;</span>
-              <span>只改变红衣控制者的动作，将前伸手势抬高为更强、更明确的控制姿态。</span>
+              <div class="tc-problem-r1__spec-divider" aria-hidden="true"></div>
+
+              <div class="tc-problem-r1__spec-group">
+                <div class="tc-problem-r1__spec-header tc-problem-r1__spec-header--change">
+                  EDIT TARGET
+                </div>
+                <div class="tc-problem-r1__spec-list">
+                  <span style="color: var(--accent, #c8683d); font-weight: 750;">POSE</span>
+                </div>
+                <p class="tc-problem-r1__intent-text">只改变红衣控制者的动作，将前伸手势抬高为更强、更明确的控制姿态。</p>
+              </div>
             </div>
           </div>
 
-          <!-- Right Column: 3 Vertically Stacked Drift Rows (58%) -->
-          <div class="tc-problem-r1__bench-right">
-            <div class="tc-problem-r1__drifts-header">
-              <h2 class="tc-problem-r1__drifts-title">同一个修改意图，三种典型漂移模式</h2>
-              <div class="tc-problem-r1__drifts-subbar">
-                <span class="tc-problem-r1__drifts-sub">SAME EDIT INTENT · THREE FAILURE MODES</span>
-                <span class="tc-problem-r1__evidence-tag">ILLUSTRATIVE FAILURE MODES</span>
+          <!-- Middle Column: Causal Spine (8%) -->
+          <div class="tc-problem-r1__col-spine" aria-hidden="true">
+            <div class="tc-problem-r1__spine-hub">
+              <div class="tc-problem-r1__spine-badge">EDIT: POSE</div>
+              <div class="tc-problem-r1__spine-fork">
+                <svg viewBox="0 0 60 180" fill="none">
+                  <!-- Central origin node -->
+                  <circle cx="10" cy="90" r="4.5" fill="#c8683d" />
+                  <!-- Branch 1: to Drift 01 top -->
+                  <path d="M 10 90 C 35 90, 35 15, 60 15" stroke="rgba(23, 23, 20, 0.22)" stroke-width="1.2" />
+                  <polygon points="56,12 60,15 56,18" fill="#c8683d" />
+                  <!-- Branch 2: to Drift 02 center -->
+                  <path d="M 10 90 L 60 90" stroke="rgba(23, 23, 20, 0.22)" stroke-width="1.2" />
+                  <polygon points="56,87 60,90 56,93" fill="#c8683d" />
+                  <!-- Branch 3: to Drift 03 bottom -->
+                  <path d="M 10 90 C 35 90, 35 165, 60 165" stroke="rgba(23, 23, 20, 0.22)" stroke-width="1.2" />
+                  <polygon points="56,162 60,165 56,168" fill="#c8683d" />
+                </svg>
               </div>
             </div>
+          </div>
 
+          <!-- Right Column: Three Stacked Drift Rows (56%) -->
+          <div class="tc-problem-r1__col-right">
             <!-- Drift 01: Character Drift -->
-            <article class="tc-problem-r1__drift-row">
-              <div class="tc-problem-r1__drift-meta">
-                <span class="tc-problem-r1__drift-num">01 / CHARACTER DRIFT</span>
+            <article class="tc-problem-r1__drift-card">
+              <div class="tc-problem-r1__drift-header">
+                <div class="tc-problem-r1__drift-title-group">
+                  <span class="tc-problem-r1__drift-num">01 / CHARACTER DRIFT</span>
+                </div>
                 <div class="tc-problem-r1__drift-status">
                   <span class="ok">POSE &check;</span>
                   <span class="err">CHARACTER &cross;</span>
@@ -289,9 +319,11 @@
             </article>
 
             <!-- Drift 02: Relation Drift -->
-            <article class="tc-problem-r1__drift-row">
-              <div class="tc-problem-r1__drift-meta">
-                <span class="tc-problem-r1__drift-num">02 / RELATION DRIFT</span>
+            <article class="tc-problem-r1__drift-card">
+              <div class="tc-problem-r1__drift-header">
+                <div class="tc-problem-r1__drift-title-group">
+                  <span class="tc-problem-r1__drift-num">02 / RELATION DRIFT</span>
+                </div>
                 <div class="tc-problem-r1__drift-status">
                   <span class="ok">POSE &check;</span>
                   <span class="err">RELATION &cross;</span>
@@ -304,9 +336,11 @@
             </article>
 
             <!-- Drift 03: Composition Drift -->
-            <article class="tc-problem-r1__drift-row">
-              <div class="tc-problem-r1__drift-meta">
-                <span class="tc-problem-r1__drift-num">03 / COMPOSITION DRIFT</span>
+            <article class="tc-problem-r1__drift-card">
+              <div class="tc-problem-r1__drift-header">
+                <div class="tc-problem-r1__drift-title-group">
+                  <span class="tc-problem-r1__drift-num">03 / COMPOSITION DRIFT</span>
+                </div>
                 <div class="tc-problem-r1__drift-status">
                   <span class="ok">POSE &check;</span>
                   <span class="err">COMPOSITION &cross;</span>
@@ -329,7 +363,7 @@
             </h2>
             <div class="tc-problem-r1__takeaway-sub-en">ONE CHANGE SHOULD NOT REOPEN EVERY VARIABLE.</div>
 
-            <!-- Minimal Coupling Formula -->
+            <!-- Minimal De-boxed Coupling Formula (Single Hairline, No Gray Box) -->
             <div class="tc-problem-r1__coupling-formula" aria-label="控制变量耦合模型公式">
               <span class="tc-problem-r1__cf-target">EDIT TARGET: POSE</span>
               <span class="tc-problem-r1__cf-arrow">&rarr;</span>
