@@ -1,10 +1,11 @@
 /* ==========================================================================
-   MODULE 01: TWITCANVA 01 THE PROBLEM — DESIGN R3.1 (SCROLL-DRIVEN & HIGHLIGHTED)
+   MODULE 01: TWITCANVA 01 THE PROBLEM — DESIGN R3.2
    Namespace: .tc-problem-r1-*
    Features:
      - Scroll-driven automatic sequential Tab switching with Sticky Pinning
      - Forensic Target Reticles & Visual Delta Problem Highlights
-     - Clean compact vertical rhythm fitting 100% in viewport without clipping
+     - Clean Camera Composition Drift (Framing & Angle Shift without 4:3 crop)
+   TasteSkill: High Forensic Precision + Editorial Restraint
    ========================================================================== */
 
 .tc-problem-r1 {
@@ -326,18 +327,19 @@
   letter-spacing: 0.04em;
 }
 
-/* Highlight 3: 4:3 Camera Framing Crop Overlay */
+/* Highlight 3: Camera Angle & Framing Shift Reticle */
 .tc-problem-r1__reticle-composition {
   position: absolute;
-  inset: 0;
+  inset: 6% 8%;
   border: 1.5px dashed rgba(200, 104, 61, 0.85);
   background: rgba(200, 104, 61, 0.04);
+  border-radius: 4px;
 }
 
 .tc-problem-r1__reticle-pill--composition {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: -10px;
+  right: 12px;
   background: rgba(23, 23, 20, 0.92);
   color: #ff9364;
   border: 1px solid rgba(200, 104, 61, 0.6);
