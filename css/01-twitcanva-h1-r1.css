@@ -1,0 +1,345 @@
+/* ==========================================================================
+   MODULE 01: TWITCANVA 00 HERO — DESIGN R1
+   Namespace: .tc-h1-r1-*
+   TasteSkill Calibration:
+     TWITCANVA_H1_VARIANCE = 7
+     TWITCANVA_H1_NEW_MOTION = 0
+     TWITCANVA_H1_DENSITY = 3
+   Architecture: Editorial + Cinematic + De-boxed + 1240px Spine
+   ========================================================================== */
+
+.tc-h1-r1 {
+  width: 100%;
+  position: relative;
+  background-color: var(--paper, #f4efe9);
+  padding: clamp(5.5rem, 7vw, 7.5rem) 0 4.5rem;
+  border-top: 1px solid var(--line, rgba(23, 23, 20, 0.12));
+}
+
+.tc-h1-r1__container {
+  width: min(1240px, calc(100% - 44px));
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --------------------------------------------------------------------------
+   1. META HEADER
+   -------------------------------------------------------------------------- */
+.tc-h1-r1__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: clamp(2.2rem, 3.2vw, 2.8rem);
+}
+
+.tc-h1-r1__meta-left {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.74rem;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  color: var(--muted, #736c64);
+  text-transform: uppercase;
+}
+
+.tc-h1-r1__meta-right {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--muted-light, #9e978e);
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   2. PRODUCT STATEMENT (HERO TITLE & DEFINITION)
+   -------------------------------------------------------------------------- */
+.tc-h1-r1__statement {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: clamp(3.2rem, 4.5vw, 4.4rem);
+}
+
+.tc-h1-r1__title {
+  font-family: var(--font-display, sans-serif);
+  font-size: clamp(3.2rem, 5.2vw, 5.4rem);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  color: var(--ink, #171714);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+}
+
+.tc-h1-r1__title span {
+  display: block;
+}
+
+.tc-h1-r1__lead {
+  margin: 1.6rem 0 0;
+  font-size: clamp(1.15rem, 1.5vw, 1.35rem);
+  font-weight: 650;
+  line-height: 1.5;
+  color: var(--ink, #171714);
+  max-width: 780px;
+  word-break: keep-all;
+}
+
+/* --------------------------------------------------------------------------
+   3. FINAL SCENE (BEAT A CLIMAX · RESULT FIRST)
+   -------------------------------------------------------------------------- */
+.tc-h1-r1__result {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.tc-h1-r1__result-label {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  color: var(--accent, #c8683d);
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+}
+
+.tc-h1-r1__media-frame--final {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(23, 23, 20, 0.08);
+  background: transparent;
+}
+
+.tc-h1-r1__img--final {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   4. TRANSITION (EDITORIAL WHITESPACE · 80-120px)
+   -------------------------------------------------------------------------- */
+.tc-h1-r1__bridge {
+  height: clamp(80px, 9vw, 120px);
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   5. CONTROL EVIDENCE (BEAT B · HOW THIS SCENE WAS BUILT)
+   -------------------------------------------------------------------------- */
+.tc-h1-r1__control {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.tc-h1-r1__control-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 2rem;
+}
+
+.tc-h1-r1__control-kicker {
+  font-family: var(--font-display, sans-serif);
+  font-size: clamp(1.5rem, 2.2vw, 2.1rem);
+  font-weight: 780;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--ink, #171714);
+  margin: 0;
+}
+
+.tc-h1-r1__control-taxonomy {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--muted, #736c64);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.tc-h1-r1__media-frame--canvas {
+  width: min(100%, 1000px);
+  margin: 0 auto;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.tc-h1-r1__img--canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Control Rail: Editorial Decoder */
+.tc-h1-r1__rail {
+  margin: 2.5rem auto 0;
+  width: min(100%, 1000px);
+  padding: 0.85rem 1.4rem;
+  background: rgba(23, 23, 20, 0.025);
+  border: 1px solid rgba(23, 23, 20, 0.065);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tc-h1-r1__rail-track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+}
+
+.tc-h1-r1__rail-item {
+  color: var(--ink, #171714);
+  font-weight: 750;
+}
+
+.tc-h1-r1__rail-op {
+  color: var(--accent, #c8683d);
+  font-weight: 800;
+  padding: 0 0.15rem;
+}
+
+.tc-h1-r1__rail-arrow {
+  color: var(--accent, #c8683d);
+  font-weight: 800;
+  padding: 0 0.35rem;
+  font-size: 0.95rem;
+}
+
+.tc-h1-r1__rail-dest {
+  color: var(--accent, #c8683d);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+/* --------------------------------------------------------------------------
+   6. PRODUCT JUDGMENT / TAKEAWAY
+   -------------------------------------------------------------------------- */
+.tc-h1-r1__takeaway {
+  margin-top: clamp(4.5rem, 6vw, 6rem);
+  padding-top: 3.5rem;
+  border-top: 1px dashed rgba(23, 23, 20, 0.12);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.tc-h1-r1__takeaway-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 820px;
+}
+
+.tc-h1-r1__takeaway-headline {
+  font-family: var(--font-display, sans-serif);
+  font-size: clamp(1.8rem, 2.8vw, 2.65rem);
+  font-weight: 780;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: var(--ink, #171714);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.tc-h1-r1__takeaway-headline span {
+  display: block;
+}
+
+.tc-h1-r1__takeaway-lead {
+  font-size: 1.12rem;
+  font-weight: 650;
+  color: var(--ink, #171714);
+  margin: 1.1rem 0 0.35rem;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+.tc-h1-r1__takeaway-explain {
+  font-size: 0.94rem;
+  font-weight: 500;
+  color: var(--ink-secondary, #423e38);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 680px;
+  word-break: keep-all;
+}
+
+.tc-h1-r1__transition {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.74rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  color: var(--muted, #736c64);
+  text-transform: uppercase;
+  padding-bottom: 0.35rem;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE OVERRIDES
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .tc-h1-r1__media-frame--canvas {
+    width: 100%;
+  }
+  .tc-h1-r1__rail {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .tc-h1-r1 {
+    padding: 4rem 0 3rem;
+  }
+  .tc-h1-r1__takeaway {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.8rem;
+    padding-top: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tc-h1-r1__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+  .tc-h1-r1__rail {
+    padding: 0.75rem 0.9rem;
+  }
+  .tc-h1-r1__rail-track {
+    font-size: 0.68rem;
+    justify-content: center;
+    gap: 0.2rem 0.35rem;
+  }
+  .tc-h1-r1__lead {
+    font-size: 1.05rem;
+  }
+  .tc-h1-r1__takeaway-lead {
+    font-size: 1.02rem;
+  }
+  .tc-h1-r1__takeaway-explain {
+    font-size: 0.88rem;
+  }
+}
