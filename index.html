@@ -877,13 +877,445 @@
 
         <!-- BOTTOM TRANSITION -->
         <footer class="tc-crowd-r1__footer">
-          <a href="#ui-skill-lab" class="tc-crowd-r1__transition">
+          <a href="#twitcanva-pose-r1" class="tc-crowd-r1__transition">
             <span>NEXT / CONTROL IN DETAIL</span>
             <span aria-hidden="true">&darr;</span>
           </a>
         </footer>
 
       </div>
+    </section>
+
+
+    <!-- ================================================================= -->
+    <!-- 04 | POSE — TWITCANVA DESIGN R1.0 (Turn Motion into Control Asset) -->
+    <!-- ================================================================= -->
+    <section class="tc-pose-r1" id="twitcanva-pose-r1" aria-label="04 / POSE · Turn Motion into a Control Asset">
+      <div class="tc-pose-r1__container">
+        
+        <!-- 00 | PLATE OPENING -->
+        <header class="tc-pose-r1__opening">
+          <div class="tc-pose-r1__meta-bar">
+            <span class="tc-pose-r1__meta-idx">04 / POSE</span>
+            <span class="tc-pose-r1__meta-sub">CONTROL THE BODY</span>
+          </div>
+
+          <div class="tc-pose-r1__opening-grid">
+            <div class="tc-pose-r1__opening-left">
+              <h1 class="tc-pose-r1__hero-title">
+                TURN MOTION<br>INTO A CONTROL ASSET.
+              </h1>
+              <p class="tc-pose-r1__hero-thesis">
+                把动作从一次性的生成条件，产品化成可控制的创作资产。
+              </p>
+              <p class="tc-pose-r1__hero-lead">
+                生成模型可以理解动作，但仅靠 Prompt，身体状态仍然大量依赖模型自行推断。TwitCanva 将 Pose 从生成过程中的隐含变量拆出来，变成独立、显式的控制资产，并让它能够被表达、复用、深化和继续派生。
+              </p>
+            </div>
+
+            <!-- Lifecycle Process Spine -->
+            <div class="tc-pose-r1__spine" aria-label="动作控制资产生命周期">
+              <div class="tc-pose-r1__spine-step">
+                <span class="tc-pose-r1__spine-dot" aria-hidden="true"></span>
+                <span class="tc-pose-r1__spine-tag"><span class="num">01</span> DECOUPLE</span>
+                <span class="tc-pose-r1__spine-desc">拆开动作：身份与动作解耦</span>
+              </div>
+              <div class="tc-pose-r1__spine-step">
+                <span class="tc-pose-r1__spine-dot" aria-hidden="true"></span>
+                <span class="tc-pose-r1__spine-tag"><span class="num">02</span> AUTHOR</span>
+                <span class="tc-pose-r1__spine-desc">显式表达：让动作意图被清晰约束</span>
+              </div>
+              <div class="tc-pose-r1__spine-step">
+                <span class="tc-pose-r1__spine-dot" aria-hidden="true"></span>
+                <span class="tc-pose-r1__spine-tag"><span class="num">03</span> REUSE</span>
+                <span class="tc-pose-r1__spine-desc">重复使用：一次定义，跨角色复用</span>
+              </div>
+              <div class="tc-pose-r1__spine-step">
+                <span class="tc-pose-r1__spine-dot" aria-hidden="true"></span>
+                <span class="tc-pose-r1__spine-tag"><span class="num">04</span> DEEPEN</span>
+                <span class="tc-pose-r1__spine-desc">增加深度：复杂动作由结构关系组成</span>
+              </div>
+              <div class="tc-pose-r1__spine-step">
+                <span class="tc-pose-r1__spine-dot" aria-hidden="true"></span>
+                <span class="tc-pose-r1__spine-tag"><span class="num">05</span> EVOLVE</span>
+                <span class="tc-pose-r1__spine-desc">继续派生：保留已成立的，修改需要的</span>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- 01 | CHARACTER ≠ POSE (DECOUPLE) -->
+        <section class="tc-pose-r1__section">
+          <div class="tc-pose-r1__split">
+            <div class="tc-pose-r1__anchor">
+              <div class="tc-pose-r1__sec-header">
+                <span class="tc-pose-r1__sec-num">01 / CHARACTER ≠ POSE</span>
+                <span class="tc-pose-r1__sec-badge">DECOUPLE</span>
+              </div>
+              <h2 class="tc-pose-r1__sec-title">把角色身份与动作控制拆开。</h2>
+              <p class="tc-pose-r1__sec-body">
+                Character 负责人物身份与外观，Pose 负责身体动作。两者独立定义、再按需组合，让角色与动作不必绑定在同一次生成里。
+              </p>
+              <div class="tc-pose-r1__formula-tag">
+                IDENTITY + BODY STATE<br>&rarr; CHARACTER IN ACTION
+              </div>
+            </div>
+
+            <div class="tc-pose-r1__formula-flow">
+              <!-- Character Card -->
+              <div class="tc-pose-r1__asset-card">
+                <div class="tc-pose-r1__card-label">CHARACTER <span>身份</span></div>
+                <div class="tc-pose-r1__img-box tc-pose-r1__img-box--char">
+                  <img src="assets/images/twitcanva/pose/pose-01-character-red.png" alt="红衣控制者角色三视图身份资产" loading="eager" decoding="async">
+                </div>
+              </div>
+
+              <!-- Plus -->
+              <div class="tc-pose-r1__op tc-pose-r1__op--plus" aria-hidden="true">+</div>
+
+              <!-- Pose Card -->
+              <div class="tc-pose-r1__asset-card">
+                <div class="tc-pose-r1__card-label">POSE <span>动作</span></div>
+                <div class="tc-pose-r1__img-box tc-pose-r1__img-box--pose">
+                  <img src="assets/images/twitcanva/pose/pose-01-pose-red.png" alt="红衣右手前伸控制姿势 3D Pose" loading="eager" decoding="async">
+                </div>
+              </div>
+
+              <!-- Arrow -->
+              <div class="tc-pose-r1__op tc-pose-r1__op--arrow" aria-hidden="true">&rarr;</div>
+
+              <!-- Result Card -->
+              <div class="tc-pose-r1__asset-card">
+                <div class="tc-pose-r1__card-label">CHARACTER IN ACTION <span>组合结果</span></div>
+                <div class="tc-pose-r1__img-box tc-pose-r1__img-box--result">
+                  <img src="assets/images/twitcanva/pose/pose-01-result-action.png" alt="红衣控制者动作组合最终生成画面" loading="eager" decoding="async">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 02 | POSE CAN BE AUTHORED (AUTHOR) -->
+        <section class="tc-pose-r1__section">
+          <div class="tc-pose-r1__split">
+            <div class="tc-pose-r1__anchor">
+              <div class="tc-pose-r1__sec-header">
+                <span class="tc-pose-r1__sec-num">02 / POSE CAN BE AUTHORED</span>
+                <span class="tc-pose-r1__sec-badge">AUTHOR</span>
+              </div>
+              <h2 class="tc-pose-r1__sec-title">让动作意图，从描述变成可控参考。</h2>
+              <p class="tc-pose-r1__sec-body">
+                自然语言能够表达动作意图，但很难精确约束身体各部分的空间关系。3D Pose 将这些隐含的姿态信息显式化，与语言共同作为生成参考，降低动作理解歧义，提高目标姿态的命中概率。
+              </p>
+              
+              <!-- Left Bottom Formula Stack -->
+              <div class="tc-pose-r1__author-stack">
+                <div class="tc-pose-r1__author-line">
+                  <span class="tc-pose-r1__author-k">LANGUAGE INTENT</span>
+                  <span class="tc-pose-r1__author-v">动作意图</span>
+                  <span class="tc-pose-r1__author-plus">+</span>
+                  <span class="tc-pose-r1__author-k">3D POSE</span>
+                  <span class="tc-pose-r1__author-v">身体空间参考</span>
+                  <span class="tc-pose-r1__author-arrow">&darr;</span>
+                </div>
+                <div class="tc-pose-r1__author-res">
+                  <span class="tc-pose-r1__author-k-hi">CLEARER ACTION CONTROL</span>
+                  <span class="tc-pose-r1__author-v-hi">更清晰的动作控制</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Large Dark Pose Stage -->
+            <div class="tc-pose-r1__author-stage">
+              <img src="assets/images/twitcanva/pose/pose-02-pose-authored.png" alt="独立定义的身体空间控制 3D Pose 舞台" loading="eager" decoding="async">
+            </div>
+          </div>
+        </section>
+
+        <!-- 03 | POSE CAN BE REUSED (REUSE) -->
+        <section class="tc-pose-r1__section">
+          <div class="tc-pose-r1__split">
+            <div class="tc-pose-r1__anchor">
+              <div class="tc-pose-r1__sec-header">
+                <span class="tc-pose-r1__sec-num">03 / POSE CAN BE REUSED</span>
+                <span class="tc-pose-r1__sec-badge">REUSE</span>
+              </div>
+              <h2 class="tc-pose-r1__sec-title">把一次性动作，变成可复用的控制资产。</h2>
+              <p class="tc-pose-r1__sec-body">
+                当 Pose 从 Character 中解耦，它的价值就不再只是完成一次动作生成，而是作为独立控制资产被不同角色重复使用。一次定义，可以减少后续重复搭建动作的成本，也让角色与动作具备更强的组合能力。
+              </p>
+              <div class="tc-pose-r1__formula-tag">
+                AUTHOR ONCE · REUSE ACROSS CHARACTERS<br>一次定义，跨角色复用
+              </div>
+            </div>
+
+            <!-- Right Dual-Layer Proof -->
+            <div class="tc-pose-r1__reuse-content">
+              <!-- Sub-block 1: Visual Proof Triptych -->
+              <div class="tc-pose-r1__reuse-col">
+                <div class="tc-pose-r1__sub-hdr">
+                  ONE POSE · MULTIPLE CHARACTERS
+                  <span>同姿态多角色</span>
+                </div>
+                <div class="tc-pose-r1__triptych">
+                  <div class="tc-pose-r1__triptych-item">
+                    <div class="tc-pose-r1__triptych-label">BLACK WARRIOR<span>黑衣战士</span></div>
+                    <div class="tc-pose-r1__triptych-img">
+                      <img src="assets/images/twitcanva/pose/pose-03-result-black.png" alt="黑衣战士复用同姿势生成结果" loading="eager" decoding="async">
+                    </div>
+                  </div>
+                  <div class="tc-pose-r1__triptych-item">
+                    <div class="tc-pose-r1__triptych-label">RED CONTROLLER<span>红衣控制者</span></div>
+                    <div class="tc-pose-r1__triptych-img">
+                      <img src="assets/images/twitcanva/pose/pose-03-result-red.png" alt="红衣控制者复用同姿势生成结果" loading="eager" decoding="async">
+                    </div>
+                  </div>
+                  <div class="tc-pose-r1__triptych-item">
+                    <div class="tc-pose-r1__triptych-label">GREEN STRATEGIST<span>绿袍智者</span></div>
+                    <div class="tc-pose-r1__triptych-img">
+                      <img src="assets/images/twitcanva/pose/pose-03-result-green.png" alt="绿袍智者复用同姿势生成结果" loading="eager" decoding="async">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sub-block 2: System Proof Workflow -->
+              <div class="tc-pose-r1__reuse-col">
+                <div class="tc-pose-r1__sub-hdr">
+                  REAL WORKFLOW EVIDENCE
+                  <span>真实工作流证据</span>
+                </div>
+                <div class="tc-pose-r1__workflow-frame">
+                  <img src="assets/images/twitcanva/pose/pose-03-workflow-reuse.png" alt="三角色共享单姿势节点的真实工作流拓扑" loading="eager" decoding="async">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div><!-- /.tc-pose-r1__container -->
+
+      <!-- 04 | COMPLEX POSE AUTHORING (Full-bleed Dark Cinema Climax) -->
+      <section class="tc-pose-r1__dark-section">
+        <div class="tc-pose-r1__dark-container">
+          <div class="tc-pose-r1__dark-split">
+            <!-- Left Anchor in Dark -->
+            <div class="tc-pose-r1__anchor">
+              <div class="tc-pose-r1__sec-header">
+                <span class="tc-pose-r1__sec-num tc-pose-r1__sec-num--dark">04 / COMPLEX POSE AUTHORING</span>
+                <span class="tc-pose-r1__sec-badge tc-pose-r1__sec-badge--dark">DEEPEN</span>
+              </div>
+              <h2 class="tc-pose-r1__sec-title tc-pose-r1__sec-title--dark">复杂动作，不再一个动作来激活。</h2>
+              <p class="tc-pose-r1__sec-body tc-pose-r1__sec-body--dark">
+                一个单独的动作，真正表达的是空间力学意图。不能只靠简单描述、局部条件微调，上肢防守、髋部打开、支撑重力分布与重心切换。3D Pose 将这些身体关系置入结构化变量，组合成多层级从基础动作状态到复杂意图的可视化明确系统。
+              </p>
+              <div class="tc-pose-r1__formula-tag tc-pose-r1__formula-tag--dark">
+                AUTHOR DEPTH DEFINES EXPRESSIVE RANGE.<br>控制颗粒度，决定了动作表达的上限。
+              </div>
+            </div>
+
+            <!-- Center Stage: High Side Kick Mannequin with SVG Pins -->
+            <div class="tc-pose-r1__deepen-stage">
+              <img src="assets/images/twitcanva/pose/pose-04-complex-pose-a.png" alt="高位侧踢复杂身体结构 3D Pose Hero" loading="eager" decoding="async">
+              
+              <!-- 5 Anatomy Callouts -->
+              <div class="tc-pose-r1__pin tc-pose-r1__pin--torso">
+                <div class="tc-pose-r1__pin-dot" aria-hidden="true"></div>
+                <div class="tc-pose-r1__pin-text">TORSO <span>躯干扭转</span></div>
+              </div>
+              <div class="tc-pose-r1__pin tc-pose-r1__pin--guard">
+                <div class="tc-pose-r1__pin-dot" aria-hidden="true"></div>
+                <div class="tc-pose-r1__pin-text">GUARD <span>上肢防守</span></div>
+              </div>
+              <div class="tc-pose-r1__pin tc-pose-r1__pin--hip">
+                <div class="tc-pose-r1__pin-dot" aria-hidden="true"></div>
+                <div class="tc-pose-r1__pin-text">HIP <span>髋部打开</span></div>
+              </div>
+              <div class="tc-pose-r1__pin tc-pose-r1__pin--support">
+                <div class="tc-pose-r1__pin-dot" aria-hidden="true"></div>
+                <div class="tc-pose-r1__pin-text">SUPPORT <span>支撑腿受力</span></div>
+              </div>
+              <div class="tc-pose-r1__pin tc-pose-r1__pin--balance">
+                <div class="tc-pose-r1__pin-dot" aria-hidden="true"></div>
+                <div class="tc-pose-r1__pin-text">BALANCE <span>平衡重心</span></div>
+              </div>
+            </div>
+
+            <!-- Right Result: Live-Action Character -->
+            <div class="tc-pose-r1__deepen-result">
+              <div class="tc-pose-r1__deepen-rhdr">
+                FROM CONTROL STRUCTURE TO CHARACTER<br>
+                <span>从控制结构到角色呈现</span>
+              </div>
+              <p class="tc-pose-r1__deepen-rdesc">
+                当身体结构被细致表达后，同一组 Pose 变量可以驱动不同个体与风格、光影、服装，动作呈现人妹真实的成果。
+              </p>
+              <div class="tc-pose-r1__deepen-rimg">
+                <img src="assets/images/twitcanva/pose/pose-04-result-a.png" alt="红衣控制者执行高位侧踢真人生成结果" loading="eager" decoding="async">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="tc-pose-r1__container">
+        
+        <!-- 05 | POSE CAN BE FORKED (EVOLVE) -->
+        <section class="tc-pose-r1__section tc-pose-r1__evolve-section">
+          <div class="tc-pose-r1__split">
+            <div class="tc-pose-r1__anchor">
+              <div class="tc-pose-r1__sec-header">
+                <span class="tc-pose-r1__sec-num">05 / POSE CAN BE FORKED</span>
+                <span class="tc-pose-r1__sec-badge">EVOLVE</span>
+              </div>
+              <h2 class="tc-pose-r1__sec-title">保留已成立的，只做微调需要的。</h2>
+              <p class="tc-pose-r1__sec-body">
+                基于 Pose 走出生成流，会自然形成分支点。为一次姿态定义提供相邻的微调版本，TwitCanva 允许从已有 Pose 派生新版本，在保留已确认结构的基础上，只需更新需要变化的细分参数。
+              </p>
+              <div class="tc-pose-r1__formula-tag">
+                KEEP WHAT WORKS · CHANGE WHAT MATTERS<br>保留已成立的，只改需要变化的
+              </div>
+            </div>
+
+            <!-- Right 4-Column Evolution Pipeline -->
+            <div class="tc-pose-r1__evolve-right">
+              <div class="tc-pose-r1__evolve-grid">
+                
+                <!-- Col 1: Pose A -> Pose B -->
+                <div class="tc-pose-r1__evolve-col">
+                  <div class="tc-pose-r1__evolve-hdr">
+                    POSE A &rarr; POSE B
+                    <span>姿态分支演变</span>
+                  </div>
+                  <div class="tc-pose-r1__pose-duo">
+                    <div class="tc-pose-r1__pose-item">
+                      <div class="tc-pose-r1__pose-label">POSE A · 基础姿态 (BASE)</div>
+                      <div class="tc-pose-r1__pose-img">
+                        <img src="assets/images/twitcanva/pose/pose-05-pose-a.png" alt="Pose A 高位侧踢基础姿态" loading="eager" decoding="async">
+                      </div>
+                    </div>
+                    <div class="tc-pose-r1__copy-modify-rail">
+                      <span>COPY &darr; MODIFY 复制并微调</span>
+                    </div>
+                    <div class="tc-pose-r1__pose-item">
+                      <div class="tc-pose-r1__pose-label">POSE B · 动作分支 (FORK)</div>
+                      <div class="tc-pose-r1__pose-img">
+                        <img src="assets/images/twitcanva/pose/pose-05-pose-b.png" alt="Pose B 低位截击动作分支" loading="eager" decoding="async">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Col 2: KEEP / CHANGE Spec Card -->
+                <div class="tc-pose-r1__evolve-col">
+                  <div class="tc-pose-r1__evolve-hdr">
+                    KEEP / CHANGE
+                    <span>保留 / 改变</span>
+                  </div>
+                  <div class="tc-pose-r1__spec-card">
+                    <div class="tc-pose-r1__spec-group">
+                      <div class="tc-pose-r1__spec-tag tc-pose-r1__spec-tag--keep">
+                        KEEP <span>保留部分 (锁定)</span>
+                      </div>
+                      <div class="tc-pose-r1__spec-sub">What works · keep it.</div>
+                      <div class="tc-pose-r1__spec-list">
+                        HEAD · TORSO · GUARD · ARMS<br>头部 · 躯干 · 防守 · 双臂
+                      </div>
+                    </div>
+
+                    <div class="tc-pose-r1__spec-group">
+                      <div class="tc-pose-r1__spec-tag tc-pose-r1__spec-tag--change">
+                        CHANGE <span>改变部分 (更新)</span>
+                      </div>
+                      <div class="tc-pose-r1__spec-sub">What matters · change it.</div>
+                      <div class="tc-pose-r1__spec-list tc-pose-r1__spec-list--orange">
+                        HIP · LEG HEIGHT · KNEE · SUPPORT · BALANCE<br>髋部 · 腿高 · 膝关节 · 支撑 · 重心
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Col 3: Result A / B -->
+                <div class="tc-pose-r1__evolve-col">
+                  <div class="tc-pose-r1__evolve-hdr">
+                    RESULT A / RESULT B
+                    <span>结果 A / 结果 B</span>
+                  </div>
+                  <div class="tc-pose-r1__result-duo">
+                    <div class="tc-pose-r1__result-item">
+                      <div class="tc-pose-r1__result-label">RESULT A · 高位侧踢</div>
+                      <div class="tc-pose-r1__result-img">
+                        <img src="assets/images/twitcanva/pose/pose-05-result-a.png" alt="Result A 高位侧踢生成结果" loading="eager" decoding="async">
+                      </div>
+                    </div>
+                    <div class="tc-pose-r1__result-item">
+                      <div class="tc-pose-r1__result-label">RESULT B · 低位截击</div>
+                      <div class="tc-pose-r1__result-img">
+                        <img src="assets/images/twitcanva/pose/pose-05-result-b.png" alt="Result B 低位截击生成结果" loading="eager" decoding="async">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Col 4: Fork Workflow Evidence -->
+                <div class="tc-pose-r1__evolve-col">
+                  <div class="tc-pose-r1__evolve-hdr">
+                    REAL WORKFLOW EVIDENCE
+                    <span>真实工作流证据</span>
+                  </div>
+                  <div class="tc-pose-r1__fork-wf">
+                    <img src="assets/images/twitcanva/pose/pose-05-workflow-fork.png" alt="Pose 分支与生成结果的真实节点工作流" loading="eager" decoding="async">
+                  </div>
+                </div>
+
+              </div><!-- /.tc-pose-r1__evolve-grid -->
+
+              <!-- Act 05 Bottom Tripartite Judgment -->
+              <div class="tc-pose-r1__evolve-bottom">
+                <div class="tc-pose-r1__eb-left">
+                  不是重新设计一个动作，而是从已有动作中派生一个新版本。
+                </div>
+                <div class="tc-pose-r1__eb-mid">
+                  Pose B 并不是覆盖 Pose A，而是作为新的动作资产继续存在，并连接新的生成节点。原版本可以保留，新版本也可以继续迭代。
+                </div>
+                <div class="tc-pose-r1__eb-right">
+                  好的动作资产，源于可控复制、可迭代的生产链。当控制资产能够精确、分支和继续组装，创作就越主动。二次定义、跨角色复用和有限属性迭代，
+                  <span class="highlight">FROM ONE-OFF EDITS TO TREATY CONTROL.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 06 | PLATE CLOSING -->
+        <footer class="tc-pose-r1__closing">
+          <div class="tc-pose-r1__closing-kicker">POSE CONTROL ASSET LIFECYCLE</div>
+          
+          <div class="tc-pose-r1__closing-rail">
+            <span>DECOUPLE</span>
+            <span class="arrow" aria-hidden="true">&rarr;</span>
+            <span>AUTHOR</span>
+            <span class="arrow" aria-hidden="true">&rarr;</span>
+            <span>REUSE</span>
+            <span class="arrow" aria-hidden="true">&rarr;</span>
+            <span>DEEPEN</span>
+            <span class="arrow" aria-hidden="true">&rarr;</span>
+            <span>EVOLVE</span>
+          </div>
+
+          <h2 class="tc-pose-r1__closing-title">从生成条件，到创作资产。</h2>
+          <p class="tc-pose-r1__closing-sub">把动作从一次性的生成条件，产品化成可控制的创作资产。</p>
+          <div class="tc-pose-r1__closing-mono">FROM POSE INPUT TO CONTROL ASSET.</div>
+
+          <div class="tc-pose-r1__next-wrap">
+            <span class="tc-pose-r1__next-kicker">NEXT / CONTROL THE VIEW &rarr;</span>
+            <a href="#twitcanva" class="tc-pose-r1__next-link">
+              <span class="num">05 /</span> SHOT
+            </a>
+          </div>
+        </footer>
+
+      </div><!-- /.tc-pose-r1__container -->
     </section>
 
 <section class="project project--twit" id="twitcanva">

@@ -1,0 +1,1099 @@
+/* ==========================================================================
+   04 / POSE — TWITCANVA DESIGN R1.0
+   Turn Motion into a Control Asset
+   Scoped namespace: .tc-pose-r1-*
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   00. CSS Variables & Scoped Tokens
+   -------------------------------------------------------------------------- */
+.tc-pose-r1 {
+  --tc-pose-paper: #f4efe9;
+  --tc-pose-paper-tint: rgba(244, 239, 233, 0.7);
+  --tc-pose-ink: #171714;
+  --tc-pose-ink-muted: #57534e;
+  --tc-pose-ink-light: #78716c;
+  --tc-pose-orange: #c8683d;
+  --tc-pose-orange-soft: rgba(200, 104, 61, 0.12);
+  --tc-pose-hairline: rgba(23, 23, 20, 0.12);
+  --tc-pose-hairline-subtle: rgba(23, 23, 20, 0.06);
+
+  /* Dark section overrides for Act 04 */
+  --tc-pose-dark-bg: #111110;
+  --tc-pose-dark-card: #181816;
+  --tc-pose-dark-ink: #faf8f5;
+  --tc-pose-dark-muted: #a8a29e;
+  --tc-pose-dark-hairline: rgba(255, 255, 255, 0.12);
+
+  position: relative;
+  width: 100%;
+  background: var(--tc-pose-paper);
+  color: var(--tc-pose-ink);
+  font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  line-height: 1.5;
+  padding: 80px 0 100px;
+  overflow: hidden;
+}
+
+.tc-pose-r1 *,
+.tc-pose-r1 *::before,
+.tc-pose-r1 *::after {
+  box-sizing: border-box;
+}
+
+.tc-pose-r1__container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* --------------------------------------------------------------------------
+   01. Act 00: Plate Opening
+   -------------------------------------------------------------------------- */
+.tc-pose-r1__opening {
+  padding-bottom: 64px;
+}
+
+.tc-pose-r1__meta-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, monospace);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--tc-pose-ink-muted);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.tc-pose-r1__meta-idx {
+  font-weight: 700;
+  color: var(--tc-pose-ink);
+}
+
+.tc-pose-r1__meta-sub {
+  color: var(--tc-pose-ink-light);
+}
+
+.tc-pose-r1__opening-grid {
+  display: grid;
+  grid-template-columns: 58% 42%;
+  gap: 48px;
+  align-items: start;
+}
+
+.tc-pose-r1__hero-title {
+  font-size: clamp(38px, 4.2vw, 54px);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  color: var(--tc-pose-ink);
+  margin: 0 0 16px;
+  text-transform: uppercase;
+}
+
+.tc-pose-r1__hero-thesis {
+  font-size: clamp(17px, 1.8vw, 21px);
+  font-weight: 600;
+  color: var(--tc-pose-orange);
+  margin: 0 0 18px;
+  letter-spacing: -0.01em;
+}
+
+.tc-pose-r1__hero-lead {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--tc-pose-ink-muted);
+  max-width: 620px;
+  margin: 0;
+}
+
+/* Right-side Lifecycle Process Spine */
+.tc-pose-r1__spine {
+  position: relative;
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.tc-pose-r1__spine::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: var(--tc-pose-hairline);
+}
+
+.tc-pose-r1__spine-step {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.tc-pose-r1__spine-dot {
+  position: absolute;
+  left: -22px;
+  top: 6px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--tc-pose-orange);
+  box-shadow: 0 0 0 3px var(--tc-pose-paper);
+}
+
+.tc-pose-r1__spine-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--tc-pose-ink);
+  white-space: nowrap;
+}
+
+.tc-pose-r1__spine-tag .num {
+  color: var(--tc-pose-orange);
+  margin-right: 4px;
+}
+
+.tc-pose-r1__spine-desc {
+  font-size: 13px;
+  color: var(--tc-pose-ink-muted);
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   General Section Layout (Left Anchor 26-28%, Right 72-74%)
+   -------------------------------------------------------------------------- */
+.tc-pose-r1__section {
+  position: relative;
+  padding: 60px 0;
+  border-top: 1px solid var(--tc-pose-hairline);
+}
+
+.tc-pose-r1__split {
+  display: grid;
+  grid-template-columns: 28% 72%;
+  gap: 40px;
+  align-items: start;
+}
+
+.tc-pose-r1__anchor {
+  padding-right: 12px;
+}
+
+.tc-pose-r1__sec-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.tc-pose-r1__sec-num {
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--tc-pose-ink);
+}
+
+.tc-pose-r1__sec-badge {
+  display: inline-block;
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--tc-pose-orange);
+  border: 1px solid rgba(200, 104, 61, 0.4);
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: var(--tc-pose-orange-soft);
+  text-transform: uppercase;
+}
+
+.tc-pose-r1__sec-title {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--tc-pose-ink);
+  margin: 0 0 14px;
+  letter-spacing: -0.02em;
+}
+
+.tc-pose-r1__sec-body {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--tc-pose-ink-muted);
+  margin: 0 0 24px;
+}
+
+.tc-pose-r1__formula-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--tc-pose-orange);
+  line-height: 1.5;
+  padding-top: 12px;
+  border-top: 1px dashed var(--tc-pose-hairline);
+}
+
+/* --------------------------------------------------------------------------
+   02. Act 01: CHARACTER + POSE (Horizontal Math Flow)
+   -------------------------------------------------------------------------- */
+.tc-pose-r1__formula-flow {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1.35fr;
+  gap: 16px;
+  align-items: center;
+}
+
+.tc-pose-r1__asset-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tc-pose-r1__card-label {
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--tc-pose-ink-light);
+  text-transform: uppercase;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.tc-pose-r1__card-label span {
+  font-size: 11px;
+  font-family: var(--font-sans, sans-serif);
+  color: var(--tc-pose-ink-muted);
+  letter-spacing: 0;
+}
+
+.tc-pose-r1__img-box {
+  position: relative;
+  border-radius: 8px;
+  background: #000;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tc-pose-r1__img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tc-pose-r1__img-box--char img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.tc-pose-r1__img-box--pose img {
+  object-fit: contain;
+  background: #000;
+}
+
+.tc-pose-r1__img-box--result {
+  aspect-ratio: 1.15 / 1;
+}
+
+.tc-pose-r1__img-box--result img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.tc-pose-r1__op {
+  font-family: var(--font-mono, monospace);
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--tc-pose-ink-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.tc-pose-r1__op--plus {
+  color: var(--tc-pose-orange);
+  font-weight: 600;
+}
+
+.tc-pose-r1__op--arrow {
+  color: var(--tc-pose-ink);
+}
+
+/* --------------------------------------------------------------------------
+   03. Act 02: POSE CAN BE AUTHORED (Author Stage)
+   -------------------------------------------------------------------------- */
+.tc-pose-r1__author-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 0;
+  border-top: 1px dashed var(--tc-pose-hairline);
+  font-family: var(--font-mono, monospace);
+}
+
+.tc-pose-r1__author-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 11px;
+}
+
+.tc-pose-r1__author-k {
+  font-weight: 700;
+  color: var(--tc-pose-ink);
+  letter-spacing: 0.04em;
+}
+
+.tc-pose-r1__author-v {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 11px;
+  color: var(--tc-pose-ink-muted);
+}
+
+.tc-pose-r1__author-plus {
+  color: var(--tc-pose-orange);
+  font-weight: 700;
+  margin: 0 4px;
+}
+
+.tc-pose-r1__author-arrow {
+  color: var(--tc-pose-orange);
+  font-weight: 700;
+  font-size: 14px;
+  margin-left: 2px;
+}
+
+.tc-pose-r1__author-res {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.tc-pose-r1__author-k-hi {
+  font-weight: 700;
+  color: var(--tc-pose-orange);
+  letter-spacing: 0.04em;
+  font-size: 11px;
+}
+
+.tc-pose-r1__author-v-hi {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 11px;
+  color: var(--tc-pose-orange);
+  font-weight: 600;
+}
+
+.tc-pose-r1__author-stage {
+  position: relative;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tc-pose-r1__author-stage img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   04. Act 03: POSE CAN BE REUSED (Reuse Triptych + Real Workflow)
+   -------------------------------------------------------------------------- */
+.tc-pose-r1__reuse-content {
+  display: grid;
+  grid-template-columns: 46% 54%;
+  gap: 24px;
+  align-items: start;
+}
+
+.tc-pose-r1__sub-hdr {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--tc-pose-ink-light);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--tc-pose-hairline);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tc-pose-r1__sub-hdr span {
+  font-family: var(--font-sans, sans-serif);
+  font-weight: 500;
+  color: var(--tc-pose-ink-muted);
+}
+
+.tc-pose-r1__triptych {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.tc-pose-r1__triptych-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tc-pose-r1__triptych-label {
+  font-family: var(--font-mono, monospace);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--tc-pose-ink-muted);
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tc-pose-r1__triptych-label span {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 10px;
+  color: var(--tc-pose-ink-light);
+  display: block;
+  font-weight: 500;
+}
+
+.tc-pose-r1__triptych-img {
+  position: relative;
+  background: #000;
+  border-radius: 6px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.tc-pose-r1__triptych-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.tc-pose-r1__workflow-frame {
+  position: relative;
+  background: #000;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  aspect-ratio: 1.25 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tc-pose-r1__workflow-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   05. Act 04: COMPLEX POSE AUTHORING (Full-bleed Dark Cinema Stage)
+   -------------------------------------------------------------------------- */
+.tc-pose-r1__dark-section {
+  position: relative;
+  background: var(--tc-pose-dark-bg);
+  color: var(--tc-pose-dark-ink);
+  margin: 60px calc(-50vw + 50%) 0;
+  width: 100vw;
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.tc-pose-r1__dark-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.tc-pose-r1__dark-split {
+  display: grid;
+  grid-template-columns: 24% 44% 32%;
+  gap: 32px;
+  align-items: center;
+}
+
+.tc-pose-r1__sec-num--dark {
+  color: var(--tc-pose-dark-ink);
+}
+
+.tc-pose-r1__sec-badge--dark {
+  border-color: rgba(200, 104, 61, 0.6);
+  background: rgba(200, 104, 61, 0.2);
+}
+
+.tc-pose-r1__sec-title--dark {
+  color: #fff;
+}
+
+.tc-pose-r1__sec-body--dark {
+  color: var(--tc-pose-dark-muted);
+}
+
+.tc-pose-r1__formula-tag--dark {
+  border-top-color: var(--tc-pose-dark-hairline);
+  color: #e07a4d;
+}
+
+/* Central High Side Kick Mannequin Stage with Callouts */
+.tc-pose-r1__deepen-stage {
+  position: relative;
+  background: #000;
+  border-radius: 8px;
+  aspect-ratio: 1.2 / 1;
+  overflow: hidden;
+  border: 1px solid var(--tc-pose-dark-hairline);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tc-pose-r1__deepen-stage img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* 5 Precise Anatomy Callout Pins */
+.tc-pose-r1__pin {
+  position: absolute;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #fff;
+  z-index: 2;
+}
+
+.tc-pose-r1__pin-text {
+  background: rgba(17, 17, 16, 0.88);
+  backdrop-filter: blur(4px);
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.tc-pose-r1__pin-text span {
+  font-size: 10px;
+  font-family: var(--font-sans, sans-serif);
+  color: var(--tc-pose-orange);
+  font-weight: 600;
+}
+
+.tc-pose-r1__pin-line {
+  width: 24px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.tc-pose-r1__pin-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--tc-pose-orange);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+  flex-shrink: 0;
+}
+
+/* Position pins relative to mannequin */
+.tc-pose-r1__pin--torso {
+  top: 24%;
+  left: 6%;
+}
+
+.tc-pose-r1__pin--guard {
+  top: 44%;
+  left: 6%;
+}
+
+.tc-pose-r1__pin--hip {
+  top: 42%;
+  right: 18%;
+  flex-direction: row-reverse;
+}
+
+.tc-pose-r1__pin--support {
+  bottom: 14%;
+  left: 14%;
+}
+
+.tc-pose-r1__pin--balance {
+  bottom: 14%;
+  right: 12%;
+  flex-direction: row-reverse;
+}
+
+/* Right Live-Action Result Floating Seamlessly */
+.tc-pose-r1__deepen-result {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tc-pose-r1__deepen-rhdr {
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--tc-pose-dark-ink);
+  line-height: 1.35;
+}
+
+.tc-pose-r1__deepen-rhdr span {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 11px;
+  color: var(--tc-pose-orange);
+  font-weight: 600;
+}
+
+.tc-pose-r1__deepen-rdesc {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--tc-pose-dark-muted);
+  margin: 0;
+}
+
+.tc-pose-r1__deepen-rimg {
+  position: relative;
+  background: transparent;
+  border-radius: 8px;
+  overflow: hidden;
+  border: none;
+  aspect-ratio: 1 / 1.15;
+}
+
+.tc-pose-r1__deepen-rimg img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   06. Act 05: POSE CAN BE FORKED (Evolution Multi-Column Grid)
+   -------------------------------------------------------------------------- */
+.tc-pose-r1__evolve-section {
+  padding-top: 80px;
+}
+
+.tc-pose-r1__evolve-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1.1fr 1.1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.tc-pose-r1__evolve-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tc-pose-r1__evolve-hdr {
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--tc-pose-ink-light);
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--tc-pose-hairline);
+  padding-bottom: 4px;
+}
+
+.tc-pose-r1__evolve-hdr span {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 10px;
+  color: var(--tc-pose-ink-muted);
+  display: block;
+}
+
+/* Col 1: Pose A -> Pose B */
+.tc-pose-r1__pose-duo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tc-pose-r1__pose-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tc-pose-r1__pose-label {
+  font-family: var(--font-mono, monospace);
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--tc-pose-ink-muted);
+}
+
+.tc-pose-r1__pose-img {
+  background: #000;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  aspect-ratio: 1.3 / 1;
+}
+
+.tc-pose-r1__pose-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.tc-pose-r1__copy-modify-rail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-mono, monospace);
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--tc-pose-orange);
+  letter-spacing: 0.08em;
+  padding: 2px 0;
+}
+
+/* Col 2: KEEP / CHANGE Spec Card */
+.tc-pose-r1__spec-card {
+  background: rgba(23, 23, 20, 0.04);
+  border: 1px solid var(--tc-pose-hairline);
+  border-radius: 6px;
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.tc-pose-r1__spec-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tc-pose-r1__spec-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.tc-pose-r1__spec-tag--keep {
+  color: var(--tc-pose-ink-muted);
+}
+
+.tc-pose-r1__spec-tag--change {
+  color: var(--tc-pose-orange);
+}
+
+.tc-pose-r1__spec-tag span {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.tc-pose-r1__spec-sub {
+  font-family: var(--font-mono, monospace);
+  font-size: 9px;
+  color: var(--tc-pose-ink-light);
+  font-style: italic;
+}
+
+.tc-pose-r1__spec-list {
+  font-family: var(--font-mono, monospace);
+  font-size: 9px;
+  line-height: 1.4;
+  color: var(--tc-pose-ink-muted);
+  word-break: break-all;
+}
+
+.tc-pose-r1__spec-list--orange {
+  color: var(--tc-pose-orange);
+  font-weight: 600;
+}
+
+/* Col 3: Result A / B */
+.tc-pose-r1__result-duo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tc-pose-r1__result-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tc-pose-r1__result-label {
+  font-family: var(--font-mono, monospace);
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--tc-pose-ink-muted);
+}
+
+.tc-pose-r1__result-img {
+  background: #000;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  aspect-ratio: 1.3 / 1;
+}
+
+.tc-pose-r1__result-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000;
+  display: block;
+}
+
+/* Col 4: Fork Workflow Frame */
+.tc-pose-r1__fork-wf {
+  background: #000;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  aspect-ratio: 1 / 1.35;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tc-pose-r1__fork-wf img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Act 05 Bottom Tripartite Judgment */
+.tc-pose-r1__evolve-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.2fr;
+  gap: 24px;
+  padding-top: 24px;
+  margin-top: 24px;
+  border-top: 1px dashed var(--tc-pose-hairline);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.tc-pose-r1__eb-left {
+  color: var(--tc-pose-orange);
+  font-weight: 600;
+}
+
+.tc-pose-r1__eb-mid {
+  color: var(--tc-pose-ink-muted);
+}
+
+.tc-pose-r1__eb-right {
+  color: var(--tc-pose-ink);
+  font-weight: 500;
+}
+
+.tc-pose-r1__eb-right .highlight {
+  font-family: var(--font-mono, monospace);
+  color: var(--tc-pose-orange);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  display: block;
+  margin-top: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   07. Act 06: Plate Closing
+   -------------------------------------------------------------------------- */
+.tc-pose-r1__closing {
+  margin-top: 80px;
+  padding-top: 60px;
+  border-top: 1px solid var(--tc-pose-hairline);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tc-pose-r1__closing-kicker {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--tc-pose-ink-light);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.tc-pose-r1__closing-rail {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--tc-pose-ink);
+  margin-bottom: 36px;
+}
+
+.tc-pose-r1__closing-rail .arrow {
+  color: var(--tc-pose-orange);
+}
+
+.tc-pose-r1__closing-title {
+  font-size: clamp(32px, 3.8vw, 46px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--tc-pose-ink);
+  margin: 0 0 14px;
+}
+
+.tc-pose-r1__closing-sub {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--tc-pose-orange);
+  margin: 0 0 12px;
+}
+
+.tc-pose-r1__closing-mono {
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--tc-pose-ink-light);
+  text-transform: uppercase;
+  margin-bottom: 48px;
+}
+
+.tc-pose-r1__next-wrap {
+  align-self: flex-end;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  font-family: var(--font-mono, monospace);
+}
+
+.tc-pose-r1__next-kicker {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--tc-pose-ink-light);
+}
+
+.tc-pose-r1__next-link {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--tc-pose-ink);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  transition: color 0.2s ease;
+}
+
+.tc-pose-r1__next-link .num {
+  color: var(--tc-pose-orange);
+}
+
+.tc-pose-r1__next-link:hover {
+  color: var(--tc-pose-orange);
+}
+
+/* --------------------------------------------------------------------------
+   08. Responsive Refinements
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .tc-pose-r1__opening-grid,
+  .tc-pose-r1__split {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .tc-pose-r1__dark-split {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .tc-pose-r1__evolve-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .tc-pose-r1__evolve-bottom {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .tc-pose-r1 {
+    padding: 50px 0 70px;
+  }
+
+  .tc-pose-r1__formula-flow {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .tc-pose-r1__op {
+    transform: rotate(90deg);
+  }
+
+  .tc-pose-r1__reuse-content {
+    grid-template-columns: 1fr;
+  }
+
+  .tc-pose-r1__evolve-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tc-pose-r1__next-wrap {
+    align-self: center;
+  }
+}
