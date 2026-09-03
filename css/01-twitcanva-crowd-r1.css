@@ -644,8 +644,8 @@
 
 .tc-crowd-r1__pipeline-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1.08fr) auto minmax(0, 1fr);
-  gap: clamp(10px, 1.4vw, 18px);
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: clamp(12px, 1.6vw, 22px);
   align-items: center;
   width: 100%;
 }
@@ -653,8 +653,8 @@
 .tc-crowd-r1__pipe-col {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
+  justify-content: flex-start;
+  gap: 0.9rem;
   min-width: 0;
 }
 
