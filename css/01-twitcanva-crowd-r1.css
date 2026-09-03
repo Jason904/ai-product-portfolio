@@ -1,8 +1,12 @@
 /* ==========================================================================
-   MODULE 01: TWITCANVA 03 CROWD — DESIGN R1.2 (METHODOLOGY FORWARD & CLEAN OPENING)
+   MODULE 01: TWITCANVA 03 CROWD — DESIGN R1.3 (TASTESKILL MASTER CRAFT)
    Namespace: .tc-crowd-r1-*
-   Theme: Scale & Spatial Organization / 规模与空间控制
-   TasteSkill: Warm Paper + Deep Ink + Burnt Orange Accent + De-boxed Editorial
+   Features:
+     - Top Asymmetric Mono Scale Spec (Balances right-side whitespace)
+     - 100% De-boxed 3-Step Pipeline (Pure hairlines, zero gray box)
+     - Tightened A/B Stacking with unified flow notation
+     - De-boxed Judgment Formula & Baseline Balanced Footer
+   TasteSkill: Pure Editorial De-boxing + Balanced Visual Mass
    ========================================================================== */
 
 .tc-crowd-r1 {
@@ -18,12 +22,19 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: clamp(3.5rem, 5vw, 4.8rem);
+  gap: clamp(3.2rem, 4.5vw, 4.2rem);
 }
 
 /* --------------------------------------------------------------------------
-   BLOCK 01: OPENING / 纯粹大气质阶开场 (FULL WIDTH EDITORIAL STATEMENT)
+   BLOCK 01: OPENING (LEFT 65% STATEMENT / RIGHT 35% MONO SCALE SPEC)
    -------------------------------------------------------------------------- */
+.tc-crowd-r1__b01-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.42fr) minmax(280px, 1fr);
+  gap: clamp(32px, 4vw, 56px);
+  align-items: end;
+}
+
 .tc-crowd-r1__b01-statement {
   display: flex;
   flex-direction: column;
@@ -32,10 +43,8 @@
 .tc-crowd-r1__meta-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 1.5rem;
-  flex-wrap: wrap;
-  margin-bottom: clamp(1.2rem, 1.8vw, 1.6rem);
+  margin-bottom: clamp(1rem, 1.5vw, 1.4rem);
 }
 
 .tc-crowd-r1__meta-eyebrow {
@@ -44,15 +53,6 @@
   font-weight: 750;
   letter-spacing: 0.12em;
   color: var(--muted, #736c64);
-  text-transform: uppercase;
-}
-
-.tc-crowd-r1__meta-right {
-  font-family: var(--font-mono, monospace);
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--ink-secondary, #423e38);
   text-transform: uppercase;
 }
 
@@ -74,12 +74,12 @@
 }
 
 .tc-crowd-r1__lead {
-  margin: 1.4rem 0 0.4rem;
+  margin: 1.4rem 0 0.35rem;
   font-size: clamp(1.1rem, 1.45vw, 1.28rem);
   font-weight: 700;
   line-height: 1.45;
   color: var(--ink, #171714);
-  max-width: 720px;
+  max-width: 680px;
   word-break: keep-all;
 }
 
@@ -89,24 +89,70 @@
   font-weight: 550;
   color: var(--ink-secondary, #423e38);
   line-height: 1.5;
-  max-width: 680px;
+  max-width: 640px;
   word-break: keep-all;
 }
 
-/* --------------------------------------------------------------------------
-   METHODOLOGY BRIDGE: 3-STEP PIPELINE STRIP (UNIT -> FORMATION -> SCENE)
-   -------------------------------------------------------------------------- */
-.tc-crowd-r1__pipeline-strip {
-  margin-top: 0.5rem;
-  padding: 1.4rem 1.6rem 1.2rem;
-  background: rgba(23, 23, 20, 0.02);
-  border: 1px solid rgba(23, 23, 20, 0.08);
-  border-radius: 8px;
+/* Optimization 1: Right-side Mono Scale Spec (Balances Whitespace with Editorial Rigor) */
+.tc-crowd-r1__scale-spec {
+  border-left: 1px dashed rgba(23, 23, 20, 0.14);
+  padding-left: clamp(1.4rem, 2vw, 2.2rem);
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  overflow: hidden;
-  box-sizing: border-box;
+  gap: 0.65rem;
+}
+
+.tc-crowd-r1__spec-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.70rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  color: var(--ink-secondary, #423e38);
+  text-transform: uppercase;
+}
+
+.tc-crowd-r1__spec-badge {
+  color: var(--accent, #c8683d);
+}
+
+.tc-crowd-r1__spec-notation {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.78rem;
+  font-weight: 750;
+  color: var(--ink, #171714);
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.tc-crowd-r1__spec-notation span.arrow {
+  color: var(--accent, #c8683d);
+}
+
+.tc-crowd-r1__spec-notes {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--muted, #736c64);
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   Optimization 2: 100% DE-BOXED 3-STEP PIPELINE STRIP (PURE HAIRLINES)
+   -------------------------------------------------------------------------- */
+.tc-crowd-r1__pipeline-strip {
+  padding: 1.4rem 0 1.2rem;
+  background: transparent;
+  border-top: 1px solid rgba(23, 23, 20, 0.10);
+  border-bottom: 1px solid rgba(23, 23, 20, 0.10);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
 }
 
 .tc-crowd-r1__pipeline-grid {
@@ -188,8 +234,8 @@
 }
 
 .tc-crowd-r1__pipeline-footer {
-  padding-top: 0.9rem;
-  border-top: 1px solid rgba(23, 23, 20, 0.07);
+  padding-top: 0.85rem;
+  border-top: 1px dashed rgba(23, 23, 20, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -206,13 +252,11 @@
 }
 
 /* --------------------------------------------------------------------------
-   BLOCK 02: FORMATION A/B -> RESULT A/B (CORE EXPERIMENT · STREAMLINED DUAL RAIL)
+   BLOCK 02: FORMATION A/B -> RESULT A/B (Optimization 3: Tightened Stacking)
    -------------------------------------------------------------------------- */
 .tc-crowd-r1__b02-section {
   display: flex;
   flex-direction: column;
-  padding-top: 1.5rem;
-  border-top: 1px dashed rgba(23, 23, 20, 0.12);
 }
 
 .tc-crowd-r1__section-kicker {
@@ -248,7 +292,7 @@
   font-size: 0.88rem;
   font-weight: 600;
   color: var(--ink-secondary, #423e38);
-  margin: 0 0 1.8rem;
+  margin: 0 0 1.6rem;
 }
 
 /* 2-Column Comparison Layout (Plan A vs Plan B) */
@@ -262,7 +306,7 @@
 .tc-crowd-r1__plan-col {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.65rem;
 }
 
 .tc-crowd-r1__plan-header {
@@ -289,7 +333,7 @@
   line-height: 1.4;
 }
 
-/* Stage & Frame */
+/* Tightened Stages */
 .tc-crowd-r1__stage-frame {
   width: 100%;
   aspect-ratio: 16 / 7;
@@ -318,7 +362,7 @@
   font-weight: 750;
   letter-spacing: 0.06em;
   color: var(--ink-secondary, #423e38);
-  margin-top: 0.15rem;
+  margin-top: 0.1rem;
 }
 
 .tc-crowd-r1__flow-arrow {
@@ -327,17 +371,17 @@
   justify-content: center;
   gap: 0.5rem;
   font-family: var(--font-mono, monospace);
-  font-size: 0.70rem;
+  font-size: 0.68rem;
   font-weight: 750;
   letter-spacing: 0.08em;
   color: var(--accent, #c8683d);
-  padding: 0.2rem 0;
+  padding: 0.15rem 0;
 }
 
 /* Bottom A/B Summary */
 .tc-crowd-r1__b02-bottom {
-  margin-top: 1.8rem;
-  padding: 1.1rem 1.3rem;
+  margin-top: 1.5rem;
+  padding: 1rem 1.2rem;
   background: transparent;
   border-left: 3px solid var(--accent, #c8683d);
   border-top: 1px solid rgba(23, 23, 20, 0.06);
@@ -486,7 +530,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   BLOCK 05: REAL CROWD WORKFLOW + PRODUCT JUDGMENT (38% LEFT / 62% RIGHT)
+   BLOCK 05: REAL CROWD WORKFLOW + PRODUCT JUDGMENT (Optimization 4: Balanced)
    -------------------------------------------------------------------------- */
 .tc-crowd-r1__b05-grid {
   display: grid;
@@ -556,16 +600,14 @@
   margin: 0 0 0.8rem;
 }
 
+/* De-boxed Formula: Pure Typography */
 .tc-crowd-r1__b05-formula {
   font-family: var(--font-mono, monospace);
-  font-size: 0.70rem;
+  font-size: 0.72rem;
   font-weight: 750;
   letter-spacing: 0.06em;
   color: var(--ink, #171714);
-  padding: 0.35rem 0.6rem;
-  background: rgba(23, 23, 20, 0.03);
-  border-radius: 4px;
-  max-width: max-content;
+  padding: 0.2rem 0;
 }
 
 .tc-crowd-r1__b05-principle {
@@ -575,7 +617,7 @@
   letter-spacing: 0.06em;
   color: var(--accent, #c8683d);
   text-transform: uppercase;
-  margin-top: 0.6rem;
+  margin-top: 0.5rem;
 }
 
 /* Right: Real Crowd Workflow (62%) */
@@ -649,6 +691,16 @@
    RESPONSIVE OVERRIDES
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
+  .tc-crowd-r1__b01-grid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+  .tc-crowd-r1__scale-spec {
+    border-left: none;
+    border-top: 1px dashed rgba(23, 23, 20, 0.12);
+    padding-left: 0;
+    padding-top: 1.2rem;
+  }
   .tc-crowd-r1__pipeline-grid {
     grid-template-columns: 1fr;
     gap: 1.4rem;
