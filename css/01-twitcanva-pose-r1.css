@@ -393,69 +393,122 @@
 }
 
 /* --------------------------------------------------------------------------
-   03. Act 02: POSE CAN BE AUTHORED (Author Stage)
+   03. Act 02: POSE CAN BE AUTHORED (TasteSkill Blueprint Convergence)
    -------------------------------------------------------------------------- */
-.tc-pose-r1__author-stack {
+.tc-pose-r1__split--02 {
+  align-items: stretch;
+}
+
+.tc-pose-r1__anchor--02 {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 16px 0;
-  border-top: 1px dashed var(--tc-pose-hairline);
-  font-family: var(--font-mono, monospace);
+  justify-content: space-between;
+  height: 100%;
+  padding-right: 20px;
 }
 
-.tc-pose-r1__author-line {
+.tc-pose-r1__schematic-formula {
+  margin-top: auto;
+  padding-top: 24px;
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 6px;
-  font-size: 12px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  user-select: none;
 }
 
-.tc-pose-r1__author-k {
+.tc-pose-r1__sf-inputs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 320px;
+}
+
+.tc-pose-r1__sf-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2px;
+}
+
+.tc-pose-r1__sf-node .en {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
   font-weight: 700;
+  letter-spacing: 0.06em;
   color: var(--tc-pose-ink);
-  letter-spacing: 0.04em;
 }
 
-.tc-pose-r1__author-v {
+.tc-pose-r1__sf-node .cn {
   font-family: var(--font-sans, sans-serif);
-  font-size: 12px;
+  font-size: 11px;
   color: var(--tc-pose-ink-muted);
 }
 
-.tc-pose-r1__author-plus {
+.tc-pose-r1__sf-mid-arrow {
   color: var(--tc-pose-orange);
+  font-size: 15px;
   font-weight: 700;
   margin: 0 4px;
 }
 
-.tc-pose-r1__author-arrow {
-  color: var(--tc-pose-orange);
-  font-weight: 700;
-  font-size: 15px;
-  margin-left: 2px;
-}
-
-.tc-pose-r1__author-res {
+/* Convergence arrows */
+.tc-pose-r1__sf-flow {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 6px;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin: 2px 0;
 }
 
-.tc-pose-r1__author-k-hi {
+.tc-pose-r1__sf-down-arrows {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 44px;
+  color: var(--tc-pose-ink-light);
+  font-size: 13px;
+  line-height: 1;
+}
+
+.tc-pose-r1__sf-target-arrow {
+  color: var(--tc-pose-orange);
+  font-size: 18px;
   font-weight: 700;
-  color: var(--tc-pose-orange);
-  letter-spacing: 0.04em;
-  font-size: 12px;
+  line-height: 1;
 }
 
-.tc-pose-r1__author-v-hi {
-  font-family: var(--font-sans, sans-serif);
-  font-size: 12px;
+/* Outcome Block */
+.tc-pose-r1__sf-outcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 320px;
+  gap: 3px;
+}
+
+.tc-pose-r1__sf-outcome .en {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
   color: var(--tc-pose-orange);
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.tc-pose-r1__sf-outcome .cn {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 13px;
   font-weight: 600;
+  color: var(--tc-pose-orange);
+  letter-spacing: 0.02em;
 }
 
 .tc-pose-r1__author-stage {
@@ -478,75 +531,115 @@
 }
 
 /* --------------------------------------------------------------------------
-   04. Act 03: POSE CAN BE REUSED (Refactored into 2 Distinct Acts)
+   04. Act 03: POSE CAN BE REUSED (Unified Triple-Column Causality Board)
    -------------------------------------------------------------------------- */
-.tc-pose-r1__sub-hdr {
-  font-family: var(--font-mono, monospace);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--tc-pose-ink-light);
-  text-transform: uppercase;
-  margin-bottom: 16px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--tc-pose-hairline);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.tc-pose-r1__section--03 {
+  padding-bottom: 72px;
 }
 
-.tc-pose-r1__sub-hdr span {
-  font-family: var(--font-sans, sans-serif);
-  font-weight: 500;
-  color: var(--tc-pose-ink-muted);
-}
-
-/* Act 3.1: Visual Proof Triptych (Full Content Width, Large Portraits) */
-.tc-pose-r1__triptych-stage {
-  margin-top: 32px;
-}
-
-.tc-pose-r1__triptych-grid {
+.tc-pose-r1__reuse-board {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: 24% 34% 42%;
+  gap: 24px;
+  align-items: stretch;
 }
 
-.tc-pose-r1__triptych-item {
+/* Col 1: Left Text Anchor */
+.tc-pose-r1__reuse-left {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  justify-content: space-between;
+  height: 100%;
+  padding-right: 16px;
 }
 
-.tc-pose-r1__triptych-label {
+.tc-pose-r1__reuse-formula-anchor {
+  margin-top: auto;
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tc-pose-r1__reuse-formula-anchor .en {
   font-family: var(--font-mono, monospace);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: var(--tc-pose-ink);
-  text-transform: uppercase;
+  color: var(--tc-pose-orange);
+  opacity: 0.85;
+}
+
+.tc-pose-r1__reuse-formula-anchor .cn {
+  font-size: clamp(16px, 1.4vw, 19px);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--tc-pose-orange);
+  line-height: 1.2;
+}
+
+/* Col 2: Middle Triptych Panel */
+.tc-pose-r1__reuse-mid {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
 }
 
-.tc-pose-r1__triptych-label span {
-  font-family: var(--font-sans, sans-serif);
-  font-size: 11px;
-  color: var(--tc-pose-ink-light);
-  font-weight: 500;
-}
-
-.tc-pose-r1__triptych-img {
-  position: relative;
+.tc-pose-r1__triptych-panel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   background: #000;
-  border-radius: 6px;
+  border-radius: 8px;
   overflow: hidden;
-  aspect-ratio: 3 / 4;
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  flex: 1;
+  aspect-ratio: 1.1 / 1;
 }
 
-.tc-pose-r1__triptych-img img {
+.tc-pose-r1__triptych-strip {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  height: 100%;
+}
+
+.tc-pose-r1__triptych-strip:last-child {
+  border-right: none;
+}
+
+.tc-pose-r1__strip-hdr {
+  padding: 10px 4px 6px;
+  text-align: center;
+  background: #000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tc-pose-r1__strip-hdr .en {
+  display: block;
+  font-family: var(--font-mono, monospace);
+  font-size: 9px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tc-pose-r1__strip-hdr .cn {
+  display: block;
+  font-family: var(--font-sans, sans-serif);
+  font-size: 10px;
+  color: var(--tc-pose-dark-muted);
+  margin-top: 1px;
+}
+
+.tc-pose-r1__strip-img {
+  flex: 1;
+  overflow: hidden;
+}
+
+.tc-pose-r1__strip-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -554,59 +647,27 @@
   display: block;
 }
 
-.tc-pose-r1__triptych-banner {
-  text-align: center;
-  padding: 24px 0 0;
-  font-family: var(--font-mono, monospace);
+/* Col 3: Right Workflow Frame */
+.tc-pose-r1__reuse-right {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.tc-pose-r1__triptych-banner h3 {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--tc-pose-ink);
-  margin: 0 0 6px;
-}
-
-.tc-pose-r1__triptych-banner span {
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  color: var(--tc-pose-orange);
-  font-weight: 700;
-}
-
-/* Act 3.2: System Proof Workflow (Large Dedicated Row) */
-.tc-pose-r1__reuse-system {
-  margin-top: 64px;
-  padding-top: 48px;
-  border-top: 1px dashed var(--tc-pose-hairline);
-  display: grid;
-  grid-template-columns: 32% 68%;
-  gap: 40px;
-  align-items: center;
-}
-
-.tc-pose-r1__reuse-judgment {
-  font-size: 26px;
-  font-weight: 700;
-  line-height: 1.3;
-  color: var(--tc-pose-ink);
-  letter-spacing: -0.02em;
-  margin: 0 0 16px;
-}
-
-.tc-pose-r1__workflow-frame {
+.tc-pose-r1__reuse-wf-card {
   position: relative;
   background: #000;
   border-radius: 8px;
   overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.35);
-  aspect-ratio: 16 / 10;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  flex: 1;
+  aspect-ratio: 1.25 / 1;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.tc-pose-r1__workflow-frame img {
+.tc-pose-r1__reuse-wf-card img {
   width: 100%;
   height: 100%;
   object-fit: contain;
