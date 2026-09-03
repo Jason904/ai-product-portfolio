@@ -856,10 +856,10 @@
 /* Right Stage: Live-Action Character (Matching 800 / 700 exactly!) */
 .tc-pose-r1__deepen-result-stage {
   position: relative;
-  background: #000;
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid var(--tc-pose-dark-hairline);
+  background: transparent;
+  border-radius: 0;
+  overflow: visible;
+  border: none;
   flex: 1;
   aspect-ratio: 800 / 700;
   display: flex;
