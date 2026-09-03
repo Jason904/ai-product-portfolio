@@ -827,30 +827,30 @@
   font-weight: 600;
 }
 
-/* Callout Box Positions relative to 800x700 */
+/* Callout Box Positions calibrated to 800x700 canvas (1:1 with SVG) */
 .tc-pose-r1__callout--torso {
-  left: 4.5%;
-  top: 25.5%;
+  left: 5.0%;
+  top: 12.8%;
 }
 
 .tc-pose-r1__callout--guard {
-  left: 4.5%;
-  top: 45.5%;
+  left: 5.0%;
+  top: 35.7%;
 }
 
 .tc-pose-r1__callout--hip {
-  left: 70.0%;
-  top: 51.5%;
-}
-
-.tc-pose-r1__callout--support {
-  left: 5.5%;
-  top: 85.5%;
+  left: 80.0%;
+  top: 39.3%;
 }
 
 .tc-pose-r1__callout--balance {
-  left: 70.0%;
-  top: 73.0%;
+  left: 72.5%;
+  top: 58.5%;
+}
+
+.tc-pose-r1__callout--support {
+  left: 5.0%;
+  top: 86.4%;
 }
 
 /* Right Stage: Live-Action Character (Matching 800 / 700 exactly!) */
