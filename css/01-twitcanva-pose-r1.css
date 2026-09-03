@@ -764,7 +764,7 @@
   letter-spacing: 0;
 }
 
-/* Left 3D Stage */
+/* Left 3D Stage - Exactly 800 / 700 aspect ratio! */
 .tc-pose-r1__deepen-stage {
   position: relative;
   background: #000;
@@ -772,7 +772,7 @@
   overflow: hidden;
   border: 1px solid var(--tc-pose-dark-hairline);
   flex: 1;
-  aspect-ratio: 1.18 / 1;
+  aspect-ratio: 800 / 700;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -785,83 +785,75 @@
   display: block;
 }
 
-/* 5 Editorial Anatomy Callout Pins */
-.tc-pose-r1__pin {
+/* Precision Vector SVG Overlay */
+.tc-pose-r1__pins-svg {
   position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-mono, monospace);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  color: #fff;
   z-index: 2;
 }
 
-.tc-pose-r1__pin-text {
-  background: rgba(17, 17, 16, 0.9);
+/* Precision Positioned HTML Callout Labels */
+.tc-pose-r1__callout {
+  position: absolute;
+  background: rgba(18, 18, 18, 0.92);
   backdrop-filter: blur(6px);
-  padding: 4px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 4px 10px;
   display: flex;
   flex-direction: column;
   line-height: 1.25;
+  z-index: 3;
+  pointer-events: none;
+  user-select: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
-.tc-pose-r1__pin-text span {
+.tc-pose-r1__callout .en {
+  font-family: var(--font-mono, monospace);
   font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #fff;
+}
+
+.tc-pose-r1__callout .cn {
   font-family: var(--font-sans, sans-serif);
+  font-size: 11px;
   color: var(--tc-pose-orange);
   font-weight: 600;
 }
 
-.tc-pose-r1__pin-line {
-  width: 28px;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.45);
+/* Callout Box Positions relative to 800x700 */
+.tc-pose-r1__callout--torso {
+  left: 4.5%;
+  top: 25.5%;
 }
 
-.tc-pose-r1__pin-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--tc-pose-orange);
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.6);
-  flex-shrink: 0;
+.tc-pose-r1__callout--guard {
+  left: 4.5%;
+  top: 45.5%;
 }
 
-/* Position pins relative to mannequin */
-.tc-pose-r1__pin--torso {
-  top: 26%;
-  left: 10%;
+.tc-pose-r1__callout--hip {
+  left: 70.0%;
+  top: 51.5%;
 }
 
-.tc-pose-r1__pin--guard {
-  top: 48%;
-  left: 8%;
+.tc-pose-r1__callout--support {
+  left: 5.5%;
+  top: 85.5%;
 }
 
-.tc-pose-r1__pin--hip {
-  top: 40%;
-  right: 22%;
-  flex-direction: row-reverse;
+.tc-pose-r1__callout--balance {
+  left: 70.0%;
+  top: 73.0%;
 }
 
-.tc-pose-r1__pin--support {
-  bottom: 12%;
-  left: 18%;
-}
-
-.tc-pose-r1__pin--balance {
-  bottom: 14%;
-  right: 14%;
-  flex-direction: row-reverse;
-}
-
-/* Right Stage: Live-Action Character (Matching Left Height Exactly!) */
+/* Right Stage: Live-Action Character (Matching 800 / 700 exactly!) */
 .tc-pose-r1__deepen-result-stage {
   position: relative;
   background: #000;
@@ -869,7 +861,7 @@
   overflow: hidden;
   border: 1px solid var(--tc-pose-dark-hairline);
   flex: 1;
-  aspect-ratio: 1.18 / 1;
+  aspect-ratio: 800 / 700;
   display: flex;
   align-items: center;
   justify-content: center;

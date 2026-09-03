@@ -1140,7 +1140,7 @@
 
       </div><!-- /.tc-pose-r1__container -->
 
-      <!-- 04 | COMPLEX POSE AUTHORING (DEEPEN) - 50/50 Cinematic Dual Stage (Same Direction Right Kick) -->
+      <!-- 04 | COMPLEX POSE AUTHORING (DEEPEN) - 50/50 Cinematic Dual Stage (Precision SVG Leader Lines) -->
       <section class="tc-pose-r1__dark-section">
         <div class="tc-pose-r1__dark-container">
           
@@ -1160,7 +1160,7 @@
           <!-- 50 / 50 Cinematic Dual Stage (Same Direction: Kicking Right) -->
           <div class="tc-pose-r1__dual-stage-grid">
             
-            <!-- Left Stage: 3D Spatial Pose Rig -->
+            <!-- Left Stage: 3D Spatial Pose Rig with Precision Vector SVG Leader Lines -->
             <div class="tc-pose-r1__dual-col">
               <div class="tc-pose-r1__dual-hdr">
                 <span class="en">3D CONTROL RIG</span>
@@ -1169,35 +1169,59 @@
               <div class="tc-pose-r1__deepen-stage">
                 <img src="assets/images/twitcanva/pose/pose-04-complex-pose-a.png" alt="高位侧踢复杂身体力学结构 3D Pose" loading="eager" decoding="async">
                 
-                <!-- 5 Precision Anatomy Callouts -->
-                <div class="tc-pose-r1__pin tc-pose-r1__pin--torso">
-                  <div class="tc-pose-r1__pin-text">TORSO <span>躯干扭转</span></div>
-                  <div class="tc-pose-r1__pin-line" aria-hidden="true"></div>
-                  <div class="tc-pose-r1__pin-dot" aria-hidden="true"></div>
+                <!-- Precision Vector SVG Overlay: viewBox 800x700 matches image 1:1 -->
+                <svg class="tc-pose-r1__pins-svg" viewBox="0 0 800 700" preserveAspectRatio="none" aria-hidden="true">
+                  <defs>
+                    <filter id="pin-orange-glow" x="-50%" y="-50%" width="200%" height="200%">
+                      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#c8683d" flood-opacity="0.9"/>
+                    </filter>
+                  </defs>
+
+                  <!-- 1. TORSO: leader line to chest (270, 275) -->
+                  <line x1="135" y1="200" x2="270" y2="275" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-dasharray="3 3"/>
+                  <circle cx="270" cy="275" r="5.5" fill="#c8683d" stroke="#ffffff" stroke-width="2" filter="url(#pin-orange-glow)"/>
+
+                  <!-- 2. GUARD: leader line to hands/elbow (255, 335) -->
+                  <line x1="135" y1="340" x2="255" y2="335" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-dasharray="3 3"/>
+                  <circle cx="255" cy="335" r="5.5" fill="#c8683d" stroke="#ffffff" stroke-width="2" filter="url(#pin-orange-glow)"/>
+
+                  <!-- 3. HIP: leader line to pelvic ball joint (385, 410) -->
+                  <line x1="560" y1="380" x2="385" y2="410" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-dasharray="3 3"/>
+                  <circle cx="385" cy="410" r="5.5" fill="#c8683d" stroke="#ffffff" stroke-width="2" filter="url(#pin-orange-glow)"/>
+
+                  <!-- 4. SUPPORT: leader line to standing foot sole (315, 630) -->
+                  <line x1="145" y1="620" x2="315" y2="630" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-dasharray="3 3"/>
+                  <circle cx="315" cy="630" r="5.5" fill="#c8683d" stroke="#ffffff" stroke-width="2" filter="url(#pin-orange-glow)"/>
+
+                  <!-- 5. BALANCE: leader line to center of mass (420, 520) -->
+                  <line x1="560" y1="530" x2="420" y2="520" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-dasharray="3 3"/>
+                  <circle cx="420" cy="520" r="5.5" fill="#c8683d" stroke="#ffffff" stroke-width="2" filter="url(#pin-orange-glow)"/>
+                </svg>
+
+                <!-- Precision HTML Callouts -->
+                <div class="tc-pose-r1__callout tc-pose-r1__callout--torso">
+                  <div class="en">TORSO</div>
+                  <div class="cn">躯干扭转</div>
                 </div>
 
-                <div class="tc-pose-r1__pin tc-pose-r1__pin--guard">
-                  <div class="tc-pose-r1__pin-text">GUARD <span>上肢防守</span></div>
-                  <div class="tc-pose-r1__pin-line" aria-hidden="true"></div>
-                  <div class="tc-pose-r1__pin-dot" aria-hidden="true"></div>
+                <div class="tc-pose-r1__callout tc-pose-r1__callout--guard">
+                  <div class="en">GUARD</div>
+                  <div class="cn">上肢防守</div>
                 </div>
 
-                <div class="tc-pose-r1__pin tc-pose-r1__pin--hip">
-                  <div class="tc-pose-r1__pin-text">HIP <span>髋部打开</span></div>
-                  <div class="tc-pose-r1__pin-line" aria-hidden="true"></div>
-                  <div class="tc-pose-r1__pin-dot" aria-hidden="true"></div>
+                <div class="tc-pose-r1__callout tc-pose-r1__callout--hip">
+                  <div class="en">HIP</div>
+                  <div class="cn">髋部打开</div>
                 </div>
 
-                <div class="tc-pose-r1__pin tc-pose-r1__pin--support">
-                  <div class="tc-pose-r1__pin-text">SUPPORT <span>支撑腿受力</span></div>
-                  <div class="tc-pose-r1__pin-line" aria-hidden="true"></div>
-                  <div class="tc-pose-r1__pin-dot" aria-hidden="true"></div>
+                <div class="tc-pose-r1__callout tc-pose-r1__callout--support">
+                  <div class="en">SUPPORT</div>
+                  <div class="cn">支撑腿受力</div>
                 </div>
 
-                <div class="tc-pose-r1__pin tc-pose-r1__pin--balance">
-                  <div class="tc-pose-r1__pin-text">BALANCE <span>平衡重心</span></div>
-                  <div class="tc-pose-r1__pin-line" aria-hidden="true"></div>
-                  <div class="tc-pose-r1__pin-dot" aria-hidden="true"></div>
+                <div class="tc-pose-r1__callout tc-pose-r1__callout--balance">
+                  <div class="en">BALANCE</div>
+                  <div class="cn">平衡重心</div>
                 </div>
               </div>
             </div>
