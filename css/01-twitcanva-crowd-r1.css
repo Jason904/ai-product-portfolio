@@ -1,5 +1,5 @@
 /* ==========================================================================
-   MODULE 01: TWITCANVA 03 CROWD — DESIGN R1.1 (OPTIMIZED BLUEPRINT)
+   MODULE 01: TWITCANVA 03 CROWD — DESIGN R1.2 (METHODOLOGY FORWARD & CLEAN OPENING)
    Namespace: .tc-crowd-r1-*
    Theme: Scale & Spatial Organization / 规模与空间控制
    TasteSkill: Warm Paper + Deep Ink + Burnt Orange Accent + De-boxed Editorial
@@ -22,16 +22,9 @@
 }
 
 /* --------------------------------------------------------------------------
-   BLOCK 01: OPENING / 从一个 UNIT 开始 (LEFT 58% STATEMENT / RIGHT 42% UNIT CARD)
+   BLOCK 01: OPENING / 纯粹大气质阶开场 (FULL WIDTH EDITORIAL STATEMENT)
    -------------------------------------------------------------------------- */
-.tc-crowd-r1__b01-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 1fr);
-  gap: clamp(32px, 4vw, 56px);
-  align-items: center;
-}
-
-.tc-crowd-r1__b01-left {
+.tc-crowd-r1__b01-statement {
   display: flex;
   flex-direction: column;
 }
@@ -86,7 +79,7 @@
   font-weight: 700;
   line-height: 1.45;
   color: var(--ink, #171714);
-  max-width: 620px;
+  max-width: 720px;
   word-break: keep-all;
 }
 
@@ -96,58 +89,120 @@
   font-weight: 550;
   color: var(--ink-secondary, #423e38);
   line-height: 1.5;
-  max-width: 600px;
+  max-width: 680px;
   word-break: keep-all;
 }
 
-/* Right Unit Card (Native 16:9 Character Dossier · Zero Letterboxing) */
-.tc-crowd-r1__unit-card {
+/* --------------------------------------------------------------------------
+   METHODOLOGY BRIDGE: 3-STEP PIPELINE STRIP (UNIT -> FORMATION -> SCENE)
+   -------------------------------------------------------------------------- */
+.tc-crowd-r1__pipeline-strip {
+  margin-top: 0.5rem;
+  padding: 1.4rem 1.6rem 1.2rem;
+  background: rgba(23, 23, 20, 0.02);
+  border: 1px solid rgba(23, 23, 20, 0.08);
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
-  border-radius: 8px;
-  background: rgba(23, 23, 20, 0.025);
-  border: 1px solid rgba(23, 23, 20, 0.08);
-  padding: 0.85rem;
+  gap: 1.2rem;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
-.tc-crowd-r1__unit-header {
+.tc-crowd-r1__pipeline-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: clamp(12px, 1.6vw, 22px);
+  align-items: center;
+  width: 100%;
+}
+
+.tc-crowd-r1__pipe-col {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  margin-bottom: 0.55rem;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.9rem;
+  min-width: 0;
+}
+
+.tc-crowd-r1__pipe-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.tc-crowd-r1__pipe-tag {
   font-family: var(--font-mono, monospace);
   font-size: 0.68rem;
-  letter-spacing: 0.06em;
-}
-
-.tc-crowd-r1__unit-tag {
+  font-weight: 750;
+  letter-spacing: 0.08em;
   color: var(--accent, #c8683d);
-  font-weight: 800;
+  text-transform: uppercase;
 }
 
-.tc-crowd-r1__unit-sub {
+.tc-crowd-r1__pipe-title {
+  font-family: var(--font-display, sans-serif);
+  font-size: 0.92rem;
+  font-weight: 780;
+  color: var(--ink, #171714);
+  line-height: 1.25;
+}
+
+.tc-crowd-r1__pipe-desc {
+  font-size: 0.76rem;
+  font-weight: 550;
   color: var(--muted, #736c64);
-  font-weight: 650;
+  line-height: 1.4;
+  margin: 0;
 }
 
-.tc-crowd-r1__unit-frame {
-  width: 100%;
-  aspect-ratio: 16 / 9;
+.tc-crowd-r1__pipe-media {
+  width: 110px;
+  height: 68px;
   background: #000;
-  border-radius: 6px;
+  border-radius: 4px;
   overflow: hidden;
+  flex-shrink: 0;
   border: 1px solid rgba(23, 23, 20, 0.08);
-  box-shadow: 0 4px 16px rgba(23, 23, 20, 0.04);
+  box-shadow: 0 2px 8px rgba(23, 23, 20, 0.04);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.tc-crowd-r1__unit-img {
+.tc-crowd-r1__pipe-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.tc-crowd-r1__pipe-arrow {
+  font-family: var(--font-mono, monospace);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--accent, #c8683d);
+  user-select: none;
+}
+
+.tc-crowd-r1__pipeline-footer {
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(23, 23, 20, 0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.74rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  color: var(--ink-secondary, #423e38);
+}
+
+.tc-crowd-r1__pipeline-footer span.arrow {
+  color: var(--accent, #c8683d);
+  padding: 0 0.4rem;
 }
 
 /* --------------------------------------------------------------------------
@@ -594,9 +649,12 @@
    RESPONSIVE OVERRIDES
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
-  .tc-crowd-r1__b01-grid {
+  .tc-crowd-r1__pipeline-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.4rem;
+  }
+  .tc-crowd-r1__pipe-arrow {
+    display: none;
   }
   .tc-crowd-r1__b03-grid {
     grid-template-columns: 1fr;
@@ -623,137 +681,5 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 0.4rem;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   BLOCK 02.5: 3-STEP PIPELINE STRIP (UNIT -> FORMATION -> SCENE)
-   -------------------------------------------------------------------------- */
-.tc-crowd-r1__pipeline-strip {
-  margin-top: 2rem;
-  padding: 1.4rem 1.6rem 1.2rem;
-  background: rgba(23, 23, 20, 0.02);
-  border: 1px solid rgba(23, 23, 20, 0.08);
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-
-.tc-crowd-r1__pipeline-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
-  gap: clamp(12px, 1.6vw, 22px);
-  align-items: center;
-  width: 100%;
-}
-
-.tc-crowd-r1__pipe-col {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 0.9rem;
-  min-width: 0;
-}
-
-.tc-crowd-r1__pipe-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  flex: 1;
-  min-width: 0;
-}
-
-.tc-crowd-r1__pipe-tag {
-  font-family: var(--font-mono, monospace);
-  font-size: 0.68rem;
-  font-weight: 750;
-  letter-spacing: 0.08em;
-  color: var(--accent, #c8683d);
-  text-transform: uppercase;
-}
-
-.tc-crowd-r1__pipe-title {
-  font-family: var(--font-display, sans-serif);
-  font-size: 0.92rem;
-  font-weight: 780;
-  color: var(--ink, #171714);
-  line-height: 1.25;
-}
-
-.tc-crowd-r1__pipe-desc {
-  font-size: 0.76rem;
-  font-weight: 550;
-  color: var(--muted, #736c64);
-  line-height: 1.4;
-  margin: 0;
-}
-
-.tc-crowd-r1__pipe-keys {
-  font-family: var(--font-mono, monospace);
-  font-size: 0.60rem;
-  font-weight: 750;
-  letter-spacing: 0.04em;
-  color: var(--accent, #c8683d);
-  text-transform: uppercase;
-  margin-top: 0.15rem;
-}
-
-.tc-crowd-r1__pipe-media {
-  width: 110px;
-  height: 68px;
-  background: #000;
-  border-radius: 4px;
-  overflow: hidden;
-  flex-shrink: 0;
-  border: 1px solid rgba(23, 23, 20, 0.08);
-  box-shadow: 0 2px 8px rgba(23, 23, 20, 0.04);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.tc-crowd-r1__pipe-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.tc-crowd-r1__pipe-arrow {
-  font-family: var(--font-mono, monospace);
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: var(--accent, #c8683d);
-  user-select: none;
-}
-
-.tc-crowd-r1__pipeline-footer {
-  padding-top: 0.9rem;
-  border-top: 1px solid rgba(23, 23, 20, 0.07);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-mono, monospace);
-  font-size: 0.74rem;
-  font-weight: 750;
-  letter-spacing: 0.08em;
-  color: var(--ink-secondary, #423e38);
-}
-
-.tc-crowd-r1__pipeline-footer span.arrow {
-  color: var(--accent, #c8683d);
-  padding: 0 0.4rem;
-}
-
-@media (max-width: 1024px) {
-  .tc-crowd-r1__pipeline-grid {
-    grid-template-columns: 1fr;
-    gap: 1.4rem;
-  }
-  .tc-crowd-r1__pipe-arrow {
-    display: none;
   }
 }
