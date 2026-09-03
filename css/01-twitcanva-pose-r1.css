@@ -539,7 +539,7 @@
 
 .tc-pose-r1__reuse-board {
   display: grid;
-  grid-template-columns: 24% 34% 42%;
+  grid-template-columns: 26% 40% 34%;
   gap: 24px;
   align-items: stretch;
 }
@@ -593,7 +593,7 @@
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.4);
   flex: 1;
-  aspect-ratio: 1.1 / 1;
+  aspect-ratio: 1.05 / 1;
 }
 
 .tc-pose-r1__triptych-strip {
@@ -647,7 +647,7 @@
   display: block;
 }
 
-/* Col 3: Right Workflow Frame */
+/* Col 3: Right Workflow Frame - Exactly matched to 0.9:1 aspect ratio! */
 .tc-pose-r1__reuse-right {
   display: flex;
   flex-direction: column;
@@ -661,7 +661,7 @@
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.4);
   flex: 1;
-  aspect-ratio: 1.25 / 1;
+  aspect-ratio: 0.9 / 1;
   display: flex;
   align-items: center;
   justify-content: center;
