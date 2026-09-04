@@ -1113,8 +1113,8 @@
   padding-top: 48px;
   border-top: 1px dashed var(--tc-pose-hairline);
   display: grid;
-  grid-template-columns: 32% 68%;
-  gap: 40px;
+  grid-template-columns: 40% 60%;
+  gap: 44px;
   align-items: center;
 }
 
@@ -1123,7 +1123,7 @@
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.35);
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
   justify-content: center;
