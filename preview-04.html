@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04 / POSE · Turn Motion into a Control Asset (Dedicated Sandbox)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./css/01-twitcanva-pose-r2.css?v=20260908_pose_final_v1">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f4efe9;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", sans-serif;
+    }
+    .sandbox-floating-badge {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(23, 23, 20, 0.88);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #eae9e4;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      font-family: var(--font-mono, monospace);
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      z-index: 99999;
+      pointer-events: none;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+    .sandbox-floating-badge .dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #c8683d;
+      margin-right: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Single Module Standalone Sandbox Badge -->
+  <div class="sandbox-floating-badge">
+    <span class="dot"></span>04 POSE · ISOLATED SANDBOX
+  </div>
+
+  <main>
+    <!-- 04 / POSE — TURN MOTION INTO A CONTROL ASSET (TasteSkill Redesign R2 - 100% Frozen Copy) -->
+    <section class="tc-pose-r2" id="twitcanva-pose-r1" aria-label="04 / POSE · Turn Motion into a Control Asset">
+      <div class="tc-pose-r2__container">
+
+        <!-- 1. 章节开篇 (Opening: 完整保留图一对比导轨与图二五阶推演仪表盘) -->
+        <header class="tc-pose-r2__opening">
+          <div class="tc-pose-r2__opening-grid">
+            <div class="tc-pose-r2__opening-left">
+              <div class="tc-pose-r2__kicker-row">
+                <span class="tc-pose-r2__kicker-num">04 / POSE</span>
+                <span class="tc-pose-r2__kicker-sep">•</span>
+                <span class="tc-pose-r2__kicker-en">TURN MOTION INTO A CONTROL ASSET</span>
+              </div>
+              <h1 class="tc-pose-r2__hero-title">
+                让动作从角色与生成结果中独立出来，<br>成为可调整、可复用、可继续修改的创作资产
+              </h1>
+              <div class="tc-pose-r2__desc-wrap">
+                <span class="tc-pose-r2__desc-spine"></span>
+                <p class="tc-pose-r2__hero-lead">
+                  生成模型具备丰富的动作常识，但单靠文字描述无法精确约束肢体。TwitCanva 将动作从生图过程中解耦为独立的控制实体，支持空间可视化定义、跨角色复用与局部微调派生。
+                </p>
+              </div>
+
+              <!-- 图一：TRADITIONAL PROMPT vs TWITCANVA POSE RIG 对比导轨 -->
+              <div class="tc-pose-r1__transform-rail">
+                <div class="tc-pose-r1__tr-node">
+                  <span class="label">TRADITIONAL PROMPT</span>
+                  <span class="desc">隐式单次抽卡条件</span>
+                </div>
+                <div class="tc-pose-r1__tr-arrow" aria-hidden="true">
+                  <span class="line"></span>
+                  <span class="arr">&rarr;</span>
+                  <span class="tag">DECOMPOSE</span>
+                </div>
+                <div class="tc-pose-r1__tr-node tc-pose-r1__tr-node--hi">
+                  <span class="label">TWITCANVA POSE RIG</span>
+                  <span class="desc">显式可控创作资产</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 图二：POSE ASSET LIFECYCLE 动作资产五阶推演闭环仪表盘 -->
+            <div class="tc-pose-r1__instrument-panel">
+              <div class="tc-pose-r1__panel-header">
+                <div class="tc-pose-r1__panel-title">
+                  <span class="mono">POSE ASSET LIFECYCLE</span>
+                  <span class="cn">动作资产五阶推演闭环</span>
+                </div>
+                <span class="tc-pose-r1__panel-count">5 PHASES</span>
+              </div>
+
+              <!-- 5 Pipeline Steps with Visual Status & Capability Metas -->
+              <div class="tc-pose-r1__pipeline-list">
+                <!-- Step 01 -->
+                <div class="tc-pose-r1__pipe-step">
+                  <div class="tc-pose-r1__pipe-track">
+                    <span class="dot"></span>
+                    <span class="track-line"></span>
+                  </div>
+                  <div class="tc-pose-r1__pipe-body">
+                    <div class="tc-pose-r1__pipe-top">
+                      <span class="num">01</span>
+                      <span class="en">DECOUPLE</span>
+                      <span class="tag">身份解耦</span>
+                    </div>
+                    <div class="tc-pose-r1__pipe-desc">拆开动作 · 身份外观与身体动作独立定义</div>
+                  </div>
+                  <div class="tc-pose-r1__pipe-spec">IDENTITY &ne; POSE</div>
+                </div>
+
+                <!-- Step 02 -->
+                <div class="tc-pose-r1__pipe-step">
+                  <div class="tc-pose-r1__pipe-track">
+                    <span class="dot"></span>
+                    <span class="track-line"></span>
+                  </div>
+                  <div class="tc-pose-r1__pipe-body">
+                    <div class="tc-pose-r1__pipe-top">
+                      <span class="num">02</span>
+                      <span class="en">AUTHOR</span>
+                      <span class="tag">显式定义</span>
+                    </div>
+                    <div class="tc-pose-r1__pipe-desc">显式表达 · 3D 骨骼将动作意图空间精确约束</div>
+                  </div>
+                  <div class="tc-pose-r1__pipe-spec">3D SPATIAL RIG</div>
+                </div>
+
+                <!-- Step 03 -->
+                <div class="tc-pose-r1__pipe-step">
+                  <div class="tc-pose-r1__pipe-track">
+                    <span class="dot"></span>
+                    <span class="track-line"></span>
+                  </div>
+                  <div class="tc-pose-r1__pipe-body">
+                    <div class="tc-pose-r1__pipe-top">
+                      <span class="num">03</span>
+                      <span class="en">REUSE</span>
+                      <span class="tag">跨角色复用</span>
+                    </div>
+                    <div class="tc-pose-r1__pipe-desc">重复使用 · 单姿态节点直接分发多角色生成</div>
+                  </div>
+                  <div class="tc-pose-r1__pipe-spec">1 &rarr; N ROLES</div>
+                </div>
+
+                <!-- Step 04 -->
+                <div class="tc-pose-r1__pipe-step">
+                  <div class="tc-pose-r1__pipe-track">
+                    <span class="dot"></span>
+                    <span class="track-line"></span>
+                  </div>
+                  <div class="tc-pose-r1__pipe-body">
+                    <div class="tc-pose-r1__pipe-top">
+                      <span class="num">04</span>
+                      <span class="en">DEEPEN</span>
+                      <span class="tag">力学深度</span>
+                    </div>
+                    <div class="tc-pose-r1__pipe-desc">控制深度 · 躯干、防守、髋骨、足底五维精控</div>
+                  </div>
+                  <div class="tc-pose-r1__pipe-spec">5-AXIS CONTROL</div>
+                </div>
+
+                <!-- Step 05 -->
+                <div class="tc-pose-r1__pipe-step">
+                  <div class="tc-pose-r1__pipe-track">
+                    <span class="dot"></span>
+                  </div>
+                  <div class="tc-pose-r1__pipe-body">
+                    <div class="tc-pose-r1__pipe-top">
+                      <span class="num">05</span>
+                      <span class="en">EVOLVE</span>
+                      <span class="tag">分支派生</span>
+                    </div>
+                    <div class="tc-pose-r1__pipe-desc">继续演化 · 继承确认结构，只做差量微调派生</div>
+                  </div>
+                  <div class="tc-pose-r1__pipe-spec">DELTA FORK</div>
+                </div>
+              </div>
+
+              <!-- Bottom Footnote of Instrument Panel -->
+              <div class="tc-pose-r1__panel-footer">
+                <span class="foot-status"><span class="status-indicator"></span> PIPELINE STATUS: ACTIVE</span>
+                <span class="foot-desc">从解耦输入到分支演化的工业级闭环</span>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- 2. 04.1 身份与动作解耦 (Decouple) -->
+        <section class="tc-pose-r2__block tc-pose-r2__block--decouple" id="pose-block-decouple">
+          <div class="tc-pose-r2__block-header">
+            <div class="tc-pose-r2__header-left">
+              <span class="tc-pose-r2__step-badge">01 / DECOUPLE</span>
+              <h2 class="tc-pose-r2__block-title">把角色身份与动作控制拆开</h2>
+              <p class="tc-pose-r2__block-sub">
+                角色负责身份与外观，动作负责空间姿态。两者作为独立的控制依据按需组合，角色与动作不必绑定在同一次生成里。
+              </p>
+            </div>
+          </div>
+
+          <!-- Three-phase Equation Stage -->
+          <div class="tc-pose-r2__equation-stage">
+            <!-- Card 1: Identity -->
+            <div class="tc-pose-r2__eq-card">
+              <div class="tc-pose-r2__eq-badge">IDENTITY INPUT <span>身份输入</span></div>
+              <div class="tc-pose-r2__eq-media">
+                <img src="assets/images/twitcanva/pose/pose-01-card1-1080x1448.png" alt="红衣控制者三面三视图身份资产" loading="eager" decoding="async">
+              </div>
+              <span class="tc-pose-r2__eq-caption">三视图外观标准卡 (正面 · 侧面 · 背面)</span>
+            </div>
+
+            <div class="tc-pose-r2__eq-operator" aria-hidden="true">+</div>
+
+            <!-- Card 2: Pose Mannequin -->
+            <div class="tc-pose-r2__eq-card">
+              <div class="tc-pose-r2__eq-badge">MOTION INPUT <span>姿态输入</span></div>
+              <div class="tc-pose-r2__eq-media">
+                <img src="assets/images/twitcanva/pose/pose-01-card2-1080x1448.png" alt="右手前伸控制姿态 3D Pose 人偶" loading="eager" decoding="async">
+              </div>
+              <span class="tc-pose-r2__eq-caption">3D 姿态骨骼空间参考 (手部前伸 · 重心微倾)</span>
+            </div>
+
+            <div class="tc-pose-r2__eq-operator" aria-hidden="true">➔</div>
+
+            <!-- Card 3: Action Result -->
+            <div class="tc-pose-r2__eq-card tc-pose-r2__eq-card--result">
+              <div class="tc-pose-r2__eq-badge">COMPOSED RESULT <span>组合结果</span></div>
+              <div class="tc-pose-r2__eq-media">
+                <img src="assets/images/twitcanva/pose/pose-01-card3-1080x1448.png" alt="红衣控制者执行控制姿势的真人落地大片" loading="eager" decoding="async">
+              </div>
+              <span class="tc-pose-r2__eq-caption">角色严格执行目标动作的真人生成结果</span>
+            </div>
+          </div>
+
+          <!-- 3. 04.2 独立姿态控制 (Author) 机制标尺 -->
+          <div class="tc-pose-r2__rig-strip">
+            <div class="tc-pose-r2__rig-label">
+              <span class="dot"></span>
+              <span class="title">02 / AUTHOR · 让动作意图，从文字描述变成可控参考</span>
+            </div>
+            <p class="tc-pose-r2__rig-desc">
+              自然语言很难精确约束复杂的肢体空间。3D Pose 将隐含的姿态转化为创作者可直接调整、检查的显式骨骼参考，降低模型理解歧义，稳定命中目标姿态。
+            </p>
+            <div class="tc-pose-r2__rig-flow">
+              <span class="flow-item">LANGUAGE INTENT 语言意图</span>
+              <span class="flow-arr">➔</span>
+              <span class="flow-item">3D SPATIAL RIG 空间骨骼约束</span>
+              <span class="flow-arr">➔</span>
+              <span class="flow-item highlight">EXPLICIT CONTROL 显式控制</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. 04.3 跨角色复用 (Reuse · 50:50 平权展台) -->
+        <section class="tc-pose-r2__block tc-pose-r2__block--reuse" id="pose-block-reuse">
+          <div class="tc-pose-r2__block-header">
+            <div class="tc-pose-r2__header-left">
+              <span class="tc-pose-r2__step-badge">03 / REUSE</span>
+              <h2 class="tc-pose-r2__block-title">一次定义，跨角色复用</h2>
+              <p class="tc-pose-r2__block-sub">
+                动作一旦成为独立资产，便不再受限于单次生成。同一个姿态节点作为公共输入，向不同角色分别分发，在保持动作严格一致的同时，大幅消除重复调试成本。
+              </p>
+            </div>
+          </div>
+
+          <div class="tc-pose-r2__reuse-grid">
+            <!-- Left 50%: 3 Roles Triad -->
+            <div class="tc-pose-r2__roles-col">
+              <div class="tc-pose-r2__col-header">
+                <span class="col-title">ONE POSE · MULTIPLE CHARACTERS</span>
+                <span class="col-sub">同一姿态资产跨角色出图</span>
+              </div>
+              <div class="tc-pose-r2__roles-triptych">
+                <div class="role-cell">
+                  <div class="role-header">
+                    <span class="role-id">ROLE A</span>
+                    <span class="role-name">黑衣战士</span>
+                  </div>
+                  <div class="role-img-wrap">
+                    <img src="assets/images/twitcanva/pose/pose-03-result-black.png" alt="黑衣战士复用同姿势生成结果" loading="eager" decoding="async">
+                  </div>
+                </div>
+                <div class="role-cell">
+                  <div class="role-header">
+                    <span class="role-id">ROLE B</span>
+                    <span class="role-name">红衣控制者</span>
+                  </div>
+                  <div class="role-img-wrap">
+                    <img src="assets/images/twitcanva/pose/pose-03-result-red.png" alt="红衣控制者复用同姿势生成结果" loading="eager" decoding="async">
+                  </div>
+                </div>
+                <div class="role-cell">
+                  <div class="role-header">
+                    <span class="role-id">ROLE C</span>
+                    <span class="role-name">绿袍智者</span>
+                  </div>
+                  <div class="role-img-wrap">
+                    <img src="assets/images/twitcanva/pose/pose-03-result-green.png" alt="绿袍智者复用同姿势生成结果" loading="eager" decoding="async">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right 50%: Real Workflow Node Graph -->
+            <div class="tc-pose-r2__graph-col">
+              <div class="tc-pose-r2__col-header">
+                <span class="col-title">REAL WORKFLOW TOPOLOGY</span>
+                <span class="col-badge">1 POSE NODE ➔ 3 CHARACTERS</span>
+              </div>
+              <div class="tc-pose-r2__graph-frame">
+                <img src="assets/images/twitcanva/pose/pose-03-workflow-reuse.png" alt="三角色共享单姿态节点的真实工作流拓扑证据" loading="eager" decoding="async">
+                <div class="graph-telemetry-tag">
+                  <span class="dot"></span>
+                  <span>TOPOLOGY :: 1 POSE NODE ➔ 3 CHARACTERS (WARRIOR · CONTROLLER · STRATEGIST)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. 04.4 复杂动作控制 (Complex Control · 暗室监视台) -->
+        <section class="tc-pose-r2__dark-console" id="pose-block-complex">
+          <div class="cad-corner corner--tl" aria-hidden="true"></div>
+          <div class="cad-corner corner--tr" aria-hidden="true"></div>
+          <div class="cad-corner corner--bl" aria-hidden="true"></div>
+          <div class="cad-corner corner--br" aria-hidden="true"></div>
+
+          <div class="tc-pose-r2__console-header">
+            <div class="console-telemetry-left">
+              <span class="console-dot"></span>
+              <span class="console-tag">DIRECTOR CONSOLE // KINEMATIC CONSTRAINT PROFILES</span>
+            </div>
+            <span class="console-coord">STAGE 04 · DEEP KINEMATICS</span>
+          </div>
+
+          <div class="tc-pose-r2__console-title-row">
+            <div class="title-left">
+              <span class="console-step">04 / COMPLEX POSE CONTROL</span>
+              <h2 class="console-h2">复杂动作不是一个动作标签，而是多部位协同约束</h2>
+            </div>
+            <p class="console-lead">
+              高位侧踢绝非单靠一个 Prompt 词能稳定命中。它依赖躯干倾斜、髋部打开、重心平衡与支撑受力的精密协同。只有将各部位空间关系显式结构化，创作者才能进行有针对性的精确控制。
+            </p>
+          </div>
+
+          <div class="tc-pose-r2__console-stage">
+            <!-- Left: 3D Control Rig with 5 Callouts -->
+            <div class="console-pane console-pane--rig">
+              <div class="pane-topbar">
+                <span>3D CONTROL RIG // 空间力学显式控制输入</span>
+                <span class="pane-badge">GEOMETRIC CONSTRAINTS</span>
+              </div>
+              <div class="pane-media-wrap">
+                <img src="assets/images/twitcanva/pose/pose-04-complex-pose-a.png" alt="高位侧踢复杂身体力学结构 3D Pose" loading="eager" decoding="async">
+                <!-- 5 Precision Telemetry Callout Markers -->
+                <div class="telemetry-marker marker--torso">
+                  <span class="marker-dot"></span>
+                  <span class="marker-pill">TORSO // 躯干扭转</span>
+                </div>
+                <div class="telemetry-marker marker--guard">
+                  <span class="marker-dot"></span>
+                  <span class="marker-pill">GUARD // 上肢防守</span>
+                </div>
+                <div class="telemetry-marker marker--hip">
+                  <span class="marker-dot"></span>
+                  <span class="marker-pill">HIP // 髋部打开</span>
+                </div>
+                <div class="telemetry-marker marker--balance">
+                  <span class="marker-dot"></span>
+                  <span class="marker-pill">BALANCE // 平衡重心</span>
+                </div>
+                <div class="telemetry-marker marker--support">
+                  <span class="marker-dot"></span>
+                  <span class="marker-pill">SUPPORT // 支撑受力</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Real Generation Output -->
+            <div class="console-pane console-pane--result">
+              <div class="pane-topbar">
+                <span>GENERATED RESULT // 真实角色高难度侧踢大片</span>
+                <span class="pane-badge pane-badge--accent">4:3 CINEMA OUTPUT</span>
+              </div>
+              <div class="pane-media-wrap">
+                <img src="assets/images/twitcanva/pose/pose-04-result-a.png" alt="红衣控制者执行高位侧踢真人生成大片" loading="eager" decoding="async">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. 04.5 局部修改与分支派生 (Fork · 任务驱动对照) -->
+        <section class="tc-pose-r2__block tc-pose-r2__block--fork" id="pose-block-fork">
+          <div class="tc-pose-r2__block-header">
+            <div class="tc-pose-r2__header-left">
+              <span class="tc-pose-r2__step-badge">05 / FORK &amp; BRANCH</span>
+              <h2 class="tc-pose-r2__block-title">保留已成立的结构，只微调需要改变的部分</h2>
+              <p class="tc-pose-r2__block-sub">
+                在已满意的侧踢基线上，创作者无需推翻重做。通过显式指定保留与修改的控制边界，派生出低位截击新分支：
+              </p>
+            </div>
+          </div>
+
+          <!-- Delta Specification Pill Bar -->
+          <div class="tc-pose-r2__delta-spec-bar">
+            <div class="spec-col spec-col--keep">
+              <span class="spec-tag tag--keep">KEEP [保留继承]</span>
+              <span class="spec-desc">头部视向 · 躯干倾斜 · 上臂防守架构（锁定结构）</span>
+            </div>
+            <div class="spec-divider"></div>
+            <div class="spec-col spec-col--change">
+              <span class="spec-tag tag--change">CHANGE [目标调整]</span>
+              <span class="spec-desc">髋关节外展角度 · 踢腿高度下调 · 支撑腿重心微调</span>
+            </div>
+          </div>
+
+          <!-- Dual-Column Side-by-Side Static Matrix (A vs B) -->
+          <div class="tc-pose-r2__matrix-grid">
+            <!-- Column 1: Base Pose A (High Side Kick) -->
+            <div class="matrix-card matrix-card--base">
+              <div class="matrix-card__header">
+                <span class="card-badge">BASE VERSION // 母体基线</span>
+                <h3 class="card-title">Pose A · 高位侧踢</h3>
+              </div>
+              <div class="matrix-card__media-pair">
+                <div class="pair-cell">
+                  <span class="cell-tag">3D POSE RIG</span>
+                  <div class="cell-img-wrap">
+                    <img src="assets/images/twitcanva/pose/pose-05-pose-a.png" alt="Pose A 高位侧踢基础姿态" loading="eager" decoding="async">
+                  </div>
+                </div>
+                <div class="pair-cell">
+                  <span class="cell-tag">GENERATION RESULT</span>
+                  <div class="cell-img-wrap">
+                    <img src="assets/images/twitcanva/pose/pose-05-result-a.png" alt="Result A 高位侧踢生成结果" loading="eager" decoding="async">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Column Divider / Flow Arrow -->
+            <div class="matrix-divider-col" aria-hidden="true">
+              <div class="divider-line"></div>
+              <div class="divider-bubble">
+                <span>DELTA</span>
+                <span>派生演进</span>
+                <span class="arrow">➔</span>
+              </div>
+              <div class="divider-line"></div>
+            </div>
+
+            <!-- Column 2: Branch Pose B (Low Stop Kick) -->
+            <div class="matrix-card matrix-card--branch">
+              <div class="matrix-card__header">
+                <span class="card-badge card-badge--accent">BRANCH VERSION // 派生分支</span>
+                <h3 class="card-title">Pose B · 低位截击</h3>
+              </div>
+              <div class="matrix-card__media-pair">
+                <div class="pair-cell">
+                  <span class="cell-tag highlight">3D POSE RIG (下肢调整)</span>
+                  <div class="cell-img-wrap">
+                    <img src="assets/images/twitcanva/pose/pose-05-pose-b.png" alt="Pose B 低位截击动作分支" loading="eager" decoding="async">
+                  </div>
+                </div>
+                <div class="pair-cell">
+                  <span class="cell-tag highlight">GENERATION RESULT (低位落地)</span>
+                  <div class="cell-img-wrap">
+                    <img src="assets/images/twitcanva/pose/pose-05-result-b.png" alt="Result B 低位截击生成结果" loading="eager" decoding="async">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom: Branching Workflow Graph Proof -->
+          <div class="tc-pose-r2__fork-proof">
+            <div class="proof-header">
+              <div class="proof-left">
+                <span class="proof-tag">REAL WORKFLOW EVIDENCE // 系统分支证据</span>
+                <h4 class="proof-title">版本化分支演进</h4>
+              </div>
+              <p class="proof-desc">
+                Pose B 作为新版本写入分支工作流，原 Pose A 依然完整可用，创作过程从单次抽卡沉淀为版本化分支演进。
+              </p>
+            </div>
+            <div class="proof-media-wrap">
+              <img src="assets/images/twitcanva/pose/pose-05-workflow-fork.png" alt="Pose 分支与生成结果的真实节点工作流" loading="eager" decoding="async">
+              <div class="proof-footer-banner">
+                <span class="dot"></span>
+                <span>好的控制系统不该每次重来。当控制资产能够继承、分支和继续编辑，创作过程才从单次抽卡变成可持续迭代的工作流。</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. 章节结尾收束 (Ending · 纯净收口) -->
+        <footer class="tc-pose-r2__monument">
+          <span class="tc-pose-r2__monument-kicker">04 / ASSET LIFECYCLE SUMMARY</span>
+          <h2 class="tc-pose-r2__monument-title">从生成条件，到创作资产。</h2>
+          <p class="tc-pose-r2__monument-sub">
+            动作成为创作资产后，不仅能够独立调整与跨角色复用，更能在已有版本上持续派生演进。
+          </p>
+        </footer>
+
+      </div><!-- /.tc-pose-r2__container -->
+    </section>
+  </main>
+
+</body>
+</html>
