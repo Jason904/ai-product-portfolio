@@ -499,9 +499,9 @@
                   <span class="col-num">02 / 模型端：全图重算</span>
                   <span class="col-tech">GLOBAL LATENT RESAMPLING</span>
                 </div>
-                <h4 class="col-title">扩散机制基于全局加噪去噪，没有局部图层隔离</h4>
+                <h4 class="col-title">扩散机制基于全局去噪采样，不维护局部图层结构</h4>
                 <p class="col-body">
-                  模型在潜空间是全图协同去噪的。只要 Prompt 稍有变动，全局注意力权重全部重置，模型必然重绘整张画面，无法只锁定局部。
+                  扩散模型将画面表示为连续潜变量，<strong>不维护“对象与图层”的符号结构</strong>。提示词经全局 Cross-Attention 注入，每个词都会影响全图的去噪方向。一次局部修改在模型端被解释为<strong>全新的全局条件采样</strong>，已满意的成果随时会被连带改写。
                 </p>
                 <div class="col-formula">
                   <span class="formula-in">全图重新加噪</span>
