@@ -515,15 +515,26 @@
   aspect-ratio: 16 / 9;
 }
 
-/* 5-Dimension Scene Decoder Strip */
+/* Caption Bar (Lead-in Annotation above image) */
+.tc-h1-r1__caption-bar {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding-left: 2px;
+}
+
+/* 5-Dimension Scene Decoder Strip (Pre-Frame Dimensions above image) */
 .tc-h1-r1__scene-decoder {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 8px 14px;
-  padding: 12px 18px;
-  margin-top: 10px;
+  padding: 10px 16px;
+  margin-top: 0;
+  margin-bottom: 12px;
   background: rgba(23, 23, 20, 0.025);
   border: 1px solid rgba(23, 23, 20, 0.07);
   border-radius: 6px;
@@ -551,15 +562,6 @@
   width: 1px;
   height: 14px;
   background-color: rgba(23, 23, 20, 0.12);
-}
-
-/* Caption Bar */
-.tc-h1-r1__caption-bar {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-  margin-top: 10px;
-  padding-left: 2px;
 }
 
 .tc-h1-r1__caption-bar .caption-bracket {
