@@ -185,9 +185,15 @@
   word-break: keep-all;
 }
 
-.tc-h1-r1__lead strong {
+.tc-h1-r1__lead strong,
+.tc-h1-r1__lead .tc-hl {
   color: #171714;
   font-weight: 750;
+}
+
+.tc-h1-r1__lead .tc-hl--orange {
+  color: #c8683d;
+  font-weight: 800;
 }
 
 .tc-h1-r1__thesis-pill {
