@@ -679,12 +679,22 @@
 }
 
 .tc-h1-r1__canvas-top-hud .hud-desc {
-  font-size: 13.5px;
-  line-height: 1.65;
+  font-size: 13px;
+  line-height: 1.68;
   color: #dedcd5;
   margin: 0;
   word-break: keep-all;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85);
+}
+
+.tc-h1-r1__canvas-top-hud .hud-desc strong {
+  color: #f4efe9;
+  font-weight: 750;
+}
+
+.tc-h1-r1__canvas-top-hud .hud-desc .hud-highlight {
+  color: #e07f55;
+  font-weight: 750;
 }
 
 /* Canvas Viewport (Complete Natural Display, Zero Clipping) */
