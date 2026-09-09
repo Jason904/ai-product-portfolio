@@ -605,7 +605,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   04. REAL WORKFLOW WORKBENCH (Integrated In-Canvas Viewport)
+   04. REAL WORKFLOW WORKBENCH (Plan A: External Console Board + Clean Canvas)
    -------------------------------------------------------------------------- */
 .tc-h1-r1__control {
   display: flex;
@@ -613,79 +613,61 @@
   margin-bottom: clamp(3rem, 4.5vw, 4.5rem);
 }
 
-.tc-h1-r1__workbench-frame--integrated {
-  position: relative;
-  width: 100%;
-  border-radius: 8px;
-  overflow: hidden;
-  background: #0d0d0b;
-  border: 1px solid rgba(23, 23, 20, 0.18);
-  box-shadow: 0 16px 48px rgba(23, 23, 20, 0.12);
-  display: flex;
-  flex-direction: column;
+/* External Header Console Board (On Warm Paper) */
+.tc-h1-r1__control-console {
+  margin-bottom: clamp(16px, 2.2vw, 22px);
+  padding: 16px 20px 18px;
+  background: rgba(23, 23, 20, 0.024);
+  border: 1px solid rgba(23, 23, 20, 0.08);
+  border-radius: 6px;
 }
 
-/* Top Floating HUD Overlay (Refined Workbench Control Console) */
-.tc-h1-r1__canvas-top-hud {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 3;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  padding: 16px 24px 28px;
-  background: linear-gradient(180deg, rgba(12, 12, 10, 0.96) 0%, rgba(12, 12, 10, 0.78) 65%, transparent 100%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  pointer-events: none;
-}
-
-.tc-h1-r1__canvas-top-hud .hud-status-bar {
+.tc-h1-r1__control-console .console-status-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 10px;
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+  margin-bottom: 12px;
+  border-bottom: 1px dashed rgba(23, 23, 20, 0.1);
   font-family: var(--font-mono, monospace);
   font-size: 10.5px;
 }
 
-.tc-h1-r1__canvas-top-hud .status-left {
+.tc-h1-r1__control-console .status-left {
   display: inline-flex;
   align-items: center;
   gap: 8px;
 }
 
-.tc-h1-r1__canvas-top-hud .hud-pulse-dot {
-  width: 5px;
-  height: 5px;
+.tc-h1-r1__control-console .hud-pulse-dot {
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background-color: #e07f55;
-  box-shadow: 0 0 6px rgba(224, 127, 85, 0.7);
+  background-color: #c8683d;
+  box-shadow: 0 0 6px rgba(200, 104, 61, 0.6);
   animation: tcPulse 2.4s infinite ease-in-out;
 }
 
-.tc-h1-r1__canvas-top-hud .hud-badge-text {
-  color: #e07f55;
+.tc-h1-r1__control-console .hud-badge-text {
+  color: #c8683d;
   font-weight: 750;
   letter-spacing: 0.08em;
 }
 
-.tc-h1-r1__canvas-top-hud .status-right {
+.tc-h1-r1__control-console .status-right {
   color: #8c8a82;
   letter-spacing: 0.06em;
   font-size: 10px;
 }
 
-.tc-h1-r1__canvas-top-hud .hud-main-grid {
+.tc-h1-r1__control-console .console-main-grid {
   display: flex;
   align-items: flex-start;
-  gap: 24px;
-  pointer-events: auto;
+  gap: clamp(20px, 3vw, 36px);
+  flex-wrap: wrap;
 }
 
-.tc-h1-r1__canvas-top-hud .hud-title-col {
+.tc-h1-r1__control-console .console-title-col {
   flex: 1.05;
   display: flex;
   flex-direction: column;
@@ -693,36 +675,35 @@
   min-width: 280px;
 }
 
-.tc-h1-r1__canvas-top-hud .hud-kicker {
+.tc-h1-r1__control-console .console-kicker {
   font-family: var(--font-mono, monospace);
-  font-size: 10px;
+  font-size: 10.5px;
   font-weight: 750;
   letter-spacing: 0.1em;
-  color: #e07f55;
+  color: #c8683d;
   text-transform: uppercase;
 }
 
-.tc-h1-r1__canvas-top-hud .hud-title {
+.tc-h1-r1__control-console .console-title {
   font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif);
   font-size: clamp(19px, 2.1vw, 24px);
   font-weight: 850;
-  color: #f4efe9;
+  color: #171714;
   margin: 0;
   letter-spacing: -0.015em;
   line-height: 1.32;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85);
   word-break: keep-all;
 }
 
-.tc-h1-r1__canvas-top-hud .hud-divider {
+.tc-h1-r1__control-console .console-divider {
   width: 1px;
-  min-height: 48px;
-  background-color: rgba(255, 255, 255, 0.12);
+  min-height: 52px;
+  background-color: rgba(23, 23, 20, 0.12);
   align-self: stretch;
   flex-shrink: 0;
 }
 
-.tc-h1-r1__canvas-top-hud .hud-narrative-col {
+.tc-h1-r1__control-console .console-narrative-col {
   flex: 1.35;
   display: flex;
   flex-direction: column;
@@ -730,51 +711,40 @@
   min-width: 280px;
 }
 
-.tc-h1-r1__canvas-top-hud .narrative-tag .bracket {
+.tc-h1-r1__control-console .narrative-tag .bracket {
   font-family: var(--font-mono, monospace);
-  font-size: 10.5px;
+  font-size: 11px;
   font-weight: 750;
-  color: #e07f55;
+  color: #c8683d;
   letter-spacing: 0.06em;
 }
 
-.tc-h1-r1__canvas-top-hud .hud-desc {
-  font-size: 13px;
+.tc-h1-r1__control-console .console-desc {
+  font-size: 13.5px;
   line-height: 1.68;
-  color: #dedcd5;
+  color: #423e38;
   margin: 0;
   word-break: keep-all;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85);
 }
 
-.tc-h1-r1__canvas-top-hud .hud-desc .desc-hl {
-  color: #f4efe9;
+.tc-h1-r1__control-console .console-desc .desc-hl {
+  color: #171714;
   font-weight: 750;
 }
 
-.tc-h1-r1__canvas-top-hud .hud-desc .desc-accent {
-  color: #e07f55;
+.tc-h1-r1__control-console .console-desc .desc-accent {
+  color: #c8683d;
   font-weight: 800;
 }
 
-@media (max-width: 900px) {
-  .tc-h1-r1__canvas-top-hud .hud-main-grid {
-    flex-direction: column;
-    gap: 14px;
-  }
-  .tc-h1-r1__canvas-top-hud .hud-divider {
-    display: none;
-  }
-}
-
-/* Canvas Viewport (Complete Natural Display, Zero Clipping) */
-.tc-h1-r1__canvas-viewport {
+/* Pure Clean Canvas Frame */
+.tc-h1-r1__workbench-frame--clean {
   width: 100%;
-  height: auto;
-  max-height: none;
-  overflow: visible;
-  position: relative;
-  background-color: #0b0b0a;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #0b0b0a;
+  border: 1px solid rgba(23, 23, 20, 0.18);
+  box-shadow: 0 16px 48px rgba(23, 23, 20, 0.1);
 }
 
 .tc-h1-r1__img--canvas {
@@ -784,11 +754,12 @@
 }
 
 @media (max-width: 900px) {
-  .tc-h1-r1__canvas-top-hud {
+  .tc-h1-r1__control-console .console-main-grid {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 14px 18px 28px;
+    gap: 14px;
+  }
+  .tc-h1-r1__control-console .console-divider {
+    display: none;
   }
 }
 
