@@ -319,11 +319,12 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  font-family: var(--font-mono, monospace);
-  font-size: 9.5px;
+  font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif);
+  font-size: 11px;
+  font-weight: 600;
   color: #736c64;
-  letter-spacing: 0.06em;
-  padding-top: 5px;
+  letter-spacing: 0.04em;
+  padding-top: 6px;
   border-top: 1px dashed rgba(23, 23, 20, 0.08);
 }
 
