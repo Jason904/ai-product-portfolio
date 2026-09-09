@@ -249,17 +249,19 @@
   border-radius: 2px;
 }
 
-/* De-boxed Pure Engineering Solo Credit Line (Zero Box Blocks) */
+/* Engineering Solo Credit Rail (带精致外围细节与微图标) */
 .tc-h1-r1__solo-line {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
-  padding: 0;
-  margin-top: 3px;
-  background: transparent;
-  border: none;
-  box-shadow: none;
+  padding: 5px 12px 5px 8px;
+  margin-top: 6px;
+  background: rgba(23, 23, 20, 0.024);
+  border: 1px solid rgba(23, 23, 20, 0.08);
+  border-left: 2.5px solid #c8683d;
+  border-radius: 4px;
+  width: fit-content;
 }
 
 .tc-h1-r1__solo-line .solo-badge-tag {
@@ -288,16 +290,33 @@
   animation: tcPulse 2.4s infinite ease-in-out;
 }
 
-.tc-h1-r1__solo-line .solo-sep {
-  color: rgba(23, 23, 20, 0.3);
-  font-size: 12px;
+.tc-h1-r1__solo-line .solo-divider-bar {
+  width: 1px;
+  height: 14px;
+  background: rgba(23, 23, 20, 0.15);
+  flex-shrink: 0;
 }
 
-.tc-h1-r1__solo-line .solo-text {
+.tc-h1-r1__solo-line .solo-text-cluster {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 13.5px;
+  font-size: 13px;
+}
+
+.tc-h1-r1__solo-line .solo-item-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.tc-h1-r1__solo-line .solo-icon {
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+.tc-h1-r1__solo-line .solo-icon--accent {
+  opacity: 1;
 }
 
 .tc-h1-r1__solo-line .solo-role-hl {
@@ -315,6 +334,19 @@
   color: #c8683d;
   font-weight: 850;
   letter-spacing: 0.01em;
+}
+
+.tc-h1-r1__solo-line .solo-scope-pill {
+  font-family: var(--font-mono, monospace);
+  font-size: 9.5px;
+  font-weight: 650;
+  color: #78716c;
+  background: rgba(23, 23, 20, 0.04);
+  border: 1px solid rgba(23, 23, 20, 0.08);
+  border-radius: 3px;
+  padding: 2px 6px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 /* Right 36% Architecture Spec Rail Box */
