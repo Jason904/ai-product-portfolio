@@ -282,6 +282,50 @@
   border-radius: 2px;
 }
 
+.tc-h1-r1__solo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+  width: fit-content;
+  flex-wrap: wrap;
+}
+
+.tc-h1-r1__solo-badge .solo-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono, monospace);
+  font-size: 10.5px;
+  font-weight: 800;
+  color: #171714;
+  letter-spacing: 0.08em;
+  background: rgba(23, 23, 20, 0.05);
+  border: 1px solid rgba(23, 23, 20, 0.14);
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.tc-h1-r1__solo-badge .solo-chip .dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #c8683d;
+}
+
+.tc-h1-r1__solo-badge .solo-divider {
+  color: rgba(23, 23, 20, 0.25);
+  font-size: 11px;
+}
+
+.tc-h1-r1__solo-badge .solo-desc {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 12px;
+  font-weight: 650;
+  color: #57534e;
+  letter-spacing: 0.02em;
+}
+
 /* Right 36% Architecture Spec Rail Box */
 .tc-h1-r1__statement-right {
   display: flex;
