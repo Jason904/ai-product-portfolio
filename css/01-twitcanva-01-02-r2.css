@@ -249,70 +249,69 @@
   border-radius: 2px;
 }
 
-/* Tactile Solo Delivery Plate (Engineering Spec Badge) */
-.tc-h1-r1__solo-plate {
-  display: inline-flex;
+/* De-boxed Pure Engineering Solo Credit Line (Zero Box Blocks) */
+.tc-h1-r1__solo-line {
+  display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 6px 14px 6px 6px;
-  background: rgba(23, 23, 20, 0.032);
-  border: 1px solid rgba(23, 23, 20, 0.12);
-  border-radius: 5px;
-  box-shadow: 0 2px 8px rgba(23, 23, 20, 0.03);
-  width: fit-content;
+  gap: 10px;
   flex-wrap: wrap;
-  margin-top: 2px;
+  padding: 0;
+  margin-top: 3px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
-.tc-h1-r1__solo-plate .solo-badge {
+.tc-h1-r1__solo-line .solo-badge-tag {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: #171714;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 3px 8px;
-  border-radius: 3px;
-  flex-shrink: 0;
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: 850;
+  color: #171714;
+  letter-spacing: 0.08em;
+  background: transparent;
+  padding: 0;
+  border: none;
 }
 
-.tc-h1-r1__solo-plate .pulse-dot {
-  width: 5px;
-  height: 5px;
+.tc-h1-r1__solo-line .pulse-dot {
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background-color: #c8683d;
-  box-shadow: 0 0 5px rgba(200, 104, 61, 0.6);
+  box-shadow: 0 0 6px rgba(200, 104, 61, 0.6);
+  animation: tcPulse 2.4s infinite ease-in-out;
 }
 
-.tc-h1-r1__solo-plate .badge-text {
-  font-family: var(--font-mono, monospace);
-  font-size: 10px;
-  font-weight: 800;
-  color: #f4efe9;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.tc-h1-r1__solo-plate .solo-content {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-sans, sans-serif);
+.tc-h1-r1__solo-line .solo-sep {
+  color: rgba(23, 23, 20, 0.3);
   font-size: 12px;
 }
 
-.tc-h1-r1__solo-plate .solo-role {
+.tc-h1-r1__solo-line .solo-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+}
+
+.tc-h1-r1__solo-line .solo-role-hl {
   color: #171714;
-  font-weight: 750;
+  font-weight: 850;
+  letter-spacing: -0.01em;
 }
 
-.tc-h1-r1__solo-plate .solo-sep {
+.tc-h1-r1__solo-line .solo-dot-sep {
   color: #a8a29e;
-  font-size: 10px;
+  font-size: 11px;
 }
 
-.tc-h1-r1__solo-plate .solo-paradigm {
-  color: #57534e;
-  font-weight: 600;
+.tc-h1-r1__solo-line .solo-paradigm-hl {
+  color: #c8683d;
+  font-weight: 850;
+  letter-spacing: 0.01em;
 }
 
 /* Right 36% Architecture Spec Rail Box */
