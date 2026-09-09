@@ -883,94 +883,176 @@
   word-break: keep-all;
 }
 
-/* 03. Task Context Spec Box */
-.tc-problem-r2__task-spec {
-  background: rgba(23, 23, 20, 0.024);
-  border: 1px solid rgba(23, 23, 20, 0.1);
-  border-radius: 6px;
-  padding: 14px 18px;
-  margin-bottom: 32px;
+/* 03. Task Context Pipeline Head (去卡片化蓝图意图区) */
+.tc-problem-r2__task-pipeline {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed rgba(23, 23, 20, 0.12);
 }
 
-.tc-problem-r2__task-spec .task-spec-header {
+.tc-problem-r2__task-pipeline .task-pipeline-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-family: var(--font-mono, monospace);
-  font-size: 10.5px;
-  padding-bottom: 8px;
-  border-bottom: 1px dashed rgba(23, 23, 20, 0.09);
+  font-size: 11px;
 }
 
-.tc-problem-r2__task-spec .spec-kicker {
+.tc-problem-r2__task-pipeline .task-pipeline-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.tc-problem-r2__task-pipeline .pipeline-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #c8683d;
+}
+
+.tc-problem-r2__task-pipeline .pipeline-kicker {
   color: #c8683d;
   font-weight: 750;
   letter-spacing: 0.08em;
 }
 
-.tc-problem-r2__task-spec .spec-id {
+.tc-problem-r2__task-pipeline .pipeline-id {
   color: #8c8a82;
   letter-spacing: 0.06em;
 }
 
-.tc-problem-r2__task-spec .task-spec-desc {
-  font-size: 13.5px;
+.tc-problem-r2__task-pipeline .task-pipeline-desc {
+  font-size: 14px;
   line-height: 1.65;
   color: #423e38;
   margin: 0;
+  max-width: 840px;
   word-break: keep-all;
 }
 
-.tc-problem-r2__task-spec .task-spec-matrix {
+.tc-problem-r2__task-pipeline .task-pipeline-spec-grid {
+  display: grid;
+  grid-template-columns: 32% calc(68% - 32px);
+  gap: 32px;
+  align-items: stretch;
+  margin-top: 6px;
+}
+
+@media (max-width: 900px) {
+  .tc-problem-r2__task-pipeline .task-pipeline-spec-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.tc-problem-r2__task-pipeline .pipeline-intent-col {
   display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-
-.tc-problem-r2__task-spec .matrix-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 5px 12px;
-  border-radius: 4px;
-  font-size: 12px;
-}
-
-.tc-problem-r2__task-spec .matrix-item--change {
-  background: rgba(200, 104, 61, 0.08);
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 14px;
+  background: rgba(200, 104, 61, 0.06);
   border: 1px solid rgba(200, 104, 61, 0.22);
+  border-radius: 6px;
 }
 
-.tc-problem-r2__task-spec .matrix-item--change .matrix-tag {
+.tc-problem-r2__task-pipeline .pipeline-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.tc-problem-r2__task-pipeline .pipeline-tag--change {
+  color: #c8683d;
+}
+
+.tc-problem-r2__task-pipeline .pipeline-tag--lock {
+  color: #55524d;
+}
+
+.tc-problem-r2__task-pipeline .pipeline-intent-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.tc-problem-r2__task-pipeline .intent-highlight {
+  color: #171714;
+  font-weight: 800;
+}
+
+.tc-problem-r2__task-pipeline .intent-arrow {
   color: #c8683d;
   font-weight: 800;
-  font-family: var(--font-mono, monospace);
-  font-size: 10.5px;
 }
 
-.tc-problem-r2__task-spec .matrix-item--change .matrix-val {
-  color: #171714;
-  font-weight: 700;
+.tc-problem-r2__task-pipeline .intent-aim {
+  color: #57534e;
+  font-weight: 600;
 }
 
-.tc-problem-r2__task-spec .matrix-item--keep {
-  background: rgba(23, 23, 20, 0.04);
+.tc-problem-r2__task-pipeline .pipeline-constraints-col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 14px;
+  background: rgba(23, 23, 20, 0.03);
   border: 1px solid rgba(23, 23, 20, 0.1);
+  border-radius: 6px;
 }
 
-.tc-problem-r2__task-spec .matrix-item--keep .matrix-tag {
-  color: #6b665f;
-  font-weight: 800;
+.tc-problem-r2__task-pipeline .constraints-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tc-problem-r2__task-pipeline .constraints-note {
   font-family: var(--font-mono, monospace);
-  font-size: 10.5px;
+  font-size: 10px;
+  color: #8c8a82;
+  letter-spacing: 0.04em;
 }
 
-.tc-problem-r2__task-spec .matrix-item--keep .matrix-val {
+.tc-problem-r2__task-pipeline .constraints-triad-track {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.tc-problem-r2__task-pipeline .constraint-anchor-chip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 8px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(23, 23, 20, 0.1);
+  border-radius: 4px;
+  font-family: var(--font-mono, monospace);
+  font-size: 11.5px;
+}
+
+.tc-problem-r2__task-pipeline .anchor-num {
+  font-weight: 800;
+  color: #c8683d;
+}
+
+.tc-problem-r2__task-pipeline .anchor-label {
+  font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif);
+  font-weight: 750;
   color: #171714;
-  font-weight: 650;
+}
+
+.tc-problem-r2__task-pipeline .anchor-pointer {
+  color: #c8683d;
+  font-weight: 700;
+  font-size: 11px;
 }
 
 /* 04. Forensic Comparator Stage ("左 1 右 3" 暗室对照监视台) */
@@ -1313,27 +1395,31 @@
 }
 
 
-/* 05. The 3 Core Mechanisms Dissection */
-.tc-problem-r2__mechanisms-section {
+/* 05. The 3 Core Mechanisms Dissection (三大根因深度解剖台 · 去卡片化蓝图图谱) */
+.tc-problem-r2__forensic-ledger {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  margin-bottom: clamp(2.5rem, 4vw, 3.8rem);
-  padding: 24px;
-  background: rgba(23, 23, 20, 0.02);
-  border: 1px dashed rgba(23, 23, 20, 0.12);
-  border-radius: 8px;
+  gap: 20px;
+  margin-bottom: clamp(3rem, 4.5vw, 4.5rem);
+  padding-top: 10px;
 }
 
-.tc-problem-r2__mechanisms-section .mechanisms-header {
+.tc-problem-r2__forensic-ledger .ledger-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(23, 23, 20, 0.12);
+}
+
+.tc-problem-r2__forensic-ledger .ledger-header-left {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid rgba(23, 23, 20, 0.09);
 }
 
-.tc-problem-r2__mechanisms-section .mechanisms-kicker {
+.tc-problem-r2__forensic-ledger .ledger-kicker {
   font-family: var(--font-mono, monospace);
   font-size: 11px;
   font-weight: 750;
@@ -1341,9 +1427,9 @@
   letter-spacing: 0.1em;
 }
 
-.tc-problem-r2__mechanisms-section .mechanisms-title {
+.tc-problem-r2__forensic-ledger .ledger-title {
   font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif);
-  font-size: clamp(18px, 1.9vw, 23px);
+  font-size: clamp(20px, 2.2vw, 25px);
   font-weight: 850;
   color: #171714;
   margin: 0;
@@ -1351,65 +1437,143 @@
   word-break: keep-all;
 }
 
-.tc-problem-r2__mechanisms-section .mechanisms-grid {
+.tc-problem-r2__forensic-ledger .telemetry-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: 750;
+  color: #78716c;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* 3-Column De-boxed Ledger Track */
+.tc-problem-r2__forensic-ledger .ledger-columns-track {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(16px, 2.2vw, 24px);
+  gap: 28px;
+  align-items: stretch;
 }
 
 @media (max-width: 860px) {
-  .tc-problem-r2__mechanisms-section .mechanisms-grid {
+  .tc-problem-r2__forensic-ledger .ledger-columns-track {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 24px;
   }
 }
 
-.tc-problem-r2__mechanisms-section .mechanism-card {
+.tc-problem-r2__forensic-ledger .ledger-column {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 16px 18px;
-  background: #ffffff;
-  border: 1px solid rgba(23, 23, 20, 0.08);
-  border-radius: 6px;
-  box-shadow: 0 4px 14px rgba(23, 23, 20, 0.03);
+  gap: 12px;
+  position: relative;
 }
 
-.tc-problem-r2__mechanisms-section .card-head {
+@media (min-width: 861px) {
+  .tc-problem-r2__forensic-ledger .ledger-column:not(:first-child) {
+    border-left: 1px solid rgba(23, 23, 20, 0.1);
+    padding-left: 24px;
+  }
+}
+
+@media (max-width: 860px) {
+  .tc-problem-r2__forensic-ledger .ledger-column:not(:first-child) {
+    border-top: 1px solid rgba(23, 23, 20, 0.1);
+    padding-top: 20px;
+  }
+}
+
+.tc-problem-r2__forensic-ledger .ledger-column-top {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.tc-problem-r2__forensic-ledger .ledger-col-badge {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-family: var(--font-mono, monospace);
-  font-size: 10px;
-  padding-bottom: 6px;
-  border-bottom: 1px dashed rgba(23, 23, 20, 0.08);
+  font-size: 10.5px;
 }
 
-.tc-problem-r2__mechanisms-section .card-num {
+.tc-problem-r2__forensic-ledger .col-num {
   color: #c8683d;
-  font-weight: 750;
+  font-weight: 800;
 }
 
-.tc-problem-r2__mechanisms-section .card-tech {
+.tc-problem-r2__forensic-ledger .col-tech {
   color: #8c8a82;
   letter-spacing: 0.04em;
 }
 
-.tc-problem-r2__mechanisms-section .card-title {
-  font-size: 14.5px;
+.tc-problem-r2__forensic-ledger .ledger-trace-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(200, 104, 61, 0.08);
+  border: 1px solid rgba(200, 104, 61, 0.2);
+  border-radius: 3px;
+  padding: 2px 7px;
+  width: fit-content;
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+}
+
+.tc-problem-r2__forensic-ledger .trace-arrow {
+  color: #c8683d;
+  font-weight: 800;
+}
+
+.tc-problem-r2__forensic-ledger .trace-dest {
+  color: #171714;
+  font-weight: 750;
+}
+
+.tc-problem-r2__forensic-ledger .ledger-col-title {
+  font-size: 15px;
   font-weight: 800;
   color: #171714;
-  line-height: 1.4;
+  line-height: 1.45;
   margin: 0;
   word-break: keep-all;
 }
 
-.tc-problem-r2__mechanisms-section .card-body {
+.tc-problem-r2__forensic-ledger .ledger-col-body {
   font-size: 13px;
-  line-height: 1.65;
+  line-height: 1.68;
   color: #57534e;
   margin: 0;
   word-break: keep-all;
+  flex: 1;
+}
+
+.tc-problem-r2__forensic-ledger .ledger-col-formula {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: rgba(23, 23, 20, 0.04);
+  border: 1px dashed rgba(23, 23, 20, 0.12);
+  border-radius: 4px;
+  font-family: var(--font-mono, monospace);
+  font-size: 10.5px;
+  width: fit-content;
+  margin-top: 4px;
+}
+
+.tc-problem-r2__forensic-ledger .formula-in {
+  color: #736c64;
+  font-weight: 600;
+}
+
+.tc-problem-r2__forensic-ledger .formula-arrow {
+  color: #c8683d;
+  font-weight: 800;
+}
+
+.tc-problem-r2__forensic-ledger .formula-out--err {
+  color: #ef4444;
+  font-weight: 750;
 }
 
 /* 06. Product Verdict */

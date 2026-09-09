@@ -281,23 +281,53 @@
           <h2 class="tc-problem-r2__headline-zh">修改一个动作，可能牵动整张画面</h2>
         </div>
 
-        <!-- 03. Task Context Spec (任务场景与控制边界前置) -->
-        <div class="tc-problem-r2__task-spec">
-          <div class="task-spec-header">
-            <span class="spec-kicker">TASK CONTEXT // 真实创作任务与修改意图</span>
-            <span class="spec-id">EXP-01A · POSE ADJUSTMENT</span>
+        <!-- 03. Task Context Pipeline Head (去卡片化蓝图意图区) -->
+        <div class="tc-problem-r2__task-pipeline">
+          <div class="task-pipeline-header">
+            <div class="task-pipeline-badge">
+              <span class="pipeline-dot"></span>
+              <span class="pipeline-kicker">TASK CONTEXT // 真实创作任务与修改意图</span>
+            </div>
+            <span class="pipeline-id">EXP-01A · POSE ADJUSTMENT SPEC</span>
           </div>
-          <p class="task-spec-desc">
+          
+          <p class="task-pipeline-desc">
             创作者已经满意三位角色的身份、站位和镜头，现在只想调整红衣角色的动作。重新生成后，其他内容也可能发生变化，原本完成的部分又需要重新检查和调整。
           </p>
-          <div class="task-spec-matrix">
-            <div class="matrix-item matrix-item--change">
-              <span class="matrix-tag">本次修改目标</span>
-              <span class="matrix-val">将红衣角色的右手抬高 ➔ 形成更有力量的控制姿态</span>
+          
+          <!-- 2-Track Spec Bar: Intent vs 3-Axis Locked Constraints -->
+          <div class="task-pipeline-spec-grid">
+            <div class="pipeline-intent-col">
+              <span class="pipeline-tag pipeline-tag--change">本次修改目标 (单变量)</span>
+              <div class="pipeline-intent-content">
+                <strong class="intent-highlight">将红衣角色右手抬高</strong>
+                <span class="intent-arrow">➔</span>
+                <span class="intent-aim">增强核心控制姿态</span>
+              </div>
             </div>
-            <div class="matrix-item matrix-item--keep">
-              <span class="matrix-tag">希望锁定保留</span>
-              <span class="matrix-val">角色身份 · 三人站位 · 镜头构图 (锁定结构)</span>
+
+            <div class="pipeline-constraints-col">
+              <div class="constraints-head">
+                <span class="pipeline-tag pipeline-tag--lock">声明锁定保留 (3 维结构约束)</span>
+                <span class="constraints-note">期望在重新生成中严格保持成立 ↓</span>
+              </div>
+              <div class="constraints-triad-track">
+                <div class="constraint-anchor-chip">
+                  <span class="anchor-num">01</span>
+                  <span class="anchor-label">角色身份</span>
+                  <span class="anchor-pointer" aria-hidden="true">↓</span>
+                </div>
+                <div class="constraint-anchor-chip">
+                  <span class="anchor-num">02</span>
+                  <span class="anchor-label">三人站位</span>
+                  <span class="anchor-pointer" aria-hidden="true">↓</span>
+                </div>
+                <div class="constraint-anchor-chip">
+                  <span class="anchor-num">03</span>
+                  <span class="anchor-label">镜头构图</span>
+                  <span class="anchor-pointer" aria-hidden="true">↓</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -401,48 +431,95 @@
 
         </div>
 
-        <!-- 05. The 3 Core Mechanisms Dissection (三大根因深度解剖台) -->
-        <div class="tc-problem-r2__mechanisms-section">
-          <div class="mechanisms-header">
-            <span class="mechanisms-kicker">ROOT CAUSE FORENSIC DISSECTION // 三大深层机理解剖台</span>
-            <h3 class="mechanisms-title">为什么单变量修改，会引发全局连锁反应？</h3>
+        <!-- 05. The 3 Core Mechanisms Dissection (三大根因深度解剖台 · 去卡片化蓝图图谱) -->
+        <div class="tc-problem-r2__forensic-ledger">
+          <div class="ledger-header">
+            <div class="ledger-header-left">
+              <span class="ledger-kicker">ROOT CAUSE FORENSIC DISSECTION // 三大深层机理解剖台</span>
+              <h3 class="ledger-title">为什么单变量修改，会引发全局连锁反应？</h3>
+            </div>
+            <div class="ledger-header-telemetry">
+              <span class="telemetry-tag">● 根因透视 // CAUSAL CHAIN</span>
+            </div>
           </div>
 
-          <div class="mechanisms-grid">
+          <div class="ledger-columns-track">
             <!-- Mechanism 01: User Expression Layer -->
-            <div class="mechanism-card">
-              <div class="card-head">
-                <span class="card-num">01 / 用户表达层</span>
-                <span class="card-tech">EXPRESSION ENTANGLEMENT</span>
+            <div class="ledger-column">
+              <div class="ledger-column-top">
+                <div class="ledger-col-badge">
+                  <span class="col-num">01 / 用户表达层</span>
+                  <span class="col-tech">EXPRESSION ENTANGLEMENT</span>
+                </div>
+                <div class="ledger-trace-link">
+                  <span class="trace-arrow">↳</span>
+                  <span class="trace-dest">根源锁定：对应「01 身份特征重算」</span>
+                </div>
               </div>
-              <h4 class="card-title">多种要求写在同一段文字里，缺少分别控制的依据</h4>
-              <p class="card-body">
+
+              <h4 class="ledger-col-title">多种要求写在同一段文字里，缺少分别控制的依据</h4>
+              
+              <p class="ledger-col-body">
                 一段文字需要同时表达角色长相、动作、站位和镜头。创作者很难只保留满意的部分，往往需要一边修改，一边反复协调其他要求。
               </p>
+
+              <div class="ledger-col-formula">
+                <span class="formula-in">文字混合描述</span>
+                <span class="formula-arrow">➔</span>
+                <span class="formula-out formula-out--err">控制无法分离</span>
+              </div>
             </div>
 
             <!-- Mechanism 02: Model Generation Layer -->
-            <div class="mechanism-card">
-              <div class="card-head">
-                <span class="card-num">02 / 模型生成层</span>
-                <span class="card-tech">GLOBAL RESAMPLING</span>
+            <div class="ledger-column">
+              <div class="ledger-column-top">
+                <div class="ledger-col-badge">
+                  <span class="col-num">02 / 模型生成层</span>
+                  <span class="col-tech">GLOBAL RESAMPLING</span>
+                </div>
+                <div class="ledger-trace-link">
+                  <span class="trace-arrow">↳</span>
+                  <span class="trace-dest">根源锁定：对应「02 站位拓扑拉散」</span>
+                </div>
               </div>
-              <h4 class="card-title">模型根据当前条件重新生成，无法自动锁定已有内容</h4>
-              <p class="card-body">
+
+              <h4 class="ledger-col-title">模型根据当前条件重新生成，无法自动锁定已有内容</h4>
+              
+              <p class="ledger-col-body">
                 模型会根据当前描述重新生成整张画面。即使用文字写上“其他保持不变”，模型也只能尝试理解这一要求，无法自动保证原本成立的部分不发生变化。
               </p>
+
+              <div class="ledger-col-formula">
+                <span class="formula-in">全局重新采样</span>
+                <span class="formula-arrow">➔</span>
+                <span class="formula-out formula-out--err">已有成果被洗牌</span>
+              </div>
             </div>
 
             <!-- Mechanism 03: Workflow Rework Layer -->
-            <div class="mechanism-card">
-              <div class="card-head">
-                <span class="card-num">03 / 工作流返工层</span>
-                <span class="card-tech">COMPOUNDING REWORK</span>
+            <div class="ledger-column">
+              <div class="ledger-column-top">
+                <div class="ledger-col-badge">
+                  <span class="col-num">03 / 工作流返工层</span>
+                  <span class="col-tech">COMPOUNDING REWORK</span>
+                </div>
+                <div class="ledger-trace-link">
+                  <span class="trace-arrow">↳</span>
+                  <span class="trace-dest">根源锁定：对应「03 机位景别重构」</span>
+                </div>
               </div>
-              <h4 class="card-title">局部修改带来全图返工，陷入反复调试深渊</h4>
-              <p class="card-body">
+
+              <h4 class="ledger-col-title">局部修改带来全图返工，陷入反复调试深渊</h4>
+              
+              <p class="ledger-col-body">
                 每次尝试都可能解决一个问题，又引发新的变化。为了把一个动作调对，创作者需要重新检查和微调整张画面。
               </p>
+
+              <div class="ledger-col-formula">
+                <span class="formula-in">单变量试错</span>
+                <span class="formula-arrow">➔</span>
+                <span class="formula-out formula-out--err">连锁连环返工</span>
+              </div>
             </div>
           </div>
         </div>
