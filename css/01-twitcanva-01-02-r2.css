@@ -777,6 +777,651 @@
   margin-bottom: 0;
 }
 
+/* ==========================================================================
+   01 / THE PROBLEM — SCHEME 1 NEW PROPOSAL STYLESHEET (R2)
+   Namespace: .tc-problem-r2-*
+   Architecture: Task Context -> Asymmetric Sticky Baseline vs 3-Drift Stream -> 3 Mechanisms Grid
+   ========================================================================== */
+
+.tc-problem-r2 {
+  width: 100%;
+  position: relative;
+  background-color: var(--paper, #f4efe9);
+  padding: clamp(3.5rem, 5vw, 5rem) 0 clamp(2.5rem, 4vw, 3.5rem);
+  border-top: 1px solid var(--line, rgba(23, 23, 20, 0.12));
+}
+
+.tc-problem-r2__container {
+  width: min(1240px, calc(100% - 48px));
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 01. Header */
+.tc-problem-r2__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+}
+
+.tc-problem-r2__meta-left {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  color: var(--muted, #736c64);
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.tc-problem-r2__meta-left .pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #c8683d;
+  box-shadow: 0 0 6px rgba(200, 104, 61, 0.6);
+  animation: tcPulse 2.4s infinite ease-in-out;
+}
+
+.tc-problem-r2__scheme-badge {
+  background: rgba(200, 104, 61, 0.12);
+  border: 1px solid rgba(200, 104, 61, 0.3);
+  color: #c8683d;
+  padding: 2px 7px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+}
+
+.tc-problem-r2__meta-ruler-line {
+  flex: 1;
+  height: 1px;
+  background: repeating-linear-gradient(90deg, rgba(23, 23, 20, 0.12) 0, rgba(23, 23, 20, 0.12) 4px, transparent 4px, transparent 8px);
+}
+
+.tc-problem-r2__meta-right {
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #57534e;
+  flex-shrink: 0;
+}
+
+/* 02. Statement */
+.tc-problem-r2__statement {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.tc-problem-r2__title {
+  font-family: var(--font-display, "Playfair Display", "Inter Tight", serif);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 850;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  color: var(--ink, #171714);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.tc-problem-r2__headline-zh {
+  font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif);
+  font-size: clamp(20px, 2.2vw, 28px);
+  font-weight: 850;
+  line-height: 1.32;
+  color: var(--ink, #171714);
+  letter-spacing: -0.02em;
+  margin: 0;
+  word-break: keep-all;
+}
+
+/* 03. Task Context Spec Box */
+.tc-problem-r2__task-spec {
+  background: rgba(23, 23, 20, 0.024);
+  border: 1px solid rgba(23, 23, 20, 0.1);
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tc-problem-r2__task-spec .task-spec-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono, monospace);
+  font-size: 10.5px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed rgba(23, 23, 20, 0.09);
+}
+
+.tc-problem-r2__task-spec .spec-kicker {
+  color: #c8683d;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+}
+
+.tc-problem-r2__task-spec .spec-id {
+  color: #8c8a82;
+  letter-spacing: 0.06em;
+}
+
+.tc-problem-r2__task-spec .task-spec-desc {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #423e38;
+  margin: 0;
+  word-break: keep-all;
+}
+
+.tc-problem-r2__task-spec .task-spec-matrix {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.tc-problem-r2__task-spec .matrix-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.tc-problem-r2__task-spec .matrix-item--change {
+  background: rgba(200, 104, 61, 0.08);
+  border: 1px solid rgba(200, 104, 61, 0.22);
+}
+
+.tc-problem-r2__task-spec .matrix-item--change .matrix-tag {
+  color: #c8683d;
+  font-weight: 800;
+  font-family: var(--font-mono, monospace);
+  font-size: 10.5px;
+}
+
+.tc-problem-r2__task-spec .matrix-item--change .matrix-val {
+  color: #171714;
+  font-weight: 700;
+}
+
+.tc-problem-r2__task-spec .matrix-item--keep {
+  background: rgba(23, 23, 20, 0.04);
+  border: 1px solid rgba(23, 23, 20, 0.1);
+}
+
+.tc-problem-r2__task-spec .matrix-item--keep .matrix-tag {
+  color: #6b665f;
+  font-weight: 800;
+  font-family: var(--font-mono, monospace);
+  font-size: 10.5px;
+}
+
+.tc-problem-r2__task-spec .matrix-item--keep .matrix-val {
+  color: #171714;
+  font-weight: 650;
+}
+
+/* 04. Forensic Comparator Grid (Left Baseline + Right 3 Drift Stream) */
+.tc-problem-r2__comparator-grid {
+  display: grid;
+  grid-template-columns: 46% 54%;
+  gap: clamp(20px, 2.5vw, 32px);
+  align-items: start;
+  margin-bottom: clamp(3rem, 4.5vw, 4.5rem);
+}
+
+@media (max-width: 960px) {
+  .tc-problem-r2__comparator-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* Left Baseline Sticky Column */
+.tc-problem-r2__sticky-baseline {
+  position: sticky;
+  top: 90px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #11110f;
+  border: 1px solid rgba(23, 23, 20, 0.2);
+  box-shadow: 0 12px 36px rgba(23, 23, 20, 0.09);
+}
+
+.tc-problem-r2__sticky-baseline .baseline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  background: #191816;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+}
+
+.tc-problem-r2__sticky-baseline .baseline-title {
+  color: #f4efe9;
+  font-weight: 750;
+  letter-spacing: 0.06em;
+}
+
+.tc-problem-r2__sticky-baseline .baseline-status {
+  color: #10b981;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.tc-problem-r2__sticky-baseline .baseline-media-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.tc-problem-r2__sticky-baseline .baseline-footer {
+  padding: 12px 16px;
+  background: #161513;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: var(--font-mono, monospace);
+  font-size: 10.5px;
+}
+
+.tc-problem-r2__sticky-baseline .baseline-spec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.tc-problem-r2__sticky-baseline .spec-label {
+  color: #8c8a82;
+  font-size: 10px;
+}
+
+.tc-problem-r2__sticky-baseline .spec-val {
+  color: #e5e3dc;
+  font-weight: 600;
+}
+
+.tc-problem-r2__sticky-baseline .spec-val--accent {
+  color: #e07f55;
+  font-weight: 750;
+}
+
+/* Right 3 Drift Cards Stream */
+.tc-problem-r2__drift-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tc-problem-r2__drift-col .drift-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(23, 23, 20, 0.1);
+}
+
+.tc-problem-r2__drift-col .drift-kicker {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: 750;
+  color: #c8683d;
+  letter-spacing: 0.08em;
+}
+
+.tc-problem-r2__drift-col .drift-sub {
+  font-size: 12px;
+  color: #736c64;
+  font-weight: 600;
+}
+
+.tc-problem-r2__drift-col .drift-cards-stream {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tc-problem-r2__drift-col .drift-card {
+  border-radius: 8px;
+  overflow: hidden;
+  background: #11110f;
+  border: 1px solid rgba(23, 23, 20, 0.2);
+  box-shadow: 0 8px 24px rgba(23, 23, 20, 0.06);
+}
+
+.tc-problem-r2__drift-col .drift-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 14px;
+  background: #191816;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+}
+
+.tc-problem-r2__drift-col .drift-card-idx {
+  color: #f4efe9;
+  font-weight: 750;
+}
+
+.tc-problem-r2__drift-col .drift-card-tag {
+  color: #ef4444;
+  font-weight: 750;
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+}
+
+.tc-problem-r2__drift-col .drift-card-media {
+  position: relative;
+  width: 100%;
+  background: #0b0b0a;
+}
+
+.tc-problem-r2__drift-col .drift-card-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.tc-problem-r2__drift-col .drift-reticle {
+  position: absolute;
+  pointer-events: none;
+  border: 1.5px dashed #ef4444;
+  border-radius: 4px;
+  background: rgba(239, 68, 68, 0.12);
+}
+
+.tc-problem-r2__drift-col .drift-reticle .reticle-pill {
+  position: absolute;
+  top: -10px;
+  right: 6px;
+  background: #ef4444;
+  color: #fff;
+  font-family: var(--font-mono, monospace);
+  font-size: 9.5px;
+  font-weight: 750;
+  padding: 1px 6px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.tc-problem-r2__drift-col .drift-reticle--character {
+  top: 10%;
+  right: 22%;
+  width: 16%;
+  height: 25%;
+}
+
+.tc-problem-r2__drift-col .drift-reticle--relation {
+  top: 45%;
+  left: 30%;
+  width: 45%;
+  height: 25%;
+}
+
+.tc-problem-r2__drift-col .drift-reticle--composition {
+  inset: 12px;
+}
+
+.tc-problem-r2__drift-col .drift-card-footer {
+  padding: 12px 16px;
+  background: #161513;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tc-problem-r2__drift-col .drift-verdict {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #dedcd5;
+  margin: 0;
+  word-break: keep-all;
+}
+
+.tc-problem-r2__drift-col .drift-verdict strong {
+  color: #f4efe9;
+  font-weight: 750;
+}
+
+.tc-problem-r2__drift-col .drift-metrics {
+  display: flex;
+  gap: 12px;
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+}
+
+.tc-problem-r2__drift-col .metric-ok {
+  color: #10b981;
+  font-weight: 700;
+}
+
+.tc-problem-r2__drift-col .metric-err {
+  color: #ef4444;
+  font-weight: 700;
+}
+
+/* 05. The 3 Core Mechanisms Dissection */
+.tc-problem-r2__mechanisms-section {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: clamp(2.5rem, 4vw, 3.8rem);
+  padding: 24px;
+  background: rgba(23, 23, 20, 0.02);
+  border: 1px dashed rgba(23, 23, 20, 0.12);
+  border-radius: 8px;
+}
+
+.tc-problem-r2__mechanisms-section .mechanisms-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(23, 23, 20, 0.09);
+}
+
+.tc-problem-r2__mechanisms-section .mechanisms-kicker {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: 750;
+  color: #c8683d;
+  letter-spacing: 0.1em;
+}
+
+.tc-problem-r2__mechanisms-section .mechanisms-title {
+  font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif);
+  font-size: clamp(18px, 1.9vw, 23px);
+  font-weight: 850;
+  color: #171714;
+  margin: 0;
+  letter-spacing: -0.015em;
+  word-break: keep-all;
+}
+
+.tc-problem-r2__mechanisms-section .mechanisms-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 2.2vw, 24px);
+}
+
+@media (max-width: 860px) {
+  .tc-problem-r2__mechanisms-section .mechanisms-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.tc-problem-r2__mechanisms-section .mechanism-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 18px;
+  background: #ffffff;
+  border: 1px solid rgba(23, 23, 20, 0.08);
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(23, 23, 20, 0.03);
+}
+
+.tc-problem-r2__mechanisms-section .card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed rgba(23, 23, 20, 0.08);
+}
+
+.tc-problem-r2__mechanisms-section .card-num {
+  color: #c8683d;
+  font-weight: 750;
+}
+
+.tc-problem-r2__mechanisms-section .card-tech {
+  color: #8c8a82;
+  letter-spacing: 0.04em;
+}
+
+.tc-problem-r2__mechanisms-section .card-title {
+  font-size: 14.5px;
+  font-weight: 800;
+  color: #171714;
+  line-height: 1.4;
+  margin: 0;
+  word-break: keep-all;
+}
+
+.tc-problem-r2__mechanisms-section .card-body {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #57534e;
+  margin: 0;
+  word-break: keep-all;
+}
+
+/* 06. Product Verdict */
+.tc-problem-r2__verdict {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 24px 0 28px;
+  border-top: 1px solid rgba(23, 23, 20, 0.1);
+}
+
+.tc-problem-r2__verdict .verdict-main {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 720px;
+}
+
+.tc-problem-r2__verdict .verdict-kicker {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: 750;
+  color: #c8683d;
+  letter-spacing: 0.08em;
+}
+
+.tc-problem-r2__verdict .verdict-headline {
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight: 850;
+  color: #171714;
+  margin: 0;
+  letter-spacing: -0.015em;
+  word-break: keep-all;
+}
+
+.tc-problem-r2__verdict .verdict-lead {
+  font-size: 14px;
+  line-height: 1.68;
+  color: #57534e;
+  margin: 0;
+  word-break: keep-all;
+}
+
+.tc-problem-r2__verdict .verdict-lead strong {
+  color: #171714;
+  font-weight: 750;
+}
+
+.tc-problem-r2__verdict .verdict-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono, monospace);
+  font-size: 11.5px;
+  font-weight: 750;
+  color: #171714;
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid rgba(23, 23, 20, 0.16);
+  border-radius: 4px;
+  background: rgba(23, 23, 20, 0.02);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tc-problem-r2__verdict .verdict-link:hover {
+  border-color: #c8683d;
+  color: #c8683d;
+  background: rgba(200, 104, 61, 0.05);
+}
+
+/* Comparison Notice Divider */
+.tc-problem-r2__comparison-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 36px;
+  padding: 16px 0;
+  opacity: 0.75;
+}
+
+.tc-problem-r2__comparison-divider .divider-line {
+  flex: 1;
+  height: 2px;
+  background: repeating-linear-gradient(90deg, #c8683d 0, #c8683d 6px, transparent 6px, transparent 12px);
+}
+
+.tc-problem-r2__comparison-divider .divider-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: 750;
+  color: #c8683d;
+  letter-spacing: 0.06em;
+  background: rgba(200, 104, 61, 0.08);
+  padding: 4px 12px;
+  border-radius: 4px;
+  border: 1px solid rgba(200, 104, 61, 0.25);
+}
+
+
 /* --- MODULE 01: THE PROBLEM --- */
 /* ==========================================================================
    MODULE 01: TWITCANVA 01 THE PROBLEM — DESIGN R3.5 (DE-BOXED & REFINED)

@@ -256,6 +256,232 @@
       </div><!-- /.tc-h1-r1__container -->
     </section>
 
+    <!-- ================================================================= -->
+    <!-- 01 / THE PROBLEM — SCHEME 1 NEW PROPOSAL (Narrative & Mechanism)  -->
+    <!-- ================================================================= -->
+    <section class="tc-problem-r2" id="twitcanva-problem-new" aria-label="01 / THE PROBLEM · 方案 1 新提案">
+      <div class="tc-problem-r2__container">
+
+        <!-- 01. Meta Header & Scheme Tag -->
+        <header class="tc-problem-r2__header">
+          <div class="tc-problem-r2__meta-left">
+            <span class="pulse-dot"></span>
+            <span>01 / THE PROBLEM</span>
+            <span class="tc-problem-r2__scheme-badge">方案 1 新提案 · 全景对撞版</span>
+          </div>
+          <div class="tc-problem-r2__meta-ruler-line" aria-hidden="true"></div>
+          <div class="tc-problem-r2__meta-right">
+            <span>CONTROL COUPLING // 变量耦合与重采样困境</span>
+          </div>
+        </header>
+
+        <!-- 02. Statement Block -->
+        <div class="tc-problem-r2__statement">
+          <h1 class="tc-problem-r2__title">ONE CHANGE. MORE TO FIX.</h1>
+          <h2 class="tc-problem-r2__headline-zh">修改一个动作，可能牵动整张画面</h2>
+        </div>
+
+        <!-- 03. Task Context Spec (任务场景与控制边界前置) -->
+        <div class="tc-problem-r2__task-spec">
+          <div class="task-spec-header">
+            <span class="spec-kicker">TASK CONTEXT // 真实创作任务与修改意图</span>
+            <span class="spec-id">EXP-01A · POSE ADJUSTMENT</span>
+          </div>
+          <p class="task-spec-desc">
+            创作者已经满意三位角色的身份、站位和镜头，现在只想调整红衣角色的动作。重新生成后，其他内容也可能发生变化，原本完成的部分又需要重新检查和调整。
+          </p>
+          <div class="task-spec-matrix">
+            <div class="matrix-item matrix-item--change">
+              <span class="matrix-tag">本次修改目标</span>
+              <span class="matrix-val">将红衣角色的右手抬高 ➔ 形成更有力量的控制姿态</span>
+            </div>
+            <div class="matrix-item matrix-item--keep">
+              <span class="matrix-tag">希望锁定保留</span>
+              <span class="matrix-val">角色身份 · 三人站位 · 镜头构图 (锁定结构)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 04. Forensic Comparator Grid (Left Baseline + Right 3 Drift Stream) -->
+        <div class="tc-problem-r2__comparator-grid">
+          
+          <!-- Left: Fixed Baseline Stage (Sticky on Desktop) -->
+          <div class="tc-problem-r2__baseline-col">
+            <div class="tc-problem-r2__sticky-baseline">
+              <div class="baseline-header">
+                <span class="baseline-title">BASELINE // 已满意的画面</span>
+                <span class="baseline-status">CURRENT VALID STATE</span>
+              </div>
+              <div class="baseline-media-box">
+                <img src="assets/images/twitcanva/twitcanva-p1-baseline.png" alt="基准参照组：三人原始正确状态" loading="eager" decoding="async">
+              </div>
+              <div class="baseline-footer">
+                <div class="baseline-spec-row">
+                  <span class="spec-label">LOCKED VARIABLES</span>
+                  <span class="spec-val">CHARACTER · RELATION · COMPOSITION</span>
+                </div>
+                <div class="baseline-spec-row">
+                  <span class="spec-label">INTENT SPEC</span>
+                  <span class="spec-val spec-val--accent">全景基线锁定 · 仅针对红衣控制者动作发起单变量变更</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: 3 Drift Failure Modes Stream -->
+          <div class="tc-problem-r2__drift-col">
+            <div class="drift-header">
+              <span class="drift-kicker">ILLUSTRATIVE FAILURE MODES // 示意性失败模式</span>
+              <span class="drift-sub">同一次修改，其他内容也可能发生变化</span>
+            </div>
+
+            <div class="drift-cards-stream">
+              <!-- Case 01: Character Drift -->
+              <div class="drift-card">
+                <div class="drift-card-header">
+                  <span class="drift-card-idx">01 / 身份漂移</span>
+                  <span class="drift-card-tag">CHARACTER DRIFT ✗</span>
+                </div>
+                <div class="drift-card-media">
+                  <img src="assets/images/twitcanva/twitcanva-p1-reroll-01-character.png" alt="Reroll 01: 角色身份漂移" loading="eager" decoding="async">
+                  <div class="drift-reticle drift-reticle--character">
+                    <span class="reticle-pill">身份特征重算 ✗</span>
+                  </div>
+                </div>
+                <div class="drift-card-footer">
+                  <p class="drift-verdict">
+                    <strong>动作改了，角色外观也发生了变化。</strong>缺乏角色显式控制，动作改动触发面部与发型特征重新采样，身份一致性丢失。
+                  </p>
+                  <div class="drift-metrics">
+                    <span class="metric-ok">POSE ✓ (抬手已生效)</span>
+                    <span class="metric-err">CHARACTER ✗ (面部身份被重绘)</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Case 02: Relation Drift -->
+              <div class="drift-card">
+                <div class="drift-card-header">
+                  <span class="drift-card-idx">02 / 空间站位漂移</span>
+                  <span class="drift-card-tag">RELATION DRIFT ✗</span>
+                </div>
+                <div class="drift-card-media">
+                  <img src="assets/images/twitcanva/twitcanva-p1-reroll-02-relation.png" alt="Reroll 02: 人物关系漂移" loading="eager" decoding="async">
+                  <div class="drift-reticle drift-reticle--relation">
+                    <span class="reticle-pill">站位拓扑拉散 ✗</span>
+                  </div>
+                </div>
+                <div class="drift-card-footer">
+                  <p class="drift-verdict">
+                    <strong>三个人还在，但彼此的距离和前后关系变了。</strong>单人动作重构未锁定空间拓扑，三人站位间距被模型重新解算，战术站位崩塌。
+                  </p>
+                  <div class="drift-metrics">
+                    <span class="metric-ok">POSE ✓ (抬手已生效)</span>
+                    <span class="metric-err">RELATION ✗ (三人站位被拉散重排)</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Case 03: Composition Drift -->
+              <div class="drift-card">
+                <div class="drift-card-header">
+                  <span class="drift-card-idx">03 / 镜头构图漂移</span>
+                  <span class="drift-card-tag">COMPOSITION DRIFT ✗</span>
+                </div>
+                <div class="drift-card-media">
+                  <img src="assets/images/twitcanva/twitcanva-p1-reroll-03-composition.png" alt="Reroll 03: 构图镜头漂移" loading="eager" decoding="async">
+                  <div class="drift-reticle drift-reticle--composition">
+                    <span class="reticle-pill">机位与景别重构 ✗</span>
+                  </div>
+                </div>
+                <div class="drift-card-footer">
+                  <p class="drift-verdict">
+                    <strong>人物基本保留，但取景、大小和画面重心发生了变化。</strong>动作修改触发整幅画面重新采样，原本满意的全景被重构为近景俯仰。
+                  </p>
+                  <div class="drift-metrics">
+                    <span class="metric-ok">POSE ✓ (抬手已生效)</span>
+                    <span class="metric-err">COMPOSITION ✗ (镜头视角失真)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 05. The 3 Core Mechanisms Dissection (三大根因深度解剖台) -->
+        <div class="tc-problem-r2__mechanisms-section">
+          <div class="mechanisms-header">
+            <span class="mechanisms-kicker">ROOT CAUSE FORENSIC DISSECTION // 三大深层机理解剖台</span>
+            <h3 class="mechanisms-title">为什么单变量修改，会引发全局连锁反应？</h3>
+          </div>
+
+          <div class="mechanisms-grid">
+            <!-- Mechanism 01: User Expression Layer -->
+            <div class="mechanism-card">
+              <div class="card-head">
+                <span class="card-num">01 / 用户表达层</span>
+                <span class="card-tech">EXPRESSION ENTANGLEMENT</span>
+              </div>
+              <h4 class="card-title">多种要求写在同一段文字里，缺少分别控制的依据</h4>
+              <p class="card-body">
+                一段文字需要同时表达角色长相、动作、站位和镜头。创作者很难只保留满意的部分，往往需要一边修改，一边反复协调其他要求。
+              </p>
+            </div>
+
+            <!-- Mechanism 02: Model Generation Layer -->
+            <div class="mechanism-card">
+              <div class="card-head">
+                <span class="card-num">02 / 模型生成层</span>
+                <span class="card-tech">GLOBAL RESAMPLING</span>
+              </div>
+              <h4 class="card-title">模型根据当前条件重新生成，无法自动锁定已有内容</h4>
+              <p class="card-body">
+                模型会根据当前描述重新生成整张画面。即使用文字写上“其他保持不变”，模型也只能尝试理解这一要求，无法自动保证原本成立的部分不发生变化。
+              </p>
+            </div>
+
+            <!-- Mechanism 03: Workflow Rework Layer -->
+            <div class="mechanism-card">
+              <div class="card-head">
+                <span class="card-num">03 / 工作流返工层</span>
+                <span class="card-tech">COMPOUNDING REWORK</span>
+              </div>
+              <h4 class="card-title">局部修改带来全图返工，陷入反复调试深渊</h4>
+              <p class="card-body">
+                每次尝试都可能解决一个问题，又引发新的变化。为了把一个动作调对，创作者需要重新检查和微调整张画面。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 06. Product Verdict (底层产品收束) -->
+        <div class="tc-problem-r2__verdict">
+          <div class="verdict-main">
+            <span class="verdict-kicker">PRODUCT JUDGMENT // 核心判断</span>
+            <h3 class="verdict-headline">改动作时，已有的角色、站位和镜头应该能继续用。</h3>
+            <p class="verdict-lead">
+              问题不是模型画不好，而是<strong>所有变量混在了一起</strong>——只要没有把控制显式拆开，任何局部微调都会沦为全图重新抽卡。
+            </p>
+          </div>
+          <div class="verdict-handoff">
+            <a href="#twitcanva-control-plan-r1" class="verdict-link">
+              <span>NEXT / 02 THE CONTROL PLAN · 如何把不同的要求显式拆开</span>
+              <span class="arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Comparison Notice Divider -->
+        <div class="tc-problem-r2__comparison-divider" aria-hidden="true">
+          <span class="divider-line"></span>
+          <span class="divider-tag">▼ 以下为原有对比方案（旧版待评估保留），可直接向下滑动进行直观对比 ▼</span>
+          <span class="divider-line"></span>
+        </div>
+
+      </div><!-- /.tc-problem-r2__container -->
+    </section>
+
     <!-- 01 / THE PROBLEM — TWITCANVA DESIGN R3.1 (Scroll-Driven & Target Highlighted Comparator) -->
     <section class="tc-problem-r1" id="twitcanva-problem-r1" aria-label="01 / THE PROBLEM · Control Coupling">
       <!-- Scroll Track: Provides 260vh scroll space to naturally drive the 3 tabs -->
