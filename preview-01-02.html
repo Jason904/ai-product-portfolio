@@ -501,7 +501,7 @@
                 </div>
                 <h4 class="col-title">扩散机制基于全局去噪采样，不维护局部图层结构</h4>
                 <p class="col-body">
-                  扩散模型将画面表示为连续潜变量，<strong>不维护“对象与图层”的符号结构</strong>。提示词经全局 Cross-Attention 注入，每个词都会影响全图的去噪方向。一次局部修改在模型端被解释为<strong>全新的全局条件采样</strong>，已满意的成果随时会被连带改写。
+                  扩散模型将画面表示为连续潜变量，<strong>不维护“对象与图层”的符号结构</strong>。提示词经全局 Cross-Attention 注入，每个词都会影响全图的去噪方向。一次局部修改在模型端被解释为<strong>全新的全局条件采样</strong>，因此已满意的成果也可能随时会被连带改写。
                 </p>
                 <div class="col-formula">
                   <span class="formula-in">全图重新加噪</span>
