@@ -153,54 +153,54 @@
           </div>
         </div>
 
-        <!-- 03. Final Scene Stage (Cinema Master Viewport - Specs Above Image) -->
+        <!-- 03. Final Scene Stage (Cinema Master Viewport - Integrated In-Canvas HUD) -->
         <div class="tc-h1-r1__result">
-          
-          <!-- Caption Bar (Lead-in Annotation) -->
-          <div class="tc-h1-r1__caption-bar">
-            <span class="caption-bracket">⌞ 01-A 镜头剖析 ⌟</span>
-            <span class="caption-text">三位主角与大规模机器人军团对峙。角色、动作、人物关系、群像和场景共同构成这个复杂镜头。</span>
-          </div>
-
-          <!-- 5-Dimension Scene Decoder Strip (Pre-Frame Technical Dimensions) -->
-          <div class="tc-h1-r1__scene-decoder" aria-label="场景 5 维要素微解构">
-            <div class="tc-h1-r1__decoder-item">
-              <span class="decoder-bracket">⌜01 角色身份⌟</span>
-              <span class="decoder-val">3 位核心主角 (战士 · 控制者 · 智者)</span>
-            </div>
-            <span class="tc-h1-r1__decoder-divider" aria-hidden="true"></span>
-            <div class="tc-h1-r1__decoder-item">
-              <span class="decoder-bracket">⌜02 独立动作⌟</span>
-              <span class="decoder-val">持枪警惕 · 控场前探 · 拄杖蓄势</span>
-            </div>
-            <span class="tc-h1-r1__decoder-divider" aria-hidden="true"></span>
-            <div class="tc-h1-r1__decoder-item">
-              <span class="decoder-bracket">⌜03 空间站位⌟</span>
-              <span class="decoder-val">三角防御阵型 · 纵深拉开</span>
-            </div>
-            <span class="tc-h1-r1__decoder-divider" aria-hidden="true"></span>
-            <div class="tc-h1-r1__decoder-item">
-              <span class="decoder-bracket">⌜04 军团规模⌟</span>
-              <span class="decoder-val">50+ 机械卫兵阵列</span>
-            </div>
-            <span class="tc-h1-r1__decoder-divider" aria-hidden="true"></span>
-            <div class="tc-h1-r1__decoder-item">
-              <span class="decoder-bracket">⌜05 工业环境⌟</span>
-              <span class="decoder-val">18 号机库 · 顶光反射地面</span>
-            </div>
-          </div>
-
-          <!-- Media Frame -->
           <div class="tc-h1-r1__media-frame tc-h1-r1__media-frame--final">
-            <div class="tc-h1-r1__frame-telemetry">
-              <div class="telemetry-left">
+            
+            <!-- Top HUD Overlay (Scene Name & Lens Breakdown) -->
+            <div class="tc-h1-r1__frame-top-hud">
+              <div class="hud-badge">
                 <span class="rec-dot"></span>
-                <span class="telemetry-title">终局画面 // 多角色群像对峙</span>
+                <span class="hud-title">终局画面 // 多角色群像对峙</span>
+              </div>
+              <div class="hud-caption">
+                <span class="caption-tag">⌞ 01-A 镜头剖析 ⌟</span>
+                <span class="caption-text">三位主角与大规模机器人军团对峙。角色、动作、人物关系、群像和场景共同构成这个复杂镜头。</span>
               </div>
             </div>
-            <img class="tc-h1-r1__img--final" src="assets/images/twitcanva/twitcanva-h1-final-scene.png" alt="多角色群像对峙：三位核心角色 VS 机械军团" loading="eager" decoding="async">
-          </div>
 
+            <!-- 16:9 Cinema Image -->
+            <img class="tc-h1-r1__img--final" src="assets/images/twitcanva/twitcanva-h1-final-scene.png" alt="多角色群像对峙：三位核心角色 VS 机械军团" loading="eager" decoding="async">
+
+            <!-- Bottom Dock Overlay (5-Dimension Scene Decoder) -->
+            <div class="tc-h1-r1__frame-bottom-dock" aria-label="场景 5 维要素微解构">
+              <div class="dock-item">
+                <span class="dock-bracket">⌜01 角色身份⌟</span>
+                <span class="dock-val">3 位核心主角 (战士 · 控制者 · 智者)</span>
+              </div>
+              <span class="dock-divider" aria-hidden="true"></span>
+              <div class="dock-item">
+                <span class="dock-bracket">⌜02 独立动作⌟</span>
+                <span class="dock-val">持枪警惕 · 控场前探 · 拄杖蓄势</span>
+              </div>
+              <span class="dock-divider" aria-hidden="true"></span>
+              <div class="dock-item">
+                <span class="dock-bracket">⌜03 空间站位⌟</span>
+                <span class="dock-val">三角防御阵型 · 纵深拉开</span>
+              </div>
+              <span class="dock-divider" aria-hidden="true"></span>
+              <div class="dock-item">
+                <span class="dock-bracket">⌜04 军团规模⌟</span>
+                <span class="dock-val">50+ 机械卫兵阵列</span>
+              </div>
+              <span class="dock-divider" aria-hidden="true"></span>
+              <div class="dock-item">
+                <span class="dock-bracket">⌜05 工业环境⌟</span>
+                <span class="dock-val">18 号机库 · 顶光反射地面</span>
+              </div>
+            </div>
+
+          </div>
         </div>
 
         <!-- 04. Real Workflow Workbench (How This Scene Was Built) -->

@@ -435,12 +435,12 @@
 }
 
 /* --------------------------------------------------------------------------
-   03. FINAL SCENE STAGE (Cinema Master Viewport)
+   03. FINAL SCENE STAGE (Cinema Master Viewport - In-Canvas Overlays)
    -------------------------------------------------------------------------- */
 .tc-h1-r1__result {
   display: flex;
   flex-direction: column;
-  margin-bottom: clamp(3.5rem, 5vw, 5.5rem);
+  margin-bottom: clamp(3rem, 4.5vw, 4.5rem);
 }
 
 .tc-h1-r1__media-frame--final {
@@ -449,62 +449,8 @@
   background: #0d0d0b;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 12px 36px rgba(23, 23, 20, 0.08);
-  border: 1px solid rgba(23, 23, 20, 0.15);
-}
-
-.tc-h1-r1__frame-telemetry {
-  position: absolute;
-  top: 14px;
-  left: 16px;
-  right: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.tc-h1-r1__frame-telemetry .telemetry-left {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(18, 18, 16, 0.78);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  padding: 5px 12px;
-  border-radius: 4px;
-}
-
-.tc-h1-r1__frame-telemetry .rec-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: #ef4444;
-  box-shadow: 0 0 6px #ef4444;
-}
-
-.tc-h1-r1__frame-telemetry .telemetry-title {
-  font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif);
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: #eae9e4;
-  text-transform: none;
-}
-
-.tc-h1-r1__frame-telemetry .telemetry-pill {
-  background: rgba(18, 18, 16, 0.65);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 4px 10px;
-  border-radius: 4px;
-  font-family: var(--font-mono, monospace);
-  font-size: 10px;
-  letter-spacing: 0.06em;
-  color: #c5c3bc;
+  box-shadow: 0 16px 48px rgba(23, 23, 20, 0.12);
+  border: 1px solid rgba(23, 23, 20, 0.18);
 }
 
 .tc-h1-r1__img--final {
@@ -515,69 +461,137 @@
   aspect-ratio: 16 / 9;
 }
 
-/* Caption Bar (Lead-in Annotation above image) */
-.tc-h1-r1__caption-bar {
+/* Top HUD Overlay (Scene Title & Lead-in Caption) */
+.tc-h1-r1__frame-top-hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
   display: flex;
-  align-items: baseline;
-  gap: 10px;
-  margin-top: 0;
-  margin-bottom: 10px;
-  padding-left: 2px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  padding: 14px 20px 18px;
+  background: linear-gradient(180deg, rgba(10, 10, 8, 0.88) 0%, rgba(10, 10, 8, 0.55) 60%, transparent 100%);
+  pointer-events: none;
 }
 
-/* 5-Dimension Scene Decoder Strip (Pre-Frame Dimensions above image) */
-.tc-h1-r1__scene-decoder {
+.tc-h1-r1__frame-top-hud .hud-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(18, 18, 16, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 5px 12px;
+  border-radius: 4px;
+  pointer-events: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.tc-h1-r1__frame-top-hud .rec-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #ef4444;
+  box-shadow: 0 0 6px #ef4444;
+  flex-shrink: 0;
+}
+
+.tc-h1-r1__frame-top-hud .hud-title {
+  font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #f4efe9;
+}
+
+.tc-h1-r1__frame-top-hud .hud-caption {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #e5e3dc;
+  max-width: 720px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+  pointer-events: auto;
+}
+
+.tc-h1-r1__frame-top-hud .caption-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: 750;
+  color: #e07f55;
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+}
+
+.tc-h1-r1__frame-top-hud .caption-text {
+  line-height: 1.45;
+  word-break: keep-all;
+}
+
+/* Bottom Dock Overlay (5-Dimension Scene Decoder Strip) */
+.tc-h1-r1__frame-bottom-dock {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 8px 14px;
-  padding: 10px 16px;
-  margin-top: 0;
-  margin-bottom: 12px;
-  background: rgba(23, 23, 20, 0.025);
-  border: 1px solid rgba(23, 23, 20, 0.07);
-  border-radius: 6px;
+  padding: 11px 20px;
+  background: rgba(12, 12, 10, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   font-family: var(--font-mono, monospace);
-  font-size: 11.5px;
+  font-size: 11px;
+  pointer-events: auto;
 }
 
-.tc-h1-r1__decoder-item {
+.tc-h1-r1__frame-bottom-dock .dock-item {
   display: inline-flex;
   align-items: center;
   gap: 6px;
 }
 
-.tc-h1-r1__decoder-item .decoder-bracket {
-  color: #c8683d;
+.tc-h1-r1__frame-bottom-dock .dock-bracket {
+  color: #e07f55;
   font-weight: 750;
 }
 
-.tc-h1-r1__decoder-item .decoder-val {
-  color: #2e2b27;
+.tc-h1-r1__frame-bottom-dock .dock-val {
+  color: #eae9e4;
   font-weight: 600;
 }
 
-.tc-h1-r1__decoder-divider {
+.tc-h1-r1__frame-bottom-dock .dock-divider {
   width: 1px;
-  height: 14px;
-  background-color: rgba(23, 23, 20, 0.12);
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
-.tc-h1-r1__caption-bar .caption-bracket {
-  font-family: var(--font-mono, monospace);
-  font-size: 11px;
-  font-weight: 750;
-  color: #8c8a82;
-  letter-spacing: 0.06em;
-  flex-shrink: 0;
-}
-
-.tc-h1-r1__caption-bar .caption-text {
-  font-size: 13px;
-  line-height: 1.55;
-  color: #736c64;
-  word-break: keep-all;
+@media (max-width: 900px) {
+  .tc-h1-r1__frame-top-hud {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .tc-h1-r1__frame-bottom-dock {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .tc-h1-r1__frame-bottom-dock .dock-divider {
+    display: none;
+  }
 }
 
 /* --------------------------------------------------------------------------
