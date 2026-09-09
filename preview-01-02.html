@@ -302,106 +302,82 @@
           </div>
         </div>
 
-        <!-- 04. Forensic Comparator Grid (Left Baseline + Right 3 Drift Stream) -->
-        <div class="tc-problem-r2__comparator-grid">
+        <!-- 04. Forensic Comparator Stage ("左 1 右 3" 暗室对照监视台) -->
+        <div class="tc-problem-r2__stage-console">
           
-          <!-- Left: Fixed Baseline Stage (Sticky on Desktop) -->
-          <div class="tc-problem-r2__baseline-col">
-            <div class="tc-problem-r2__sticky-baseline">
-              <div class="baseline-header">
-                <span class="baseline-title">BASELINE // 已满意的画面</span>
-                <span class="baseline-status">CURRENT VALID STATE</span>
+          <!-- Left Column: Baseline (~33%) -->
+          <div class="tc-problem-r2__baseline-panel">
+            <div class="baseline-panel-head">
+              <div class="baseline-panel-badge">
+                <span class="baseline-target-dot" aria-hidden="true">
+                  <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
+                    <circle cx="7" cy="7" r="5.5" stroke="#c8683d" stroke-width="1.3"/>
+                    <circle cx="7" cy="7" r="2.5" fill="#c8683d"/>
+                  </svg>
+                </span>
+                <span class="baseline-tag-en">BASELINE</span>
+                <span class="baseline-tag-sep">/</span>
+                <span class="baseline-tag-zh">已满意的画面</span>
               </div>
-              <div class="baseline-media-box">
-                <img src="assets/images/twitcanva/twitcanva-p1-baseline.png" alt="基准参照组：三人原始正确状态" loading="eager" decoding="async">
-              </div>
-              <div class="baseline-footer">
-                <div class="baseline-spec-row">
-                  <span class="spec-label">LOCKED VARIABLES</span>
-                  <span class="spec-val">CHARACTER · RELATION · COMPOSITION</span>
-                </div>
-                <div class="baseline-spec-row">
-                  <span class="spec-label">INTENT SPEC</span>
-                  <span class="spec-val spec-val--accent">全景基线锁定 · 仅针对红衣控制者动作发起单变量变更</span>
-                </div>
-              </div>
+              <div class="baseline-head-hairline" aria-hidden="true"></div>
             </div>
+
+            <div class="baseline-media-frame">
+              <img src="assets/images/twitcanva/twitcanva-p1-baseline.png" alt="基准参照组：三人原始正确状态" loading="eager" decoding="async">
+            </div>
+
+            <p class="baseline-caption">
+              调整前：角色、站位和镜头均符合预期。
+            </p>
           </div>
 
-          <!-- Right: 3 Drift Failure Modes Stream -->
-          <div class="tc-problem-r2__drift-col">
-            <div class="drift-header">
-              <span class="drift-kicker">ILLUSTRATIVE FAILURE MODES // 示意性失败模式</span>
-              <span class="drift-sub">同一次修改，其他内容也可能发生变化</span>
+          <!-- Right Column: 3 Drift Failure Modes (~67%) -->
+          <div class="tc-problem-r2__drifts-panel">
+            <div class="drifts-panel-head">
+              <h3 class="drifts-panel-title">三种典型的漂移结果</h3>
+              <span class="drifts-panel-telemetry">SAME EDIT INTENT. DIFFERENT UNWANTED CHANGES.</span>
             </div>
 
-            <div class="drift-cards-stream">
-              <!-- Case 01: Character Drift -->
-              <div class="drift-card">
-                <div class="drift-card-header">
-                  <span class="drift-card-idx">01 / 身份漂移</span>
-                  <span class="drift-card-tag">CHARACTER DRIFT ✗</span>
+            <div class="drifts-triad-grid">
+              <!-- Drift 01: Character -->
+              <div class="drift-channel-card">
+                <div class="drift-channel-header">
+                  <div class="drift-channel-title-row">
+                    <span class="drift-channel-num">01</span>
+                    <strong class="drift-channel-name">身份漂移</strong>
+                  </div>
+                  <p class="drift-channel-desc">动作改了，角色外观也发生了变化。</p>
                 </div>
-                <div class="drift-card-media">
+                <div class="drift-channel-media">
                   <img src="assets/images/twitcanva/twitcanva-p1-reroll-01-character.png" alt="Reroll 01: 角色身份漂移" loading="eager" decoding="async">
-                  <div class="drift-reticle drift-reticle--character">
-                    <span class="reticle-pill">身份特征重算 ✗</span>
-                  </div>
-                </div>
-                <div class="drift-card-footer">
-                  <p class="drift-verdict">
-                    <strong>动作改了，角色外观也发生了变化。</strong>缺乏角色显式控制，动作改动触发面部与发型特征重新采样，身份一致性丢失。
-                  </p>
-                  <div class="drift-metrics">
-                    <span class="metric-ok">POSE ✓ (抬手已生效)</span>
-                    <span class="metric-err">CHARACTER ✗ (面部身份被重绘)</span>
-                  </div>
                 </div>
               </div>
 
-              <!-- Case 02: Relation Drift -->
-              <div class="drift-card">
-                <div class="drift-card-header">
-                  <span class="drift-card-idx">02 / 空间站位漂移</span>
-                  <span class="drift-card-tag">RELATION DRIFT ✗</span>
-                </div>
-                <div class="drift-card-media">
-                  <img src="assets/images/twitcanva/twitcanva-p1-reroll-02-relation.png" alt="Reroll 02: 人物关系漂移" loading="eager" decoding="async">
-                  <div class="drift-reticle drift-reticle--relation">
-                    <span class="reticle-pill">站位拓扑拉散 ✗</span>
+              <!-- Drift 02: Relation -->
+              <div class="drift-channel-card">
+                <div class="drift-channel-header">
+                  <div class="drift-channel-title-row">
+                    <span class="drift-channel-num">02</span>
+                    <strong class="drift-channel-name">站位漂移</strong>
                   </div>
+                  <p class="drift-channel-desc">三个人还在，但彼此的距离和前后关系变了。</p>
                 </div>
-                <div class="drift-card-footer">
-                  <p class="drift-verdict">
-                    <strong>三个人还在，但彼此的距离和前后关系变了。</strong>单人动作重构未锁定空间拓扑，三人站位间距被模型重新解算，战术站位崩塌。
-                  </p>
-                  <div class="drift-metrics">
-                    <span class="metric-ok">POSE ✓ (抬手已生效)</span>
-                    <span class="metric-err">RELATION ✗ (三人站位被拉散重排)</span>
-                  </div>
+                <div class="drift-channel-media">
+                  <img src="assets/images/twitcanva/twitcanva-p1-reroll-02-relation.png" alt="Reroll 02: 空间站位漂移" loading="eager" decoding="async">
                 </div>
               </div>
 
-              <!-- Case 03: Composition Drift -->
-              <div class="drift-card">
-                <div class="drift-card-header">
-                  <span class="drift-card-idx">03 / 镜头构图漂移</span>
-                  <span class="drift-card-tag">COMPOSITION DRIFT ✗</span>
-                </div>
-                <div class="drift-card-media">
-                  <img src="assets/images/twitcanva/twitcanva-p1-reroll-03-composition.png" alt="Reroll 03: 构图镜头漂移" loading="eager" decoding="async">
-                  <div class="drift-reticle drift-reticle--composition">
-                    <span class="reticle-pill">机位与景别重构 ✗</span>
+              <!-- Drift 03: Composition -->
+              <div class="drift-channel-card">
+                <div class="drift-channel-header">
+                  <div class="drift-channel-title-row">
+                    <span class="drift-channel-num">03</span>
+                    <strong class="drift-channel-name">构图漂移</strong>
                   </div>
+                  <p class="drift-channel-desc">人物基本保留，但取景、大小和画面重心发生了变化。</p>
                 </div>
-                <div class="drift-card-footer">
-                  <p class="drift-verdict">
-                    <strong>人物基本保留，但取景、大小和画面重心发生了变化。</strong>动作修改触发整幅画面重新采样，原本满意的全景被重构为近景俯仰。
-                  </p>
-                  <div class="drift-metrics">
-                    <span class="metric-ok">POSE ✓ (抬手已生效)</span>
-                    <span class="metric-err">COMPOSITION ✗ (镜头视角失真)</span>
-                  </div>
+                <div class="drift-channel-media">
+                  <img src="assets/images/twitcanva/twitcanva-p1-reroll-03-composition.png" alt="Reroll 03: 镜头构图漂移" loading="eager" decoding="async">
                 </div>
               </div>
             </div>
