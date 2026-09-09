@@ -473,23 +473,19 @@
           </div>
 
           <div class="ledger-columns-track">
-            <!-- Mechanism 01: User Expression Layer -->
+            <!-- Mechanism 01: Input Conditioning Entanglement -->
             <div class="ledger-column">
               <div class="ledger-column-top">
                 <div class="ledger-col-badge">
-                  <span class="col-num">01 / 用户表达层</span>
-                  <span class="col-tech">EXPRESSION ENTANGLEMENT</span>
-                </div>
-                <div class="ledger-trace-link">
-                  <span class="trace-arrow">↳</span>
-                  <span class="trace-dest">根源锁定：对应「01 身份特征重算」</span>
+                  <span class="col-num">01 / 输入端：描述耦合</span>
+                  <span class="col-tech">CONDITIONING ENTANGLEMENT</span>
                 </div>
               </div>
 
-              <h4 class="ledger-col-title">多种要求写在同一段文字里，缺少分别控制的依据</h4>
+              <h4 class="ledger-col-title">文字描述无法提供独立的控制依据</h4>
               
               <p class="ledger-col-body">
-                一段文字需要同时表达角色长相、动作、站位和镜头。创作者很难只保留满意的部分，往往需要一边修改，一边反复协调其他要求。
+                文字没有物理空间和图层的概念。长相、动作与站位混在同一段描述里，模型接收到的是一个混合条件，根本无法单独控制某一项。
               </p>
 
               <div class="ledger-col-formula">
@@ -499,23 +495,19 @@
               </div>
             </div>
 
-            <!-- Mechanism 02: Model Generation Layer -->
+            <!-- Mechanism 02: Model Global Latent Resampling -->
             <div class="ledger-column">
               <div class="ledger-column-top">
                 <div class="ledger-col-badge">
-                  <span class="col-num">02 / 模型生成层</span>
-                  <span class="col-tech">GLOBAL RESAMPLING</span>
-                </div>
-                <div class="ledger-trace-link">
-                  <span class="trace-arrow">↳</span>
-                  <span class="trace-dest">根源锁定：对应「02 站位拓扑拉散」</span>
+                  <span class="col-num">02 / 模型端：全图重算</span>
+                  <span class="col-tech">GLOBAL LATENT RESAMPLING</span>
                 </div>
               </div>
 
-              <h4 class="ledger-col-title">模型根据当前条件重新生成，无法自动锁定已有内容</h4>
+              <h4 class="ledger-col-title">扩散机制基于全局加噪去噪，没有局部图层隔离</h4>
               
               <p class="ledger-col-body">
-                模型会根据当前描述重新生成整张画面。即使用文字写上“其他保持不变”，模型也只能尝试理解这一要求，无法自动保证原本成立的部分不发生变化。
+                模型在潜空间是全图协同去噪的。只要 Prompt 稍有变动，全局注意力权重全部重置，模型必然重绘整张画面，无法只锁定局部。
               </p>
 
               <div class="ledger-col-formula">
@@ -525,23 +517,19 @@
               </div>
             </div>
 
-            <!-- Mechanism 03: Workflow Rework Layer -->
+            <!-- Mechanism 03: Workflow Collateral Chain Reaction -->
             <div class="ledger-column">
               <div class="ledger-column-top">
                 <div class="ledger-col-badge">
-                  <span class="col-num">03 / 工作流返工层</span>
-                  <span class="col-tech">COMPOUNDING REWORK</span>
-                </div>
-                <div class="ledger-trace-link">
-                  <span class="trace-arrow">↳</span>
-                  <span class="trace-dest">根源锁定：对应「03 机位景别重构」</span>
+                  <span class="col-num">03 / 工作流：连锁坍塌</span>
+                  <span class="col-tech">COLLATERAL CHAIN REACTION</span>
                 </div>
               </div>
 
-              <h4 class="ledger-col-title">局部修改带来全图返工，陷入反复调试深渊</h4>
+              <h4 class="ledger-col-title">单点修改引发全局连锁变动，已确认成果无法继承</h4>
               
               <p class="ledger-col-body">
-                每次尝试都可能解决一个问题，又引发新的变化。为了把一个动作调对，创作者需要重新检查和微调整张画面。
+                输入无法解耦、模型全图重算，哪怕只改动一个抬手动作，已经满意的长相、站位与构图也会被无差别洗牌，创作过程退化为不可预测的反复抽卡。
               </p>
 
               <div class="ledger-col-formula">
