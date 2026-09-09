@@ -196,26 +196,84 @@
   font-weight: 800;
 }
 
-.tc-h1-r1__thesis-pill {
+.tc-h1-r1__thesis-strip {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-family: var(--font-mono, monospace);
-  font-size: 11px;
-  color: #6b665f;
-  letter-spacing: 0.04em;
-  background: rgba(23, 23, 20, 0.03);
-  border: 1px solid rgba(23, 23, 20, 0.09);
-  padding: 5px 12px;
-  border-radius: 4px;
+  gap: 12px;
+  padding: 7px 14px;
+  background: rgba(23, 23, 20, 0.035);
+  border: 1px solid rgba(23, 23, 20, 0.12);
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(23, 23, 20, 0.03);
   width: fit-content;
+  flex-wrap: wrap;
 }
 
-.tc-h1-r1__thesis-pill .dot {
+.tc-h1-r1__thesis-strip .thesis-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(200, 104, 61, 0.12);
+  border: 1px solid rgba(200, 104, 61, 0.28);
+  padding: 2px 7px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.tc-h1-r1__thesis-strip .badge-dot {
   width: 5px;
   height: 5px;
   border-radius: 50%;
   background-color: #c8683d;
+  box-shadow: 0 0 5px rgba(200, 104, 61, 0.5);
+}
+
+.tc-h1-r1__thesis-strip .badge-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 750;
+  color: #c8683d;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tc-h1-r1__thesis-strip .thesis-contrast-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  letter-spacing: 0.01em;
+}
+
+.tc-h1-r1__thesis-strip .contrast-from {
+  color: #736c64;
+  font-weight: 600;
+  text-decoration: line-through;
+  text-decoration-color: rgba(200, 104, 61, 0.4);
+}
+
+.tc-h1-r1__thesis-strip .contrast-arrow {
+  color: #c8683d;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.tc-h1-r1__thesis-strip .contrast-to {
+  color: #171714;
+  font-weight: 600;
+}
+
+.tc-h1-r1__thesis-strip .contrast-to strong {
+  color: #171714;
+  font-weight: 750;
+}
+
+.tc-h1-r1__thesis-strip .contrast-to .highlight-accent {
+  color: #c8683d;
+  font-weight: 800;
+  padding: 1px 4px;
+  background: rgba(200, 104, 61, 0.08);
+  border-radius: 2px;
 }
 
 /* Right 36% Architecture Spec Rail Box */
