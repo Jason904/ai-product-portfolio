@@ -2562,7 +2562,7 @@
   width: 100%;
   position: relative;
   background-color: var(--paper, #f4efe9);
-  padding: clamp(5rem, 6.5vw, 6.8rem) 0 4.5rem;
+  padding: clamp(4rem, 5.5vw, 6rem) 0 clamp(3.5rem, 5vw, 5rem);
   border-top: 1px solid var(--line, rgba(23, 23, 20, 0.12));
 }
 
@@ -2793,7 +2793,7 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 10px;
   overflow: hidden;
-  margin-bottom: clamp(3.2rem, 4.5vw, 4.2rem);
+  margin-bottom: 0;
   box-shadow: 0 16px 44px rgba(0, 0, 0, 0.35);
 }
 
