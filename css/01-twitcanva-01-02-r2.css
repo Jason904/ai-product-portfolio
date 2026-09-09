@@ -1684,7 +1684,8 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  max-width: 760px;
+  max-width: 100%;
+  width: 100%;
 }
 
 .tc-problem-r2__insight-foundation .verdict-kicker-row {
@@ -1723,7 +1724,13 @@
   line-height: 1.7;
   color: #57534e;
   margin: 0;
-  word-break: keep-all;
+  word-break: normal;
+}
+
+@media (min-width: 1040px) {
+  .tc-problem-r2__insight-foundation .verdict-lead {
+    white-space: nowrap;
+  }
 }
 
 .tc-problem-r2__insight-foundation .verdict-lead strong {
