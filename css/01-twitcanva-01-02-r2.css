@@ -249,39 +249,41 @@
   border-radius: 2px;
 }
 
-/* Engineering Solo Credit Rail (带精致外围细节与微图标) */
-.tc-h1-r1__solo-line {
+/* Scheme A: Blueprint Caliper Stream (100% De-boxed, Zero Boxes) */
+.tc-h1-r1__solo-caliper {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px 12px;
   flex-wrap: wrap;
-  padding: 5px 12px 5px 8px;
+  padding: 4px 0;
   margin-top: 6px;
-  background: rgba(23, 23, 20, 0.024);
-  border: 1px solid rgba(23, 23, 20, 0.08);
-  border-left: 2.5px solid #c8683d;
-  border-radius: 4px;
-  width: fit-content;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
-.tc-h1-r1__solo-line .solo-badge-tag {
+.tc-h1-r1__solo-caliper .caliper-bracket {
+  color: #c8683d;
+  font-family: var(--font-mono, monospace);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1;
+  opacity: 0.9;
+  user-select: none;
+}
+
+.tc-h1-r1__solo-caliper .caliper-core-badge {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   font-family: var(--font-mono, monospace);
-  font-size: 10px;
-  font-weight: 800;
-  color: #f4efe9;
+  font-size: 11px;
+  font-weight: 850;
   letter-spacing: 0.08em;
-  background-color: #171714;
-  padding: 3px 8px;
-  border-radius: 3px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 0 2px 6px rgba(23, 23, 20, 0.12);
-  flex-shrink: 0;
+  color: #171714;
 }
 
-.tc-h1-r1__solo-line .pulse-dot {
+.tc-h1-r1__solo-caliper .pulse-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
@@ -290,63 +292,52 @@
   animation: tcPulse 2.4s infinite ease-in-out;
 }
 
-.tc-h1-r1__solo-line .solo-divider-bar {
-  width: 1px;
-  height: 14px;
-  background: rgba(23, 23, 20, 0.15);
+.tc-h1-r1__solo-caliper .caliper-hairline-connector {
+  width: 14px;
+  height: 1px;
+  background: rgba(23, 23, 20, 0.18);
   flex-shrink: 0;
 }
 
-.tc-h1-r1__solo-line .solo-text-cluster {
+.tc-h1-r1__solo-caliper .caliper-role-group {
   display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 13.5px;
 }
 
-.tc-h1-r1__solo-line .solo-item-group {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.tc-h1-r1__solo-line .solo-icon {
-  flex-shrink: 0;
-  opacity: 0.85;
-}
-
-.tc-h1-r1__solo-line .solo-icon--accent {
-  opacity: 1;
-}
-
-.tc-h1-r1__solo-line .solo-role-hl {
+.tc-h1-r1__solo-caliper .caliper-role-title {
   color: #171714;
   font-weight: 850;
   letter-spacing: -0.01em;
 }
 
-.tc-h1-r1__solo-line .solo-dot-sep {
-  color: #a8a29e;
+.tc-h1-r1__solo-caliper .caliper-crosshair {
+  color: #c8683d;
+  font-family: var(--font-mono, monospace);
   font-size: 11px;
+  font-weight: 800;
+  padding: 0 1px;
 }
 
-.tc-h1-r1__solo-line .solo-paradigm-hl {
+.tc-h1-r1__solo-caliper .caliper-paradigm-title {
   color: #c8683d;
   font-weight: 850;
   letter-spacing: 0.01em;
 }
 
-.tc-h1-r1__solo-line .solo-scope-pill {
+.tc-h1-r1__solo-caliper .caliper-scope-telemetry {
   font-family: var(--font-mono, monospace);
-  font-size: 9.5px;
-  font-weight: 650;
+  font-size: 11px;
   color: #78716c;
-  background: rgba(23, 23, 20, 0.04);
-  border: 1px solid rgba(23, 23, 20, 0.08);
-  border-radius: 3px;
-  padding: 2px 6px;
+  font-weight: 600;
   letter-spacing: 0.02em;
-  white-space: nowrap;
+}
+
+.tc-h1-r1__solo-caliper .caliper-scope-telemetry .scope-prefix {
+  color: #c8683d;
+  font-weight: 800;
+  margin-right: 2px;
 }
 
 /* Right 36% Architecture Spec Rail Box */
