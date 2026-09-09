@@ -1521,32 +1521,32 @@
   text-transform: uppercase;
 }
 
-/* 3-Column De-boxed Ledger Track */
+/* 2-Column De-boxed Ledger Track (双核根因：输入端描述耦合 vs 模型端全局重算) */
 .tc-problem-r2__forensic-ledger .ledger-columns-track {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(32px, 4.5vw, 64px);
   align-items: stretch;
 }
 
 @media (max-width: 860px) {
   .tc-problem-r2__forensic-ledger .ledger-columns-track {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 28px;
   }
 }
 
 .tc-problem-r2__forensic-ledger .ledger-column {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
   position: relative;
 }
 
 @media (min-width: 861px) {
   .tc-problem-r2__forensic-ledger .ledger-column:not(:first-child) {
-    border-left: 1px solid rgba(23, 23, 20, 0.1);
-    padding-left: 24px;
+    border-left: 1px solid rgba(23, 23, 20, 0.12);
+    padding-left: clamp(32px, 4.5vw, 64px);
   }
 }
 
