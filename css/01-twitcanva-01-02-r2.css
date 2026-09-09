@@ -2658,6 +2658,13 @@
   word-break: keep-all;
 }
 
+.tc-plan-r1__headline-zh strong {
+  color: #171714;
+  font-weight: 900;
+  border-bottom: 2.5px solid #c8683d;
+  padding-bottom: 2px;
+}
+
 .tc-plan-r1__lead {
   margin: 0.6rem 0 0;
   font-size: clamp(14px, 1.15vw, 16px);
