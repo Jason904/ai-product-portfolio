@@ -883,176 +883,250 @@
   word-break: keep-all;
 }
 
-/* 03. Task Context Pipeline Head (去卡片化蓝图意图区) */
-.tc-problem-r2__task-pipeline {
+/* 03. Dual-Track Specification Stream (双轨测绘对撞标尺 · 100% 去方块化) */
+.tc-problem-r2__dual-track-spec {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-bottom: 28px;
-  padding-bottom: 20px;
+  gap: 14px;
+  margin-bottom: 26px;
+  padding-bottom: 22px;
   border-bottom: 1px dashed rgba(23, 23, 20, 0.12);
 }
 
-.tc-problem-r2__task-pipeline .task-pipeline-header {
+.tc-problem-r2__track-meta-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
   font-family: var(--font-mono, monospace);
   font-size: 11px;
 }
 
-.tc-problem-r2__task-pipeline .task-pipeline-badge {
+.tc-problem-r2__track-meta-row .track-meta-badge {
   display: inline-flex;
   align-items: center;
   gap: 7px;
 }
 
-.tc-problem-r2__task-pipeline .pipeline-dot {
+.tc-problem-r2__track-meta-row .track-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
   background-color: #c8683d;
 }
 
-.tc-problem-r2__task-pipeline .pipeline-kicker {
+.tc-problem-r2__track-meta-row .track-kicker {
   color: #c8683d;
   font-weight: 750;
   letter-spacing: 0.08em;
 }
 
-.tc-problem-r2__task-pipeline .pipeline-id {
+.tc-problem-r2__track-meta-row .track-spec-code {
   color: #8c8a82;
   letter-spacing: 0.06em;
 }
 
-.tc-problem-r2__task-pipeline .task-pipeline-desc {
-  font-size: 14px;
-  line-height: 1.65;
-  color: #423e38;
-  margin: 0;
-  max-width: 840px;
-  word-break: keep-all;
-}
-
-.tc-problem-r2__task-pipeline .task-pipeline-spec-grid {
-  display: grid;
-  grid-template-columns: 32% calc(68% - 32px);
-  gap: 32px;
-  align-items: stretch;
-  margin-top: 6px;
-}
-
-@media (max-width: 900px) {
-  .tc-problem-r2__task-pipeline .task-pipeline-spec-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-}
-
-.tc-problem-r2__task-pipeline .pipeline-intent-col {
+/* Individual Specification Rail */
+.tc-problem-r2__spec-rail {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding: 10px 14px;
-  background: rgba(200, 104, 61, 0.06);
-  border: 1px solid rgba(200, 104, 61, 0.22);
-  border-radius: 6px;
+  gap: 8px;
+  padding: 4px 0;
 }
 
-.tc-problem-r2__task-pipeline .pipeline-tag {
+.tc-problem-r2__spec-rail .rail-axis-tag {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
   font-family: var(--font-mono, monospace);
-  font-size: 10.5px;
-  font-weight: 800;
-  letter-spacing: 0.04em;
 }
 
-.tc-problem-r2__task-pipeline .pipeline-tag--change {
+.tc-problem-r2__spec-rail .axis-icon {
+  font-size: 10px;
   color: #c8683d;
 }
 
-.tc-problem-r2__task-pipeline .pipeline-tag--lock {
-  color: #55524d;
+.tc-problem-r2__spec-rail .axis-icon--alert {
+  color: #ef4444;
+  font-weight: 800;
 }
 
-.tc-problem-r2__task-pipeline .pipeline-intent-content {
+.tc-problem-r2__spec-rail .axis-title {
+  font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif);
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #171714;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.tc-problem-r2__spec-rail .rail-axis-tag--alert .axis-title {
+  color: #991b1b;
+}
+
+.tc-problem-r2__spec-rail .axis-sub {
+  font-size: 10px;
+  color: #8c8a82;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Rail 1 Statement Row */
+.tc-problem-r2__spec-rail--intent .rail-statement-row {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+  align-items: baseline;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 16px;
+  font-size: 14px;
+}
+
+.rail-intent-phrase {
+  display: inline-flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px;
+  line-height: 1.6;
+}
+
+.rail-intent-phrase .phrase-prefix {
+  color: #57534e;
+}
+
+.rail-intent-phrase .phrase-target {
+  color: #171714;
+  font-weight: 850;
+  font-size: 15px;
+  border-bottom: 2px solid #c8683d;
+  padding-bottom: 1px;
+}
+
+.rail-intent-phrase .phrase-arrow {
+  color: #c8683d;
+  font-weight: 800;
   font-size: 13px;
 }
 
-.tc-problem-r2__task-pipeline .intent-highlight {
-  color: #171714;
-  font-weight: 800;
-}
-
-.tc-problem-r2__task-pipeline .intent-arrow {
-  color: #c8683d;
-  font-weight: 800;
-}
-
-.tc-problem-r2__task-pipeline .intent-aim {
+.rail-intent-phrase .phrase-goal {
   color: #57534e;
   font-weight: 600;
 }
 
-.tc-problem-r2__task-pipeline .pipeline-constraints-col {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding: 10px 14px;
-  background: rgba(23, 23, 20, 0.03);
-  border: 1px solid rgba(23, 23, 20, 0.1);
-  border-radius: 6px;
+.rail-locked-cluster {
+  display: inline-flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.tc-problem-r2__task-pipeline .constraints-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.tc-problem-r2__task-pipeline .constraints-note {
+.rail-locked-cluster .locked-kicker {
   font-family: var(--font-mono, monospace);
-  font-size: 10px;
+  font-size: 11px;
   color: #8c8a82;
+  font-weight: 600;
   letter-spacing: 0.04em;
 }
 
-.tc-problem-r2__task-pipeline .constraints-triad-track {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+.locked-triad-stream {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
 }
 
-.tc-problem-r2__task-pipeline .constraint-anchor-chip {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 4px 8px;
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(23, 23, 20, 0.1);
-  border-radius: 4px;
+.locked-token-item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 3px;
   font-family: var(--font-mono, monospace);
-  font-size: 11.5px;
+  font-size: 13px;
+  white-space: nowrap;
 }
 
-.tc-problem-r2__task-pipeline .anchor-num {
-  font-weight: 800;
+.locked-token-item .token-bracket {
   color: #c8683d;
+  font-weight: 700;
+  font-size: 14px;
 }
 
-.tc-problem-r2__task-pipeline .anchor-label {
+.locked-token-item .token-idx {
+  color: #c8683d;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.locked-token-item .token-name {
   font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif);
   font-weight: 750;
   color: #171714;
+  font-size: 13.5px;
 }
 
-.tc-problem-r2__task-pipeline .anchor-pointer {
+.locked-token-item .token-trace-arrow {
   color: #c8683d;
   font-weight: 700;
   font-size: 11px;
+  margin-left: 1px;
+}
+
+.locked-triad-stream .token-sep {
+  color: #b5b0a8;
+  font-weight: 400;
+}
+
+/* Dividing Hairline */
+.tc-problem-r2__rail-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 0;
+  opacity: 0.8;
+}
+
+.tc-problem-r2__rail-divider .divider-hairline {
+  flex: 1;
+  height: 1px;
+  background: repeating-linear-gradient(90deg, rgba(23, 23, 20, 0.12) 0, rgba(23, 23, 20, 0.12) 4px, transparent 4px, transparent 8px);
+}
+
+.tc-problem-r2__rail-divider .divider-crosshair {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  color: #c8683d;
+  font-weight: 700;
+}
+
+/* Rail 2 Reality Phrase */
+.rail-reality-phrase {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #57534e;
+  word-break: keep-all;
+}
+
+.rail-reality-phrase .reality-lead {
+  font-weight: 750;
+  color: #991b1b;
+}
+
+.rail-reality-phrase .reality-highlight {
+  color: #171714;
+  font-weight: 800;
+  border-bottom: 1.5px dashed rgba(239, 68, 68, 0.5);
+}
+
+.rail-reality-phrase .reality-tag {
+  display: inline-block;
+  font-family: var(--font-mono, monospace);
+  font-size: 10.5px;
+  font-weight: 750;
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 3px;
+  padding: 1px 7px;
+  margin-left: 8px;
+  vertical-align: middle;
 }
 
 /* 04. Forensic Comparator Stage ("左 1 右 3" 暗室对照监视台) */

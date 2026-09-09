@@ -281,55 +281,87 @@
           <h2 class="tc-problem-r2__headline-zh">修改一个动作，可能牵动整张画面</h2>
         </div>
 
-        <!-- 03. Task Context Pipeline Head (去卡片化蓝图意图区) -->
-        <div class="tc-problem-r2__task-pipeline">
-          <div class="task-pipeline-header">
-            <div class="task-pipeline-badge">
-              <span class="pipeline-dot"></span>
-              <span class="pipeline-kicker">TASK CONTEXT // 真实创作任务与修改意图</span>
+        <!-- 03. Dual-Track Specification Stream (双轨测绘对撞标尺 · 100% 去方块化) -->
+        <div class="tc-problem-r2__dual-track-spec">
+          
+          <!-- Top Meta Row -->
+          <div class="tc-problem-r2__track-meta-row">
+            <div class="track-meta-badge">
+              <span class="track-dot"></span>
+              <span class="track-kicker">TASK SPECIFICATION // 创作意图与黑盒反噬对照</span>
             </div>
-            <span class="pipeline-id">EXP-01A · POSE ADJUSTMENT SPEC</span>
+            <span class="track-spec-code">EXP-01A · SINGLE-VARIABLE CONTROL</span>
           </div>
-          
-          <p class="task-pipeline-desc">
-            创作者已经满意三位角色的身份、站位和镜头，现在只想调整红衣角色的动作。重新生成后，其他内容也可能发生变化，原本完成的部分又需要重新检查和调整。
-          </p>
-          
-          <!-- 2-Track Spec Bar: Intent vs 3-Axis Locked Constraints -->
-          <div class="task-pipeline-spec-grid">
-            <div class="pipeline-intent-col">
-              <span class="pipeline-tag pipeline-tag--change">本次修改目标 (单变量)</span>
-              <div class="pipeline-intent-content">
-                <strong class="intent-highlight">将红衣角色右手抬高</strong>
-                <span class="intent-arrow">➔</span>
-                <span class="intent-aim">增强核心控制姿态</span>
-              </div>
+
+          <!-- Rail 1: User Intent & Locked Baseline (创作者精密目标轨) -->
+          <div class="tc-problem-r2__spec-rail tc-problem-r2__spec-rail--intent">
+            <div class="rail-axis-tag">
+              <span class="axis-icon">●</span>
+              <strong class="axis-title">创作者意图与锁定基准</strong>
+              <span class="axis-sub">USER INTENT & LOCKED SPEC</span>
             </div>
 
-            <div class="pipeline-constraints-col">
-              <div class="constraints-head">
-                <span class="pipeline-tag pipeline-tag--lock">声明锁定保留 (3 维结构约束)</span>
-                <span class="constraints-note">期望在重新生成中严格保持成立 ↓</span>
+            <div class="rail-statement-row">
+              <div class="rail-intent-phrase">
+                <span class="phrase-prefix">在已满意的画面基线中，仅将</span>
+                <strong class="phrase-target">红衣角色的右手抬高</strong>
+                <span class="phrase-arrow">➔</span>
+                <span class="phrase-goal">形成更有力量的控制姿态</span>
               </div>
-              <div class="constraints-triad-track">
-                <div class="constraint-anchor-chip">
-                  <span class="anchor-num">01</span>
-                  <span class="anchor-label">角色身份</span>
-                  <span class="anchor-pointer" aria-hidden="true">↓</span>
-                </div>
-                <div class="constraint-anchor-chip">
-                  <span class="anchor-num">02</span>
-                  <span class="anchor-label">三人站位</span>
-                  <span class="anchor-pointer" aria-hidden="true">↓</span>
-                </div>
-                <div class="constraint-anchor-chip">
-                  <span class="anchor-num">03</span>
-                  <span class="anchor-label">镜头构图</span>
-                  <span class="anchor-pointer" aria-hidden="true">↓</span>
+
+              <div class="rail-locked-cluster">
+                <span class="locked-kicker">声明严格锁定保留：</span>
+                <div class="locked-triad-stream">
+                  <div class="locked-token-item">
+                    <span class="token-bracket">⌜</span>
+                    <span class="token-idx">01</span>
+                    <strong class="token-name">角色身份</strong>
+                    <span class="token-bracket">⌟</span>
+                    <span class="token-trace-arrow" aria-hidden="true">↓</span>
+                  </div>
+                  <span class="token-sep">·</span>
+                  <div class="locked-token-item">
+                    <span class="token-bracket">⌜</span>
+                    <span class="token-idx">02</span>
+                    <strong class="token-name">三人站位</strong>
+                    <span class="token-bracket">⌟</span>
+                    <span class="token-trace-arrow" aria-hidden="true">↓</span>
+                  </div>
+                  <span class="token-sep">·</span>
+                  <div class="locked-token-item">
+                    <span class="token-bracket">⌜</span>
+                    <span class="token-idx">03</span>
+                    <strong class="token-name">镜头构图</strong>
+                    <span class="token-bracket">⌟</span>
+                    <span class="token-trace-arrow" aria-hidden="true">↓</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- Dividing Telemetry Hairline with Crosshairs -->
+          <div class="tc-problem-r2__rail-divider" aria-hidden="true">
+            <span class="divider-hairline"></span>
+            <span class="divider-crosshair">+</span>
+            <span class="divider-hairline"></span>
+          </div>
+
+          <!-- Rail 2: System Reality & Collateral Damage (黑盒模型连锁反噬轨) -->
+          <div class="tc-problem-r2__spec-rail tc-problem-r2__spec-rail--reality">
+            <div class="rail-axis-tag rail-axis-tag--alert">
+              <span class="axis-icon axis-icon--alert">✗</span>
+              <strong class="axis-title">黑盒模型的失控反噬</strong>
+              <span class="axis-sub">SYSTEM REALITY · GLOBAL RESAMPLING</span>
+            </div>
+
+            <div class="rail-reality-phrase">
+              <span class="reality-lead">重新生成无法局部锁定——</span>
+              <span class="reality-body">原本成立的<strong class="reality-highlight">外观、阵型与机位被全图重新采样</strong>，导致单点微调引发连锁崩塌，已满意的成果被全图洗牌，陷入重新检查与连环返工。</span>
+              <span class="reality-tag">↓ 现场失控证据见下方监视台</span>
+            </div>
+          </div>
+
         </div>
 
         <!-- 04. Forensic Comparator Stage ("左 1 右 3" 暗室对照监视台) -->
