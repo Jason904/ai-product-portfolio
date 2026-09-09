@@ -565,93 +565,119 @@
     <!-- 02 / THE CONTROL PLAN — TWITCANVA DESIGN R1.1 (Compact System Blueprint) -->
     <section class="tc-plan-r1" id="twitcanva-control-plan-r1" aria-label="02 / THE CONTROL PLAN · Decompose Before Generate">
       <div class="tc-plan-r1__container">
-        <!-- BEAT A: TOP 60% : 40% COMPACT PROPOSITION & COGNITIVE CONVERSION -->
-        <div class="tc-plan-r1__top-grid">
-          <!-- Left 60%: Statement -->
-          <div class="tc-plan-r1__top-left">
-            <div class="tc-plan-r1__meta-header">
+        <!-- BEAT A: FULL-WIDTH STATEMENT & SPEC BANNER -->
+        <div class="tc-plan-r1__banner">
+          <header class="tc-plan-r1__meta-header">
+            <div class="tc-plan-r1__meta-left">
+              <span class="tc-plan-r1__pulse-dot"></span>
               <span class="tc-plan-r1__meta-eyebrow">02 / THE CONTROL PLAN</span>
+              <span class="tc-plan-r1__meta-sub">EXPLICIT CONTROL BLUEPRINT // 显式控制与空间画布解耦</span>
             </div>
+            <div class="tc-plan-r1__meta-right">
+              <span>FROM 1 TEXT PROMPT ➔ 4 DECOUPLED ASSETS</span>
+            </div>
+          </header>
+
+          <div class="tc-plan-r1__statement-deck">
             <h1 class="tc-plan-r1__title">
-              <span>DECOUPLE.</span>
-              <span>DEFINE. COMPOSE.</span>
+              <span>DECOUPLE · DEFINE · COMPOSE.</span>
             </h1>
             <h2 class="tc-plan-r1__headline-zh">以独立资产承载控制，以空间画布组织生成</h2>
-            <p class="tc-plan-r1__lead">TwitCanva 将原本混在描述里的创作要素，解耦为<strong>角色身份、3D 动作、空间站位与群像环境</strong>四类独立资产。创作者可以分别创建和独立调整每个节点，再通过画布连线确立约束关系，协同用于图像与视频生成。</p>
-          </div>
-
-          <!-- Right 40%: Cognitive Conversion (Before / After) -->
-          <div class="tc-plan-r1__top-right">
-            <span class="tc-plan-r1__meta-right">MAKE CONTROL EXPLICIT</span>
-            
-            <div class="tc-plan-r1__convert-block">
-              <span class="tc-plan-r1__convert-kicker">BEFORE</span>
-              <div class="tc-plan-r1__convert-title">变量隐含在一次生成里</div>
-              <div class="tc-plan-r1__convert-sub">ONE PROMPT &middot; ONE SAMPLING SPACE</div>
-              <div class="tc-plan-r1__convert-list">
-                Character &middot; Pose &middot; Relation<br>Crowd &middot; Environment
-              </div>
-            </div>
-
-            <div class="tc-plan-r1__convert-arrow" aria-hidden="true">&darr; DECOMPOSE</div>
-
-            <div class="tc-plan-r1__convert-block">
-              <span class="tc-plan-r1__convert-kicker">AFTER</span>
-              <div class="tc-plan-r1__convert-title">变量进入显式控制</div>
-              <div class="tc-plan-r1__convert-sub">EXPLICIT CONTROL PLAN</div>
-              <div class="tc-plan-r1__convert-list tc-plan-r1__convert-list--after">
-                SUBJECT &middot; SPATIAL &middot; WORLD
-              </div>
-            </div>
+            <p class="tc-plan-r1__lead">
+              TwitCanva 将原本混在描述里的创作要素，解耦为<strong>角色身份、3D 动作、空间站位与群像环境</strong>四类独立控制资产。创作者可以分别创建和独立调整每个节点，再通过画布连线确立约束依赖，协同用于图像与视频生成。
+            </p>
           </div>
         </div>
 
-        <!-- BEAT B: 3-COLUMN TAXONOMY RAIL (1240px · COMPACT SKELETON) -->
-        <div class="tc-plan-r1__taxonomy-rail" aria-label="三域分类学解构">
-          <!-- Column 1: Subject -->
-          <div class="tc-plan-r1__taxonomy-col">
-            <span class="tc-plan-r1__tax-num">01 / SUBJECT</span>
-            <div class="tc-plan-r1__tax-main">Character &middot; Pose</div>
-            <div class="tc-plan-r1__tax-skeleton">WHO / HOW</div>
-            <p class="tc-plan-r1__tax-desc">谁在场，以及角色如何行动。</p>
+        <!-- BEAT B: 4-LANE DECOUPLED ASSET SPEC (四维解耦控制资产导轨) -->
+        <div class="tc-plan-r1__asset-grid" aria-label="四维控制资产图谱">
+          
+          <!-- Column 01: Identity -->
+          <div class="tc-plan-r1__asset-card">
+            <div class="asset-card-head">
+              <span class="asset-num">01 / IDENTITY</span>
+              <span class="asset-role">WHO // 视觉特征</span>
+            </div>
+            <h3 class="asset-title">角色身份资产</h3>
+            <p class="asset-core">锁定面部与服装特征，杜绝身份漂移</p>
+            <div class="asset-spec-tag">
+              <span class="tag-dot"></span>
+              <span>3 位核心主角 (战士 · 控制者 · 智者)</span>
+            </div>
           </div>
 
-          <!-- Column 2: Spatial -->
-          <div class="tc-plan-r1__taxonomy-col">
-            <span class="tc-plan-r1__tax-num">02 / SPATIAL</span>
-            <div class="tc-plan-r1__tax-main">Relation &middot; Scene Staging</div>
-            <div class="tc-plan-r1__tax-skeleton">WITH WHOM / WHERE</div>
-            <p class="tc-plan-r1__tax-desc">人物彼此怎么站，以及主体如何组织在空间里。</p>
+          <!-- Column 02: Pose -->
+          <div class="tc-plan-r1__asset-card">
+            <div class="asset-card-head">
+              <span class="asset-num">02 / POSE</span>
+              <span class="asset-role">HOW // 空间骨骼</span>
+            </div>
+            <h3 class="asset-title">3D 动作姿态资产</h3>
+            <p class="asset-core">显式骨骼空间约束，稳定命中动作意图</p>
+            <div class="asset-spec-tag">
+              <span class="tag-dot"></span>
+              <span>独立微调 · 跨角色复用 · 分支派生</span>
+            </div>
           </div>
 
-          <!-- Column 3: World -->
-          <div class="tc-plan-r1__taxonomy-col">
-            <span class="tc-plan-r1__tax-num">03 / WORLD</span>
-            <div class="tc-plan-r1__tax-main">Crowd &middot; Environment</div>
-            <div class="tc-plan-r1__tax-skeleton">SCALE / CONTEXT</div>
-            <p class="tc-plan-r1__tax-desc">群像如何组织，以及场景发生在什么环境中。</p>
+          <!-- Column 03: Staging -->
+          <div class="tc-plan-r1__asset-card">
+            <div class="asset-card-head">
+              <span class="asset-num">03 / STAGING</span>
+              <span class="asset-role">WHERE // 空间几何</span>
+            </div>
+            <h3 class="asset-title">空间站位拓扑</h3>
+            <p class="asset-core">约束角色间距与前后景深，锁定防守阵型</p>
+            <div class="asset-spec-tag">
+              <span class="tag-dot"></span>
+              <span>三角防御拓扑 · 纵深拉开 · 机位锁定</span>
+            </div>
           </div>
+
+          <!-- Column 04: Context -->
+          <div class="tc-plan-r1__asset-card">
+            <div class="asset-card-head">
+              <span class="asset-num">04 / CONTEXT</span>
+              <span class="asset-role">WORLD // 宏观世界</span>
+            </div>
+            <h3 class="asset-title">群像军团与场景</h3>
+            <p class="asset-core">解耦背景环境与规模阵列，提供统一光影底座</p>
+            <div class="asset-spec-tag">
+              <span class="tag-dot"></span>
+              <span>50+ 机械卫兵阵列 · 18号机库顶光</span>
+            </div>
+          </div>
+
         </div>
 
-        <!-- BEAT C: REAL CONTROL PLAN CANVAS (1180px CENTERPIECE) -->
-        <div class="tc-plan-r1__canvas-section">
-          <div class="tc-plan-r1__canvas-header">
-            REAL PRODUCT EVIDENCE / <span class="highlight">CONTROL PLAN</span>
+        <!-- BEAT C: REAL CONTROL PLAN CANVAS (1240px 真实生产节点流工作台) -->
+        <div class="tc-plan-r1__canvas-workbench">
+          <div class="workbench-bar">
+            <div class="workbench-bar-left">
+              <span class="workbench-dot"></span>
+              <span class="workbench-kicker">REAL PRODUCT EVIDENCE // 生产级控制流</span>
+              <span class="workbench-title">TWITCANVA CONTROL PLAN · 15-NODE COMPOSABLE GRAPH</span>
+            </div>
+            <div class="workbench-bar-right">
+              <span class="workbench-status">● PRODUCTION PIPELINE ACTIVE</span>
+            </div>
           </div>
 
-          <div class="tc-plan-r1__media-frame">
+          <div class="workbench-stage">
             <img class="tc-plan-r1__img-canvas" src="assets/images/twitcanva/twitcanva-p2-control-plan-canvas.png" alt="TwitCanva 02 Control Plan 真实控制画布蓝图" loading="eager" decoding="async">
           </div>
 
           <!-- System Formula Rail (Single Top Hairline, Pure Notation) -->
-          <div class="tc-plan-r1__formula-rail" aria-label="三域生成系统公式">
-            <span class="tc-plan-r1__formula-item">SUBJECT</span>
+          <div class="tc-plan-r1__formula-rail" aria-label="四维生成系统公式">
+            <span class="tc-plan-r1__formula-item">01 IDENTITY 角色身份</span>
             <span class="tc-plan-r1__formula-op">+</span>
-            <span class="tc-plan-r1__formula-item">SPATIAL</span>
+            <span class="tc-plan-r1__formula-item">02 POSE 3D动作姿态</span>
             <span class="tc-plan-r1__formula-op">+</span>
-            <span class="tc-plan-r1__formula-item">WORLD</span>
+            <span class="tc-plan-r1__formula-item">03 STAGING 空间站位</span>
+            <span class="tc-plan-r1__formula-op">+</span>
+            <span class="tc-plan-r1__formula-item">04 CONTEXT 群像环境</span>
             <span class="tc-plan-r1__formula-arrow" aria-hidden="true">&rarr;</span>
-            <span class="tc-plan-r1__formula-dest">FINAL SCENE</span>
+            <span class="tc-plan-r1__formula-dest">终局电影级生成结果 (FINAL SCENE)</span>
           </div>
         </div>
 
