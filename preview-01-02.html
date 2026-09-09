@@ -460,82 +460,90 @@
 
         </div>
 
-        <!-- 05. The 3 Core Mechanisms Dissection (三大根因深度解剖台 · 去卡片化蓝图图谱) -->
-        <div class="tc-problem-r2__forensic-ledger">
-          <div class="ledger-header">
-            <div class="ledger-header-left">
-              <span class="ledger-kicker">ROOT CAUSE FORENSIC DISSECTION // 底层深层机理解剖台</span>
-              <h3 class="ledger-title">为什么单变量修改，会引发全局连锁反应？</h3>
+        <!-- 05 & 06. Unified Diagnosis & Product Judgment Foundation (根因诊断与产品决断一体化底座) -->
+        <div class="tc-problem-r2__insight-foundation">
+          
+          <!-- Upper Deck: Dual-Core Root Cause Diagnosis -->
+          <div class="foundation-diagnosis">
+            <div class="diagnosis-header">
+              <div class="diagnosis-header-left">
+                <span class="foundation-kicker">ROOT CAUSE ANALYSIS // 问题根因剖析</span>
+                <h3 class="diagnosis-title">为什么单变量修改，会引发全局连锁反应？</h3>
+              </div>
+              <div class="diagnosis-telemetry">
+                <span class="telemetry-pill">● 双核机理解剖 // DUAL-CORE ENGINE</span>
+              </div>
             </div>
-            <div class="ledger-header-telemetry">
-              <span class="telemetry-tag">● 根因透视 // CAUSAL CHAIN</span>
-            </div>
-          </div>
 
-          <div class="ledger-columns-track">
-            <!-- Mechanism 01: Input Conditioning Entanglement -->
-            <div class="ledger-column">
-              <div class="ledger-column-top">
-                <div class="ledger-col-badge">
+            <div class="diagnosis-grid">
+              <!-- 01 Input Conditioning Entanglement -->
+              <div class="diagnosis-column">
+                <div class="diagnosis-col-top">
                   <span class="col-num">01 / 输入端：描述耦合</span>
                   <span class="col-tech">CONDITIONING ENTANGLEMENT</span>
                 </div>
-              </div>
-
-              <h4 class="ledger-col-title">文字描述无法提供独立的控制依据</h4>
-              
-              <p class="ledger-col-body">
-                文字没有物理空间和图层的概念。长相、动作与站位混在同一段描述里，模型接收到的是一个混合条件，根本无法单独控制某一项。
-              </p>
-
-              <div class="ledger-col-formula">
-                <span class="formula-in">长相与动作混写</span>
-                <span class="formula-arrow">➔</span>
-                <span class="formula-out formula-out--err">无法只改动作不换脸</span>
-              </div>
-            </div>
-
-            <!-- Mechanism 02: Model Global Latent Resampling -->
-            <div class="ledger-column">
-              <div class="ledger-column-top">
-                <div class="ledger-col-badge">
-                  <span class="col-num">02 / 模型端：全图重算</span>
-                  <span class="col-tech">GLOBAL LATENT RESAMPLING</span>
+                <h4 class="col-title">文字描述无法提供独立的控制依据</h4>
+                <p class="col-body">
+                  文字没有物理空间和图层的概念。长相、动作与站位混在同一段描述里，模型接收到的是一个混合条件，根本无法单独控制某一项。
+                </p>
+                <div class="col-formula">
+                  <span class="formula-in">长相与动作混写</span>
+                  <span class="formula-arrow">➔</span>
+                  <span class="formula-out formula-out--err">无法只改动作不换脸</span>
                 </div>
               </div>
 
-              <h4 class="ledger-col-title">扩散机制基于全局加噪去噪，没有局部图层隔离</h4>
-              
-              <p class="ledger-col-body">
-                模型在潜空间是全图协同去噪的。只要 Prompt 稍有变动，全局注意力权重全部重置，模型必然重绘整张画面，无法只锁定局部。
-              </p>
-
-              <div class="ledger-col-formula">
-                <span class="formula-in">全图重新加噪</span>
-                <span class="formula-arrow">➔</span>
-                <span class="formula-out formula-out--err">无法只锁定局部生成</span>
+              <!-- 02 Model Global Latent Resampling -->
+              <div class="diagnosis-column">
+                <div class="diagnosis-col-top">
+                  <span class="col-num">02 / 模型端：全图重算</span>
+                  <span class="col-tech">GLOBAL LATENT RESAMPLING</span>
+                </div>
+                <h4 class="col-title">扩散机制基于全局加噪去噪，没有局部图层隔离</h4>
+                <p class="col-body">
+                  模型在潜空间是全图协同去噪的。只要 Prompt 稍有变动，全局注意力权重全部重置，模型必然重绘整张画面，无法只锁定局部。
+                </p>
+                <div class="col-formula">
+                  <span class="formula-in">全图重新加噪</span>
+                  <span class="formula-arrow">➔</span>
+                  <span class="formula-out formula-out--err">无法只锁定局部生成</span>
+                </div>
               </div>
             </div>
-
-
           </div>
-        </div>
 
-        <!-- 06. Product Verdict (底层产品收束) -->
-        <div class="tc-problem-r2__verdict">
-          <div class="verdict-main">
-            <span class="verdict-kicker">PRODUCT JUDGMENT // 核心判断</span>
-            <h3 class="verdict-headline">改动作时，已有的角色、站位和镜头应该能继续用。</h3>
-            <p class="verdict-lead">
-              问题不是模型画不好，而是<strong>所有变量混在了一起</strong>——只要没有把控制显式拆开，任何局部微调都会沦为全图重新抽卡。
-            </p>
+          <!-- Pivot Bridge: Causal Deduction Line (因果演进推导桥梁) -->
+          <div class="foundation-pivot-bridge" aria-hidden="true">
+            <span class="pivot-hairline"></span>
+            <div class="pivot-badge">
+              <span class="pivot-arrow">↓</span>
+              <span class="pivot-text">由此得出产品核心判断 // PRODUCT JUDGMENT</span>
+              <span class="pivot-arrow">↓</span>
+            </div>
+            <span class="pivot-hairline"></span>
           </div>
-          <div class="verdict-handoff">
-            <a href="#twitcanva-control-plan-r1" class="verdict-link">
-              <span>NEXT / 02 THE CONTROL PLAN · 如何把不同的要求显式拆开</span>
-              <span class="arrow" aria-hidden="true">&rarr;</span>
-            </a>
+
+          <!-- Lower Deck: Product Judgment & Strategic Verdict -->
+          <div class="foundation-verdict-deck">
+            <div class="verdict-main-copy">
+              <div class="verdict-kicker-row">
+                <span class="verdict-dot"></span>
+                <span class="verdict-kicker">STRATEGIC VERDICT // 破局法则</span>
+              </div>
+              <h3 class="verdict-headline">改动作时，已有的角色、站位和镜头应该能继续用。</h3>
+              <p class="verdict-lead">
+                问题不是模型画不好，而是<strong>所有变量混在了一起</strong>——只要没有把控制显式拆开，任何局部微调都会沦为全图重新抽卡。
+              </p>
+            </div>
+            <div class="verdict-handoff-action">
+              <a href="#twitcanva-control-plan-r1" class="verdict-next-btn">
+                <span class="btn-label">NEXT / 02 THE CONTROL PLAN</span>
+                <span class="btn-sub">如何把不同的要求显式拆开</span>
+                <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
           </div>
+
         </div>
 
         <!-- Comparison Notice Divider -->
