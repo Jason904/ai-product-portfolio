@@ -605,216 +605,141 @@
 }
 
 /* --------------------------------------------------------------------------
-   04. REAL WORKFLOW WORKBENCH (How This Scene Was Built)
+   04. REAL WORKFLOW WORKBENCH (Integrated In-Canvas Viewport)
    -------------------------------------------------------------------------- */
 .tc-h1-r1__control {
   display: flex;
   flex-direction: column;
-  margin-bottom: clamp(2.5rem, 4vw, 4rem);
+  margin-bottom: clamp(3rem, 4.5vw, 4.5rem);
 }
 
-.tc-h1-r1__control-header {
-  display: flex !important;
-  flex-direction: row !important;
-  justify-content: space-between !important;
-  align-items: flex-end !important;
-  text-align: left !important;
-  width: 100% !important;
-  flex-wrap: wrap !important;
-  gap: 16px !important;
-  margin-bottom: 18px !important;
-  padding-bottom: 12px !important;
-  border-bottom: 1px solid rgba(23, 23, 20, 0.1) !important;
-}
-
-.tc-h1-r1__control-title-group {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: flex-start !important;
-  text-align: left !important;
-  gap: 6px !important;
-}
-
-.tc-h1-r1__control-kicker {
-  font-family: var(--font-mono, monospace) !important;
-  font-size: 11px !important;
-  font-weight: 750 !important;
-  letter-spacing: 0.1em !important;
-  color: #c8683d !important;
-  text-transform: uppercase !important;
-  margin: 0 !important;
-  display: block !important;
-}
-
-.tc-h1-r1__control-sub {
-  font-family: var(--font-sans, sans-serif) !important;
-  font-size: clamp(20px, 2.2vw, 25px) !important;
-  font-weight: 800 !important;
-  color: #171714 !important;
-  margin: 0 !important;
-  letter-spacing: -0.015em !important;
-  text-transform: none !important;
-  word-break: keep-all !important;
-}
-
-.tc-h1-r1__control-index-rail {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-mono, monospace);
-  font-size: 10.5px;
-}
-
-.tc-h1-r1__control-index-rail .index-token {
-  padding: 3px 7px;
-  border-radius: 3px;
-  background: rgba(23, 23, 20, 0.04);
-  border: 1px solid rgba(23, 23, 20, 0.08);
-  color: #423e38;
-  font-weight: 650;
-}
-
-.tc-h1-r1__control-index-rail .index-sep {
-  color: rgba(23, 23, 20, 0.25);
-}
-
-/* Pipeline Topology Signal Flow */
-.tc-h1-r1__pipeline-rail {
-  margin-bottom: 14px;
-}
-
-.tc-h1-r1__pipeline-rail .pipeline-track {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  font-family: var(--font-mono, monospace);
-  font-size: 11px;
-  color: #57534e;
-}
-
-.tc-h1-r1__pipeline-rail .pipeline-node {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: 600;
-}
-
-.tc-h1-r1__pipeline-rail .pipeline-node .dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background-color: #c8683d;
-}
-
-.tc-h1-r1__pipeline-rail .pipeline-node--dest {
-  color: #c8683d;
-  font-weight: 750;
-}
-
-.tc-h1-r1__pipeline-rail .pipeline-arrow {
-  color: #a8a29e;
-}
-
-/* Workbench Frame */
-.tc-h1-r1__workbench-frame {
+.tc-h1-r1__workbench-frame--integrated {
+  position: relative;
+  width: 100%;
   border-radius: 8px;
   overflow: hidden;
-  background: #11110f;
+  background: #0d0d0b;
   border: 1px solid rgba(23, 23, 20, 0.18);
-  box-shadow: 0 16px 44px rgba(23, 23, 20, 0.1);
-}
-
-.tc-h1-r1__workbench-frame .workbench-bar {
+  box-shadow: 0 16px 48px rgba(23, 23, 20, 0.12);
   display: flex;
+  flex-direction: column;
+}
+
+/* Top Floating HUD Overlay */
+.tc-h1-r1__canvas-top-hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  padding: 10px 18px;
-  background: #191816;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  font-family: var(--font-mono, monospace);
-  font-size: 11px;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px 18px;
+  padding: 14px 20px 18px;
+  background: linear-gradient(180deg, rgba(10, 10, 8, 0.92) 0%, rgba(10, 10, 8, 0.6) 65%, transparent 100%);
+  pointer-events: none;
 }
 
-.tc-h1-r1__workbench-frame .workbench-bar-left {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+.tc-h1-r1__canvas-top-hud .hud-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  pointer-events: auto;
 }
 
-.tc-h1-r1__workbench-frame .workbench-badge {
-  background: rgba(200, 104, 61, 0.18);
-  color: #e07f55;
-  border: 1px solid rgba(200, 104, 61, 0.35);
-  padding: 2px 7px;
-  border-radius: 3px;
-  font-weight: 750;
-  letter-spacing: 0.08em;
-}
-
-.tc-h1-r1__workbench-frame .workbench-title {
-  color: #dedcd5;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-}
-
-.tc-h1-r1__workbench-frame .workbench-meta {
-  color: #8a8880;
+.tc-h1-r1__canvas-top-hud .hud-kicker {
+  font-family: var(--font-mono, monospace);
   font-size: 10.5px;
-  letter-spacing: 0.06em;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  color: #e07f55;
+  text-transform: uppercase;
 }
 
-.tc-h1-r1__media-frame--canvas {
+.tc-h1-r1__canvas-top-hud .hud-title {
+  font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif);
+  font-size: clamp(17px, 1.8vw, 22px);
+  font-weight: 800;
+  color: #f4efe9;
+  margin: 0;
+  letter-spacing: -0.015em;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.tc-h1-r1__canvas-top-hud .hud-index-rail {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono, monospace);
+  font-size: 10.5px;
+  background: rgba(18, 18, 16, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 5px 12px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  pointer-events: auto;
+}
+
+.tc-h1-r1__canvas-top-hud .index-token {
+  color: #d6d3cd;
+  font-weight: 650;
+  letter-spacing: 0.05em;
+}
+
+.tc-h1-r1__canvas-top-hud .index-sep {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+/* Canvas Viewport (Controlled Height) */
+.tc-h1-r1__canvas-viewport {
   width: 100%;
+  max-height: clamp(520px, 52vw, 680px);
+  overflow: hidden;
   position: relative;
-  background-color: #11110f;
+  background-color: #0b0b0a;
 }
 
 .tc-h1-r1__img--canvas {
   width: 100%;
   height: auto;
   display: block;
+  object-fit: cover;
+  object-position: top center;
 }
 
-/* Forensic Note below Canvas */
-.tc-h1-r1__canvas-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 24px;
-  flex-wrap: wrap;
-  margin-top: 14px;
-  padding: 0 4px;
+/* Bottom Floating Dock Overlay */
+.tc-h1-r1__canvas-bottom-dock {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  padding: 12px 20px;
+  background: rgba(12, 12, 10, 0.84);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
 }
 
-.tc-h1-r1__canvas-desc {
-  flex: 1;
-  min-width: 280px;
-  max-width: 720px;
-  font-size: 13.5px;
-  line-height: 1.65;
-  color: #4a4842;
+.tc-h1-r1__canvas-bottom-dock .dock-desc {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #dedcd5;
   margin: 0;
   word-break: keep-all;
+  max-width: 900px;
 }
 
-.tc-h1-r1__canvas-telemetry {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-mono, monospace);
-  font-size: 10.5px;
-  color: #8c8a82;
-  letter-spacing: 0.05em;
-}
-
-.tc-h1-r1__canvas-telemetry .telemetry-dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background-color: #10b981;
+@media (max-width: 900px) {
+  .tc-h1-r1__canvas-top-hud {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
 }
 
 /* --------------------------------------------------------------------------

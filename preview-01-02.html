@@ -203,60 +203,42 @@
           </div>
         </div>
 
-        <!-- 04. Real Workflow Workbench (How This Scene Was Built) -->
+        <!-- 04. Real Workflow Workbench (Integrated In-Canvas Viewport) -->
         <div class="tc-h1-r1__control">
-          <div class="tc-h1-r1__control-header">
-            <div class="tc-h1-r1__control-title-group">
-              <span class="tc-h1-r1__control-kicker">HOW THIS SCENE WAS BUILT</span>
-              <h3 class="tc-h1-r1__control-sub">这个场景，怎样在 TwitCanva 中完成？</h3>
-            </div>
-            <div class="tc-h1-r1__control-index-rail" aria-label="创作输入索引导轨">
-              <span class="index-token">CHARACTER</span>
-              <span class="index-sep">·</span>
-              <span class="index-token">POSE</span>
-              <span class="index-sep">·</span>
-              <span class="index-token">RELATION</span>
-              <span class="index-sep">·</span>
-              <span class="index-token">CROWD</span>
-              <span class="index-sep">·</span>
-              <span class="index-token">WORLD</span>
-            </div>
-          </div>
-
-          <!-- Pipeline Topology Signal Flow -->
-          <div class="tc-h1-r1__pipeline-rail" aria-label="输入汇聚流程">
-            <div class="pipeline-track">
-              <span class="pipeline-node"><span class="dot"></span> 角色与动作参考</span>
-              <span class="pipeline-arrow">&rarr;</span>
-              <span class="pipeline-node"><span class="dot"></span> 人物关系与站位</span>
-              <span class="pipeline-arrow">&rarr;</span>
-              <span class="pipeline-node"><span class="dot"></span> 机器人群像与场景</span>
-              <span class="pipeline-arrow">&rarr;</span>
-              <span class="pipeline-node pipeline-node--dest">连线协同汇聚生成</span>
-            </div>
-          </div>
-
-          <!-- Workbench Frame (Topology Viewport) -->
-          <div class="tc-h1-r1__workbench-frame">
-            <div class="workbench-bar">
-              <div class="workbench-bar-left">
-                <span class="workbench-badge">CANVAS TOPOLOGY</span>
-                <span class="workbench-title">MASTER WORKFLOW GRAPH // 真实 15 节点连线工作流</span>
+          
+          <!-- Integrated Workbench Viewport Frame -->
+          <div class="tc-h1-r1__workbench-frame tc-h1-r1__workbench-frame--integrated">
+            
+            <!-- Top Floating HUD Overlay -->
+            <div class="tc-h1-r1__canvas-top-hud">
+              <div class="hud-header-left">
+                <span class="hud-kicker">HOW THIS SCENE WAS BUILT</span>
+                <h3 class="hud-title">这个场景，怎样在 TwitCanva 中完成？</h3>
               </div>
-              <div class="workbench-bar-right">
-                <span class="workbench-meta">15 NODES · 4 ASSET LANES · 1 OUTPUT</span>
+              <div class="hud-index-rail" aria-label="创作输入索引导轨">
+                <span class="index-token">CHARACTER</span>
+                <span class="index-sep">·</span>
+                <span class="index-token">POSE</span>
+                <span class="index-sep">·</span>
+                <span class="index-token">RELATION</span>
+                <span class="index-sep">·</span>
+                <span class="index-token">CROWD</span>
+                <span class="index-sep">·</span>
+                <span class="index-token">WORLD</span>
               </div>
             </div>
-            <div class="tc-h1-r1__media-frame tc-h1-r1__media-frame--canvas">
+
+            <!-- Canvas Image Container -->
+            <div class="tc-h1-r1__canvas-viewport">
               <img class="tc-h1-r1__img--canvas" src="assets/images/twitcanva/twitcanva-h1-control-canvas.png" alt="TwitCanva H1 控制画布工作流拓扑" loading="eager" decoding="async">
             </div>
-          </div>
 
-          <!-- Forensic Note below Canvas -->
-          <div class="tc-h1-r1__canvas-footer">
-            <p class="tc-h1-r1__canvas-desc">
-              角色与动作参考、人物关系、群像和场景等输入通过节点连接，共同用于生成。创作者可以沿用已有输入，继续调整当前的创作内容。
-            </p>
+            <!-- Bottom Floating Dock Overlay -->
+            <div class="tc-h1-r1__canvas-bottom-dock">
+              <p class="dock-desc">
+                角色与动作参考、人物关系、群像和场景等输入通过节点连接，共同用于生成。创作者可以沿用已有输入，继续调整当前的创作内容。
+              </p>
+            </div>
 
           </div>
         </div>
