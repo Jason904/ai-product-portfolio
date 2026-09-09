@@ -196,85 +196,52 @@
   font-weight: 800;
 }
 
-.tc-h1-r1__contrast-rail {
+.tc-h1-r1__contrast-flow {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #423e38;
   padding-top: 14px;
   border-top: 1px dashed rgba(23, 23, 20, 0.12);
   width: 100%;
-  flex-wrap: wrap;
-  background: transparent;
-  border-left: none;
-  border-right: none;
-  border-bottom: none;
-  box-shadow: none;
 }
 
-.tc-h1-r1__contrast-rail .contrast-rail-lead {
-  display: inline-flex;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-.tc-h1-r1__contrast-rail .rail-bracket {
+.tc-h1-r1__contrast-flow .flow-prefix {
   font-family: var(--font-mono, monospace);
   font-size: 11px;
   font-weight: 750;
   color: #c8683d;
-  letter-spacing: 0.08em;
-  background: rgba(200, 104, 61, 0.08);
-  border: 1px solid rgba(200, 104, 61, 0.22);
-  padding: 2px 7px;
-  border-radius: 3px;
+  letter-spacing: 0.06em;
 }
 
-.tc-h1-r1__contrast-rail .contrast-rail-flow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 12.5px;
-  letter-spacing: 0.01em;
-  flex-wrap: wrap;
-}
-
-.tc-h1-r1__contrast-rail .flow-origin {
+.tc-h1-r1__contrast-flow .flow-from {
   color: #78746d;
   font-weight: 600;
   text-decoration: line-through;
   text-decoration-color: rgba(200, 104, 61, 0.45);
 }
 
-.tc-h1-r1__contrast-rail .flow-track {
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-}
-
-.tc-h1-r1__contrast-rail .track-line {
-  width: 20px;
-  height: 1px;
-  background: repeating-linear-gradient(90deg, #c8683d 0, #c8683d 3px, transparent 3px, transparent 6px);
-}
-
-.tc-h1-r1__contrast-rail .track-arrow {
+.tc-h1-r1__contrast-flow .flow-arrow {
   color: #c8683d;
   font-weight: 800;
-  font-size: 13px;
-  line-height: 1;
+  font-size: 14px;
+  margin: 0 2px;
 }
 
-.tc-h1-r1__contrast-rail .flow-dest {
+.tc-h1-r1__contrast-flow .flow-to {
   color: #171714;
   font-weight: 600;
 }
 
-.tc-h1-r1__contrast-rail .flow-dest strong {
+.tc-h1-r1__contrast-flow .flow-to strong {
   color: #171714;
   font-weight: 750;
 }
 
-.tc-h1-r1__contrast-rail .flow-highlight {
+.tc-h1-r1__contrast-flow .highlight-accent {
   color: #c8683d;
   font-weight: 800;
   padding: 1px 5px;
@@ -282,48 +249,70 @@
   border-radius: 2px;
 }
 
-.tc-h1-r1__solo-badge {
+/* Tactile Solo Delivery Plate (Engineering Spec Badge) */
+.tc-h1-r1__solo-plate {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  margin-top: 4px;
+  gap: 12px;
+  padding: 6px 14px 6px 6px;
+  background: rgba(23, 23, 20, 0.032);
+  border: 1px solid rgba(23, 23, 20, 0.12);
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(23, 23, 20, 0.03);
   width: fit-content;
   flex-wrap: wrap;
+  margin-top: 2px;
 }
 
-.tc-h1-r1__solo-badge .solo-chip {
+.tc-h1-r1__solo-plate .solo-badge {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-family: var(--font-mono, monospace);
-  font-size: 10.5px;
-  font-weight: 800;
-  color: #171714;
-  letter-spacing: 0.08em;
-  background: rgba(23, 23, 20, 0.05);
-  border: 1px solid rgba(23, 23, 20, 0.14);
+  background: #171714;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   padding: 3px 8px;
   border-radius: 3px;
+  flex-shrink: 0;
 }
 
-.tc-h1-r1__solo-badge .solo-chip .dot {
+.tc-h1-r1__solo-plate .pulse-dot {
   width: 5px;
   height: 5px;
   border-radius: 50%;
   background-color: #c8683d;
+  box-shadow: 0 0 5px rgba(200, 104, 61, 0.6);
 }
 
-.tc-h1-r1__solo-badge .solo-divider {
-  color: rgba(23, 23, 20, 0.25);
-  font-size: 11px;
+.tc-h1-r1__solo-plate .badge-text {
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 800;
+  color: #f4efe9;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.tc-h1-r1__solo-badge .solo-desc {
+.tc-h1-r1__solo-plate .solo-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-family: var(--font-sans, sans-serif);
   font-size: 12px;
-  font-weight: 650;
+}
+
+.tc-h1-r1__solo-plate .solo-role {
+  color: #171714;
+  font-weight: 750;
+}
+
+.tc-h1-r1__solo-plate .solo-sep {
+  color: #a8a29e;
+  font-size: 10px;
+}
+
+.tc-h1-r1__solo-plate .solo-paradigm {
   color: #57534e;
-  letter-spacing: 0.02em;
+  font-weight: 600;
 }
 
 /* Right 36% Architecture Spec Rail Box */
