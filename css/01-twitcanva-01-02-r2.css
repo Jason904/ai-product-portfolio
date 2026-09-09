@@ -483,12 +483,12 @@
 }
 
 .tc-h1-r1__frame-telemetry .telemetry-title {
-  font-family: var(--font-mono, monospace);
-  font-size: 10.5px;
+  font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif);
+  font-size: 11.5px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   color: #eae9e4;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .tc-h1-r1__frame-telemetry .telemetry-pill {
