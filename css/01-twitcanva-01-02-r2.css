@@ -1729,7 +1729,8 @@
 .tc-problem-r2__insight-foundation .verdict-lead strong {
   color: #171714;
   font-weight: 800;
-  border-bottom: 2px solid rgba(200, 104, 61, 0.4);
+  border-bottom: 1.5px solid rgba(200, 104, 61, 0.5);
+  padding-bottom: 1px;
 }
 
 .tc-problem-r2__insight-foundation .verdict-handoff-action {
