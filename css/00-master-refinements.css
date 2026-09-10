@@ -360,3 +360,117 @@ html {
     font-size: 9.5px !important;
   }
 }
+
+/* ==========================================================================
+   VERTICAL RHYTHM LADDER — 全站垂直留白节拍归一 (15 处浏览器批注一次性收口)
+   --------------------------------------------------------------------------
+   Taste Dial · VISUAL_DENSITY: 4  (Editorial Whitespace · 留白是聚焦透镜)
+   设计基准: 反推自已定稿且零投诉的 TwitCanva 章节 (实测墨迹净空 @1327px)
+             126.9 / 125.6 / 163.3 / 198.7 / 154.0 / 150.0 · TC→Hermes 181.0
+
+   三级节拍阶梯  ≈ 4 : 2 : 1 视觉比例
+     T1  章节边界   180px   跨项目换章 (对齐既有 TC→Hermes 181px)
+     T2  板块边界    96px   同一项目内相邻板块
+     T3  标题↔内容   48px   章节标题与其正文绑定, 标题不再飘离内容
+
+   根因锚点 (css/02-hermes.css · 实测):
+     L63   .hermes-plate              padding-bottom: 4.5rem + gap: 2.5rem  ← 双向叠加
+     L29   .hermes-plate--master      padding-bottom: 2rem
+     L1410 .hermes-plate--pipeline    gap: 1.25rem
+     L1997 .hermes-plate--engine      padding: 4rem 0
+     L2004 .hermes-section-head       margin-bottom: 2.2rem  ← 与 plate gap 重复计数
+     L2060 .hermes-inspector-console  padding: 1.6rem + margin-bottom: 2rem
+     同类问题在 #ui-skill-lab (padding 122.4px) 与 #guangfan (padding 122.4px) 复现
+     ⇒ 出程 padding-bottom 与入程 padding-top 双向叠加 + 子级 margin 复利
+
+   实现: 逐对差值校准 (baseline → target), 只动纵向负 margin, 不新增任何盒子。
+   铁律: 零 HTML 改动 · 零文案改动 · 零冻结模块染指
+   ========================================================================== */
+
+:root {
+  --rhythm-chapter: 180px; /* T1 章节边界 */
+  --rhythm-section: 96px;  /* T2 板块边界 */
+  --rhythm-bind: 48px;     /* T3 标题↔内容 */
+}
+
+/* --------------------------------------------------------------------------
+   T2 · Hermes 板间节拍  (plate-1/2/3/4 之间的真空大坑)
+   -------------------------------------------------------------------------- */
+
+/* ① P1 末墨迹 → P2 标题  182.4px → 96px   (-86.4, 吃掉 plate gap 双向叠加) */
+#hermes-plate-1 { margin-bottom: -86.4px !important; }
+
+/* ③ P2 控制台 → P3 标题  192.2px → 96px   (-96.2)
+   根因: plate-2 的 padding-bottom 36px 与 plate-3 的 padding-top 40px 双向叠加。
+   对策: 改用「父级 padding 单侧化」而非子级负 margin —— 否则 plate-2 的分隔导轨
+        会切穿 .hermes-p3tier-console 控制台 (实测溢出 59.2px)
+   补偿: -36 (plate-2 padding-bottom) -40 (plate-3 padding-top) -20.2 (板间隙) */
+#hermes-plate-2 { padding-bottom: 0 !important; }
+#hermes-plate-3 { padding-top: 0 !important; margin-top: -20.2px !important; }
+
+/* ⑤ P4 五层账本 → 能力矩阵  222.6px → 96px  (-126.6, 含 systemize padding + 双 margin) */
+#hermes-plate-4 > .hermes-systemize-section { margin-bottom: -94.6px !important; }
+
+/* --------------------------------------------------------------------------
+   T3 · Hermes 标题 ↔ 内容绑定  (消灭 2.2rem 双重 margin 复利)
+   -------------------------------------------------------------------------- */
+
+/* ② P2 标题 → 导语横幅  91.4px → 48px  (-43.4) */
+#hermes-plate-2 > .hermes-section-head { margin-bottom: -8.2px !important; }
+
+/* ④ P3 标题 → 8Q 推演台  101.8px → 48px  (-53.8) */
+#hermes-plate-3 > .hermes-section-head { margin-bottom: -18.6px !important; }
+
+/* --------------------------------------------------------------------------
+   T1 · 章节边界 180px  (Hermes → UI Skill Lab)
+   -------------------------------------------------------------------------- */
+
+/* ⑥ P4 能力矩阵 → UI Skill Lab 首屏  362px → 180px  (-182)
+   根因: #hermes padding-bottom 122.4px 与 #ui-skill-lab padding-top 122.4px 双向叠加。
+   对策: 「入程单侧承担」—— 出程三段留白全部归零, 由 #ui-skill-lab 独占章节边界。
+        否则 plate-4 的 dashed 导轨会切穿 .hermes-caps-section (实测溢出 73.8px) */
+#hermes-plate-4 { padding-bottom: 0 !important; }
+.project--hermes { padding-bottom: 0 !important; }
+.hermes-caps-section { margin-bottom: 0 !important; }
+.project--ui { padding-top: calc(var(--rhythm-chapter) - 29.2px) !important; } /* 150.8px ⇒ 实测净空 180px */
+
+/* --------------------------------------------------------------------------
+   T2 · UI Skill Lab 段间节拍
+   -------------------------------------------------------------------------- */
+
+/* ⑦ UI 首屏 → 缺失层控制台  184.5px → 96px  (-88.5) */
+#ui-skill-lab > .ui-sheet { margin-bottom: -88.5px !important; }
+
+/* ⑧ 缺失层控制台 → 自动化工作流  126.8px → 96px  (-30.8) */
+#ui-skill-lab > #ui-control-layer { margin-bottom: -30.8px !important; }
+
+/* ⑨ 自动化工作流 → 7 大核心技能  105.2px → 96px  (-9.2) */
+#ui-skill-lab > .ui-workflow-section { margin-bottom: -9.2px !important; }
+
+/* ⑩ 7 大核心技能 → 5 类 AI 产品能力  101.3px → 96px  (-5.3) */
+#ui-skill-lab > #ui-core-skills { margin-bottom: -5.3px !important; }
+
+/* --------------------------------------------------------------------------
+   T1 · 章节边界 180px  (UI Skill Lab → Guangfan)
+   -------------------------------------------------------------------------- */
+
+/* ⑪ 5 类 AI 产品能力 → 光帆首屏  253.2px → 180px  (-73.2)
+   同源根因: #ui-skill-lab padding-bottom 122.4px + #guangfan padding-top 122.4px */
+.project--ui { padding-bottom: 0 !important; }
+.project--guangfan { padding-top: calc(var(--rhythm-chapter) - 27.6px) !important; } /* 152.4px ⇒ 实测净空 180px */
+
+/* --------------------------------------------------------------------------
+   T2 · Guangfan 段间节拍
+   -------------------------------------------------------------------------- */
+
+/* ⑫ 光帆首屏 → 三大核心杠杆  134px → 96px  (-38) */
+#guangfan > .gf-hero { margin-bottom: -38px !important; }
+
+/* ⑬ 三大核心杠杆 → AI as a Lever  72.5px → 96px  (+23.5, 唯一需要撑开的过紧间隙) */
+#guangfan > .gf-core-levers-section { margin-bottom: 23.5px !important; }
+
+/* ⑭ AI as a Lever → 4K 推演舞台  96.3px → 96px  (已达节拍, 仅归零复利) */
+#guangfan > .gf-ai-lever { margin-bottom: -0.3px !important; }
+
+/* ⑮ 4K 推演舞台 → 双轨角色流  104.5px → 96px  (-8.5) */
+#guangfan > .gf-case { margin-bottom: -8.5px !important; }
