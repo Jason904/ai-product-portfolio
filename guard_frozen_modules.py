@@ -26,7 +26,7 @@ def extract_html_sections(html_content: str):
     sections = {}
     
     # 1. TwitCanva
-    twit_start = html_content.find('<section class="project project--twit"')
+    twit_start = html_content.find('<section class="tc-h1-r1" id="twitcanva-h1-r1"')
     hermes_start = html_content.find('<section class="project project--hermes"')
     if twit_start != -1 and hermes_start != -1:
         sections["html_twitcanva"] = html_content[twit_start:hermes_start]
