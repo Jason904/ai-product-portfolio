@@ -1,0 +1,1421 @@
+/* ==========================================================================
+   >>> [MODULE 00: GLOBAL BASE, HERO & DESIGN TOKENS - R2 SANDBOX] <<<
+   PURE EDITORIAL PRODUCT DOSSIER CARDS (ZERO IMAGES · ZERO BLACK BOXES)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   01. HERO STAGE GRID & TITLE
+   -------------------------------------------------------------------------- */
+.hero-copy h1 {
+  font-size: clamp(2.15rem, 3.1vw, 3.25rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.18 !important;
+  letter-spacing: -0.035em !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  margin-bottom: 1.25rem !important;
+}
+
+.hero-copy .hero-sub {
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem) !important;
+  line-height: 1.6 !important;
+  color: #55524c !important;
+  margin-bottom: 1.8rem !important;
+}
+
+/* --------------------------------------------------------------------------
+   02. HERO CARD ARCHITECTURE (ORIGINAL SCATTER POSITIONS PRESERVED 100%)
+   -------------------------------------------------------------------------- */
+.hero-visuals {
+  position: relative !important;
+  height: min(720px, 76dvh) !important;
+  min-height: 560px !important;
+  perspective: 1200px !important;
+}
+
+.hero-card {
+  --scroll-y: 0px;
+  --tilt: 0deg;
+  position: absolute !important;
+  width: clamp(290px, 28vw, 420px) !important;
+  min-height: 255px !important;
+  aspect-ratio: auto !important;
+  border-radius: 20px !important;
+  padding: 1.15rem 1.25rem 1.05rem !important;
+  box-shadow: 0 16px 36px rgba(23, 23, 20, 0.1),
+              inset 0 1px 0 rgba(255, 255, 255, 0.7) !important;
+  border: 1px solid rgba(23, 23, 20, 0.13) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  overflow: hidden !important;
+  text-decoration: none !important;
+  color: inherit !important;
+  cursor: pointer !important;
+  transition: box-shadow 260ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 260ms ease,
+              transform 260ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+}
+
+.hero-card:hover {
+  box-shadow: 0 28px 64px rgba(23, 23, 20, 0.22),
+              0 0 0 1.5px rgba(200, 104, 61, 0.5) !important;
+  border-color: rgba(200, 104, 61, 0.5) !important;
+  z-index: 20 !important;
+}
+
+/* Original Card Stacking Offsets */
+.hero-card--twit {
+  top: 4% !important;
+  left: 9% !important;
+  z-index: 4 !important;
+  background: #fbf8f2 !important;
+  border-color: rgba(23, 23, 20, 0.14) !important;
+  color: #171714 !important;
+}
+
+.hero-card--hermes {
+  top: 30% !important;
+  right: 1% !important;
+  z-index: 3 !important;
+  background: #141412 !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+  color: #f7f2eb !important;
+}
+
+.hero-card--ui {
+  top: 54% !important;
+  left: 1% !important;
+  z-index: 5 !important;
+  background: #eee8de !important;
+  border-color: rgba(23, 23, 20, 0.14) !important;
+  color: #171714 !important;
+}
+
+.hero-card--guangfan {
+  top: 71% !important;
+  right: 10% !important;
+  z-index: 2 !important;
+  background: #d8cdbf !important;
+  border-color: rgba(23, 23, 20, 0.16) !important;
+  color: #171714 !important;
+}
+
+/* --------------------------------------------------------------------------
+   03. CARD INTERNAL PURE EDITORIAL TYPOGRAPHY (ZERO OVERLAP · BREATHING ROOM)
+   -------------------------------------------------------------------------- */
+.plate-meta {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.plate-code {
+  font-family: var(--font-mono, monospace) !important;
+  font-size: 0.68rem !important;
+  font-weight: 750 !important;
+  letter-spacing: 0.14em !important;
+  opacity: 0.72 !important;
+}
+
+.hero-card--hermes .plate-code {
+  color: var(--accent-orange, #c8683d) !important;
+  opacity: 1 !important;
+}
+
+.plate-explore {
+  font-family: var(--font-mono, monospace) !important;
+  font-size: 0.62rem !important;
+  font-weight: 750 !important;
+  letter-spacing: 0.08em !important;
+  color: var(--accent-orange, #c8683d) !important;
+  opacity: 0.8 !important;
+  transition: transform 180ms ease, opacity 180ms ease !important;
+}
+
+.hero-card:hover .plate-explore {
+  opacity: 1 !important;
+  transform: translate(2px, -2px) !important;
+}
+
+.plate-body {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  flex: 1 !important;
+  justify-content: center !important;
+}
+
+.hero-card .plate-title {
+  font-size: clamp(1.35rem, 1.75vw, 1.65rem) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.15 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.hero-card p,
+.hero-card .plate-sub {
+  position: static !important;
+  left: auto !important;
+  bottom: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: clamp(0.72rem, 0.88vw, 0.78rem) !important;
+  line-height: 1.5 !important;
+  opacity: 0.8 !important;
+  color: inherit !important;
+}
+
+/* --------------------------------------------------------------------------
+   04. BOTTOM 3 AI PM CAPABILITY TAGS
+   -------------------------------------------------------------------------- */
+.plate-tags {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 4px !important;
+  padding-top: 10px !important;
+  border-top: 1px solid rgba(23, 23, 20, 0.08) !important;
+}
+
+.hero-card--hermes .plate-tags {
+  border-top-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.plate-tags span {
+  font-size: 0.58rem !important;
+  font-weight: 650 !important;
+  letter-spacing: 0.01em !important;
+  padding: 2.5px 5px !important;
+  border-radius: 4px !important;
+  background: rgba(23, 23, 20, 0.05) !important;
+  border: 1px solid rgba(23, 23, 20, 0.08) !important;
+  white-space: nowrap !important;
+  color: rgba(23, 23, 20, 0.82) !important;
+}
+
+.hero-card--hermes .plate-tags span {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* --------------------------------------------------------------------------
+   02B. HERO CARD IMAGE REFRESH (FULL-BLEED ARTWORK FACES)
+   -------------------------------------------------------------------------- */
+.hero-card {
+  width: auto !important;
+  height: clamp(236px, 34vh, 320px) !important;
+  min-height: 0 !important;
+  aspect-ratio: var(--hero-card-ratio) !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+.hero-card::after {
+  display: none !important;
+}
+
+.hero-card:hover {
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.hero-card-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 22px;
+  filter: drop-shadow(0 16px 28px rgba(23, 23, 20, 0.14));
+  transition: filter 220ms ease, transform 220ms ease;
+}
+
+.hero-card:hover .hero-card-image {
+  filter: drop-shadow(0 24px 38px rgba(23, 23, 20, 0.22));
+  transform: translateY(-3px);
+}
+
+.hero-card--twit {
+  --hero-card-ratio: 1774 / 887;
+  top: 1% !important;
+}
+
+.hero-card--hermes {
+  --hero-card-ratio: 1507 / 1044;
+  top: 24% !important;
+}
+
+.hero-card--ui {
+  --hero-card-ratio: 1508 / 1043;
+  top: 48% !important;
+}
+
+.hero-card--guangfan {
+  --hero-card-ratio: 1672 / 941;
+  top: 63% !important;
+}
+
+/* --------------------------------------------------------------------------
+   02C. HERO ORBITAL 3D DECK (SHALLOW PERSPECTIVE · READABLE CARD PLANES)
+   -------------------------------------------------------------------------- */
+.hero-scroll {
+  min-height: 240dvh;
+}
+
+.hero-stage {
+  isolation: isolate;
+}
+
+.hero-copy,
+.hero-visuals {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-copy {
+  z-index: 5;
+}
+
+.hero-galaxy {
+  position: absolute;
+  inset: 0;
+  left: 50%;
+  width: 100vw;
+  z-index: 0;
+  pointer-events: none;
+  transform: translateX(-50%);
+  background-image: url("../assets/images/hero-refresh/orbital-galaxy.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 82% 50%;
+  opacity: 0.94;
+}
+
+.hero-galaxy::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(243, 239, 232, 0.98) 0%, rgba(243, 239, 232, 0.84) 31%, rgba(243, 239, 232, 0.2) 62%, rgba(243, 239, 232, 0.04) 100%),
+    linear-gradient(180deg, rgba(243, 239, 232, 0.2) 0%, rgba(243, 239, 232, 0) 24%, rgba(243, 239, 232, 0) 76%, rgba(243, 239, 232, 0.35) 100%);
+}
+
+.hero-visuals {
+  perspective: 1400px;
+  perspective-origin: 50% 48%;
+  transform-style: flat;
+}
+
+.hero-card--orbital {
+  --orbit-x: 0px;
+  --orbit-y: 0px;
+  --orbit-z: 0px;
+  --orbit-rx: 0deg;
+  --orbit-ry: 0deg;
+  --orbit-rz: 0deg;
+  --orbit-hover-z: 0px;
+  --orbit-hover-scale: 1;
+  --orbit-scale: 1;
+  --orbit-depth-layer: 1;
+  --orbit-layer: var(--orbit-depth-layer);
+  height: clamp(190px, min(34vh, 24vw), 320px) !important;
+  top: 50% !important;
+  right: auto !important;
+  left: 50% !important;
+  z-index: var(--orbit-layer) !important;
+  transform-origin: 50% 50%;
+  transform:
+    translate3d(-50%, -50%, 0)
+    translate3d(var(--orbit-x), var(--orbit-y), calc(var(--orbit-z) + var(--orbit-hover-z)))
+    rotateX(var(--orbit-rx))
+    rotateY(var(--orbit-ry))
+    rotateZ(var(--orbit-rz))
+    scale(var(--orbit-scale))
+    scale(var(--orbit-hover-scale));
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform;
+  transition: none !important;
+}
+
+.hero-card--orbital:hover {
+  z-index: var(--orbit-layer) !important;
+}
+
+.hero-card--orbital.is-orbital-hovered,
+.hero-card--orbital:focus-visible {
+  --orbit-hover-z: 110px;
+  --orbit-hover-scale: 1.05;
+  --orbit-layer: 1000;
+}
+
+.hero-card__mesh {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transform-style: preserve-3d;
+}
+
+.hero-card--orbital .hero-card-image {
+  pointer-events: none;
+  transform: translateZ(0);
+}
+
+.hero-card--orbital.is-orbital-hovered .hero-card-image,
+.hero-card--orbital:focus-visible .hero-card-image {
+  transform: translate3d(0, -2px, 18px);
+}
+
+
+/* ==========================================================================
+   IMAGE 1 EXACT CALIBRATED REPLICA: HEAVY SANS POSTER TYPOGRAPHY
+   ========================================================================== */
+.hero-copy {
+  max-width: 550px !important;
+}
+
+.hero-copy .kicker {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-family: var(--font-mono, monospace) !important;
+  font-size: 0.72rem !important;
+  font-weight: 750 !important;
+  letter-spacing: 0.13em !important;
+  text-transform: uppercase !important;
+  color: #78736a !important;
+  margin: 0 0 1.4rem 0 !important;
+}
+
+.hero-copy .kicker-mark {
+  width: 7px !important;
+  height: 7px !important;
+  border-radius: 50% !important;
+  background: #d36735 !important;
+  box-shadow: 0 0 0 3.5px rgba(211, 103, 53, 0.22) !important;
+  flex-shrink: 0 !important;
+}
+
+/* Master Heavy Sans Poster Title */
+.hero-title-editorial {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif !important;
+  font-size: clamp(2.35rem, 3.3vw, 3.15rem) !important;
+  font-weight: 900 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.045em !important;
+  color: #0c0c0c !important;
+  margin: 0 0 1.6rem 0 !important;
+  word-break: keep-all !important;
+}
+
+.hero-title-line {
+  display: block !important;
+  white-space: nowrap !important;
+}
+
+.hero-hl--orange {
+  color: #d36735 !important;
+  font-weight: 900 !important;
+}
+
+/* 4-Line Editorial Subtitle */
+.hero-sub-editorial {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+  margin: 0 0 1.8rem 0 !important;
+}
+
+.hero-sub-group {
+  position: relative !important;
+  padding-left: 30px !important;
+}
+
+.hero-sub-group::before {
+  content: "" !important;
+  position: absolute !important;
+  top: calc(0.86em - 3.5px) !important;
+  left: 0 !important;
+  width: 7px !important;
+  height: 7px !important;
+  border-radius: 50% !important;
+  background: #d36735 !important;
+  box-shadow: 0 0 0 3px rgba(211, 103, 53, 0.08) !important;
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+.hero-sub-group + .hero-sub-group {
+  margin-top: 15px !important;
+}
+
+.hero-sub-group:first-child {
+  padding-bottom: 14px !important;
+}
+
+.hero-sub-group:first-child::after {
+  content: "" !important;
+  position: absolute !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  height: 1px !important;
+  background: rgba(23, 23, 20, 0.12) !important;
+  transform: scaleX(1) !important;
+}
+
+.hero-sub-editorial p {
+  font-size: clamp(0.92rem, 1.08vw, 1.02rem) !important;
+  line-height: 1.72 !important;
+  color: #5a564e !important;
+  margin: 0 !important;
+  word-break: keep-all !important;
+}
+
+.hero-sub-line {
+  position: relative !important;
+}
+
+/* Hero author sign-offs: restrained editorial marks in the first viewport. */
+.hero-signatures {
+  position: absolute;
+  right: 0;
+  bottom: clamp(1rem, 2.5vh, 2rem);
+  left: 0;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: clamp(1.5rem, 5vw, 5rem);
+  pointer-events: none;
+}
+
+.hero-signature {
+  margin: 0;
+  opacity: 0.76;
+  mix-blend-mode: multiply;
+  transform-origin: 50% 100%;
+}
+
+.hero-signature img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-signature--build-with-ai {
+  width: clamp(170px, 15vw, 220px);
+  transform: rotate(-1.4deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   03. CLOSING SECTION: 6:4 EDITORIAL SPLIT (60% PROFILE CENTERED · 40% SIDEBAR)
+   Left 60%: Pure Monograph Center-X & Center-Y · Right 40%: Precision Channels
+   ========================================================================== */
+
+.closing-ratio-64,
+.closing-ratio-73 {
+  width: min(1340px, calc(100% - 64px));
+  margin: 0 auto;
+  padding: clamp(5.5rem, 8.5vw, 8rem) 0 clamp(6rem, 9vw, 9rem);
+  border-top: 1px solid rgba(23, 23, 20, 0.12);
+}
+
+.clean-masthead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.6rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid rgba(23, 23, 20, 0.08);
+}
+
+.clean-masthead-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #a84f2d;
+  text-transform: uppercase;
+}
+
+.clean-masthead-icon {
+  font-size: 0.55rem;
+  color: #a84f2d;
+  transform: translateY(-0.5px);
+}
+
+.clean-masthead-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  font-weight: 650;
+  color: #67625a;
+  letter-spacing: 0.06em;
+}
+
+.clean-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2e7d32;
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.15);
+}
+
+/* Master 6:4 Split Layout (60% Profile : 40% Reach & Tracks) */
+.grid-ratio-64,
+.grid-ratio-73 {
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  gap: clamp(2.5rem, 4.5vw, 5rem);
+  align-items: center; /* Vertically center the whole 60% and 40% columns */
+}
+
+/* --- Left Column: 60% Width, Both Horizontally and Vertically Centered --- */
+.col-profile-60,
+.col-profile-70 {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center horizontally in the 60% column */
+  height: 100%;
+  padding: 2rem 1.5rem;
+}
+
+.profile-monograph-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Perfect horizontal center of all children */
+  text-align: center;   /* Balanced center-aligned typography */
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.monograph-name-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.65rem;
+}
+
+.monograph-display-name {
+  font-size: clamp(3.2rem, 4.5vw, 4.3rem);
+  font-weight: 880;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  color: #171714;
+  margin: 0;
+  text-align: center;
+}
+
+/* Single-line integrated bar (Tightened Cadence) */
+.monograph-single-bar {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  white-space: nowrap;
+  margin-bottom: 1.45rem; /* Tightened compact breathing cadence to patent numbers */
+}
+
+.monograph-bar-role {
+  font-size: 1.15rem;
+  font-weight: 780;
+  color: #171714;
+  letter-spacing: -0.018em;
+}
+
+.monograph-bar-sep {
+  color: #a8a39a;
+  margin: 0 0.65rem;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.monograph-bar-creds {
+  font-size: 1.02rem;
+  font-weight: 550;
+  color: #66625a;
+  letter-spacing: 0.01em;
+}
+
+/* Pure Typographic Patent Footprint (Direct Numbers) */
+.monograph-patent-pure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.patent-pure-numbers {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.95rem;
+  margin: 0;
+}
+
+.patent-pure-item {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.patent-pure-val {
+  font-family: var(--font-mono, monospace);
+  font-size: 1.85rem;
+  font-weight: 900;
+  color: #c8683d;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.patent-pure-unit {
+  font-size: 0.86rem;
+  font-weight: 750;
+  color: #171714;
+  letter-spacing: -0.01em;
+}
+
+.patent-pure-plus {
+  font-size: 0.95rem;
+  color: #9c978e;
+  font-weight: 300;
+}
+
+/* --- Right Column: 40% Width (Reach + Tracks Sidebar) --- */
+.col-content-40,
+.col-content-30 {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  border-left: 1px solid rgba(23, 23, 20, 0.08);
+  padding-left: clamp(2rem, 3.5vw, 3.5rem);
+}
+
+.side-block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.85rem;
+}
+
+.side-block-title {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.94rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  color: #171714;
+  text-transform: uppercase;
+}
+
+.side-block-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.65rem;
+  font-weight: 750;
+  color: #2e7d32;
+  background: rgba(46, 125, 50, 0.06);
+  padding: 2px 7px;
+  border-radius: 999px;
+  border: 1px solid rgba(46, 125, 50, 0.18);
+}
+
+.status-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #2e7d32;
+}
+
+.side-block-meta {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.66rem;
+  font-weight: 700;
+  color: #8c867c;
+}
+
+/* Reach List */
+.side-reach-list {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(23, 23, 20, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+.side-reach-item {
+  padding: 0.8rem 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(23, 23, 20, 0.06);
+  transition: background 0.15s ease;
+}
+
+.side-reach-item:last-child {
+  border-bottom: none;
+}
+
+.side-reach-item:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.side-reach-lbl {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #7a756c;
+}
+
+.side-copy-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #171714;
+  font-variant-numeric: tabular-nums;
+  position: relative;
+  transition: color 0.15s ease;
+}
+
+.side-copy-btn:hover {
+  color: #c8683d;
+}
+
+.side-tag {
+  font-size: 0.64rem;
+  font-weight: 650;
+  color: #8c867c;
+  background: rgba(23, 23, 20, 0.04);
+  border: 1px solid rgba(23, 23, 20, 0.09);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+.side-copy-btn[data-copied]::after {
+  content: attr(data-copied);
+  position: absolute;
+  right: 0;
+  top: -1.5rem;
+  background: #171714;
+  color: #fff;
+  font-size: 0.66rem;
+  padding: 2px 6px;
+  border-radius: 3px;
+  white-space: nowrap;
+  animation: fadeInOut 2s ease forwards;
+}
+
+.side-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #171714;
+  transition: color 0.15s ease;
+}
+
+.side-link:hover {
+  color: #c8683d;
+}
+
+.side-arrow {
+  font-size: 0.74rem;
+  color: #8c867c;
+}
+
+/* Experience Tracks Vertical Stack */
+.side-tracks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.side-track-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid rgba(23, 23, 20, 0.06);
+  transition: transform 0.15s ease;
+}
+
+.side-track-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.side-track-row:hover {
+  transform: translateX(3px);
+}
+
+.side-track-idx {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.78rem;
+  font-weight: 850;
+  color: #c8683d;
+  font-variant-numeric: tabular-nums;
+  width: 18px;
+  flex-shrink: 0;
+}
+
+.side-track-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.side-track-name {
+  font-size: 0.88rem;
+  font-weight: 780;
+  color: #171714;
+  line-height: 1.35;
+}
+
+.side-track-desc {
+  font-size: 0.76rem;
+  color: #6a655c;
+  line-height: 1.4;
+}
+
+/* Action Bottom */
+.side-action-bottom {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(23, 23, 20, 0.08);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.side-back-top-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #444038;
+  text-decoration: none;
+  padding: 0.45rem 1.15rem;
+  border-radius: 999px;
+  border: 1px solid rgba(23, 23, 20, 0.14);
+  background: rgba(255, 255, 255, 0.5);
+  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.side-back-top-btn:hover {
+  background: #171714;
+  color: #fff;
+  border-color: #171714;
+  transform: translateY(-2px);
+}
+
+/* Minimal Site Footer */
+.clean-footer {
+  width: min(1340px, calc(100% - 64px));
+  margin: 0 auto;
+  padding: 2.4rem 0 3.6rem;
+  border-top: 1px solid rgba(23, 23, 20, 0.09);
+}
+
+.clean-footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.clean-footer-left {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.clean-footer-brand {
+  font-size: 0.86rem;
+  font-weight: 750;
+  color: #171714;
+}
+
+.clean-footer-sep {
+  color: #a8a39a;
+}
+
+.clean-footer-sub {
+  font-size: 0.8rem;
+  color: #78736a;
+}
+
+.clean-footer-right {
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.clean-footer-axiom {
+  font-family: var(--font-serif, Georgia, serif);
+  font-style: italic;
+  font-size: 0.82rem;
+  color: #8c867c;
+}
+
+.clean-footer-copy {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 650;
+  color: #8c867c;
+  letter-spacing: 0.04em;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 960px) {
+  .grid-ratio-64,
+  .grid-ratio-73 {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+  .col-profile-60,
+  .col-profile-70 {
+    padding: 0;
+    justify-content: center;
+  }
+  .col-content-40,
+  .col-content-30 {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid rgba(23, 23, 20, 0.08);
+    padding-top: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .monograph-single-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    white-space: normal;
+  }
+  .monograph-bar-sep {
+    display: none;
+  }
+  .patent-pure-numbers {
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+  }
+  .clean-masthead {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+  .clean-footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+}
+
+/* ==========================================================================
+   Scheme 2: Contact Chips & 2-Column Domains Mosaic (Unboxed Editorial)
+   ========================================================================== */
+
+.side-reach-chips-block {
+  margin-bottom: 2.2rem;
+}
+
+.side-reach-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.side-chip-btn,
+.side-chip-link {
+  background: rgba(23, 23, 20, 0.04);
+  border: 1px solid rgba(23, 23, 20, 0.09);
+  padding: 0.45rem 0.85rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #171714;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  position: relative;
+}
+
+.side-chip-btn:hover,
+.side-chip-link:hover {
+  background: rgba(23, 23, 20, 0.08);
+  border-color: rgba(23, 23, 20, 0.2);
+  color: #c8683d;
+}
+
+.side-chip-lbl {
+  font-size: 0.72rem;
+  color: #78736a;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 550;
+}
+
+.side-chip-val {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+.side-chip-action {
+  font-size: 0.62rem;
+  color: #c8683d;
+  background: rgba(200, 104, 61, 0.08);
+  border: 1px solid rgba(200, 104, 61, 0.2);
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 600;
+}
+
+.side-chip-btn[data-copied]::after {
+  content: attr(data-copied);
+  position: absolute;
+  right: 0;
+  top: -1.6rem;
+  background: #171714;
+  color: #fff;
+  font-size: 0.66rem;
+  padding: 2px 6px;
+  border-radius: 3px;
+  white-space: nowrap;
+  animation: fadeInOut 2s ease forwards;
+}
+
+.side-chip-arrow {
+  font-size: 0.75rem;
+  color: #8c867c;
+  transition: transform 0.15s ease;
+}
+
+.side-chip-link:hover .side-chip-arrow {
+  transform: translate(2px, -2px);
+  color: #c8683d;
+}
+
+/* 2-Column Experience Mosaic Grid (NO Lines, Clean Typography) */
+.side-tracks-mosaic-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.side-tracks-mosaic-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.95rem 1.35rem;
+}
+
+.side-mosaic-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  transition: transform 0.15s ease;
+}
+
+.side-mosaic-item:hover {
+  transform: translateY(-1px);
+}
+
+.side-mosaic-head {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.side-mosaic-idx {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.74rem;
+  font-weight: 850;
+  color: #a84f2d;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+.side-mosaic-name {
+  font-size: 0.88rem;
+  font-weight: 780;
+  color: #171714;
+  line-height: 1.35;
+}
+
+.side-mosaic-desc {
+  font-size: 0.74rem;
+  color: #66625a;
+  line-height: 1.45;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .side-tracks-mosaic-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+}
+
+/* ==========================================================================
+   Scheme 4-C: Compact Monograph Signature (Zero Buttons, Pure Typography)
+   ========================================================================== */
+
+.side-reach-signature-block {
+  margin-bottom: 0;
+}
+
+.side-reach-signature {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  font-family: var(--font-mono, monospace);
+}
+
+.reach-sig-tel {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+}
+
+.reach-sig-val {
+  font-size: 1.25rem;
+  font-weight: 850;
+  color: #171714;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.15;
+}
+
+.reach-sig-lbl {
+  font-size: 0.78rem;
+  color: #67625a;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.reach-sig-links {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.85rem;
+  font-size: 0.96rem;
+  font-weight: 750;
+  color: #4a463e;
+}
+
+.reach-sig-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: #4a463e;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.reach-sig-link:hover {
+  color: #a84f2d;
+}
+
+.reach-sig-link:focus-visible {
+  border-radius: 2px;
+  outline: 2px solid #a84f2d;
+  outline-offset: 4px;
+}
+
+.reach-sig-sep {
+  color: #c4bebe;
+  font-weight: 300;
+}
+
+@media (min-width: 961px) and (max-width: 1100px) {
+  .side-tracks-mosaic-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reach-sig-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .reach-sig-sep {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .reach-sig-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .reach-sig-sep {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-card--orbital {
+    transition: none !important;
+  }
+
+  .closing-ratio-64,
+  .closing-ratio-64 *,
+  .closing-ratio-64 *::before,
+  .closing-ratio-64 *::after {
+    animation-delay: 0s !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-delay: 0s !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .closing-ratio-64.reveal,
+  .closing-ratio-64.reveal.is-visible {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-scroll {
+    min-height: auto !important;
+  }
+
+  .hero-stage {
+    position: relative !important;
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+    gap: 3rem !important;
+    padding: 6.5rem 0 4rem !important;
+  }
+
+  .hero-galaxy {
+    inset: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    transform: none !important;
+    background-position: 74% 8% !important;
+    opacity: 0.42 !important;
+  }
+
+  .hero-visuals {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    order: 3;
+    gap: 1rem !important;
+    height: auto !important;
+    min-height: 0 !important;
+    perspective: none !important;
+    transform-style: flat !important;
+  }
+
+  .hero-card--orbital {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: auto !important;
+    transform: none !important;
+    opacity: 1 !important;
+    transform-style: flat !important;
+  }
+
+  .hero-card__mesh,
+  .hero-card--orbital .hero-card-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .hero-copy {
+    order: 1;
+  }
+
+  .hero-title-editorial {
+    font-size: clamp(1.72rem, 7.4vw, 2rem) !important;
+    letter-spacing: -0.04em !important;
+  }
+
+  .hero-sub-group {
+    padding-left: 22px !important;
+  }
+
+  .hero-signatures {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    grid-column: 1;
+    order: 2;
+    width: 100%;
+    min-width: 0;
+    align-items: flex-end;
+    margin-top: 1.5rem;
+    gap: 1rem;
+  }
+
+  .hero-signature {
+    min-width: 0;
+    opacity: 0.72;
+  }
+
+  .hero-signature--build-with-ai {
+    width: 44%;
+  }
+}

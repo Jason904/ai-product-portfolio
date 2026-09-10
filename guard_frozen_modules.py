@@ -38,15 +38,25 @@ def extract_html_sections(html_content: str):
         sections["html_ui_skill_lab"] = html_content[ui_start:gf_start]
 
     # 3. Guangfan
-    closing_start = html_content.find('<section class="closing reveal">')
+    closing_start = html_content.find(
+        '<section class="closing-ratio-64 reveal" id="closing-profile"'
+    )
+    if closing_start == -1:
+        closing_start = html_content.find('<section class="closing reveal">')
     if closing_start == -1:
         closing_start = html_content.find('<section class="closing"')
     if gf_start != -1 and closing_start != -1:
-        sections["html_guangfan"] = html_content[gf_start:closing_start]
+        guangfan_end = closing_start
+        closing_comment = html_content.rfind("<!--", gf_start, closing_start)
+        if closing_comment != -1:
+            guangfan_end = closing_comment
+        sections["html_guangfan"] = html_content[gf_start:guangfan_end]
 
-    # 4. Closing & Footer
+    # 4. Profile & Thanks
     if closing_start != -1:
-        sections["html_closing_footer"] = html_content[closing_start:]
+        main_end = html_content.find("</main>", closing_start)
+        closing_end = main_end if main_end != -1 else len(html_content)
+        sections["html_profile_thanks"] = html_content[closing_start:closing_end]
 
     return sections
 

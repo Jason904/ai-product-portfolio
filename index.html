@@ -7,10 +7,12 @@
   <meta name="theme-color" content="#f3efe8" />
   <title>AI Product Build Portfolio</title>
   <link rel="stylesheet" href="./styles.css?v=20260910_final" />
-  <script src="./script.js?v=20260910_nav" defer></script>
+  <link rel="stylesheet" href="./css/00-global-hero-r2.css?v=20260911_hero_editorial_groups_v3" />
+  <link rel="stylesheet" href="./css/06-profile-thanks.css?v=20260910_profile_bg_v1" />
+  <script src="./script.js?v=20260911_hero_merge_v1" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#work">跳到作品</a>
+  <a class="skip-link" href="#twitcanva-h1-r1">跳到作品</a>
 
   <header class="topbar" aria-label="主导航">
     <a class="brand-mark" href="#top" aria-label="回到顶部">
@@ -48,70 +50,65 @@
   <main>
     <section class="hero-scroll" id="top">
       <div class="hero-stage">
+        <div class="hero-galaxy" aria-hidden="true"></div>
         <div class="hero-copy reveal is-visible">
           <p class="kicker"><span class="kicker-mark"></span> AI Product Manager · Build Portfolio</p>
-          <h1>把不确定性，<br><span>变成可以判断的证据。</span></h1>
-          <p class="hero-sub">我如何用 AI 改变产品从概念验证、真实构建，到 Skill / Workflow 产品化的工作方式。</p>
-          <div class="hero-actions">
-            <a class="button button--dark" href="#work">查看作品 <span aria-hidden="true">↓</span></a>
-            <a class="button button--light" href="https://github.com/Jason904" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
-          </div>
-          <div class="capability-rail" id="capabilities" aria-label="核心能力">
-            <span><b>BUILD</b> 产品构建</span>
-            <span><b>SYSTEMIZE</b> Skill 设计</span>
-            <span><b>PRODUCTIZE</b> 方法产品化</span>
-            <span><b>VALIDATE</b> 概念验证</span>
+          <h1 class="hero-title-editorial">
+            <span class="hero-title-line">让 <span class="hero-hl hero-hl--orange">AI</span> 成为 产品的能力</span>
+            <span class="hero-title-line">也用 <span class="hero-hl hero-hl--orange">AI</span> 亲手 创造<span class="hero-hl hero-hl--orange">产品</span></span>
+          </h1>
+          <div class="hero-sub-editorial">
+            <div class="hero-sub-group">
+              <p class="hero-sub-line">把 AI 设计成围绕目标持续工作的产品能力，</p>
+              <p class="hero-sub-line">也使用 AI 亲自把产品做出来。</p>
+            </div>
+            <div class="hero-sub-group">
+              <p class="hero-sub-line">借助 AI Coding、AIGC 与 Agent 工作流，</p>
+              <p class="hero-sub-line">让产品判断更早进入真实体验，在迭代中持续校准</p>
+            </div>
           </div>
         </div>
 
-        <div class="hero-visuals" aria-label="四个项目视觉预览">
-          <article class="hero-card hero-card--twit" data-speed="0.72" data-tilt="-2.5">
-            <div class="plate-meta"><span>01</span><span>BUILD</span></div>
-            <div class="plate-title">TwitCanva</div>
-            <div class="plate-art plate-art--nodes" aria-hidden="true">
-              <span class="node n1"></span><span class="node n2"></span><span class="node n3"></span><span class="node n4"></span>
-              <i class="wire w1"></i><i class="wire w2"></i><i class="wire w3"></i>
-            </div>
-            <p>Multimodal AI Creation Workspace</p>
-          </article>
+        <div class="hero-signatures" aria-label="手写签名">
+          <figure class="hero-signature hero-signature--build-with-ai">
+            <img
+              src="assets/images/profile/signature-build-with-ai.png"
+              alt="手写签名：Build with AI for what's next."
+              loading="eager"
+              decoding="async"
+            />
+          </figure>
+        </div>
 
-          <article class="hero-card hero-card--hermes" data-speed="1.06" data-tilt="1.2">
-            <div class="plate-meta"><span>02</span><span>SYSTEMIZE</span></div>
-            <div class="plate-title">Hermes P7+</div>
-            <div class="plate-art plate-art--thinking" aria-hidden="true">
-              <span>CASE</span><i></i><span>JUDGE</span><i></i><span>ASSET</span>
-            </div>
-            <p>Product Thinking Skill</p>
-          </article>
+        <div class="hero-visuals" data-orbital-3d="true" aria-label="四个互补的 AI-native PM 能力证明与快速索引">
+          <a href="#twitcanva-h1-r1" class="hero-card hero-card--orbital hero-card--twit" data-speed="0.72" data-tilt="-2.5" aria-label="跳转至 01 / BUILD · 多模态 AI 创作控制系统">
+            <span class="hero-card__mesh">
+              <img class="hero-card-image" src="assets/images/hero-refresh/01-build.png" alt="01 / BUILD · TwitCanva 多模态 AI 创作控制系统" loading="eager" decoding="async">
+            </span>
+          </a>
 
-          <article class="hero-card hero-card--ui" data-speed="0.9" data-tilt="-1.1">
-            <div class="plate-meta"><span>03</span><span>PRODUCTIZE</span></div>
-            <div class="plate-title">UI Skill Lab</div>
-            <div class="plate-art plate-art--spec" aria-hidden="true">
-              <span></span><span></span><span></span><span></span><span></span>
-            </div>
-            <p>Visual-first Agent Workflow</p>
-          </article>
+          <a href="#hermes" class="hero-card hero-card--orbital hero-card--hermes" data-speed="1.06" data-tilt="1.2" aria-label="跳转至 02 / SYSTEMIZE · Daily Product Thinking Training">
+            <span class="hero-card__mesh">
+              <img class="hero-card-image" src="assets/images/hero-refresh/02-systemize.png?v=20260910_hero_outline_v1" alt="02 / SYSTEMIZE · Daily Product Thinking Training" loading="eager" decoding="async">
+            </span>
+          </a>
 
-          <article class="hero-card hero-card--guangfan" data-speed="1.22" data-tilt="2.2">
-            <div class="plate-meta"><span>04</span><span>VALIDATE</span></div>
-            <div class="plate-title">光帆</div>
-            <div class="plate-art plate-art--orbit" aria-hidden="true"><span></span><i></i></div>
-            <p>AI Product Concept Validation</p>
-          </article>
+          <a href="#ui-skill-lab" class="hero-card hero-card--orbital hero-card--ui" data-speed="0.9" data-tilt="-1.1" aria-label="跳转至 03 / PRODUCTIZE · UI Skill Lab">
+            <span class="hero-card__mesh">
+              <img class="hero-card-image" src="assets/images/hero-refresh/03-productize.png?v=20260910_hero_outline_v1" alt="03 / PRODUCTIZE · UI Skill Lab" loading="eager" decoding="async">
+            </span>
+          </a>
+
+          <a href="#guangfan" class="hero-card hero-card--orbital hero-card--guangfan" data-speed="1.22" data-tilt="2.2" aria-label="跳转至 04 / VALIDATE · AI Product Concept Validation">
+            <span class="hero-card__mesh">
+              <img class="hero-card-image" src="assets/images/hero-refresh/04-validate.png?v=20260910_hero_outline_v1" alt="04 / VALIDATE · AI Product Concept Validation" loading="eager" decoding="async">
+            </span>
+          </a>
         </div>
       </div>
     </section>
 
-    <section class="work-intro" id="work">
-      <p class="section-kicker reveal">Selected AI Product Work</p>
-      <div class="work-intro-grid reveal">
-        <h2>不是四个 Side Project，<br>而是四种 AI PM 能力。</h2>
-        <p>每个项目只证明一件最重要的事：我能把模糊问题变成产品判断，再把判断推进成真实证据。</p>
-      </div>
-    </section>
-
-        <!-- 00 | HERO — TWITCANVA DESIGN R1.4.1 (Final Polish & Frozen) -->
+    <!-- 00 | HERO — TWITCANVA DESIGN R1.4.1 (Final Polish & Frozen) -->
     <section class="tc-h1-r1" id="twitcanva-h1-r1" aria-label="01 / BUILD · TwitCanva Hero">
       <span id="twitcanva" style="position:absolute; top:0; pointer-events:none;" aria-hidden="true"></span>
       <div class="tc-h1-r1__container">
@@ -6822,17 +6819,157 @@
       </section>
     </section>
 
-    <!-- CLOSING SECTION -->
-    <section class="closing reveal">
-      <p class="closing-label">AI PRODUCT BUILD PORTFOLIO</p>
-      <h2>Validate what matters.<br><span class="u-nowrap">Build what works.</span></h2>
-      <a class="button button--dark" href="#top">回到顶部 ↑</a>
+    <!-- =====================================================================
+         MODULE 05: PROFILE & CONTACT (6:4 RATIO · LEFT 60% CENTERED / RIGHT 40%)
+         Left 60%: Pure Personal Monograph (Centered X & Y)
+         Right 40%: Contact Channels & Experience Tracks
+         ===================================================================== -->
+    <section class="closing-ratio-64 reveal" id="closing-profile">
+
+      <!-- Top Architectural Masthead -->
+      <header class="clean-masthead">
+        <div class="clean-masthead-label">
+          <span class="clean-masthead-icon" aria-hidden="true">■</span>
+          <span>05 // PROFILE &amp; CONTACT</span>
+        </div>
+        <div class="clean-masthead-status">
+          <span class="clean-status-dot" aria-hidden="true"></span>
+          <span>ACTIVE CANDIDATE PROFILE · 2026</span>
+        </div>
+      </header>
+
+      <!-- Main 7:3 Grid -->
+      <div class="grid-ratio-64">
+
+        <!-- Left Column (60%): Personal Monograph, Centered Both Horizontally & Vertically -->
+        <div class="col-profile-60">
+          <div class="profile-monograph-centered">
+
+            <div class="monograph-name-wrap">
+              <h2 class="monograph-display-name">江盛</h2>
+            </div>
+
+            <div class="monograph-single-bar">
+              <span class="monograph-bar-role">AI 产品经理 · AI-native Builder</span>
+              <span class="monograph-bar-sep">｜</span>
+              <span class="monograph-bar-creds">4年AI产品 · 计算机 × 交互设计硕士</span>
+            </div>
+
+            <!-- Pure Typographic Patent Footprint (Direct Numbers) -->
+            <div class="monograph-patent-pure">
+              <div class="patent-pure-numbers">
+                <div class="patent-pure-item">
+                  <span class="patent-pure-val">05</span>
+                  <span class="patent-pure-unit">项国家发明专利</span>
+                </div>
+                <span class="patent-pure-plus">＋</span>
+                <div class="patent-pure-item">
+                  <span class="patent-pure-val">01</span>
+                  <span class="patent-pure-unit">项外观设计专利</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Column (40%): Scheme 2 - Contact Chips & 2-Column Domains Mosaic -->
+        <div class="col-content-40">
+
+          <!-- Upper: LET'S TALK (Scheme 4-C: Compact Monograph Signature, Zero Buttons) -->
+          <div class="side-reach-signature-block">
+            <div class="side-block-header">
+              <span class="side-block-title">联系方式</span>
+            </div>
+            <div class="side-reach-signature">
+              <div class="reach-sig-tel">
+                <span class="reach-sig-val">18396365650</span>
+                <span class="reach-sig-lbl">(微信 / 电话)</span>
+              </div>
+              <div class="reach-sig-links">
+                <a href="mailto:904350681@qq.com" class="reach-sig-link">904350681@qq.com</a>
+                <span class="reach-sig-sep" aria-hidden="true">·</span>
+                <a href="https://github.com/Jason904" target="_blank" rel="noopener" class="reach-sig-link">github.com/Jason904</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lower: 6 Experience Tracks (2-Column Architectural Mosaic Grid, NO lines) -->
+          <div class="side-tracks-mosaic-block">
+            <div class="side-block-header">
+              <span class="side-block-title">经历</span>
+            </div>
+
+            <div class="side-tracks-mosaic-grid">
+              <div class="side-mosaic-item">
+                <div class="side-mosaic-head">
+                  <span class="side-mosaic-idx">01</span>
+                  <strong class="side-mosaic-name">智能座舱</strong>
+                </div>
+                <span class="side-mosaic-desc">车载 NLG 智能转述与行动承接</span>
+              </div>
+
+              <div class="side-mosaic-item">
+                <div class="side-mosaic-head">
+                  <span class="side-mosaic-idx">02</span>
+                  <strong class="side-mosaic-name">多模态 AI 硬件</strong>
+                </div>
+                <span class="side-mosaic-desc">面向低读写门槛手持终端 0→1</span>
+              </div>
+
+              <div class="side-mosaic-item">
+                <div class="side-mosaic-head">
+                  <span class="side-mosaic-idx">03</span>
+                  <strong class="side-mosaic-name">IoT 应用生成与编排</strong>
+                </div>
+                <span class="side-mosaic-desc">自然语言驱动跨品牌应用自动生成</span>
+              </div>
+
+              <div class="side-mosaic-item">
+                <div class="side-mosaic-head">
+                  <span class="side-mosaic-idx">04</span>
+                  <strong class="side-mosaic-name">跨生态设备互联</strong>
+                </div>
+                <span class="side-mosaic-desc">异构设备能力统一抽象与联动调度</span>
+              </div>
+
+              <div class="side-mosaic-item">
+                <div class="side-mosaic-head">
+                  <span class="side-mosaic-idx">05</span>
+                  <strong class="side-mosaic-name">人体动作迁移视觉生成</strong>
+                </div>
+                <span class="side-mosaic-desc">单图驱动动作视频生成</span>
+              </div>
+
+              <div class="side-mosaic-item">
+                <div class="side-mosaic-head">
+                  <span class="side-mosaic-idx">06</span>
+                  <strong class="side-mosaic-name">线下多模态 AI 互动</strong>
+                </div>
+                <span class="side-mosaic-desc">多人大屏互动与高并发稳定交付</span>
+              </div>
+            </div>
+
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="thanks-section" aria-labelledby="embedded-thanks-title">
+      <div class="thanks-content">
+        <h2 class="thanks-title" id="embedded-thanks-title">
+          <span class="thanks-title-line">THANK</span>
+          <span class="thanks-title-line thanks-title-line--accent">YOU.</span>
+        </h2>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <span>Jason904 · AI Product Portfolio</span>
-    <span>V0.2 · Visual Structure Prototype</span>
-  </footer>
+
 </body>
 </html>

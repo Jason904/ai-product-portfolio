@@ -184,84 +184,349 @@
 
   // 3. Hero Parallax / Card Motion (Desktop only)
   const initHeroParallax = () => {
-    if (reduceMotion || !hero || cards.length === 0) {
+    if (!hero) return;
+
+    const orbitalCards = cards.filter((card) => card.classList.contains("hero-card--orbital"));
+    if (!orbitalCards.length) {
+      if (reduceMotion || cards.length === 0) return;
+
+      const clamp01 = (value) => Math.min(Math.max(value, 0), 1);
+      const smoothstep = (value) => {
+        const t = clamp01(value);
+        return t * t * (3 - 2 * t);
+      };
+
+      const profiles = [
+        { x: -50, y: -60, rotate: -1.8, scale: 0.99, opacity: 0.98 },
+        { x: 60, y: -85, rotate: 2.2, scale: 0.97, opacity: 0.94 },
+        { x: -65, y: 20, rotate: -2.0, scale: 1.00, opacity: 0.98 },
+        { x: 75, y: 48, rotate: 2.8, scale: 0.92, opacity: 0.84 },
+      ];
+
+      const motionCards = cards.map((card, index) => ({
+        card,
+        profile: profiles[index] || profiles[profiles.length - 1],
+        speed: Number(card.dataset.speed || 1),
+        baseTilt: Number(card.dataset.tilt || 0),
+        delay: index * 0.03,
+      }));
+
+      let heroStart = 0;
+      let travel = 1;
+      const measure = () => {
+        heroStart = hero.offsetTop;
+        travel = Math.max(hero.scrollHeight - window.innerHeight, 1);
+      };
+      measure();
+
+      let ticking = false;
+      const update = () => {
+        if (window.innerWidth < 768) {
+          motionCards.forEach(({ card }) => {
+            card.style.transform = "";
+            card.style.opacity = "";
+          });
+          ticking = false;
+          return;
+        }
+
+        const progress = clamp01((window.scrollY - heroStart) / travel);
+
+        motionCards.forEach(({ card, profile, speed, baseTilt, delay }) => {
+          const local = smoothstep((progress - delay) / Math.max(1 - delay, 0.001));
+          const factor = 0.86 + speed * 0.14;
+          const x = profile.x * local * factor;
+          const y = profile.y * local * factor;
+          const rotate = baseTilt + profile.rotate * local;
+          const scale = 1 + (profile.scale - 1) * local;
+          const opacity = 1 + (profile.opacity - 1) * local;
+
+          card.style.transform = `translate3d(${x.toFixed(2)}px,${y.toFixed(2)}px,0) rotate(${rotate.toFixed(2)}deg) scale(${scale.toFixed(4)})`;
+          card.style.opacity = opacity.toFixed(4);
+        });
+
+        ticking = false;
+      };
+
+      const requestUpdate = () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(update);
+      };
+
+      const onResize = () => {
+        measure();
+        requestUpdate();
+      };
+
+      window.addEventListener("scroll", requestUpdate, { passive: true });
+      window.addEventListener("resize", onResize, { passive: true });
+      window.addEventListener("load", onResize, { once: true });
+      update();
       return;
     }
 
-  const clamp01 = (value) => Math.min(Math.max(value, 0), 1);
-  const smoothstep = (value) => {
-    const t = clamp01(value);
-    return t * t * (3 - 2 * t);
-  };
+    const clamp01 = (value) => Math.min(Math.max(value, 0), 1);
+    const smoothstep = (value) => {
+      const t = clamp01(value);
+      return t * t * (3 - 2 * t);
+    };
+    const mix = (from, to, progress) => from + (to - from) * progress;
 
-  const profiles = [
-    { x: -50, y: -60, rotate: -1.8, scale: 0.99, opacity: 0.98 },
-    { x:  60, y: -85, rotate:  2.2, scale: 0.97, opacity: 0.94 },
-    { x: -65, y:  20, rotate: -2.0, scale: 1.00, opacity: 0.98 },
-    { x:  75, y:  48, rotate:  2.8, scale: 0.92, opacity: 0.84 },
-  ];
+    // Gathered card stack that expands along the cream orbital field while scrolling.
+    const profiles = [
+      {
+        from: { x: -18, y: -42, z: 105, rx: -2.2, ry: 6.2, rz: -1.2, scale: 0.96 },
+        to: { x: -12, y: -296, z: 155, rx: -6.2, ry: 9, rz: -4.8, scale: 0.72 },
+      },
+      {
+        from: { x: 44, y: -30, z: 48, rx: -1.8, ry: -5.4, rz: 1.6, scale: 0.96 },
+        to: { x: 299, y: -220, z: 82, rx: -4.4, ry: -8.4, rz: 4, scale: 0.96 },
+      },
+      {
+        from: { x: -38, y: 30, z: 18, rx: 2.2, ry: -4.8, rz: -1.6, scale: 0.94 },
+        to: { x: -153, y: 137, z: 48, rx: 5.2, ry: -8.2, rz: -4.4, scale: 0.76 },
+      },
+      {
+        from: { x: 48, y: 44, z: -42, rx: 2.8, ry: 5.2, rz: 2.2, scale: 0.94 },
+        to: { x: 351, y: 326, z: -58, rx: 6, ry: 8.4, rz: 5, scale: 0.98 },
+      },
+    ];
 
-  const motionCards = cards.map((card, index) => ({
-    card,
-    profile: profiles[index] || profiles[profiles.length - 1],
-    speed: Number(card.dataset.speed || 1),
-    baseTilt: Number(card.dataset.tilt || 0),
-    delay: index * 0.03,
-  }));
+    const orbitCards = orbitalCards.map((card, index) => ({
+      card,
+      profile: profiles[index] || profiles[profiles.length - 1],
+      delay: index * 0.045,
+    }));
 
-  let heroStart = 0;
-  let travel = 1;
-  const measure = () => {
-    heroStart = hero.offsetTop;
-    travel = Math.max(hero.scrollHeight - window.innerHeight, 1);
-  };
-  measure();
+    const heroVisuals = hero.querySelector(".hero-visuals");
+    const supportsFineHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
-  let ticking = false;
-  const update = () => {
-    // Only apply physics transform on desktop viewports
-    if (window.innerWidth < 768) {
-      motionCards.forEach(({ card }) => {
-        card.style.transform = "";
-        card.style.opacity = "";
+    const clearOrbitalHover = () => {
+      orbitCards.forEach(({ card }) => card.classList.remove("is-orbital-hovered"));
+    };
+
+    const updateOrbitalHover = (event) => {
+      if (!heroVisuals || window.innerWidth < 768) {
+        clearOrbitalHover();
+        return;
+      }
+
+      let closestCard = null;
+      let closestScore = Infinity;
+
+      orbitCards.forEach(({ card }) => {
+        const rect = card.getBoundingClientRect();
+        const radiusX = rect.width / 2 + 18;
+        const radiusY = rect.height / 2 + 18;
+        const dx = (event.clientX - (rect.left + rect.width / 2)) / radiusX;
+        const dy = (event.clientY - (rect.top + rect.height / 2)) / radiusY;
+        const score = dx * dx + dy * dy;
+
+        if (score <= 1 && score < closestScore) {
+          closestCard = card;
+          closestScore = score;
+        }
       });
-      ticking = false;
-      return;
+
+      orbitCards.forEach(({ card }) => {
+        card.classList.toggle("is-orbital-hovered", card === closestCard);
+      });
+    };
+
+    if (heroVisuals && supportsFineHover && !reduceMotion) {
+      heroVisuals.addEventListener("pointermove", updateOrbitalHover, { passive: true });
+      heroVisuals.addEventListener("pointerleave", clearOrbitalHover, { passive: true });
     }
 
-    const progress = clamp01((window.scrollY - heroStart) / travel);
-
-    motionCards.forEach(({ card, profile, speed, baseTilt, delay }) => {
-      const local = smoothstep((progress - delay) / Math.max(1 - delay, 0.001));
-      const factor = 0.86 + speed * 0.14;
-      const x = profile.x * local * factor;
-      const y = profile.y * local * factor;
-      const rotate = baseTilt + profile.rotate * local;
-      const scale = 1 + (profile.scale - 1) * local;
-      const opacity = 1 + (profile.opacity - 1) * local;
-
-      card.style.transform = `translate3d(${x.toFixed(2)}px,${y.toFixed(2)}px,0) rotate(${rotate.toFixed(2)}deg) scale(${scale.toFixed(4)})`;
-      card.style.opacity = opacity.toFixed(4);
+    const getOrbitScale = () => ({
+      x:
+        window.innerWidth < 960
+          ? 0.44
+          : window.innerWidth <= 1180
+            ? 0.22
+            : window.innerWidth < 1366
+              ? 0.5
+              : 1,
+      y: window.innerHeight < 840 ? 0.72 : window.innerHeight <= 1000 ? 0.95 : 1,
+      z: window.innerHeight < 820 ? 0.8 : 1,
+      layout:
+        window.innerWidth <= 1180
+          ? 0.76
+          : window.innerWidth < 1366
+            ? 0.68
+            : window.innerHeight < 820
+              ? 0.92
+              : 1,
     });
 
-    ticking = false;
-  };
+    const setOrbitalState = (card, profile, progress) => {
+      const scale = getOrbitScale();
+      const expandedScale = 1 + 0.3 * progress;
+      card.style.setProperty("--orbit-x", `${(mix(profile.from.x, profile.to.x, progress) * scale.x).toFixed(2)}px`);
+      card.style.setProperty("--orbit-y", `${(mix(profile.from.y, profile.to.y, progress) * scale.y).toFixed(2)}px`);
+      card.style.setProperty("--orbit-z", `${(mix(profile.from.z, profile.to.z, progress) * scale.z).toFixed(2)}px`);
+      card.style.setProperty("--orbit-rx", `${mix(profile.from.rx, profile.to.rx, progress).toFixed(2)}deg`);
+      card.style.setProperty("--orbit-ry", `${mix(profile.from.ry, profile.to.ry, progress).toFixed(2)}deg`);
+      card.style.setProperty("--orbit-rz", `${mix(profile.from.rz, profile.to.rz, progress).toFixed(2)}deg`);
+      card.style.setProperty("--orbit-depth-layer", `${Math.round(100 + mix(profile.from.z, profile.to.z, progress))}`);
+      card.style.setProperty(
+        "--orbit-scale",
+        (mix(profile.from.scale, profile.to.scale, progress) * scale.layout * expandedScale).toFixed(3)
+      );
+    };
 
-  const requestUpdate = () => {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(update);
-  };
+    if (reduceMotion) {
+      orbitCards.forEach(({ card, profile }) => setOrbitalState(card, profile, 1));
+      return;
+    }
 
-  const onResize = () => {
+    const HERO_ANIMATION_RATIO = 0.8;
+    const HERO_EXIT_SETTLE_MS = 280;
+    const heroExitKeys = new Set(["ArrowDown", "PageDown", " ", "Spacebar"]);
+    const heroExitKeyStep = (event) => {
+      if (event.key === "ArrowDown") return 48;
+      return Math.max(window.innerHeight * 0.85, 240);
+    };
+    let heroStart = 0;
+    let travel = 1;
+    let animationTravel = 1;
+    let ticking = false;
+    let heroExitState = "blocked";
+    let heroExitReleaseTimer = 0;
+
+    const measure = () => {
+      heroStart = hero.offsetTop;
+      travel = Math.max(hero.scrollHeight - window.innerHeight, 1);
+      animationTravel = Math.max(travel * HERO_ANIMATION_RATIO, 1);
+    };
+
+    const update = () => {
+      if (window.innerWidth < 768) {
+        ticking = false;
+        return;
+      }
+
+      const progress = clamp01((window.scrollY - heroStart) / animationTravel);
+
+      orbitCards.forEach(({ card, profile, delay }) => {
+        const local = smoothstep((progress - delay) / Math.max(1 - delay, 0.001));
+        setOrbitalState(card, profile, local);
+      });
+
+      ticking = false;
+    };
+
+    const requestUpdate = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(update);
+    };
+
+    const onResize = () => {
+      measure();
+      requestUpdate();
+    };
+
+    const clearHeroExitRelease = () => {
+      if (!heroExitReleaseTimer) return;
+      window.clearTimeout(heroExitReleaseTimer);
+      heroExitReleaseTimer = 0;
+    };
+
+    const scheduleHeroExitRelease = () => {
+      clearHeroExitRelease();
+      heroExitReleaseTimer = window.setTimeout(() => {
+        heroExitReleaseTimer = 0;
+        heroExitState = "armed";
+      }, HERO_EXIT_SETTLE_MS);
+    };
+
+    const holdHeroAtEnd = () => {
+      window.scrollTo({
+        top: heroStart + travel,
+        left: 0,
+        behavior: "instant",
+      });
+    };
+
+    const blockHeroExit = (event) => {
+      if (event) event.preventDefault();
+      holdHeroAtEnd();
+      scheduleHeroExitRelease();
+    };
+
+    const handleHeroWheel = (event) => {
+      if (
+        window.innerWidth < 768 ||
+        event.ctrlKey ||
+        event.metaKey ||
+        event.altKey ||
+        event.deltaY <= 0
+      ) {
+        return;
+      }
+
+      const heroEnd = heroStart + travel;
+      const currentY = window.scrollY;
+      if (currentY < heroStart - 1 || currentY > heroEnd + 1) return;
+
+      if (heroExitState === "armed") {
+        clearHeroExitRelease();
+        heroExitState = "passed";
+        return;
+      }
+
+      if (heroExitState === "passed") return;
+
+      if (currentY >= heroEnd - 1 || currentY + event.deltaY >= heroEnd - 1) {
+        blockHeroExit(event);
+      }
+    };
+
+    const handleHeroExitKeydown = (event) => {
+      if (
+        window.innerWidth < 768 ||
+        event.ctrlKey ||
+        event.metaKey ||
+        event.altKey ||
+        !heroExitKeys.has(event.key)
+      ) {
+        return;
+      }
+
+      const heroEnd = heroStart + travel;
+      const currentY = window.scrollY;
+      if (currentY < heroStart - 1 || currentY > heroEnd + 1) return;
+
+      if (heroExitState === "armed") {
+        clearHeroExitRelease();
+        heroExitState = "passed";
+        return;
+      }
+
+      if (heroExitState === "passed") return;
+      if (currentY >= heroEnd - 1 || currentY + heroExitKeyStep(event) >= heroEnd - 1) {
+        blockHeroExit(event);
+      }
+    };
+
+    const resetHeroExitAfterReturn = () => {
+      if (heroExitState !== "passed") return;
+      if (window.scrollY <= heroStart + animationTravel * 0.5) {
+        clearHeroExitRelease();
+        heroExitState = "blocked";
+      }
+    };
+
     measure();
-    requestUpdate();
-  };
-
-  window.addEventListener("scroll", requestUpdate, { passive: true });
-  window.addEventListener("resize", onResize, { passive: true });
-  window.addEventListener("load", onResize, { once: true });
-  update();
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", onResize, { passive: true });
+    window.addEventListener("load", onResize, { once: true });
+    window.addEventListener("wheel", handleHeroWheel, { passive: false });
+    window.addEventListener("keydown", handleHeroExitKeydown);
+    window.addEventListener("scroll", resetHeroExitAfterReturn, { passive: true });
+    update();
   };
 
   initHeroParallax();
