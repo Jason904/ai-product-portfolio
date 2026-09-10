@@ -885,6 +885,16 @@
   font-size: 11px;
 }
 
+@media (max-width: 640px) {
+  .tc-problem-r2__header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .tc-problem-r2__header .tc-problem-r2__meta-ruler-line {
+    display: none;
+  }
+}
+
 .tc-problem-r2__meta-left {
   display: inline-flex;
   align-items: center;
