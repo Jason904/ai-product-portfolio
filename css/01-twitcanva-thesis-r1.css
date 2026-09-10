@@ -1,0 +1,2175 @@
+/* ==========================================================================
+   TWITCANVA 06 / PRODUCT THESIS — FULL PAGE CONTENT & VISUAL PREVIEW R4
+   Architecture: Page 1 (Conflict / Contrast) -> Normal Transition -> Page 2 (Accumulation / System)
+   Design System: TasteSkill Anti-Slop (Variance 7 · Motion 3 · Density 4)
+   Color Palette: Warm Paper (#f9f7f2), Deep Ink (#181816), Burnt Orange (#c8683d)
+   ========================================================================== */
+
+:root {
+  --tc-thesis-paper: #f9f7f2;
+  --tc-thesis-paper-card: #ffffff;
+  --tc-thesis-paper-tint: #f4efe6;
+  --tc-thesis-paper-subtle: #eae5da;
+  --tc-thesis-ink: #181816;
+  --tc-thesis-ink-secondary: #34322c;
+  --tc-thesis-ink-muted: #5e5b53;
+  --tc-thesis-ink-light: #8c887e;
+  --tc-thesis-orange: #c8683d;
+  --tc-thesis-orange-soft: rgba(200, 104, 61, 0.06);
+  --tc-thesis-orange-border: rgba(200, 104, 61, 0.3);
+  --tc-thesis-border-warm: rgba(24, 24, 22, 0.09);
+  --tc-thesis-border-subtle: rgba(24, 24, 22, 0.05);
+  --tc-thesis-radius: 6px;
+  --tc-thesis-radius-lg: 8px;
+}
+
+/* Master Section Wrapper */
+.tc-thesis-r1 {
+  width: 100%;
+  position: relative;
+  background-color: var(--tc-thesis-paper);
+  color: var(--tc-thesis-ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  overflow-x: hidden;
+  padding: 32px 0 88px 0;
+  box-sizing: border-box;
+}
+
+.tc-thesis-r1 *,
+.tc-thesis-r1 *::before,
+.tc-thesis-r1 *::after {
+  box-sizing: border-box;
+}
+
+.tc-thesis-r1__container {
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 0 32px;
+  position: relative;
+}
+
+/* Top Masterhead Navigation Bar */
+.tc-thesis-r1__topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0 20px 0;
+  border-bottom: 1px solid var(--tc-thesis-border-warm);
+  font-size: 13px;
+  color: var(--tc-thesis-ink-muted);
+  margin-bottom: 40px;
+}
+
+.tc-thesis-r1__topbar-brand {
+  font-weight: 750;
+  color: var(--tc-thesis-ink);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tc-thesis-r1__brand-name {
+  font-family: var(--font-display, "Plus Jakarta Sans", sans-serif);
+  font-size: 15px;
+  letter-spacing: -0.01em;
+}
+
+.tc-thesis-r1__tagline {
+  font-weight: 400;
+  color: var(--tc-thesis-ink-light);
+  font-size: 12.5px;
+}
+
+.tc-thesis-r1__topbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-size: 11.5px;
+  color: var(--tc-thesis-ink-light);
+}
+
+.tc-thesis-r1__topbar-nav-active {
+  color: var(--tc-thesis-orange);
+  font-weight: 750;
+  padding-bottom: 2px;
+  border-bottom: 1.5px solid var(--tc-thesis-orange);
+}
+
+/* Meta Kicker & Indicator */
+.tc-thesis-r1__meta-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--tc-thesis-orange);
+  margin-bottom: 12px;
+}
+
+.tc-thesis-r1__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--tc-thesis-orange);
+  box-shadow: 0 0 0 3px rgba(200, 104, 61, 0.2);
+}
+
+.tc-thesis-r1__page-title {
+  font-family: var(--font-display, "Plus Jakarta Sans", -apple-system, sans-serif);
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 850;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  color: var(--tc-thesis-ink);
+  margin: 0 0 16px 0;
+}
+
+/* ==========================================================================
+   PAGE 1: CONFLICT / CONTRAST (降低复杂创作的返工成本)
+   ========================================================================== */
+.tc-thesis-r1__page--p1 {
+  margin-bottom: 20px;
+}
+
+.tc-thesis-r1__p1-head {
+  margin-bottom: 28px;
+}
+
+.tc-thesis-r1__p1-top-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+  gap: 36px;
+  align-items: end;
+  margin-bottom: 14px;
+}
+
+.tc-thesis-r1__p1-top-main .tc-thesis-r1__meta-kicker {
+  margin-bottom: 8px;
+}
+
+.tc-thesis-r1__p1-top-main .tc-thesis-r1__page-title {
+  margin-bottom: 0;
+}
+
+.tc-thesis-r1__p1-brand-aside {
+  border-left: 2px solid var(--tc-thesis-orange);
+  padding: 4px 0 4px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tc-thesis-r1__p1-brand-line {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tc-thesis-r1__p1-brand-name {
+  font-family: var(--font-display, 'Plus Jakarta Sans', sans-serif);
+  font-size: 16px;
+  font-weight: 850;
+  color: var(--tc-thesis-ink);
+  letter-spacing: -0.01em;
+}
+
+.tc-thesis-r1__p1-brand-tagline {
+  font-size: 13.5px;
+  color: var(--tc-thesis-ink-secondary);
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .tc-thesis-r1__p1-top-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    align-items: flex-start;
+  }
+}
+
+.tc-thesis-r1__p1-problem-fact {
+  font-size: clamp(17px, 1.8vw, 22px);
+  font-weight: 750;
+  line-height: 1.4;
+  color: var(--tc-thesis-ink-secondary);
+  margin: 0 0 8px 0;
+  word-break: keep-all;
+}
+
+.tc-thesis-r1__p1-problem-sub {
+  font-size: 14.5px;
+  color: var(--tc-thesis-ink-muted);
+  line-height: 1.5;
+  margin: 0 0 14px 0;
+  max-width: 860px;
+}
+
+.tc-thesis-r1__p1-cognitive-wire {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--tc-thesis-ink-secondary);
+  background: transparent;
+  border: none;
+  border-left: 2.5px solid var(--tc-thesis-orange);
+  padding: 5px 0 5px 12px;
+  margin-top: 14px;
+  line-height: 1.55;
+}
+
+.tc-thesis-r1__wire-kicker {
+  color: var(--tc-thesis-ink-light);
+  font-weight: 800;
+  margin-right: 2px;
+}
+
+.tc-thesis-r1__wire-node {
+  color: var(--tc-thesis-ink);
+}
+
+.tc-thesis-r1__wire-arrow {
+  color: var(--tc-thesis-orange);
+  font-weight: 800;
+  padding: 0 1px;
+}
+
+.tc-thesis-r1__wire-node--drift {
+  color: var(--tc-thesis-orange);
+  font-weight: 750;
+  background: rgba(200, 104, 61, 0.08);
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+
+.tc-thesis-r1__wire-node--result {
+  color: var(--tc-thesis-ink);
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-color: var(--tc-thesis-orange);
+  text-underline-offset: 3px;
+}
+
+/* Precision Causality Stepper Ribbon (TasteSkill Masterwork) */
+.tc-thesis-r1__p1-stepper-ribbon {
+  margin-top: 18px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--tc-thesis-border-warm);
+  border-left: 3px solid var(--tc-thesis-orange);
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tc-thesis-r1__ribbon-head {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tc-thesis-r1__ribbon-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--tc-thesis-orange);
+}
+
+.tc-thesis-r1__ribbon-kicker {
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--tc-thesis-orange);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tc-thesis-r1__ribbon-track {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+}
+
+.tc-thesis-r1__ribbon-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-size: 11.5px;
+  font-weight: 650;
+  color: var(--tc-thesis-ink-secondary);
+}
+
+.tc-thesis-r1__step-idx {
+  font-size: 9.5px;
+  font-weight: 800;
+  color: var(--tc-thesis-ink-light);
+  background: rgba(24, 24, 22, 0.06);
+  padding: 1px 4px;
+  border-radius: 2px;
+}
+
+.tc-thesis-r1__step-name {
+  color: var(--tc-thesis-ink);
+}
+
+.tc-thesis-r1__step-arrow {
+  color: var(--tc-thesis-border-warm);
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
+
+/* Step 03 Drift Highlight */
+.tc-thesis-r1__ribbon-step--drift {
+  background: rgba(200, 104, 61, 0.08);
+  border: 1px solid rgba(200, 104, 61, 0.24);
+  padding: 2px 7px;
+  border-radius: 3px;
+}
+
+.tc-thesis-r1__step-idx--drift {
+  color: #ffffff;
+  background: var(--tc-thesis-orange);
+}
+
+.tc-thesis-r1__step-name--drift {
+  color: var(--tc-thesis-orange);
+  font-weight: 750;
+}
+
+.tc-thesis-r1__step-arrow--drift {
+  color: var(--tc-thesis-orange);
+}
+
+/* Step 05 Consequence Result */
+.tc-thesis-r1__ribbon-step--result {
+  color: var(--tc-thesis-ink);
+}
+
+.tc-thesis-r1__step-idx--result {
+  color: var(--tc-thesis-orange);
+  background: var(--tc-thesis-orange-soft);
+  font-weight: 900;
+}
+
+.tc-thesis-r1__step-name--result {
+  color: var(--tc-thesis-ink);
+  font-weight: 850;
+  border-bottom: 1.5px solid var(--tc-thesis-orange);
+  padding-bottom: 1px;
+}
+
+/* Central Conflict Zone (Fully De-boxed Editorial Blueprint) */
+.tc-thesis-r1__p1-conflict-zone {
+  display: grid;
+  grid-template-columns: 1fr auto 1.32fr;
+  align-items: stretch;
+  gap: 28px;
+  margin: 32px 0;
+  padding: 28px 0;
+  border-top: 1px solid var(--tc-thesis-border-warm);
+  border-bottom: 1px solid var(--tc-thesis-border-warm);
+  position: relative;
+}
+
+.tc-thesis-r1__p1-side {
+  background: transparent;
+  border: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tc-thesis-r1__p1-side-header {
+  margin-bottom: 20px;
+}
+
+.tc-thesis-r1__p1-side-tag {
+  font-family: var(--font-display, "Plus Jakarta Sans", sans-serif);
+  font-size: 19px;
+  font-weight: 850;
+  color: var(--tc-thesis-ink);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.tc-thesis-r1__p1-side-tag--orange {
+  color: var(--tc-thesis-orange);
+}
+
+.tc-thesis-r1__p1-side-desc {
+  font-size: 13px;
+  color: var(--tc-thesis-ink-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Left Timeline Flow (Zero Cards, Continuous Stepper Spine) */
+.tc-thesis-r1__p1-timeline-flow {
+  display: flex;
+  flex-direction: column;
+  margin: 8px 0 20px 0;
+}
+
+.tc-thesis-r1__p1-tl-item {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  min-height: 52px;
+}
+
+.tc-thesis-r1__p1-tl-spine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.tc-thesis-r1__p1-tl-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid var(--tc-thesis-ink-light);
+  box-sizing: border-box;
+  margin-top: 5px;
+  z-index: 2;
+}
+
+.tc-thesis-r1__p1-tl-dot--drift {
+  border-color: var(--tc-thesis-orange);
+  background: var(--tc-thesis-orange);
+}
+
+.tc-thesis-r1__p1-tl-dot--repeat {
+  border-color: var(--tc-thesis-ink-light);
+  border-style: dashed;
+}
+
+.tc-thesis-r1__p1-tl-line {
+  width: 1.5px;
+  flex: 1;
+  background: var(--tc-thesis-border-warm);
+  margin-top: 2px;
+}
+
+.tc-thesis-r1__p1-tl-line--dashed {
+  background: repeating-linear-gradient(to bottom, var(--tc-thesis-orange-border) 0, var(--tc-thesis-orange-border) 3px, transparent 3px, transparent 6px);
+  width: 1.5px;
+}
+
+.tc-thesis-r1__p1-tl-body {
+  padding: 0 0 16px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tc-thesis-r1__p1-tl-kicker {
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--tc-thesis-ink-light);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tc-thesis-r1__p1-tl-title {
+  font-size: 13.5px;
+  font-weight: 750;
+  color: var(--tc-thesis-ink);
+  line-height: 1.45;
+}
+
+.tc-thesis-r1__p1-tl-title--drift {
+  color: var(--tc-thesis-orange);
+  font-weight: 800;
+}
+
+.tc-thesis-r1__p1-tl-title--repeat {
+  color: var(--tc-thesis-ink-secondary);
+  font-weight: 650;
+}
+
+.tc-thesis-r1__p1-side-footer {
+  border-left: 2.5px solid var(--tc-thesis-orange);
+  padding: 8px 0 8px 14px;
+  font-size: 13px;
+  font-weight: 750;
+  color: var(--tc-thesis-ink);
+  line-height: 1.5;
+  background: transparent;
+  border-radius: 0;
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  margin-top: auto;
+}
+
+.tc-thesis-r1__p1-footer-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  color: var(--tc-thesis-orange);
+  font-weight: 800;
+  margin-right: 4px;
+}
+
+/* Center Divider with Vertical Axis */
+.tc-thesis-r1__p1-vs-divider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 32px;
+}
+
+.tc-thesis-r1__p1-vs-divider::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: var(--tc-thesis-border-warm);
+  z-index: 1;
+}
+
+.tc-thesis-r1__p1-divider-pill {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-mono, monospace);
+  font-size: 13px;
+  font-weight: 850;
+  color: var(--tc-thesis-orange);
+  background: #ffffff;
+  border: 1.5px solid var(--tc-thesis-orange-border);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(200, 104, 61, 0.12);
+}
+
+/* Right: Open Architectural Spec Grid (Zero Cards) */
+.tc-thesis-r1__p1-open-spec-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1px 1fr;
+  gap: 16px;
+  align-items: stretch;
+  margin: 6px 0 16px 0;
+}
+
+.tc-thesis-r1__p1-spec-mid-line {
+  background: var(--tc-thesis-border-warm);
+  width: 1px;
+}
+
+.tc-thesis-r1__p1-spec-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.tc-thesis-r1__p1-spec-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid var(--tc-thesis-border-warm);
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+}
+
+.tc-thesis-r1__p1-spec-title {
+  font-family: var(--font-display, "Plus Jakarta Sans", sans-serif);
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--tc-thesis-ink);
+}
+
+.tc-thesis-r1__p1-spec-meta {
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--tc-thesis-ink-light);
+  letter-spacing: 0.04em;
+}
+
+.tc-thesis-r1__p1-spec-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.tc-thesis-r1__p1-spec-list li {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: var(--tc-thesis-ink);
+}
+
+.tc-thesis-r1__p1-spec-prop {
+  font-weight: 700;
+  min-width: 32px;
+}
+
+.tc-thesis-r1__p1-spec-lead-line {
+  flex: 1;
+  height: 1px;
+  background: repeating-linear-gradient(to right, var(--tc-thesis-border-warm) 0, var(--tc-thesis-border-warm) 2px, transparent 2px, transparent 5px);
+  margin: 0 10px;
+}
+
+.tc-thesis-r1__p1-spec-val {
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  font-weight: 850;
+  color: var(--tc-thesis-orange);
+  letter-spacing: 0.06em;
+}
+
+/* Right Col: Change Target (Shifted up靠近“本轮需要改变”) */
+.tc-thesis-r1__p1-open-change-target {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 1;
+  padding: 10px 0 0 0;
+}
+
+.tc-thesis-r1__p1-change-name {
+  font-family: var(--font-display, "Plus Jakarta Sans", sans-serif);
+  font-size: 19px;
+  font-weight: 850;
+  color: var(--tc-thesis-orange);
+  letter-spacing: -0.01em;
+  display: inline-block;
+  border-bottom: 2px solid var(--tc-thesis-orange);
+  padding-bottom: 2px;
+  align-self: flex-start;
+}
+
+/* Downstream Open Flow (Structured 2-Step Cadence with Confirm Note) */
+.tc-thesis-r1__p1-open-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  margin-top: 6px;
+}
+
+.tc-thesis-r1__p1-flow-bracket-wrap {
+  width: 100%;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.tc-thesis-r1__p1-bracket-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.tc-thesis-r1__p1-flow-step {
+  padding-left: 14px;
+  border-left: 2px solid var(--tc-thesis-border-warm);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.tc-thesis-r1__p1-flow-step--one {
+  border-left-color: var(--tc-thesis-ink-light);
+}
+
+.tc-thesis-r1__p1-flow-step--two {
+  border-left-color: var(--tc-thesis-orange);
+}
+
+.tc-thesis-r1__p1-flow-step-title {
+  font-family: var(--font-display, "Plus Jakarta Sans", sans-serif);
+  font-size: 13.5px;
+  font-weight: 850;
+  color: var(--tc-thesis-ink);
+  line-height: 1.4;
+}
+
+.tc-thesis-r1__p1-flow-step-desc {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--tc-thesis-ink-secondary);
+  line-height: 1.45;
+  margin: 0;
+}
+
+.tc-thesis-r1__p1-flow-step-desc--confirm {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--tc-thesis-orange);
+  line-height: 1.5;
+  margin-top: 2px;
+}
+
+.tc-thesis-r1__p1-flow-arrow {
+  margin: 6px 0 6px 14px;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
+/* ==========================================================================
+   PAGE 1: ASYMMETRICAL EDITORIAL SPREAD (38% Value Monolith : 62% Product Judgment)
+   Design: Editorial Golden Ratio, Zero Cards, Hairline Axis (TasteSkill Scheme 2)
+   ========================================================================== */
+.tc-thesis-r1__p1-editorial-spread {
+  display: grid;
+  grid-template-columns: 37% 1px 1fr;
+  gap: 24px;
+  align-items: stretch;
+  margin: 36px 0 20px 0;
+  padding: 32px 0 8px 0;
+  border-top: 1px solid var(--tc-thesis-border-warm);
+}
+
+.tc-thesis-r1__p1-spread-val {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-right: 8px;
+}
+
+.tc-thesis-r1__p1-spread-kicker {
+  font-family: var(--font-mono, monospace);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--tc-thesis-orange);
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.tc-thesis-r1__badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--tc-thesis-orange);
+}
+
+.tc-thesis-r1__p1-val-prose-block {
+  position: relative;
+  border-left: 2.5px solid var(--tc-thesis-orange);
+  padding: 2px 0 4px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.tc-thesis-r1__p1-val-prose {
+  font-family: var(--font-display, "Plus Jakarta Sans", sans-serif);
+  font-size: 15px;
+  font-weight: 750;
+  letter-spacing: -0.015em;
+  line-height: 1.68;
+  color: var(--tc-thesis-ink);
+  margin: 0;
+}
+
+.tc-thesis-r1__p1-val-prose strong {
+  font-weight: 850;
+  color: var(--tc-thesis-ink);
+}
+
+.tc-thesis-r1__p1-val-foot-ruler {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.tc-thesis-r1__val-ruler-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--tc-thesis-orange);
+}
+
+.tc-thesis-r1__val-ruler-track {
+  flex: 1;
+  max-width: 110px;
+  height: 1px;
+  background: repeating-linear-gradient(to right, var(--tc-thesis-orange-border) 0, var(--tc-thesis-orange-border) 2px, transparent 2px, transparent 5px);
+}
+
+.tc-thesis-r1__val-ruler-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--tc-thesis-ink-light);
+  opacity: 0.75;
+}
+
+/* Vertical Divider Axis */
+.tc-thesis-r1__p1-spread-axis {
+  background: var(--tc-thesis-border-warm);
+  width: 1px;
+}
+
+/* Right: 62% Deep Judgment */
+.tc-thesis-r1__p1-spread-judgment {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-left: 8px;
+}
+
+.tc-thesis-r1__p1-judgment-head {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  background: var(--tc-thesis-orange-soft);
+  border: 1px solid var(--tc-thesis-orange-border);
+  padding: 3px 10px 3px 8px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(200, 104, 61, 0.06);
+}
+
+.tc-thesis-r1__p1-bar-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--tc-thesis-orange);
+}
+
+.tc-thesis-r1__p1-judgment-badge {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  color: var(--tc-thesis-orange);
+  text-transform: uppercase;
+}
+
+.tc-thesis-r1__p1-judgment-lead {
+  font-family: var(--font-display, "Plus Jakarta Sans", sans-serif);
+  font-size: 15px;
+  font-weight: 850;
+  letter-spacing: -0.01em;
+  color: var(--tc-thesis-ink);
+  margin: 0 0 16px 0;
+  line-height: 1.4;
+}
+
+.tc-thesis-r1__p1-spread-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tc-thesis-r1__p1-spread-pillar {
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.tc-thesis-r1__spread-pillar-idx {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: 850;
+  color: var(--tc-thesis-orange);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.tc-thesis-r1__spread-pillar-body {
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  align-items: baseline;
+  gap: 6px 10px;
+}
+
+.tc-thesis-r1__spread-pillar-core {
+  font-family: var(--font-display, "Plus Jakarta Sans", sans-serif);
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--tc-thesis-ink);
+  line-height: 1.45;
+  white-space: nowrap;
+}
+
+.tc-thesis-r1__spread-desc {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--tc-thesis-ink-muted);
+  line-height: 1.45;
+  white-space: nowrap;
+}
+
+.tc-thesis-r1__spread-wire {
+  color: var(--tc-thesis-orange);
+  font-weight: 800;
+  font-family: var(--font-mono, monospace);
+  font-size: 13px;
+}
+
+.tc-thesis-r1__spread-desc {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--tc-thesis-ink-muted);
+  line-height: 1.45;
+}
+
+.tc-thesis-r1__spread-operator-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 0 4px 58px;
+}
+
+.tc-thesis-r1__spread-op-line {
+  width: 20px;
+  height: 1px;
+  background: var(--tc-thesis-border-warm);
+}
+
+.tc-thesis-r1__spread-op-plus {
+  font-family: var(--font-mono, monospace);
+  font-size: 11.5px;
+  font-weight: 850;
+  color: var(--tc-thesis-orange);
+  line-height: 1;
+}
+
+@media (max-width: 960px) {
+  .tc-thesis-r1__p1-editorial-spread {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .tc-thesis-r1__p1-spread-axis {
+    display: none;
+  }
+  .tc-thesis-r1__p1-spread-judgment {
+    padding-left: 0;
+    border-top: 1px solid var(--tc-thesis-border-warm);
+    padding-top: 20px;
+  }
+}
+
+/* Normal Clean Editorial Transition (正常衔接) */
+.tc-thesis-r1__section-divider {
+  height: 1px;
+  background: var(--tc-thesis-border-warm);
+  margin: 48px 0;
+  border: none;
+}
+
+/* ==========================================================================
+   PAGE 2: COMPLETE SYSTEM ACCUMULATION (Task-Driven Creative Memory Flow)
+   Design: Task Entry -> 4-Beat Reading Rail -> Concrete Canvas -> Thesis Monument
+   ========================================================================== */
+.tc-thesis-r1__page--p2 {
+  position: relative;
+}
+
+.tc-thesis-r1__p2-head {
+  margin-bottom: 24px;
+}
+
+.tc-thesis-r1__p2-meta-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+/* A. 顶部双翼排版与任务入口 (Task-Driven Entry & Dual-Wing Editorial Header) */
+.tc-thesis-r1__p2-head {
+  margin-bottom: 28px;
+}
+
+.tc-thesis-r1__p2-datum-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(24, 24, 22, 0.08);
+  padding-bottom: 8px;
+  margin-bottom: 18px;
+}
+
+.tc-thesis-r1__p2-datum-meta {
+  font-family: var(--font-mono, monospace);
+  font-size: 9.5px;
+  color: #8e8a82;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+}
+
+.tc-thesis-r1__p2-task-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: start;
+  margin: 0;
+}
+
+.tc-thesis-r1__p2-entry-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.tc-thesis-r1__p2-entry-headline {
+  font-family: var(--font-display, 'Plus Jakarta Sans', sans-serif);
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.42;
+  color: #2d2b27;
+  margin: 0;
+}
+
+.tc-thesis-r1__p2-scope-aside {
+  border-left: 2px solid var(--tc-thesis-orange);
+  padding: 2px 0 2px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tc-thesis-r1__p2-scope-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  color: var(--tc-thesis-orange);
+  text-transform: uppercase;
+}
+
+.tc-thesis-r1__p2-scope-desc {
+  font-size: 13px;
+  font-weight: 500;
+  color: #4e4a42;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.tc-thesis-r1__p2-scope-pills {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.tc-thesis-r1__p2-scope-pill {
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 650;
+  color: #4a4740;
+  background: #ffffff;
+  border: 1px solid rgba(24, 24, 22, 0.12);
+  padding: 2px 8px;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+  letter-spacing: 0.02em;
+}
+
+.tc-thesis-r1__p2-entry-task-strip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(200, 104, 61, 0.04);
+  border: 1px solid rgba(200, 104, 61, 0.16);
+  border-radius: 6px;
+  padding: 6px 12px;
+  margin-bottom: 16px;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.tc-thesis-r1__p2-task-badge {
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  color: var(--tc-thesis-orange);
+  background: #ffffff;
+  border: 1px solid rgba(200, 104, 61, 0.25);
+  padding: 2px 6px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+.tc-thesis-r1__p2-task-txt {
+  font-size: 13px;
+  font-weight: 650;
+  color: var(--tc-thesis-ink);
+  line-height: 1.4;
+}
+
+/* Section 2: Project Memory Canvas Wrapper */
+.tc-thesis-r1__p2-canvas-wrap {
+  margin-bottom: 32px;
+  border-top: none;
+  padding-top: 6px;
+}
+
+/* Unified Editorial Canvas Box (三大空间走廊) */
+.tc-thesis-r1__p2-unified-box {
+  background: #faf8f5;
+  border: 1px solid rgba(24, 24, 22, 0.08);
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin-bottom: 24px;
+  box-sizing: border-box;
+}
+
+.tc-thesis-r1__p2-zones-bar {
+  display: grid;
+  grid-template-columns: 390px 540px minmax(0, 1fr);
+  gap: 30px;
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(24, 24, 22, 0.06);
+  box-sizing: border-box;
+}
+
+.tc-thesis-r1__p2-zone-head {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.tc-thesis-r1__p2-zh-sub {
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  color: var(--tc-thesis-ink-muted);
+  text-transform: uppercase;
+}
+
+.tc-thesis-r1__p2-zh-title {
+  font-family: var(--font-display, 'Plus Jakarta Sans', sans-serif);
+  font-size: 16px;
+  font-weight: 850;
+  color: var(--tc-thesis-ink);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.tc-thesis-r1__p2-mobile-hint {
+  display: none;
+  background: #f0eee9;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 11.5px;
+  color: var(--tc-thesis-ink-secondary);
+  text-align: center;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* 2D DAG Graph Stage */
+.tc-thesis-r1__p2-dag-canvas-stage {
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.tc-thesis-r1__p2-dag-canvas-inner {
+  position: relative;
+  width: 1165px;
+  min-width: 1165px;
+  height: 625px;
+}
+
+@media (min-width: 1200px) {
+  .tc-thesis-r1__p2-dag-canvas-stage {
+    overflow-x: hidden;
+  }
+}
+
+.tc-thesis-r1__p2-dag-svg-wires {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* 事实锚点微注 (Editorial Annotation · 足够字号与行宽) */
+.tc-thesis-r1__fact-annotation {
+  position: absolute;
+  z-index: 2;
+  border-left: 2.5px solid #8e8a82;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+
+.tc-thesis-r1__fact-annotation--orange {
+  border-left-color: var(--tc-thesis-orange);
+}
+
+.tc-thesis-r1__fact-kicker {
+  display: block;
+  font-family: var(--font-mono, monospace);
+  font-size: 11.5px;
+  font-weight: 850;
+  color: #4a4742;
+  letter-spacing: 0.02em;
+  margin-bottom: 3px;
+  line-height: 1.3;
+}
+
+.tc-thesis-r1__fact-kicker--orange {
+  color: var(--tc-thesis-orange);
+}
+
+.tc-thesis-r1__fact-desc {
+  font-size: 12.5px;
+  color: var(--tc-thesis-ink);
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 550;
+}
+
+/* 节点样式基础 */
+.tc-thesis-r1__dag-node {
+  position: absolute;
+  z-index: 2;
+  background: #ffffff;
+  border: 1px solid rgba(24, 24, 22, 0.09);
+  border-radius: 6px;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  box-sizing: border-box;
+  min-width: 110px;
+}
+
+.tc-thesis-r1__dag-node--asset {
+  border-color: rgba(24, 24, 22, 0.1);
+}
+
+.tc-thesis-r1__dag-node--subordinate {
+  background: #f7f5f0;
+  border-color: rgba(24, 24, 22, 0.07);
+  opacity: 0.9;
+}
+
+.tc-thesis-r1__dag-node--subordinate .tc-thesis-r1__dag-name {
+  color: #45423c;
+  font-weight: 750;
+}
+
+.tc-thesis-r1__dag-node--subordinate .tc-thesis-r1__dag-role {
+  color: #8e8a82;
+}
+
+.tc-thesis-r1__dag-node--fork {
+  min-width: 105px;
+  border-color: rgba(24, 24, 22, 0.12);
+}
+
+.tc-thesis-r1__dag-node--state {
+  background: #f0eee9;
+  border: 1px solid #dedad2;
+}
+
+.tc-thesis-r1__dag-node--output {
+  background: #ffffff;
+  border-color: rgba(24, 24, 22, 0.1);
+}
+
+.tc-thesis-r1__dag-node-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  color: #7a776e;
+  flex-shrink: 0;
+  background: rgba(24, 24, 22, 0.03);
+}
+
+.tc-thesis-r1__dag-fork-bracket {
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  font-weight: 850;
+  color: #8e8a82;
+  border-right: 1px solid rgba(24, 24, 22, 0.1);
+  padding-right: 6px;
+}
+
+.tc-thesis-r1__dag-state-bar {
+  width: 2.5px;
+  height: 20px;
+  background: #9e9a92;
+  border-radius: 1px;
+  flex-shrink: 0;
+}
+
+.tc-thesis-r1__dag-name {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: 850;
+  color: var(--tc-thesis-ink);
+  display: block;
+  line-height: 1.25;
+  word-break: keep-all;
+  white-space: nowrap;
+}
+
+.tc-thesis-r1__dag-role {
+  font-size: 9.5px;
+  color: var(--tc-thesis-ink-light);
+  display: block;
+  line-height: 1.2;
+  word-break: keep-all;
+  white-space: nowrap;
+}
+
+.tc-thesis-r1__dag-tag-pill {
+  position: absolute;
+  z-index: 3;
+  font-family: var(--font-mono, monospace);
+  font-size: 9px;
+  font-weight: 800;
+  color: var(--tc-thesis-ink-muted);
+  background: #ffffff;
+  padding: 2px 5px;
+  border-radius: 3px;
+  border: 1px solid rgba(24, 24, 22, 0.12);
+  line-height: 1;
+}
+
+.tc-thesis-r1__dag-tag-pill--orange {
+  color: var(--tc-thesis-orange);
+  background: #fff8f5;
+  border-color: rgba(200, 104, 61, 0.28);
+}
+
+/* 中央主场景组合卡片 (Hero Scene Card) */
+.tc-thesis-r1__hero-scene-card {
+  position: absolute;
+  z-index: 3;
+  background: #ffffff;
+  border: 1.5px solid var(--tc-thesis-orange);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(200, 104, 61, 0.12);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.tc-thesis-r1__hsc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 12px;
+  background: #fff8f5;
+  border-bottom: 1px solid rgba(200, 104, 61, 0.15);
+}
+
+.tc-thesis-r1__hsc-badge {
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 850;
+  color: var(--tc-thesis-orange);
+  letter-spacing: 0.03em;
+}
+
+.tc-thesis-r1__hsc-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--tc-thesis-orange);
+  box-shadow: 0 0 0 2px rgba(200, 104, 61, 0.2);
+}
+
+.tc-thesis-r1__hsc-viewport {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  background: #171714;
+  overflow: hidden;
+}
+
+.tc-thesis-r1__hsc-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tc-thesis-r1__crop-mark {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.tc-thesis-r1__crop-mark--tl {
+  top: 8px;
+  left: 8px;
+  border-top: 1.5px solid rgba(255, 255, 255, 0.7);
+  border-left: 1.5px solid rgba(255, 255, 255, 0.7);
+}
+
+.tc-thesis-r1__crop-mark--tr {
+  top: 8px;
+  right: 8px;
+  border-top: 1.5px solid rgba(255, 255, 255, 0.7);
+  border-right: 1.5px solid rgba(255, 255, 255, 0.7);
+}
+
+.tc-thesis-r1__crop-mark--bl {
+  bottom: 8px;
+  left: 8px;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.7);
+  border-left: 1.5px solid rgba(255, 255, 255, 0.7);
+}
+
+.tc-thesis-r1__crop-mark--br {
+  bottom: 8px;
+  right: 8px;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.7);
+  border-right: 1.5px solid rgba(255, 255, 255, 0.7);
+}
+
+.tc-thesis-r1__hsc-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+}
+
+.tc-thesis-r1__hsc-cap {
+  position: absolute;
+  bottom: 6px;
+  left: 8px;
+  right: 8px;
+  background: rgba(23, 23, 20, 0.75);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: #f0eee9;
+  font-size: 9.5px;
+  font-family: var(--font-mono, monospace);
+  letter-spacing: 0.02em;
+  padding: 3px 6px;
+  border-radius: 3px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.tc-thesis-r1__hsc-meta {
+  padding: 10px 14px;
+  background: #ffffff;
+}
+
+.tc-thesis-r1__hsc-title {
+  font-family: var(--font-mono, monospace);
+  font-size: 13px;
+  font-weight: 850;
+  color: var(--tc-thesis-ink);
+  display: block;
+  line-height: 1.25;
+  margin-bottom: 4px;
+}
+
+.tc-thesis-r1__hsc-composition-desc {
+  font-size: 11px;
+  line-height: 1.45;
+  color: var(--tc-thesis-ink);
+  margin: 0 0 5px 0;
+  font-weight: 550;
+}
+
+.tc-thesis-r1__hsc-tags {
+  font-size: 10px;
+  color: var(--tc-thesis-ink-muted);
+  margin: 0;
+  line-height: 1.35;
+  font-weight: 550;
+}
+
+/* 跨任务复用终端大节点 (Downstream Hero) */
+/* Asset Thumbnail Previews (Scheme 1 Calibrated Scale +55%) */
+.tc-thesis-r1__dag-thumb {
+  width: 46px;
+  height: 54px;
+  border-radius: 5px;
+  background: #171714;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid rgba(24, 24, 22, 0.12);
+}
+
+.tc-thesis-r1__dag-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tc-thesis-r1__dag-thumb--hero {
+  width: 105px;
+  height: 70px;
+  border-radius: 6px;
+  background: #0d0d0c;
+}
+
+.tc-thesis-r1__dag-thumb--pose {
+  width: 62px;
+  height: 74px;
+  border-radius: 6px;
+  background: #0d0d0c;
+}
+
+.tc-thesis-r1__dag-node--hero-anchor {
+  border: 1.5px solid rgba(24, 24, 22, 0.22);
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.tc-thesis-r1__dag-node--new-version {
+  border: 1.8px solid var(--tc-thesis-orange);
+  background: #fffcf9;
+  box-shadow: 0 2px 10px rgba(200, 104, 61, 0.14);
+}
+
+.tc-thesis-r1__dag-thumb--scene {
+  width: 66px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.tc-thesis-r1__dag-node--hero-pose {
+  padding: 5px 8px;
+}
+
+.tc-thesis-r1__dh-pose-ref {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  border: 1px solid rgba(200, 104, 61, 0.25);
+  border-radius: 6px;
+  padding: 6px 10px;
+  margin-top: 8px;
+}
+
+.tc-thesis-r1__dh-pose-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tc-thesis-r1__dh-pose-lbl {
+  font-family: var(--font-mono, monospace);
+  font-size: 9.5px;
+  font-weight: 800;
+  color: var(--tc-thesis-orange);
+  text-transform: uppercase;
+}
+
+.tc-thesis-r1__dh-pose-val {
+  font-size: 11px;
+  font-weight: 750;
+  color: var(--tc-thesis-ink);
+}
+
+.tc-thesis-r1__downstream-hero {
+  position: absolute;
+  z-index: 3;
+  background: #fffbf8;
+  border: 1.8px solid var(--tc-thesis-orange);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 18px rgba(200, 104, 61, 0.12);
+  box-sizing: border-box;
+}
+
+.tc-thesis-r1__dh-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono, monospace);
+  font-size: 9.5px;
+  font-weight: 800;
+  color: var(--tc-thesis-orange);
+  margin-bottom: 8px;
+}
+
+.tc-thesis-r1__dh-title {
+  font-family: var(--font-mono, monospace);
+  font-size: 14px;
+  font-weight: 850;
+  color: var(--tc-thesis-orange);
+  margin: 0 0 5px 0;
+  line-height: 1.25;
+}
+
+.tc-thesis-r1__dh-desc {
+  font-size: 12px;
+  color: var(--tc-thesis-ink-secondary);
+  margin: 0 0 10px 0;
+  line-height: 1.45;
+  font-weight: 550;
+}
+
+.tc-thesis-r1__dh-proof {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10.5px;
+  color: #7a776e;
+  border-top: 1px solid rgba(200, 104, 61, 0.15);
+  padding-top: 8px;
+  line-height: 1.35;
+}
+
+.tc-thesis-r1__dh-proof-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--tc-thesis-orange);
+  flex-shrink: 0;
+}
+
+.tc-thesis-r1__dot-legend--future {
+  border: 1.5px dashed var(--tc-thesis-orange);
+  background: #fff8f5;
+  box-sizing: border-box;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* ==========================================================================
+   SECTION 3-5: 高阶系统架构规格板 (The Architecture Spec Console)
+   ========================================================================== */
+/* ==========================================================================
+   SECTION 3-5: 去方框化纯净出版物大版面 (Pure De-boxed Editorial Spread)
+   ========================================================================== */
+.tc-thesis-r1__spec-console {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 24px 0 0 0;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  border-top: none;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Deck Headers */
+.tc-thesis-r1__sc-deck-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.tc-thesis-r1__sc-deck-num {
+  font-family: var(--font-mono, monospace);
+  font-size: 10.5px;
+  font-weight: 850;
+  color: var(--tc-thesis-orange);
+  background: #ffffff;
+  padding: 1px 5px;
+  border-radius: 2px;
+  border: 1px solid rgba(200, 104, 61, 0.25);
+  line-height: 1.2;
+}
+
+.tc-thesis-r1__sc-deck-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--tc-thesis-ink-muted);
+  letter-spacing: 0.06em;
+}
+
+/* Upper Deck: Axiom Title */
+.tc-thesis-r1__sc-axiom-deck {
+  padding-bottom: 18px;
+}
+
+.tc-thesis-r1__sc-axiom-title {
+  font-family: var(--font-display, 'Plus Jakarta Sans', sans-serif);
+  font-size: clamp(18px, 1.9vw, 22px);
+  font-weight: 850;
+  letter-spacing: -0.015em;
+  line-height: 1.45;
+  color: var(--tc-thesis-ink);
+  margin: 0;
+}
+
+.tc-thesis-r1__p2-highlight {
+  color: var(--tc-thesis-orange);
+  position: relative;
+}
+
+/* Crosshair Line */
+.tc-thesis-r1__sc-crosshair-divider {
+  position: relative;
+  height: 1px;
+  background: rgba(24, 24, 22, 0.1);
+  margin: 0 0 20px 0;
+}
+
+.tc-thesis-r1__sc-crosshair {
+  position: absolute;
+  top: -7px;
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  font-weight: 700;
+  color: #a39f96;
+  line-height: 1;
+  user-select: none;
+}
+
+.tc-thesis-r1__sc-crosshair--left {
+  left: 0;
+}
+
+.tc-thesis-r1__sc-crosshair--mid {
+  left: 62%;
+}
+
+.tc-thesis-r1__sc-crosshair--right {
+  right: 0;
+}
+
+/* Lower Deck: Matrix Grid */
+.tc-thesis-r1__sc-matrix-deck {
+  display: grid;
+  grid-template-columns: minmax(0, 62%) 1px minmax(0, 38%);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.tc-thesis-r1__sc-col-divider {
+  background: rgba(24, 24, 22, 0.08);
+  width: 1px;
+  height: 100%;
+}
+
+/* Judgment Column */
+.tc-thesis-r1__sc-judgment-title {
+  font-family: var(--font-display, 'Plus Jakarta Sans', sans-serif);
+  font-size: 15.5px;
+  font-weight: 850;
+  color: var(--tc-thesis-ink);
+  margin: 0 0 10px 0;
+  line-height: 1.35;
+}
+
+.tc-thesis-r1__sc-judgment-body {
+  font-size: 13px;
+  color: var(--tc-thesis-ink);
+  line-height: 1.65;
+  margin: 0 0 12px 0;
+  font-weight: 500;
+}
+
+.tc-thesis-r1__sc-judgment-rule {
+  font-size: 13px;
+  font-weight: 650;
+  color: var(--tc-thesis-orange);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.tc-thesis-r1__sc-logic-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.tc-thesis-r1__sc-logic-row {
+  display: grid;
+  grid-template-columns: 82px 1fr;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.tc-thesis-r1__sc-logic-label {
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 850;
+  color: #6e6b64;
+  letter-spacing: 0.04em;
+}
+
+.tc-thesis-r1__sc-logic-label--accent {
+  color: var(--tc-thesis-orange);
+}
+
+.tc-thesis-r1__sc-logic-text {
+  font-size: 12px;
+  color: var(--tc-thesis-ink);
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 550;
+}
+
+/* Semantic Execution Chain */
+.tc-thesis-r1__sc-chain {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 10px;
+  background: #ffffff;
+  border: 1px solid rgba(24, 24, 22, 0.09);
+  border-radius: 6px;
+  width: fit-content;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.tc-thesis-r1__sc-chain-node {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tc-thesis-r1__sc-chain-role {
+  font-family: var(--font-mono, monospace);
+  font-size: 9.5px;
+  font-weight: 850;
+  color: var(--tc-thesis-ink-muted);
+  background: #f0eee9;
+  padding: 1px 4px;
+  border-radius: 2px;
+}
+
+.tc-thesis-r1__sc-chain-role--orange {
+  color: var(--tc-thesis-orange);
+  background: #fff8f5;
+  border: 1px solid rgba(200, 104, 61, 0.25);
+}
+
+.tc-thesis-r1__sc-chain-act {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--tc-thesis-ink);
+}
+
+.tc-thesis-r1__sc-chain-arrow {
+  color: #b0aca3;
+  font-size: 10.5px;
+  font-weight: 700;
+}
+
+/* Platform Column */
+.tc-thesis-r1__sc-platform-title {
+  font-family: var(--font-display, 'Plus Jakarta Sans', sans-serif);
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--tc-thesis-ink);
+  line-height: 1.5;
+  margin: 0 0 14px 0;
+}
+
+/* 方案 3: 紧凑键值对刻度带 (Compact Telemetry Stream · 无长点线 · 白皮书纯正排印) */
+.tc-thesis-r1__sc-compact-stream {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 4px;
+}
+
+.tc-thesis-r1__sc-compact-item {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+  line-height: 1.5;
+}
+
+.tc-thesis-r1__sc-compact-bullet {
+  width: 4.5px;
+  height: 4.5px;
+  border-radius: 50%;
+  background: #8e8a82;
+  flex-shrink: 0;
+  transform: translateY(-1px);
+}
+
+.tc-thesis-r1__sc-compact-bullet--orange {
+  background: var(--tc-thesis-orange);
+}
+
+.tc-thesis-r1__sc-compact-bullet--green {
+  background: #3b7c5e;
+}
+
+.tc-thesis-r1__sc-compact-key {
+  font-family: var(--font-mono, monospace);
+  font-size: 11.5px;
+  font-weight: 850;
+  color: var(--tc-thesis-ink);
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+.tc-thesis-r1__sc-compact-key--orange {
+  color: var(--tc-thesis-orange);
+}
+
+.tc-thesis-r1__sc-compact-sep {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  color: #b8b5ad;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.tc-thesis-r1__sc-compact-val {
+  font-size: 11px;
+  color: #5e5b54;
+  font-weight: 550;
+  letter-spacing: -0.01em;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .tc-thesis-r1__sc-matrix-deck {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .tc-thesis-r1__sc-col-divider {
+    display: none;
+  }
+  .tc-thesis-r1__sc-crosshair--mid {
+    display: none;
+  }
+  .tc-thesis-r1__sc-chain {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 1024px) {
+  .tc-thesis-r1__p2-task-entry {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .tc-thesis-r1__p2-zones-bar {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .tc-thesis-r1__p2-mobile-hint {
+    display: block;
+  }
+  .tc-thesis-r1__p2-unified-box {
+    padding: 16px;
+  }
+}
+/* ==========================================================================
+   RESPONSIVE HARDENING
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .tc-thesis-r1__p1-conflict-zone,
+  .tc-thesis-r1__p2-graph-body {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .tc-thesis-r1__p1-vs-divider {
+    display: none;
+  }
+
+  .tc-thesis-r1__p2-graph-bridge {
+    flex-direction: row;
+    transform: rotate(90deg);
+    margin: 6px auto;
+  }
+
+  .tc-thesis-r1__p2-bridge-label {
+    writing-mode: horizontal-tb;
+  }
+}
+
+@media (max-width: 768px) {
+  .tc-thesis-r1__container {
+    padding: 0 18px;
+  }
+
+  .tc-thesis-r1__topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .tc-thesis-r1__p1-twit-split {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .tc-thesis-r1__p2-platform-climax {
+    padding: 20px;
+  }
+
+  .tc-thesis-r1__p2-climax-pillar {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .tc-thesis-r1__p2-dag-stage {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tc-thesis-r1__p1-break-desktop {
+    display: none;
+  }
+}
+
+.tc-thesis-r1__dag-node--fork .tc-thesis-r1__dag-role {
+  font-size: 8.5px;
+  line-height: 1.25;
+}
+
+.tc-thesis-r1__dag-node--hero-anchor .tc-thesis-r1__dag-role {
+  font-size: 9px;
+}
+
+/* 协同控制要素组合底座 (Subordinate Controls Dock) */
+.tc-thesis-r1__sub-dock-panel {
+  position: absolute;
+  top: 375px;
+  left: 15px;
+  width: 345px;
+  background: #ffffff;
+  border: 1px solid rgba(24, 24, 22, 0.12);
+  border-radius: 8px;
+  padding: 10px 12px;
+  box-sizing: border-box;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  z-index: 2;
+}
+
+.tc-thesis-r1__sub-dock-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  border-bottom: 1px dashed rgba(24, 24, 22, 0.08);
+  padding-bottom: 5px;
+}
+
+.tc-thesis-r1__sub-dock-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 9.5px;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+  color: #8e8a82;
+  text-transform: uppercase;
+}
+
+.tc-thesis-r1__sub-dock-count {
+  font-family: var(--font-mono, monospace);
+  font-size: 9px;
+  color: #b0aca3;
+}
+
+.tc-thesis-r1__sub-dock-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.tc-thesis-r1__sub-dock-port {
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #b0aca3;
+  border: 2px solid #ffffff;
+  z-index: 3;
+}
+
+/* 方案 B: 架构时间轴刻度导轨 (Architectural Timeline Spine) */
+.tc-thesis-r1__timeline-spine {
+  position: absolute;
+  top: 15px;
+  left: 14px;
+  width: 22px;
+  height: 535px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.tc-thesis-r1__dag-node--deboxed {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.tc-thesis-r1__dag-node--deboxed .tc-thesis-r1__dag-thumb {
+  background: #ffffff;
+  border: 1px solid rgba(24, 24, 22, 0.12);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.tc-thesis-r1__sub-dock-grid .tc-thesis-r1__dag-role {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+  white-space: normal;
+}
+
+.tc-thesis-r1__sub-dock-grid .tc-thesis-r1__dag-role span:first-child {
+  font-family: var(--font-mono, monospace);
+  font-size: 8.5px;
+  color: var(--tc-thesis-ink-light);
+}
+
+.tc-thesis-r1__dag-role-tag {
+  font-size: 8.5px;
+  color: #8e8a82;
+  font-weight: 550;
+}
