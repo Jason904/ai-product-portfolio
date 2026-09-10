@@ -1,0 +1,160 @@
+/* ==========================================================================
+   SANDBOX CALIBRATION STYLESHEET (Dedicated for preview-index.html)
+   Scope: Pure CSS Font-Size / Line-Height / Spacing / Hairline Adjustments
+   Strict Rule: Zero Copy Changes, Zero Layout Restructuring
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. 03 CROWD: TYPOGRAPHIC LADDER CORRECTION (理顺层级倒挂 · 纯字号参数校准)
+   -------------------------------------------------------------------------- */
+
+/* 1.1 英文 Display 主标对齐至 56px 工业基准 (原 49.7px) */
+.tc-crowd-r2__title {
+  font-size: clamp(2.5rem, 3.8vw, 3.5rem) !important; /* ~56px */
+  font-weight: 850 !important;
+  line-height: 1.04 !important;
+  letter-spacing: -0.035em !important;
+  color: #171714 !important;
+}
+
+/* 1.2 中文主标题提升至 29px 850 极限黑体 (原 22.3px 600 单薄) */
+.tc-crowd-r2__subtitle {
+  font-size: clamp(1.55rem, 2.05vw, 1.85rem) !important; /* ~29px */
+  font-weight: 850 !important;
+  line-height: 1.34 !important;
+  letter-spacing: -0.015em !important;
+  color: #171714 !important;
+  margin-bottom: 1.25rem !important;
+}
+
+/* 1.3 子级 H3 标题回归 22px 次级层级 (原 37.4px 倒挂，比父级还大 15px) */
+.tc-crowd-r2__act-title {
+  font-size: clamp(1.25rem, 1.55vw, 1.45rem) !important; /* ~22px */
+  font-weight: 800 !important;
+  line-height: 1.35 !important;
+  letter-spacing: -0.015em !important;
+  color: #171714 !important;
+}
+
+.tc-crowd-r2__act-title-hl {
+  font-weight: 850 !important;
+  border-bottom: 2px solid rgba(200, 104, 61, 0.45) !important;
+  padding-bottom: 1px !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. INTER-SECTION WHITESPACE CADENCE (消灭 210px 与 300px 空白断层巨坑)
+   -------------------------------------------------------------------------- */
+
+/* 2.1 TwitCanva 06 Thesis ➔ Hermes 换章间距优化 (从 210px 压缩至标准 112px) */
+.tc-thesis-r1 {
+  padding-top: 56px !important;
+  padding-bottom: 40px !important;
+  border-top: 1px solid rgba(23, 23, 20, 0.12) !important;
+}
+
+.project--hermes {
+  padding-top: 72px !important;
+}
+
+/* 2.2 Guangfan ➔ Closing 结语区过度留白收拢 (从 300px 压缩至标准 120px) */
+.project--guangfan {
+  padding-bottom: 48px !important;
+  margin-bottom: 0 !important;
+}
+
+.closing {
+  padding-top: 72px !important;
+}
+
+/* 2.3 05 System 与 04 Pose 边界间距微调 */
+.tc-pose-r2 {
+  padding-bottom: 48px !important;
+  border-top: 1px solid rgba(23, 23, 20, 0.12) !important;
+}
+
+.tc-sys-r1 {
+  padding-top: 56px !important;
+  border-top: 1px solid rgba(23, 23, 20, 0.12) !important;
+}
+
+
+/* ==========================================================================
+   USER 6 BROWSER COMMENTS SURGICAL REFINEMENTS
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   COMMENT 1: HERMES PLATE 1 MASTERHEAD SPACING CALIBRATION (标题与副标题呼吸微调)
+   -------------------------------------------------------------------------- */
+.hermes-title {
+  font-size: clamp(2.35rem, 3.2vw, 2.95rem) !important;
+  font-weight: 850 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.025em !important;
+  color: #171714 !important;
+  margin-bottom: 0 !important;
+}
+
+.hermes-title-sub {
+  display: block !important;
+  margin-top: 8px !important; /* 优雅撑开英文与中文的呼吸感 (原 4px 紧贴) */
+  font-size: 1.18rem !important;
+  font-weight: 750 !important;
+  color: #c8683d !important; /* 焦橙副标强调 */
+  letter-spacing: 0.02em !important;
+}
+
+.hermes-masterhead-main {
+  gap: 1.35rem !important; /* 规范副标题到底下陈述块的下边距 (消灭拥挤感) */
+}
+
+/* --------------------------------------------------------------------------
+   COMMENT 2: HERMES PLATE 2 TITLE SINGLE-LINE FIX (强制单行展示 · 绝不折行落单字)
+   -------------------------------------------------------------------------- */
+div#hermes-plate-2 h3.hermes-section-title {
+  font-size: clamp(1.65rem, 2.1vw, 2.35rem) !important; /* 精微适配 960px 容器 */
+  white-space: nowrap !important; /* 核心铁律：一行完整舒展展示，绝不分行 */
+  letter-spacing: -0.02em !important;
+  line-height: 1.2 !important;
+}
+
+/* --------------------------------------------------------------------------
+   COMMENT 3: HERMES PLATE 2 ➔ PLATE 3 SPACING (收拢 150px+ 空白巨坑)
+   -------------------------------------------------------------------------- */
+#hermes-plate-2 {
+  padding-bottom: 36px !important; /* 原 72px 偏大 */
+}
+
+#hermes-plate-3 {
+  padding-top: 40px !important;    /* 原 64px，两板之间总空距从 150px 收敛至标准 76px 呼吸 */
+}
+
+/* --------------------------------------------------------------------------
+   COMMENT 4: HERMES PLATE 3 ➔ PLATE 4 SPACING (彻底切除 194px 垂直真空大坑)
+   -------------------------------------------------------------------------- */
+#hermes-plate-3 {
+  padding-bottom: 0 !important;
+}
+
+#hermes-plate-3 .hermes-inspector-console {
+  margin-bottom: 0 !important;
+}
+
+#hermes-plate-4 {
+  padding-top: 0 !important;
+  margin-top: -32px !important; /* 抵消外层 86px flex gap，使两板光学净空隙收敛至黄金 54px */
+}
+
+/* --------------------------------------------------------------------------
+   COMMENT 6: UI SKILL LAB MISSING LAYER SPACING (消除 200px 超长空滚)
+   -------------------------------------------------------------------------- */
+.ui-intent-bus {
+  margin-top: 1rem !important;
+  margin-bottom: 0 !important;
+}
+
+.ui-missing-layer {
+  margin-top: 1.4rem !important; /* 原 2.2rem */
+  padding-top: 1.8rem !important; /* 原 3rem，总间距从近 200px 收敛至标准 64px */
+}
+
