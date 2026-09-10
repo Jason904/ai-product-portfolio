@@ -96,22 +96,25 @@
       }
     };
 
-    // 获取四大项目的连续全域区间 (覆盖子章节，整段保持高亮)
+    // 获取核心模块的连续全域区间 (覆盖子章节，整段保持高亮)
     const getActiveTarget = () => {
       const scrollPos = window.scrollY + 140;
       const tCanva = document.getElementById('twitcanva-h1-r1') || document.getElementById('twitcanva');
       const hermes = document.getElementById('hermes');
       const uiLab = document.getElementById('ui-skill-lab');
       const gFan = document.getElementById('guangfan');
+      const profile = document.getElementById('closing-profile');
 
       const getTop = (el) => el ? Math.round(el.getBoundingClientRect().top + window.scrollY) : 0;
 
+      const profileTop = getTop(profile);
       const gFanTop = getTop(gFan);
       const uiLabTop = getTop(uiLab);
       const hermesTop = getTop(hermes);
       const tCanvaTop = getTop(tCanva);
 
       // 从下往上分段判断整个项目的连续纵深：
+      if (scrollPos >= profileTop) return 'closing-profile';
       if (scrollPos >= gFanTop) return 'guangfan';
       if (scrollPos >= uiLabTop) return 'ui-skill-lab';
       if (scrollPos >= hermesTop) return 'hermes';
@@ -163,7 +166,8 @@
           'twitcanva': 'twitcanva-h1-r1',
           'hermes': 'hermes',
           'ui-skill-lab': 'ui-skill-lab',
-          'guangfan': 'guangfan'
+          'guangfan': 'guangfan',
+          'closing-profile': 'closing-profile'
         };
         const targetEl = document.getElementById(anchorMap[targetId] || targetId);
         if (targetEl) {

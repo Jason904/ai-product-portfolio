@@ -160,7 +160,7 @@ div#hermes-plate-2 h3.hermes-section-title {
 
 
 /* ==========================================================================
-   TOP NAVIGATION: 4 CORE CAPABILITY/PROJECT TABS (中英双阶梯工匠胶囊)
+   TOP NAVIGATION: 5 CORE CAPABILITY/PROJECT TABS (中英双阶梯工匠胶囊)
    ========================================================================== */
 .topbar {
   width: min(1280px, calc(100% - 32px)) !important;
@@ -274,7 +274,8 @@ div#hermes-plate-2 h3.hermes-section-title {
 #twitcanva-h1-r1,
 #hermes,
 #ui-skill-lab,
-#guangfan {
+#guangfan,
+#closing-profile {
   scroll-margin-top: 85px !important;
 }
 
@@ -323,7 +324,7 @@ html {
 }
 
 /* --------------------------------------------------------------------------
-   RESPONSIVE POLISH: 4-TAB TOPBAR ACROSS TABLET & MOBILE VIEWPORTS
+   RESPONSIVE POLISH: 5-TAB TOPBAR ACROSS TABLET & MOBILE VIEWPORTS
    -------------------------------------------------------------------------- */
 @media (max-width: 990px) {
   .nav-pill--project-tabs .nav-tab__en {
