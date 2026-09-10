@@ -76,6 +76,112 @@
   window.addEventListener("scroll", updateTopbar, { passive: true });
   updateTopbar();
 
+  // 2.1 TasteSkill Top Navigation Controller (5s Smart Idle-Dismiss & Range ScrollSpy)
+  const initProjectTabsNav = () => {
+    const tabs = Array.from(document.querySelectorAll('.nav-pill--project-tabs .nav-tab[data-target]'));
+    if (!tabs.length || !topbar) return;
+
+    const IDLE_TIMEOUT_MS = 5000; // 5秒静止智能隐退
+    let idleTimer = null;
+    let isHovered = false;
+
+    const scheduleIdleDismiss = () => {
+      if (idleTimer) clearTimeout(idleTimer);
+      if (!isHovered && window.scrollY > 180) {
+        idleTimer = setTimeout(() => {
+          if (!isHovered && window.scrollY > 180) {
+            topbar.classList.remove('is-visible-nav');
+          }
+        }, IDLE_TIMEOUT_MS);
+      }
+    };
+
+    // 获取四大项目的连续全域区间 (覆盖子章节，整段保持高亮)
+    const getActiveTarget = () => {
+      const scrollPos = window.scrollY + 140;
+      const tCanva = document.getElementById('twitcanva-h1-r1') || document.getElementById('twitcanva');
+      const hermes = document.getElementById('hermes');
+      const uiLab = document.getElementById('ui-skill-lab');
+      const gFan = document.getElementById('guangfan');
+
+      const getTop = (el) => el ? Math.round(el.getBoundingClientRect().top + window.scrollY) : 0;
+
+      const gFanTop = getTop(gFan);
+      const uiLabTop = getTop(uiLab);
+      const hermesTop = getTop(hermes);
+      const tCanvaTop = getTop(tCanva);
+
+      // 从下往上分段判断整个项目的连续纵深：
+      if (scrollPos >= gFanTop) return 'guangfan';
+      if (scrollPos >= uiLabTop) return 'ui-skill-lab';
+      if (scrollPos >= hermesTop) return 'hermes';
+      if (scrollPos >= tCanvaTop) return 'twitcanva'; // 涵盖 01~06 全系子板块！
+      return null;
+    };
+
+    const onNavScroll = () => {
+      const scrollY = window.scrollY;
+
+      // 1. 首屏 (<= 180px) 保持纯净隐藏
+      if (scrollY <= 180) {
+        if (idleTimer) clearTimeout(idleTimer);
+        topbar.classList.remove('is-visible-nav');
+        return;
+      }
+
+      // 2. 离开首屏后滑动：立即唤醒滑入
+      topbar.classList.add('is-visible-nav');
+
+      // 3. 动态高亮对应项目（在整个大项目内部滑动时持续保持黑块激活）
+      const activeTarget = getActiveTarget();
+      tabs.forEach(tab => {
+        const isMatch = tab.getAttribute('data-target') === activeTarget;
+        tab.classList.toggle('is-active', isMatch);
+      });
+
+      // 4. 重置 5 秒倒计时
+      scheduleIdleDismiss();
+    };
+
+    // 鼠标悬停保护
+    topbar.addEventListener('mouseenter', () => {
+      isHovered = true;
+      if (idleTimer) clearTimeout(idleTimer);
+      topbar.classList.add('is-visible-nav');
+    });
+
+    topbar.addEventListener('mouseleave', () => {
+      isHovered = false;
+      scheduleIdleDismiss();
+    });
+
+    // Tab 点击平滑滚动
+    tabs.forEach(tab => {
+      tab.addEventListener('click', (e) => {
+        const targetId = tab.getAttribute('data-target');
+        const anchorMap = {
+          'twitcanva': 'twitcanva-h1-r1',
+          'hermes': 'hermes',
+          'ui-skill-lab': 'ui-skill-lab',
+          'guangfan': 'guangfan'
+        };
+        const targetEl = document.getElementById(anchorMap[targetId] || targetId);
+        if (targetEl) {
+          e.preventDefault();
+          targetEl.scrollIntoView({ behavior: 'smooth' });
+          scheduleIdleDismiss();
+        }
+      });
+    });
+
+    window.addEventListener('scroll', onNavScroll, { passive: true });
+    window.addEventListener('resize', onNavScroll, { passive: true });
+    window.addEventListener('load', onNavScroll, { passive: true });
+    onNavScroll();
+  };
+
+  initProjectTabsNav();
+
   // 3. Hero Parallax / Card Motion (Desktop only)
   const initHeroParallax = () => {
     if (reduceMotion || !hero || cards.length === 0) {

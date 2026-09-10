@@ -6,10 +6,42 @@
   <meta name="description" content="AI Product Build Portfolio — 把不确定性变成可以判断的证据。" />
   <meta name="theme-color" content="#f3efe8" />
   <title>AI Product Build Portfolio</title>
-  <link rel="stylesheet" href="./styles.css?v=20260910_final" />
-  <script src="./script.js?v=20260910_nav" defer></script>
+  <link rel="stylesheet" href="./styles.css?v=20260906_final" />
+  <link rel="stylesheet" href="./css/preview-index-refine.css?v=2" />
+  <style>
+    .sandbox-global-badge {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(23, 23, 20, 0.92);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #eae9e4;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      font-family: var(--font-mono, monospace);
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      z-index: 99999;
+      pointer-events: none;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+    .sandbox-global-badge .dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #c8683d;
+      margin-right: 6px;
+    }
+  </style>
+  <script src="./script.js" defer></script>
 </head>
 <body>
+  <div class="sandbox-global-badge">
+    <span class="dot"></span>SANDBOX :: FULL PORTFOLIO TYPOGRAPHY & WHITESPACE CALIBRATION
+  </div>
   <a class="skip-link" href="#work">跳到作品</a>
 
   <header class="topbar" aria-label="主导航">
@@ -6834,5 +6866,6 @@
     <span>Jason904 · AI Product Portfolio</span>
     <span>V0.2 · Visual Structure Prototype</span>
   </footer>
+
 </body>
 </html>
