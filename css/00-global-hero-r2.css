@@ -1173,8 +1173,9 @@
 
 .side-mosaic-head {
   display: flex;
-  align-items: baseline;
-  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3px 6px;
 }
 
 .side-mosaic-idx {
@@ -1208,37 +1209,43 @@ a.side-mosaic-item--linked {
 }
 
 .side-mosaic-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  padding: 1.5px 6px;
-  border-radius: 999px;
-  background: rgba(200, 104, 61, 0.08);
-  border: 1px solid rgba(200, 104, 61, 0.22);
-  color: #a84f2d;
-  font-family: var(--font-mono, monospace);
-  font-size: 0.65rem;
-  line-height: 1;
-  vertical-align: middle;
-  margin-left: 2px;
-  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
-  flex-shrink: 0;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 3px !important;
+  padding: 1.5px 6px !important;
+  border-radius: 999px !important;
+  background: rgba(200, 104, 61, 0.08) !important;
+  border: 1px solid rgba(200, 104, 61, 0.22) !important;
+  color: #a84f2d !important;
+  font-family: var(--font-mono, monospace) !important;
+  font-size: 0.65rem !important;
+  line-height: 1 !important;
+  vertical-align: middle !important;
+  margin-left: 2px !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .side-mosaic-pill-icon {
-  width: 10px;
-  height: 10px;
-  fill: currentColor;
-  display: inline-block;
-  vertical-align: middle;
-  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 11px !important;
+  height: 11px !important;
+  fill: currentColor !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  flex-shrink: 0 !important;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .side-mosaic-pill-arrow {
-  font-size: 0.65rem;
-  font-weight: 750;
-  display: inline-block;
-  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  font-size: 0.65rem !important;
+  font-weight: 750 !important;
+  line-height: 1 !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  flex-shrink: 0 !important;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .side-mosaic-item--linked:hover .side-mosaic-name {
