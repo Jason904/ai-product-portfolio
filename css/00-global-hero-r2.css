@@ -1200,6 +1200,66 @@
   display: block;
 }
 
+/* Linked State for Tracks (Editorial Micro-Pill) */
+a.side-mosaic-item--linked {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.side-mosaic-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 1.5px 6px;
+  border-radius: 999px;
+  background: rgba(200, 104, 61, 0.08);
+  border: 1px solid rgba(200, 104, 61, 0.22);
+  color: #a84f2d;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.65rem;
+  line-height: 1;
+  vertical-align: middle;
+  margin-left: 2px;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+.side-mosaic-pill-icon {
+  width: 10px;
+  height: 10px;
+  fill: currentColor;
+  display: inline-block;
+  vertical-align: middle;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.side-mosaic-pill-arrow {
+  font-size: 0.65rem;
+  font-weight: 750;
+  display: inline-block;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.side-mosaic-item--linked:hover .side-mosaic-name {
+  color: #c8683d;
+  transition: color 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.side-mosaic-item--linked:hover .side-mosaic-pill {
+  background: rgba(200, 104, 61, 0.16);
+  border-color: rgba(200, 104, 61, 0.45);
+  box-shadow: 0 1px 4px rgba(200, 104, 61, 0.12);
+}
+
+.side-mosaic-item--linked:hover .side-mosaic-pill-arrow {
+  transform: translate(1px, -1px);
+}
+
+.side-mosaic-item--linked:hover .side-mosaic-pill-icon {
+  transform: scale(1.05);
+}
+
 @media (max-width: 640px) {
   .side-tracks-mosaic-grid {
     grid-template-columns: 1fr;
