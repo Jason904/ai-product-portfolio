@@ -197,112 +197,155 @@
   white-space: nowrap;
 }
 
-/* Deep Charcoal Solid Launch Trigger Button (Tactile Hardware Affordance) */
-.tc-h1-r1__live-deck--solid {
+/* Airy Blueprint Live Deck Card with Burnt Orange Action Capsule */
+.tc-h1-r1__live-deck--capsule {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding: 14px 20px 13px 20px;
-  background: #171714;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 6px;
+  gap: 7px;
+  padding: 13px 18px 12px 18px;
+  background: rgba(200, 104, 61, 0.025);
+  border: 1px solid rgba(23, 23, 20, 0.12);
+  border-radius: 4px;
   text-decoration: none;
-  color: #ffffff;
+  color: inherit;
   cursor: pointer;
   box-sizing: border-box;
-  box-shadow: 0 4px 16px rgba(23, 23, 20, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.16);
-  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-  overflow: hidden;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Blueprint Corner Crosshairs */
+.tc-h1-r1__live-deck--capsule .tc-h1-r1__deck-corner {
+  position: absolute;
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  color: #c8683d;
+  opacity: 0.6;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.tc-h1-r1__live-deck--capsule .tc-h1-r1__deck-corner--tl { top: 3px; left: 4px; }
+.tc-h1-r1__live-deck--capsule .tc-h1-r1__deck-corner--tr { top: 3px; right: 4px; }
+.tc-h1-r1__live-deck--capsule .tc-h1-r1__deck-corner--bl { bottom: 3px; left: 4px; }
+.tc-h1-r1__live-deck--capsule .tc-h1-r1__deck-corner--br { bottom: 3px; right: 4px; }
+
 /* Deck Meta Tag with Amber Pulse */
-.tc-h1-r1__live-deck--solid .tc-h1-r1__deck-meta {
+.tc-h1-r1__live-deck--capsule .tc-h1-r1__deck-meta {
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
-.tc-h1-r1__live-deck--solid .tc-h1-r1__deck-pulse-dot {
-  width: 6px;
-  height: 6px;
+.tc-h1-r1__live-deck--capsule .tc-h1-r1__deck-pulse-dot {
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
-  background-color: #ff9160;
-  box-shadow: 0 0 0 2px rgba(255, 145, 96, 0.3);
-  animation: tcLivePulseDark 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  background-color: #c8683d;
+  box-shadow: 0 0 0 2px rgba(200, 104, 61, 0.25);
+  animation: tcLivePulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   flex-shrink: 0;
 }
 
-@keyframes tcLivePulseDark {
-  0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 2px rgba(255, 145, 96, 0.35); }
-  50% { opacity: 0.55; transform: scale(0.85); box-shadow: 0 0 0 5px rgba(255, 145, 96, 0.08); }
-}
-
-.tc-h1-r1__live-deck--solid .tc-h1-r1__deck-tag {
+.tc-h1-r1__live-deck--capsule .tc-h1-r1__deck-tag {
   font-family: var(--font-mono, monospace);
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.08em;
-  color: #ff9160;
+  color: #c8683d;
   text-transform: uppercase;
 }
 
-/* Main Action Row */
-.tc-h1-r1__live-deck--solid .tc-h1-r1__deck-main {
+/* Deck Body: Left Info + Right Action Capsule */
+.tc-h1-r1__live-deck--capsule .tc-h1-r1__deck-body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: 12px;
 }
 
-.tc-h1-r1__live-deck--solid .tc-h1-r1__deck-title {
+.tc-h1-r1__live-deck--capsule .tc-h1-r1__deck-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.tc-h1-r1__live-deck--capsule .tc-h1-r1__deck-title {
   font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif);
-  font-size: 15px;
-  font-weight: 800;
-  color: #ffffff;
+  font-size: 14.5px;
+  font-weight: 780;
+  color: #171714;
   line-height: 1.3;
   letter-spacing: -0.015em;
+  white-space: nowrap;
   transition: color 0.18s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.tc-h1-r1__live-deck--solid .tc-h1-r1__deck-arrow {
-  font-family: var(--font-mono, monospace);
-  font-size: 15px;
-  font-weight: 900;
-  color: #ff9160;
-  flex-shrink: 0;
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
-}
-
-/* Subtitle Proof */
-.tc-h1-r1__live-deck--solid .tc-h1-r1__deck-sub {
-  display: flex;
-  align-items: center;
-}
-
-.tc-h1-r1__live-deck--solid .tc-h1-r1__deck-sub-text {
+.tc-h1-r1__live-deck--capsule .tc-h1-r1__deck-sub-text {
   font-family: var(--font-mono, monospace);
   font-size: 11px;
-  color: rgba(255, 255, 255, 0.55);
+  color: #66625a;
   line-height: 1.35;
-  letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
-/* Hover State */
-.tc-h1-r1__live-deck--solid:hover {
-  background: #24231f;
-  border-color: rgba(255, 145, 96, 0.55);
-  box-shadow: 0 8px 26px rgba(23, 23, 20, 0.28), 0 0 20px rgba(200, 104, 61, 0.22);
-  transform: translateY(-2px);
-}
-
-.tc-h1-r1__live-deck--solid:hover .tc-h1-r1__deck-title {
+/* Burnt Orange Action Pill Button */
+.tc-h1-r1__action-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 30px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: #c8683d;
   color: #ffffff;
+  font-family: var(--font-sans, -apple-system, sans-serif);
+  font-size: 12px;
+  font-weight: 750;
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(200, 104, 61, 0.28);
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.tc-h1-r1__live-deck--solid:hover .tc-h1-r1__deck-arrow {
-  transform: translate(3px, -3px);
-  color: #ffaa80;
+.tc-h1-r1__action-pill .pill-text {
+  line-height: 1;
+}
+
+.tc-h1-r1__action-pill .pill-arrow {
+  font-family: var(--font-mono, monospace);
+  font-size: 12.5px;
+  font-weight: 800;
+  line-height: 1;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hover States */
+.tc-h1-r1__live-deck--capsule:hover {
+  background: rgba(200, 104, 61, 0.05);
+  border-color: rgba(200, 104, 61, 0.35);
+  box-shadow: 0 4px 16px rgba(200, 104, 61, 0.08);
+  transform: translateY(-1.5px);
+}
+
+.tc-h1-r1__live-deck--capsule:hover .tc-h1-r1__deck-title {
+  color: #c8683d;
+}
+
+.tc-h1-r1__live-deck--capsule:hover .tc-h1-r1__deck-corner {
+  opacity: 1;
+}
+
+.tc-h1-r1__live-deck--capsule:hover .tc-h1-r1__action-pill {
+  background: #d96b3b;
+  box-shadow: 0 4px 14px rgba(200, 104, 61, 0.42);
+  transform: translateY(-1px);
+}
+
+.tc-h1-r1__live-deck--capsule:hover .pill-arrow {
+  transform: translate(2px, -2px);
 }
 
 @media (max-width: 900px) {
