@@ -2173,3 +2173,275 @@
   color: #8e8a82;
   font-weight: 550;
 }
+
+
+/* ==========================================================================
+   06.3 CHAPTER CLOSURE & LIVE SYSTEM LAUNCH DECK (TasteSkill Precision Blueprint)
+   ========================================================================== */
+.tc-thesis-r1__closure-deck {
+  margin-top: 48px;
+  padding-top: 36px;
+  padding-bottom: 24px;
+  border-top: 1px dashed rgba(23, 23, 20, 0.16);
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: clamp(24px, 3.5vw, 44px);
+  align-items: center;
+  width: 100%;
+}
+
+.tc-thesis-r1__closure-left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tc-thesis-r1__closure-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tc-thesis-r1__closure-num {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--tc-thesis-orange, #c8683d);
+  background: rgba(200, 104, 61, 0.12);
+  border: 1px solid rgba(200, 104, 61, 0.28);
+  border-radius: 2px;
+  padding: 1px 5px;
+  line-height: 1.1;
+}
+
+.tc-thesis-r1__closure-kicker {
+  font-family: var(--font-mono, monospace);
+  font-size: 10.5px;
+  font-weight: 800;
+  color: var(--tc-thesis-orange, #c8683d);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tc-thesis-r1__closure-title {
+  font-family: var(--font-display, 'Plus Jakarta Sans', -apple-system, sans-serif);
+  font-size: clamp(19px, 1.9vw, 23px);
+  font-weight: 850;
+  letter-spacing: -0.02em;
+  line-height: 1.36;
+  color: var(--tc-thesis-ink, #171714);
+  margin: 0;
+  word-break: keep-all;
+}
+
+.tc-thesis-r1__closure-desc {
+  font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif);
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--tc-thesis-ink-muted, #66625a);
+  margin: 0;
+  word-break: keep-all;
+}
+
+.tc-thesis-r1__closure-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.tc-closure-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono, monospace);
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #555149;
+  background: rgba(23, 23, 20, 0.04);
+  border: 1px solid rgba(23, 23, 20, 0.1);
+  padding: 2.5px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.02em;
+}
+
+.tc-closure-chip .chip-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #c8683d;
+}
+
+/* Right Column: High-Grade Hardware Launch Console Card */
+.tc-thesis-r1__closure-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tc-thesis-r1__console-card {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 14px 18px 14px 18px;
+  background: rgba(23, 23, 20, 0.025);
+  border: 1px solid rgba(23, 23, 20, 0.14);
+  border-radius: 4px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Corner Alignment Marks */
+.tc-thesis-r1__console-card .console-corner {
+  position: absolute;
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  color: #c8683d;
+  opacity: 0.65;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.tc-thesis-r1__console-card .corner--tl { top: 3px; left: 4px; }
+.tc-thesis-r1__console-card .corner--tr { top: 3px; right: 4px; }
+.tc-thesis-r1__console-card .corner--bl { bottom: 3px; left: 4px; }
+.tc-thesis-r1__console-card .corner--br { bottom: 3px; right: 4px; }
+
+/* Console Header Bar */
+.tc-thesis-r1__console-card .console-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tc-thesis-r1__console-card .console-live-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #c8683d;
+  box-shadow: 0 0 0 2px rgba(200, 104, 61, 0.25);
+  flex-shrink: 0;
+}
+
+.tc-thesis-r1__console-card .console-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #c8683d;
+  text-transform: uppercase;
+}
+
+/* Console Body: Info + Pill Button */
+.tc-thesis-r1__console-card .console-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.tc-thesis-r1__console-card .console-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.tc-thesis-r1__console-card .console-title {
+  font-family: var(--font-display, 'Plus Jakarta Sans', -apple-system, sans-serif);
+  font-size: 14.5px;
+  font-weight: 780;
+  color: #171714;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  white-space: nowrap;
+  transition: color 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tc-thesis-r1__console-card .console-sub {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  color: #767269;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+/* High-contrast Action Pill Button */
+.tc-thesis-r1__console-card .console-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 32px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: #c8683d;
+  color: #ffffff;
+  font-family: var(--font-sans, -apple-system, sans-serif);
+  font-size: 12.5px;
+  font-weight: 750;
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(200, 104, 61, 0.28);
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tc-thesis-r1__console-card .console-pill .pill-text {
+  line-height: 1;
+}
+
+.tc-thesis-r1__console-card .console-pill .pill-arrow {
+  font-family: var(--font-mono, monospace);
+  font-size: 12.5px;
+  font-weight: 800;
+  line-height: 1;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hover States */
+.tc-thesis-r1__console-card:hover {
+  background: rgba(200, 104, 61, 0.05);
+  border-color: rgba(200, 104, 61, 0.35);
+  box-shadow: 0 4px 18px rgba(200, 104, 61, 0.08);
+  transform: translateY(-1.5px);
+}
+
+.tc-thesis-r1__console-card:hover .console-title {
+  color: #c8683d;
+}
+
+.tc-thesis-r1__console-card:hover .console-corner {
+  opacity: 1;
+}
+
+.tc-thesis-r1__console-card:hover .console-pill {
+  background: #d96b3b;
+  box-shadow: 0 4px 14px rgba(200, 104, 61, 0.42);
+  transform: translateY(-1px);
+}
+
+.tc-thesis-r1__console-card:hover .pill-arrow {
+  transform: translate(2px, -2px);
+}
+
+@media (max-width: 900px) {
+  .tc-thesis-r1__closure-deck {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 36px;
+    padding-top: 24px;
+  }
+
+  .tc-thesis-r1__closure-right {
+    justify-content: flex-start;
+  }
+
+  .tc-thesis-r1__console-card {
+    max-width: 100%;
+  }
+}

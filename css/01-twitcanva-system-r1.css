@@ -2978,6 +2978,56 @@
   letter-spacing: 0.04em;
 }
 
+/* Right Telemetry & Launch Action */
+.rail-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.tc-rail-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--tc-sys-orange, #c8683d);
+  background: rgba(200, 104, 61, 0.08);
+  border: 1px solid rgba(200, 104, 61, 0.4);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 180ms ease;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+}
+
+.tc-rail-cta-btn:hover {
+  color: #fff;
+  background: var(--tc-sys-orange, #c8683d);
+  border-color: var(--tc-sys-orange, #c8683d);
+  box-shadow: 0 2px 10px rgba(200, 104, 61, 0.35);
+  transform: translateY(-1px);
+}
+
+.tc-rail-cta-btn .cta-pulse-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 5px currentColor;
+}
+
+.tc-rail-cta-btn .cta-arrow {
+  font-size: 11px;
+  transition: transform 160ms ease;
+}
+
+.tc-rail-cta-btn:hover .cta-arrow {
+  transform: translate(2px, -2px);
+}
+
 /* Canvas Matting Frame & Image */
 .canvas-workbench-frame {
   position: relative;
@@ -3425,6 +3475,11 @@
     padding: 4px 8px;
     font-size: 10px;
     flex-shrink: 0;
+  }
+
+  .rail-actions {
+    width: 100%;
+    justify-content: space-between;
   }
 }
 
